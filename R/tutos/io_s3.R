@@ -4,9 +4,12 @@ library(arrow)
 # library(here)
 
 BUCKET = "projet-donnees-synthetiques"
+BUCKET_SIM = file.path(BUCKET, "simulations")
 
 # Les fichiers du bucket 
 aws.s3::get_bucket(BUCKET, region = "")
+aws.s3::put_bucket(BUCKET_SIM, region = "")
+
 
 # Export en csv (à privilégier pour interopérabilité)
 
@@ -14,11 +17,13 @@ FILE_KEY_OUT_S3 = "iris.csv"
 
 aws.s3::s3write_using(
   iris,
-  FUN = readr::write_csv,
+  FUN = readr::write_csv, 
+  append = TRUE,
   object = FILE_KEY_OUT_S3,
-  bucket = BUCKET,
+  bucket = BUCKET_SIM,
   opts = list("region" = "")
 )
+aws.s3::get_bucket(BUCKET_SIM, region = "")
 
 # Export d'objets R en RData
 
