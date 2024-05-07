@@ -4,24 +4,24 @@ source("R/fonctions/creation_jeu.R")
 
 
 # Jeu de données
-df <- jeudedonnees_SD2011()
-visit_sequence <- c(11,16,22,2,23,24,18,19,1,17,15,21,12,13,14,20,6,3,9,4,10,8,5,7)
+df <- jeudedonnees_SD2011()[,-7] #retrait eduspec
+
 regles = list(marital = "age < 18")
 regles_val = list(marital = "SINGLE")
 
-visit_sequence = c(5,2,22,23,24,16,11,1,18,19,17,15,21,12,13,14,20,6,3,9,4,10,8)
+visit_sequence = c(5,2,21,22,23,15,10,1,17,18,16,14,20,11,12,13,19,6,3,8,4,9,7)
+names(df)[visit_sequence]
 
 # Initialisation
 mes_modeles <- c("cart","ctree","parametric", "rf")
 
-n_sim <- 1
-num_seed <- 1234
-
+n_sim <- 500
+num_seed <- 40889
 
 # Simulations (cart, ctree, rf, parametric)
 res_simulation <- list(
-  meta = list("","","",""),
-  data = list(df, df, df, df)
+  meta = as.list(rep("", length(mes_modeles))),
+  data = as.list(rep("", length(mes_modeles)))
 )
 names(res_simulation$meta) <- mes_modeles
 names(res_simulation$data) <- mes_modeles
@@ -39,7 +39,11 @@ list_calcul <- purrr::map(
 names(list_calcul) <- mes_modeles
 
 res_simulation$meta <- list_calcul %>% 
-  purrr::map(  \(calcul) calcul[-3] )
+  purrr::map(  \(calcul){
+    res <- calcul[-3]
+    res$models = res$models[[1]]
+    return(res)
+  })
 
 res_simulation$data <- list_calcul %>% 
   purrr::map(  \(calcul) calcul$syn )
@@ -54,7 +58,14 @@ aws.s3::get_bucket(BUCKET, region = "")
 aws.s3::put_bucket(BUCKET_SIM, region = "")
 
 date = format(Sys.Date(), "%Y%m%d")
-FILE_KEY_OUT_S3 = paste0(date, "_sim_synthpop_cart_ctree_rf_parametric_500_sims.RDS")
+FILE_KEY_OUT_S3 = paste0(
+  date, 
+  "_sim_synthpop_", 
+  paste0(mes_modeles, collapse = "_"),
+  "_",
+  n_sim, 
+  "_sims.RDS"
+)
 
 aws.s3::s3write_using(
   res_simulation,
