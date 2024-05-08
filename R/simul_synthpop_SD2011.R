@@ -1,3 +1,6 @@
+packages <- c("synthpop","dplyr","furrr","purrr","aws.s3")
+p <- lapply(packages, \(pack) if(! pack %in% installed.packages()) install.packages(pack))
+
 library(synthpop)
 library(dplyr)
 library(furrr)
@@ -16,7 +19,7 @@ names(df)[visit_sequence]
 # Initialisation
 mes_modeles <- c("cart","ctree","parametric", "rf")
 
-n_sim <- 500
+n_sim <- 100
 num_seed <- 40889
 
 # Simulations (cart, ctree, rf, parametric)
@@ -31,14 +34,17 @@ plan(multisession, workers = length(mes_modeles))
 
 list_calcul <- furrr::future_map(
   mes_modeles,
-  \(meth) syn(
-    df, method = meth, m = n_sim, 
-    visit.sequence = visit_sequence, 
-    rules = regles, rvalues = regles_val, 
-    models = TRUE, seed = num_seed
-  ),
-  .options = furrr_options(seed = TRUE),
-  .progress = TRUE
+  \(meth){
+    res <- syn(
+      df, method = meth, m = n_sim, 
+      visit.sequence = visit_sequence, 
+      rules = regles, rvalues = regles_val, 
+      models = TRUE, seed = num_seed
+    )
+    res$models <- res$models[[1]]
+    return(res)
+  },
+  .options = furrr_options(seed = TRUE)
 )
 names(list_calcul) <- mes_modeles
 
@@ -47,7 +53,6 @@ plan(sequential)
 res_simulation$meta <- list_calcul %>% 
   purrr::map(  \(calcul){
     res <- calcul[-3]
-    res$models = res$models[[1]]
     return(res)
   })
 
