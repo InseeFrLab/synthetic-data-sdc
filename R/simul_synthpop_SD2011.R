@@ -1,7 +1,8 @@
 library(synthpop)
 library(dplyr)
+library(furrr)
+library(purrr)
 source("R/fonctions/creation_jeu.R")
-
 
 # Jeu de données
 df <- jeudedonnees_SD2011()[,-7] #retrait eduspec
@@ -26,7 +27,9 @@ res_simulation <- list(
 names(res_simulation$meta) <- mes_modeles
 names(res_simulation$data) <- mes_modeles
 
-list_calcul <- purrr::map(
+plan(multisession, workers = length(mes_modeles))
+
+list_calcul <- furrr::future_map(
   mes_modeles,
   \(meth) syn(
     df, method = meth, m = n_sim, 
@@ -34,9 +37,12 @@ list_calcul <- purrr::map(
     rules = regles, rvalues = regles_val, 
     models = TRUE, seed = num_seed
   ),
+  .options = furrr_options(seed = TRUE),
   .progress = TRUE
 )
 names(list_calcul) <- mes_modeles
+
+plan(sequential)
 
 res_simulation$meta <- list_calcul %>% 
   purrr::map(  \(calcul){
