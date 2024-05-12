@@ -8,56 +8,70 @@ library(purrr)
 source("R/fonctions/creation_jeu.R")
 
 # Jeu de données
-df <- jeudedonnees_SD2011()[,-7] #retrait eduspec
+df <- jeudedonnees_SD2011()
 
 regles = list(marital = "age < 18")
 regles_val = list(marital = "SINGLE")
 
-visit_sequence = c(5,2,21,22,23,15,10,1,17,18,16,14,20,11,12,13,19,6,3,8,4,9,7)
+visit_sequence = c(2,20,21,22,14,9,1,16,17,15,13,19,10,11,12,18,5,3,7,4,8,6)
 names(df)[visit_sequence]
 
 # Initialisation
-mes_modeles <- c("cart","ctree","parametric", "rf")
+mes_modeles <- c("sample","cart","ctree","parametric","bag","rf")
 
-n_sim <- 100
+n_sim <- 500
 num_seed <- 40889
 
-# Simulations (cart, ctree, rf, parametric)
-res_simulation <- list(
-  meta = as.list(rep("", length(mes_modeles))),
-  data = as.list(rep("", length(mes_modeles)))
-)
-names(res_simulation$meta) <- mes_modeles
-names(res_simulation$data) <- mes_modeles
 
-plan(multisession, workers = length(mes_modeles))
+tictoc::tic()
 
-list_calcul <- furrr::future_map(
+res_simulation <- map(
   mes_modeles,
-  \(meth){
-    res <- syn(
-      df, method = meth, m = n_sim, 
-      visit.sequence = visit_sequence, 
-      rules = regles, rvalues = regles_val, 
-      models = TRUE, seed = num_seed
+  \(modele){
+    print(modele)
+    
+    plan(multisession, workers = 25)
+    
+    res <- furrr::future_map(
+      seq_len(n_sim), \(i){
+        r <- syn(
+          df, method = modele, m = 1, 
+          visit.sequence = visit_sequence, 
+          rules = regles, rvalues = regles_val, 
+          models = TRUE
+          # , seed = num_seed
+        )
+        return(r$syn)
+      }, .options = furrr_options(seed = num_seed), 
+      .progress = TRUE
     )
-    res$models <- res$models[[1]]
+    plan(sequential)
     return(res)
   },
-  .options = furrr_options(seed = TRUE)
+  .progress = TRUE
 )
-names(list_calcul) <- mes_modeles
+names(res_simulation) <- mes_modeles
 
-plan(sequential)
+tictoc::toc()
+#3739.65 sec elapsed pour n_sim=100
+#19937.91 sec elapsed pour n_sim = 500
 
-res_simulation$meta <- list_calcul %>% 
-  purrr::map(  \(calcul){
-    res <- calcul[-3]
-    return(res)
-  })
+res_simulation$original <- df
+format(object.size(res_simulation), units = "Gb")
 
-res_simulation$data <- list_calcul %>% 
-  purrr::map(  \(calcul) calcul$syn )
+date = format(Sys.Date(), "%Y%m%d")
+save(res_simulation, file = 
+       file.path("X:/HAB-INVEST-CONFIDENTIALITE/SYNTHETIC/simulations",
+                 paste0(
+                   date, 
+                   "_sim_synthpop_", 
+                   paste0(mes_modeles, collapse = "_"),
+                   "_",
+                   n_sim, 
+                   "_sims.RData"
+                 )
+       )
+)
 
 ## Sauvegarde 
 
