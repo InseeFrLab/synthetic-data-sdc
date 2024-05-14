@@ -57,21 +57,22 @@ tictoc::toc()
 #19937.91 sec elapsed pour n_sim = 500
 
 res_simulation$original <- df
-format(object.size(res_simulation), units = "Gb")
+format(object.size(res_simulation), units = "Gb") 
+# 1.5Gb pour n_sim = 500
 
-date = format(Sys.Date(), "%Y%m%d")
-save(res_simulation, file = 
-       file.path("X:/HAB-INVEST-CONFIDENTIALITE/SYNTHETIC/simulations",
-                 paste0(
-                   date, 
-                   "_sim_synthpop_", 
-                   paste0(mes_modeles, collapse = "_"),
-                   "_",
-                   n_sim, 
-                   "_sims.RData"
-                 )
-       )
-)
+# date = format(Sys.Date(), "%Y%m%d")
+# saveRDS(res_simulation, file = 
+#        file.path("X:/HAB-INVEST-CONFIDENTIALITE/SYNTHETIC/simulations",
+#                  paste0(
+#                    date, 
+#                    "_sim_synthpop_", 
+#                    paste0(mes_modeles, collapse = "_"),
+#                    "_",
+#                    n_sim, 
+#                    "_sims.RDS"
+#                  )
+#        )
+# )
 
 ## Sauvegarde 
 

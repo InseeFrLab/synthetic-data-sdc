@@ -3,7 +3,11 @@ library(synthpop)
 library(purrr)
 library(furrr)
 library(dplyr)
+library(ggplot2)
+library(hrbrthemes)
+library(viridis)
 
+# Import des données -----------------
 FILE_KEY_IN_S3 <- "20240512_sim_synthpop_sample_cart_ctree_parametric_bag_rf_500_sims.RDS"
 BUCKET = "projet-donnees-synthetiques"
 BUCKET_SIM = file.path(BUCKET, "simulations")
@@ -17,6 +21,8 @@ res_simul <- aws.s3::s3read_using(
 str(res_simul, max.level=1)
 methodes <- which(names(res_simul) != "original")
 
+
+# Calcul mesures d'utilité par méthodes ------------------
 tictoc::tic()
 
 utility_measures_all_meth <- imap(
@@ -44,3 +50,99 @@ utility_measures_all_meth <- imap(
 ) %>% list_rbind()
 
 tictoc::toc()
+#806.579 sec elapsed
+
+# Quelques graphiques -----------------------------
+
+utility_measures_all_meth <- utility_measures_all_meth %>%
+  group_by(method) %>% 
+  mutate(i = 1:500) %>% 
+  mutate(across(pMSE:U, cummean, .names = "{.col}_cummean"))
+
+utility_measures_all_meth %>% 
+  ggplot() +
+  geom_line(aes(x = i, y = pMSE_cummean, col = method))
+
+
+utility_graph <- map(
+  c("pMSE","SPECKS","PO50","U"),
+  \(meth){
+    utility_measures_all_meth %>% 
+      ggplot( aes(x=method, y=.data[[meth]], fill=method)) +
+      geom_violin(width=1.4) +
+      geom_boxplot(width=0.1, color="grey", alpha=0.2) +
+      scale_fill_viridis(discrete = TRUE) +
+      coord_flip() +
+      theme_ipsum() +
+      theme(
+        legend.position="none",
+        plot.title = element_text(size=11)
+      ) +
+      ggtitle(paste0("distribution des ", meth)) +
+      ylab(meth) + xlab("méthode")
+  }
+)
+names(utility_graph) <- c("pMSE","SPECKS","PO50","U")
+utility_graph$pMSE
+utility_graph$SPECKS
+utility_graph$PO50
+utility_graph$U
+
+utility_measures_summary <- utility_measures_all_meth %>% 
+  group_by(method) %>% 
+  summarise(
+    across(
+      pMSE:U, 
+      list(mean = mean, min = min, max = max, 
+           pc025 = ~quantile(., probs = 0.025),
+           pc975 = ~quantile(., probs = 0.975),
+           sd = sd
+      ),
+      .names = "{.col}_{.fn}"
+    )) %>%
+  tidyr::pivot_longer(-1, names_to = "indicateur", values_to = "val") %>% 
+  tidyr::separate(indicateur, into = c("utility","indicateur"))
+
+utility_measures_summary %>% 
+  filter(indicateur == "mean") %>%
+  ggplot() +
+  geom_bar(aes(x = method, y = val, fill = utility), stat = "identity")+
+  coord_flip() +
+  facet_wrap(~utility, scales = "free") +
+  theme_ipsum()
+
+
+# Recherche des répliques -------------------------------------
+
+tictoc::tic()
+
+nb_repliques_all_meth <- imap(
+  res_simul[methodes],
+  \(res_one_methode, nom_methode){
+    plan(multisession, workers = 10)
+    res <- future_map(
+      res_one_methode,
+      \(df_synth){
+        tibble(
+          n_replicats = inner_join(res_simul$original, df_synth, relationship = "many-to-many") %>% nrow(),
+          method = nom_methode
+        )
+      }
+    )
+    plan(sequential)
+    return(res %>% list_rbind())
+  },
+  .progress = TRUE
+) %>% list_rbind()
+
+tictoc::toc()
+#806.579 sec elapsed
+
+
+nb_repliques_all_meth %>% 
+  group_by(method) %>% 
+  summarise(across(n_replicats, list(mean=mean, min=min, max=max, sd=sd)))
+
+
+
+
