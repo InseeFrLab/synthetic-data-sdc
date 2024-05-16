@@ -137,18 +137,6 @@ table_cor <- map(
 )
 
 
-calc_mae_num <- function(df_syn, df_orig) {
-  df_syn %>% select(where(is.numeric))
-  df_orig %>% select(where(is.numeric))
-}
-
-table_mae_num <- imap(res_simul[methodes], \(list_df, methode) {
-  map_dfr(list_df, \(df_synth, i) {
-    df_orig <- res_simul$original[[i]]
-    calc_mae_num(df_synth, df_orig)
-  }) %>% mutate(methode = methode)
-}) %>% bind_rows()
-
 
 calc_mae <- function(liste_res, )
 for (i in 1:length(res_simul[methodes])) {
