@@ -162,20 +162,18 @@ colnames(somme_cor_mat) = mes_modeles
 # MAE --------------------------------------------------------------------------
 
 calc_mae <- function(res) {
-  mae_table = matrix(0, nrow = 6, ncol = 5)
+  mae_table = matrix(0, nrow = 6, ncol = 17)
   
   for (i in 1:length(res[methodes])) {
-    mae_table_meth = matrix(0, nrow = 500, ncol = 5)
-    
+    mae_table_meth = matrix(0, nrow = 500, ncol = 17)
     for (j in 1:length(res[[i]])) {
-      factor(res[[i]][[j]][, "depress"])
+      res[[i]][[j]][, "depress"] <- factor(res[[i]][[j]][, "depress"], levels = 0:21)
       for (k in 1:length(fac)) {
-        MAE = mean(abs(res$original[[fac[k]]] - res[[i]][[j]][[fac[k]]]))
-        mae_table_meth[j, k] = MAE
-        
+        MAE <- mean(abs(table(res$original[[fac[k]]]) - table(res[[i]][[j]][[fac[k]]])))
+        mae_table_meth[j, k] <- MAE
       }
     }
-    mae_table[i, ] = colMeans(mae_table_meth)
+    mae_table[i, ] <- colMeans(mae_table_meth)
   }
   
   row.names(mae_table) = mes_modeles
@@ -183,7 +181,30 @@ calc_mae <- function(res) {
   return(mae_table)
 }
 
+table_mae <- calc_mae(data)
 
+# MSE --------------------------------------------------------------------------
+
+calc_mse <- function(res) {
+  mse_table = matrix(0, nrow = 6, ncol = 5)
+  
+  for (i in 1:length(res[methodes])) {
+    mse_table_meth = matrix(0, nrow = 500, ncol = 5)
+    for (j in 1:length(res[[i]])) {
+      for (k in 1:length(num)) {
+        MSE <- mean((res$original[[num[k]]] - res[[i]][[j]][[num[k]]])^2)
+        mse_table_meth[j, k] <- MSE
+      }
+    }
+    mse_table[i, ] <- colMeans(mse_table_meth)
+  }
+  
+  row.names(mse_table) = mes_modeles
+  colnames(mse_table) = num
+  return(mse_table)
+}
+
+table_mse <- calc_mse(data)
 
 # Analyse bmi ------------------------------------------------------------------
 bmi_comp <- function(res) {

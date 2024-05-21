@@ -33,6 +33,19 @@ somme_cor_mat est la somme des éléments de chaque matrices. Plus la valeur est
 
 bag et cart sont ici les meilleurs modèles suivis par parametric, ctree et rf. Sample est loin derrière.
 
+## MAE
+```{r mae}
+  table_mae
+```
+On remarque que bag et rf ont des MAE très élevé allant jusqu'à être 10 fois supérieurs aux autres modèles. Sample, cart, ctree et parametric sont assez rapprochés sans qu'il n'y ait une réelle domination d'un modèle. 
+
+## MSE
+```{r mse}
+  table_mse
+```
+On ne voit pas de réelle domination d'un modèle.
+
+
 ## Analyse de l'IMC
 
 On va vérifier deux choses :
@@ -144,7 +157,9 @@ utility_measures_summary %>%
   facet_wrap(~utility, scales = "free") +
   theme_ipsum()
 ```
-1) Sur le premier graphique, on remarque que les moyennes cumulées se stabilisent très rapidement. On remarque de plus que cart est le meilleur modèle en terme de pMSE. Il est suivi par rf, bag et ctree. Parametric arrive ensuite avec un pMSE environ 2 fois plus élevé. Enfin, sample a un pMSE d'environ 0.17 ce qui est environ
+1) Sur le premier graphique, on remarque que les moyennes cumulées se stabilisent très rapidement. On remarque de plus que cart est le meilleur modèle en terme de pMSE. Il est suivi par rf, bag et ctree. Parametric arrive ensuite avec un pMSE environ 2 fois plus élevé. Enfin, sample a un pMSE d'environ de l'ordre de 7 fois supérieur.
+
+2) On constate que pour la plupart des modèles, la distribution est 
 
 ## Recherche des individus répliqués
 ```{r repliques}
