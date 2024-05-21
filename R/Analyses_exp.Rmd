@@ -1,0 +1,61 @@
+---
+title: "Analyses des simulations"
+author: "Julien Helfenstein"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r pacakges}
+source("Analyses.R")
+```
+
+```{r données}
+data <- res_simul 
+```
+
+## Vue d'ensemble
+
+```{r}
+table_cat
+table_mean_num
+```
+
+## Correlations
+
+```{r correlations}
+liste_mat
+somme_cor_mat
+```
+
+liste_mat est une liste de 6 matrices. Ces matrices sont les matrices de corrélations moyenne des simulations pour chaque modèles moins la matrice de corrélation du jeu de données original.
+
+somme_cor_mat est la somme des éléments de chaque matrices. Plus la valeur est proche de 0 plus les synthétisations produisent de bonnes corrélations.
+
+bag et cart sont ici les meilleurs modèles suivis par parametric, ctree et rf. Sample est loin derrière.
+
+## Analyse de l'IMC
+
+On va vérifier deux choses :
+
+-   Est-ce que dans les jeux de données synthétiques la variable bmi est bien synthétisé, i.e est-ce qu'elle respecte bmi = 10000 \* (weight / height \^ 2) ?
+
+-   Est-ce que les valeurs de la variable bmi synthétisée sont proches de celles de la variable bmi originale ?
+
+```{r bmi comparaison}
+bmi_comp(data)
+```
+
+1)  On constate une assez bonne synthétisation via cart, ctree, parametric et bag, une moins bonne synthétisation via rf et une vraiment moins bonne synthétisation via sample. On n'a cependant pas une valeur de 0 ce qui signifie que le modèle s'approche de la relation mais ne la reproduit pas totalement.
+
+2)  En ce qui concerne la comparaison au jeu de données original, sample, cart, ctree et bagging s'en sortent le mieux, suivis par rf puis parametric.
+
+```{r}
+  reg_coeff[2, ]
+```
+reg_coeff est un vecteur comportant la moyenne des coefficients directeurs pour chaque modèles.
+
+On voit que bag, cart et ctree sont très proches, suivis par parametric (x5), rf(x11). Sample est à la ramasse
+
+```{r graphiques bmi}
+  
+```

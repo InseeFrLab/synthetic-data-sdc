@@ -6,7 +6,6 @@ library(dplyr)
 library(tidyverse)
 library(tictoc)
 library(ggplot2)
-library(hrbrthemes)
 library(viridis)
 library(abind)
 
@@ -29,6 +28,11 @@ mes_modeles <- c("sample", "cart", "ctree", "parametric", "bag", "rf")
 n_sim <- 500
 num_seed <- 40889
 options(max.print = 10000)
+
+df = res_simul
+varsnum = c("age", "depress", "nofriend", "height", "weight", "bmi")
+num = c("age", "nofriend", "height", "weight", "bmi")
+fac = c("sex", "agegr", "placesize", "edu", "socprof", "marital", "ls", "depress", "trust", "trustfam", "trustneigh", "sport", "smoke", "alcabuse", "alcsol", "wkabint", "englang")
 
 # Statistiques
 res_simul_empile <- map(res_simul[methodes], \(df_list) df_list %>% imap(\(df, i) df %>% mutate(index_sim = i)) %>% bind_rows())
@@ -56,7 +60,7 @@ table_mean_num <- imap(res_simul_empile, \(df, methode) calc_stats_mean_num(df) 
 
 calc_org_mean_num <- function(df) {
   df %>% summarise(
-      across(where(is.numeric), list(
+    across(where(is.numeric), list(
       min = ~ min(.),
       max = ~ max(.),
       mean = ~ mean(.),
@@ -136,17 +140,90 @@ table_cor <- map(
   }
 )
 
-
-
-calc_mae <- function(liste_res, )
-for (i in 1:length(res_simul[methodes])) {
-  MSE = 0
-  for (j in 1:length(res_simul[[i]])) {
-    for (k in 1:length(res_simul[[i]][[j]])) {
-      MSE = MSE + mean(abs(res_simul[[i]][[j]][, k] - res_simul$original[, k]))
-    }
-  }
+cor_comp = list()
+for (i in length(mes_modeles)) {
+  cor_comp[[i]] = abs(table_cor[[i]][[1]] - cor(data$original[, varsnum]))
 }
+
+somme_cor_mat = matrix(0, nrow = 1, ncol = 6)
+for (i in length(mes_modeles)) {
+  somme_cor_mat[i] = sum(liste_mat[[i]])
+}
+colnames(somme_cor_mat) = mes_modeles
+
+
+calc_mae <- function(res) {
+  mae_table = matrix(0, nrow = 6, ncol = 5)
+  
+  for (i in 1:length(res[methodes])) {
+    mae_table_meth = matrix(0, nrow = 500, ncol = 5)
+    
+    for (j in 1:length(res[[i]])) {
+      factor(res[[i]][[j]][, "depress"])
+      for (k in 1:length(fac)) {
+        MAE = mean(abs(res$original[[fac[k]]] - res[[i]][[j]][[fac[k]]]))
+        mae_table_meth[j, k] = MAE
+        
+      }
+    }
+    mae_table[i, ] = colMeans(mae_table_meth)
+  }
+  
+  row.names(mae_table) = mes_modeles
+  colnames(mae_table) = fac
+  return(mae_table)
+}
+
+
+
+# Analyse bmi
+bmi_comp <- function(res) {
+  matrice = matrix(0, nrow = 2, ncol = 6)
+  for (i in 1:length(res[methodes])) {
+    mat_cal = matrix(0, nrow = 500, ncol = 2)
+    for (j in 1:length(res[[i]])) {
+      mat_cal[j, 1] = mean(10000 * (res[[i]][[j]][, "weight"] / (res[[i]][[j]][, "height"])^2) - res$original[, "bmi"])
+      mat_cal[j, 2] = mean(res[[i]][[j]][, "bmi"] - res$original[, "bmi"])
+    }
+    matrice[1, i] = sum(mat_cal[, 1])
+    matrice[2, i] = sum(mat_cal[, 2])
+  }
+  
+  colnames(matrice) = mes_modeles
+  row.names(matrice) = c("Comparaison synth/synth", "Comparaison synth/org")
+  return(matrice)
+}
+
+reg_coeff <- matrix(0, nrow = 2, ncol = length(mes_modeles))
+for (i in 1:length(mes_modeles)) {
+  coeff = matrix(0, nrow = length(df[[i]]), ncol = 2)
+  for (j in 1:length(df[[i]])) {
+    var_test = 10000 * (res[[i]][[j]][, "weight"] / (res[[i]][[j]][, "height"])^2)
+    reglin = lm(bmi ~ var_test, data = res[[i]][[j]])
+    coeff[j, 1] = reglin$coefficients[1]
+    coeff[j, 2] = reglin$coefficients[2]
+  }
+  reg_coeff[1, i] = mean(coeff[, 1])
+  reg_coeff[2, i] = mean(coeff[, 2])
+}
+row.names(reg_coeff) <- c("intercept", "coeff")
+colnames(reg_coeff) <- mes_modeles
+
+
+# Tests
+reglin_1_1 = lm(bmi ~ var_tests, data = res$sample[[1]])
+
+var_tests = 10000 * (res$sample[[1]][, "weight"] / (res$sample[[1]][, "height"])^2)
+
+
+
+
+
+
+
+
+
+
 
 
 
