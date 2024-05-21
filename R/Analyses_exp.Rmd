@@ -159,7 +159,10 @@ utility_measures_summary %>%
 ```
 1) Sur le premier graphique, on remarque que les moyennes cumulées se stabilisent très rapidement. On remarque de plus que cart est le meilleur modèle en terme de pMSE. Il est suivi par rf, bag et ctree. Parametric arrive ensuite avec un pMSE environ 2 fois plus élevé. Enfin, sample a un pMSE d'environ de l'ordre de 7 fois supérieur.
 
-2) On constate que pour la plupart des modèles, la distribution est 
+2) On constate que pour la plupart des modèles, l'étendue du pMSE est relativement contenue à l'exception de sample. Cart est ici le meilleur et sample est le moins bon et de loin.
+
+3) Concernant le SPECKS, on obtient les mêmes conclusions que pour le pMSE. On rappelle que le SPECKS est défini par : $$SPECKS =  $$
+4) De même pour le PO50. On rappelle qu'il est défini par : $$PO50 =  $$
 
 ## Recherche des individus répliqués
 ```{r repliques}

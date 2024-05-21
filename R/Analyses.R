@@ -288,7 +288,6 @@ nb_repliques_all_meth <- imap(
   .progress = TRUE
 ) %>% list_rbind()
 
-#806.579 sec elapsed
 
 
 
