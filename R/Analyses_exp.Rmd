@@ -5,7 +5,7 @@ date: "`r Sys.Date()`"
 output: html_document
 ---
 
-```{r pacakges}
+```{r packages}
 source("Analyses.R")
 ```
 
@@ -23,7 +23,7 @@ table_mean_num
 ## Correlations
 
 ```{r correlations}
-liste_mat
+cor_comp
 somme_cor_mat
 ```
 
@@ -57,5 +57,98 @@ reg_coeff est un vecteur comportant la moyenne des coefficients directeurs pour 
 On voit que bag, cart et ctree sont très proches, suivis par parametric (x5), rf(x11). Sample est à la ramasse
 
 ```{r graphiques bmi}
-  
+var_test_org <- 10000 * (data$original[, "weight"] / (data$original[, "height"])^2)
+reglinorg <- lm(bmi ~ var_test_org, data = data$original)
+
+# Définir les coefficients de régression pour chaque modèle
+intercepts <- reg_coeff["intercept", ]
+slopes <- reg_coeff["coeff", ]
+
+# Créer une séquence de points pour l'axe x
+x_vals <- seq(0, 100, length.out = 100)
+
+# Initialiser le graphique
+plot(x_vals, x_vals, type = "n", xlab = "x", ylab = "y", xlim = c(0, 100), ylim = c(-5, 100))
+colors <- rainbow(length(mes_modeles))
+for (i in 1:length(mes_modeles)) {
+  y_vals <- intercepts[i] + slopes[i] * x_vals
+  lines(x_vals, y_vals, col = colors[i], lwd = 2)
+}
+y_org <- reglinorg$coefficients[1] + reglinorg$coefficients[2] * x_vals
+lines(x_vals, y_org, col = "black", lwd = 2)
+legend("bottomright", legend = mes_modeles, col = colors, lwd = 0.5, title = "Modèles")
+title("Droites de Régression")
+```
+
+## Mesures d'utilités
+```{r utilite}
+utility_measures_all_meth
+```
+
+
+```{r graphiques utilite}
+utility_measures_all_meth <- utility_measures_all_meth %>%
+  group_by(method) %>% 
+  mutate(i = 1:500) %>% 
+  mutate(across(pMSE:U, cummean, .names = "{.col}_cummean"))
+
+utility_measures_all_meth %>% 
+  ggplot() +
+  geom_line(aes(x = i, y = pMSE_cummean, col = method))
+
+
+utility_graph <- map(
+  c("pMSE","SPECKS","PO50","U"),
+  \(meth){
+    utility_measures_all_meth %>% 
+      ggplot( aes(x=method, y=.data[[meth]], fill=method)) +
+      geom_violin(width=1.4) +
+      geom_boxplot(width=0.1, color="grey", alpha=0.2) +
+      scale_fill_viridis(discrete = TRUE) +
+      coord_flip() +
+      theme_ipsum() +
+      theme(
+        legend.position="none",
+        plot.title = element_text(size=11)
+      ) +
+      ggtitle(paste0("distribution des ", meth)) +
+      ylab(meth) + xlab("méthode")
+  }
+)
+names(utility_graph) <- c("pMSE","SPECKS","PO50","U")
+utility_graph$pMSE
+utility_graph$SPECKS
+utility_graph$PO50
+utility_graph$U
+
+utility_measures_summary <- utility_measures_all_meth %>% 
+  group_by(method) %>% 
+  summarise(
+    across(
+      pMSE:U, 
+      list(mean = mean, min = min, max = max, 
+           pc025 = ~quantile(., probs = 0.025),
+           pc975 = ~quantile(., probs = 0.975),
+           sd = sd
+      ),
+      .names = "{.col}_{.fn}"
+    )) %>%
+  tidyr::pivot_longer(-1, names_to = "indicateur", values_to = "val") %>% 
+  tidyr::separate(indicateur, into = c("utility","indicateur"))
+
+utility_measures_summary %>% 
+  filter(indicateur == "mean") %>%
+  ggplot() +
+  geom_bar(aes(x = method, y = val, fill = utility), stat = "identity")+
+  coord_flip() +
+  facet_wrap(~utility, scales = "free") +
+  theme_ipsum()
+```
+1) Sur le premier graphique, on remarque que les moyennes cumulées se stabilisent très rapidement. On remarque de plus que cart est le meilleur modèle en terme de pMSE. Il est suivi par rf, bag et ctree. Parametric arrive ensuite avec un pMSE environ 2 fois plus élevé. Enfin, sample a un pMSE d'environ 0.17 ce qui est environ
+
+## Recherche des individus répliqués
+```{r repliques}
+nb_repliques_all_meth %>% 
+  group_by(method) %>% 
+  summarise(across(n_replicats, list(mean=mean, min=min, max=max, sd=sd)))
 ```

@@ -9,7 +9,7 @@ library(ggplot2)
 library(viridis)
 library(abind)
 
-# Import des données -----------------
+# Import des données -----------------------------------------------------------
 FILE_KEY_IN_S3 <- "20240512_sim_synthpop_sample_cart_ctree_parametric_bag_rf_500_sims.RDS"
 BUCKET = "projet-donnees-synthetiques"
 BUCKET_SIM = file.path(BUCKET, "simulations")
@@ -29,12 +29,13 @@ n_sim <- 500
 num_seed <- 40889
 options(max.print = 10000)
 
-df = res_simul
+data = res_simul
 varsnum = c("age", "depress", "nofriend", "height", "weight", "bmi")
 num = c("age", "nofriend", "height", "weight", "bmi")
 fac = c("sex", "agegr", "placesize", "edu", "socprof", "marital", "ls", "depress", "trust", "trustfam", "trustneigh", "sport", "smoke", "alcabuse", "alcsol", "wkabint", "englang")
 
-# Statistiques
+
+# Stats variable numériques ----------------------------------------------------
 res_simul_empile <- map(res_simul[methodes], \(df_list) df_list %>% imap(\(df, i) df %>% mutate(index_sim = i)) %>% bind_rows())
 
 calc_stats_mean_num <- function(df) {
@@ -94,8 +95,11 @@ calc_stats_sd_num <- function(df) {
       q975 = ~ quantile(., 0.975))))
 }
 
-table_sd_num <- imap(res_simul_empile, \(df, methode) calc_stats_sd_num(df) %>% mutate(methode = methode)) %>% list_rbind() 
+table_sd_num <- imap(res_simul_empile, \(df, methode) calc_stats_sd_num(df) %>%
+                       mutate(methode = methode)) %>% list_rbind() 
 
+
+# Stats variable catégorielles -------------------------------------------------
 
 calc_stats_cat <- function(df) {
   cat_stats <- df %>%
@@ -117,8 +121,11 @@ calc_stats_cat <- function(df) {
       q975 = ~ quantile(., 0.975))))
 }
 
-table_cat <- imap(res_simul_empile, \(df, methode) calc_stats_cat(df) %>% mutate(methode = methode)) %>% list_rbind() 
+table_cat <- imap(res_simul_empile, \(df, methode) calc_stats_cat(df) %>%
+                    mutate(methode = methode)) %>% list_rbind() 
 
+
+# Correlations -----------------------------------------------------------------
 
 calc_correlation <- function(df) {
   df %>%
@@ -144,13 +151,15 @@ cor_comp = list()
 for (i in length(mes_modeles)) {
   cor_comp[[i]] = abs(table_cor[[i]][[1]] - cor(data$original[, varsnum]))
 }
+names(cor_comp) <- mes_modeles
 
 somme_cor_mat = matrix(0, nrow = 1, ncol = 6)
 for (i in length(mes_modeles)) {
-  somme_cor_mat[i] = sum(liste_mat[[i]])
+  somme_cor_mat[i] = sum(cor_comp[[i]])
 }
 colnames(somme_cor_mat) = mes_modeles
 
+# MAE --------------------------------------------------------------------------
 
 calc_mae <- function(res) {
   mae_table = matrix(0, nrow = 6, ncol = 5)
@@ -176,7 +185,7 @@ calc_mae <- function(res) {
 
 
 
-# Analyse bmi
+# Analyse bmi ------------------------------------------------------------------
 bmi_comp <- function(res) {
   matrice = matrix(0, nrow = 2, ncol = 6)
   for (i in 1:length(res[methodes])) {
@@ -196,10 +205,10 @@ bmi_comp <- function(res) {
 
 reg_coeff <- matrix(0, nrow = 2, ncol = length(mes_modeles))
 for (i in 1:length(mes_modeles)) {
-  coeff = matrix(0, nrow = length(df[[i]]), ncol = 2)
-  for (j in 1:length(df[[i]])) {
-    var_test = 10000 * (res[[i]][[j]][, "weight"] / (res[[i]][[j]][, "height"])^2)
-    reglin = lm(bmi ~ var_test, data = res[[i]][[j]])
+  coeff = matrix(0, nrow = length(data[[i]]), ncol = 2)
+  for (j in 1:length(data[[i]])) {
+    var_test = 10000 * (data[[i]][[j]][, "weight"] / (data[[i]][[j]][, "height"])^2)
+    reglin = lm(bmi ~ var_test, data = data[[i]][[j]])
     coeff[j, 1] = reglin$coefficients[1]
     coeff[j, 2] = reglin$coefficients[2]
   }
@@ -210,14 +219,55 @@ row.names(reg_coeff) <- c("intercept", "coeff")
 colnames(reg_coeff) <- mes_modeles
 
 
-# Tests
-reglin_1_1 = lm(bmi ~ var_tests, data = res$sample[[1]])
+# Utilite ----------------------------------------------------------------------
 
-var_tests = 10000 * (res$sample[[1]][, "weight"] / (res$sample[[1]][, "height"])^2)
+utility_measures_all_meth <- imap(
+  data[methodes],
+  \(res_one_methode, nom_methode){
+    plan(multisession, workers = 10)
+    res <- future_map(
+      res_one_methode,
+      \(df_synth){
+        synthpop::utility.gen(
+          df_synth,
+          data$original, 
+          method = "cart",
+          resamp.method = "none",
+          print.flag = FALSE
+        )[c("pMSE","SPECKS","PO50","U")] %>% 
+          as_tibble() %>% 
+          mutate(method = nom_methode)
+      }
+    )
+    plan(sequential)
+    return(res %>% list_rbind())
+  },
+  .progress = TRUE
+) %>% list_rbind()
 
 
+# Recherche des répliques ------------------------------------------------------
 
+nb_repliques_all_meth <- imap(
+  data[methodes],
+  \(res_one_methode, nom_methode){
+    plan(multisession, workers = 10)
+    res <- future_map(
+      res_one_methode,
+      \(df_synth){
+        tibble(
+          n_replicats = inner_join(data$original, df_synth, relationship = "many-to-many") %>% nrow(),
+          method = nom_methode
+        )
+      }
+    )
+    plan(sequential)
+    return(res %>% list_rbind())
+  },
+  .progress = TRUE
+) %>% list_rbind()
 
+#806.579 sec elapsed
 
 
 
