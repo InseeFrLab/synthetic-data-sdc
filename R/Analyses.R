@@ -8,6 +8,9 @@ library(tictoc)
 library(ggplot2)
 library(viridis)
 library(abind)
+library(plotly)
+library(wesanderson)
+library(pracma)
 
 # Import des données -----------------------------------------------------------
 FILE_KEY_IN_S3 <- "20240512_sim_synthpop_sample_cart_ctree_parametric_bag_rf_500_sims.RDS"
@@ -39,7 +42,8 @@ fac = c("sex", "agegr", "placesize", "edu", "socprof", "marital", "ls", "depress
 #data$sample[[1]][, "depress"] <- as.numeric(data$sample[[1]][, "depress"])
 
 # Stats variable numériques ----------------------------------------------------
-res_simul_empile <- map(res_simul[methodes], \(df_list) df_list %>% imap(\(df, i) df %>% mutate(index_sim = i)) %>% bind_rows())
+res_simul_empile <- map(res_simul[methodes], \(df_list) df_list %>%
+                          imap(\(df, i) df %>% mutate(index_sim = i)) %>% bind_rows())
 
 calc_stats_mean_num <- function(df) {
   df %>% group_by(index_sim) %>%
@@ -243,6 +247,77 @@ row.names(reg_coeff) <- c("intercept", "coeff")
 colnames(reg_coeff) <- mes_modeles
 
 
+plot_reg_bmi <- function() {
+  var_test_org <- 10000 * (data$original[, "weight"] / (data$original[, "height"])^2)
+  reglinorg <- lm(bmi ~ var_test_org, data = data$original)
+  
+  intercepts <- reg_coeff["intercept", ]
+  slopes <- reg_coeff["coeff", ]
+  
+  x_vals <- seq(0, 100, length.out = 100)
+  
+  pltreg <- plot(x_vals, x_vals, type = "n", xlab = "x", ylab = "y", xlim = c(0, 100), ylim = c(-5, 100))
+  colors <- rainbow(length(mes_modeles))
+  for (i in 1:length(mes_modeles)) {
+    y_vals <- intercepts[i] + slopes[i] * x_vals
+    lines(x_vals, y_vals, col = colors[i], lwd = 1)
+  }
+  y_org <- reglinorg$coefficients[1] + reglinorg$coefficients[2] * x_vals
+  lines(x_vals, y_org, col = "black", lwd = 0.5)
+  legend("bottomright", legend = mes_modeles, col = colors, lwd = 2, title = "Modèles")
+  title("Droites de Régression")
+  print(pltreg)
+}
+
+plot_nuage_bmi <- function(modele, i) {
+  var_height_mod <- data[[modele]][[i]]$weight ^ 2 / 10000
+  nuage_bmi <- plot_ly(x = data[[modele]][[i]]$weight,
+                       y = var_height_mod,
+                       z = data[[modele]][[i]]$bmi,
+                       type = "scatter3d",
+                       mode = "markers",
+                       color = data[[modele]][[i]]$bmi)
+}
+
+# Densités ---------------------------------------------------------------------
+
+densites = function(data) {
+  liste = list()
+  
+  res_simul_empile <- map(data[methodes], \(df_list) df_list %>%
+                            imap(\(df, i) df %>% mutate(index_sim = i)) %>% bind_rows())
+  
+  res_simul_empile_combined <- map_dfr(mes_modeles, function(model) {
+    res_simul_empile[[model]] %>% mutate(model = model)
+  })
+  
+  data_original <- data$original %>% mutate(model = "original")
+  res_simul_empile_combined <- bind_rows(res_simul_empile_combined, data_original)
+  
+  p_comb <- ggplot(res_simul_empile_combined, aes(x = bmi, color = model)) +
+    geom_density() +
+    labs(title = "Densité de BMI pour chaque modèle en comparaison à celle pour le jeu de données original", x = "BMI", y = "Densité") +
+    theme_minimal()
+  liste[[1]] <- p_comb
+  
+  for (i in 1:length(mes_modeles)) {
+    p_all <- ggplot(res_simul_empile[[i]], aes(x = bmi)) +
+      geom_density() +
+      labs(title = paste0("Densité de BMI ", mes_modeles[i]), x = "BMI", y = "Densité") +
+      theme_minimal()
+    liste[[i+1]] <- p_all
+  }
+  
+  p_org <- ggplot(data$original, aes(x = bmi)) +
+    geom_density() +
+    labs(title = "Densité de BMI original", x = "BMI", y = "Densité") +
+    theme_minimal()
+  liste[[length(liste)+1]] <- p_org
+  
+  print(liste)  
+}
+
+
 # Utilite ----------------------------------------------------------------------
 
 utility_measures_all_meth <- imap(
@@ -294,13 +369,49 @@ nb_repliques_all_meth <- imap(
 
 
 # Tests
+bmi_densite_sample <- density(res_simul_empile$sample$bmi)
+bmi_densite_original <- density(data$original$bmi)
+
+x_common <- sort(union(bmi_densite_sample$x, bmi_densite_original$x))
+y_diff <- bmi_densite_original$y - bmi_densite_sample$y
+dxy <- data.frame(x = x_common, y = y_diff)
+
+
+plot(dxy[, 1], dxy[, 2], type = "l")
+
+
+densite_diff <- function(data) {
+  aires <- matrix(0, nrow = 1, ncol = length(mes_modeles))
+  for (i in 1:length(mes_modeles)) {
+    aire_vecteur <- rep(0, 500)
+    print(i)
+    for (j in 1:length(data[[i]])) {
+      densite_syn <- density(data[[i]][[j]]$bmi)
+      densite_original <- density(data$original$bmi)
+      
+      x_common <- sort(union(densite_syn$x, densite_original$x))
+      y_diff <- densite_original$y - densite_syn$y
+      dxy <- data.frame(x = x_common, y = y_diff)
+      aire_vecteur[j] <- trapz(dxy[, 1], dxy[, 2])
+      print(j)
+    }
+    aires[1, i] <- mean(aire_vecteur)
+  }
+  colnames(aires) <- mes_modeles
+  print(aires)
+}
+
+densite_diff(data)
 
 
 
-
-
-
-
+ggplot(densite_diff, aes(x = x, y = y, fill = model)) +
+  geom_area(alpha = 0.3, position = "identity") +
+  labs(title = "Différence de densité de BMI entre les modèles et les données originales",
+       x = "BMI", y = "Différence de densité") +
+  theme_ipsum() +
+  scale_fill_brewer(palette = "Set2") +
+  scale_color_brewer(palette = "Set2")
 
 
 

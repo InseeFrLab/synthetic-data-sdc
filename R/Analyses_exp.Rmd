@@ -70,25 +70,16 @@ reg_coeff est un vecteur comportant la moyenne des coefficients directeurs pour 
 On voit que bag, cart et ctree sont très proches, suivis par parametric (x5), rf(x11). Sample est à la ramasse
 
 ```{r graphiques bmi}
-var_test_org <- 10000 * (data$original[, "weight"] / (data$original[, "height"])^2)
-reglinorg <- lm(bmi ~ var_test_org, data = data$original)
+modele = 2
+i=1
+plot_nuage_bmi(modele, i)
 
-intercepts <- reg_coeff["intercept", ]
-slopes <- reg_coeff["coeff", ]
+plot_reg_bmi()
 
-x_vals <- seq(0, 100, length.out = 100)
-
-plot(x_vals, x_vals, type = "n", xlab = "x", ylab = "y", xlim = c(0, 100), ylim = c(-5, 100))
-colors <- rainbow(length(mes_modeles))
-for (i in 1:length(mes_modeles)) {
-  y_vals <- intercepts[i] + slopes[i] * x_vals
-  lines(x_vals, y_vals, col = colors[i], lwd = 1)
-}
-y_org <- reglinorg$coefficients[1] + reglinorg$coefficients[2] * x_vals
-lines(x_vals, y_org, col = "black", lwd = 0.5)
-legend("bottomright", legend = mes_modeles, col = colors, lwd = 2, title = "Modèles")
-title("Droites de Régression")
+densites(res_simul)
 ```
+Les densités de sample, cart, et ctree sont très ressemblantes. Celles de bag et rf le sont entre elles. 
+
 
 ## Mesures d'utilités
 ```{r utilite}
