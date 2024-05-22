@@ -34,6 +34,9 @@ varsnum = c("age", "depress", "nofriend", "height", "weight", "bmi")
 num = c("age", "nofriend", "height", "weight", "bmi")
 fac = c("sex", "agegr", "placesize", "edu", "socprof", "marital", "ls", "depress", "trust", "trustfam", "trustneigh", "sport", "smoke", "alcabuse", "alcsol", "wkabint", "englang")
 
+# Modifier le type de depress en fonction du besoin
+#data$sample[[1]][, "depress"] <- factor(data$sample[[1]][, "depress"], levels = 0:21)
+#data$sample[[1]][, "depress"] <- as.numeric(data$sample[[1]][, "depress"])
 
 # Stats variable numériques ----------------------------------------------------
 res_simul_empile <- map(res_simul[methodes], \(df_list) df_list %>% imap(\(df, i) df %>% mutate(index_sim = i)) %>% bind_rows())
@@ -290,6 +293,7 @@ nb_repliques_all_meth <- imap(
 
 
 
+# Tests
 
 
 

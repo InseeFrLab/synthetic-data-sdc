@@ -73,23 +73,20 @@ On voit que bag, cart et ctree sont très proches, suivis par parametric (x5), r
 var_test_org <- 10000 * (data$original[, "weight"] / (data$original[, "height"])^2)
 reglinorg <- lm(bmi ~ var_test_org, data = data$original)
 
-# Définir les coefficients de régression pour chaque modèle
 intercepts <- reg_coeff["intercept", ]
 slopes <- reg_coeff["coeff", ]
 
-# Créer une séquence de points pour l'axe x
 x_vals <- seq(0, 100, length.out = 100)
 
-# Initialiser le graphique
 plot(x_vals, x_vals, type = "n", xlab = "x", ylab = "y", xlim = c(0, 100), ylim = c(-5, 100))
 colors <- rainbow(length(mes_modeles))
 for (i in 1:length(mes_modeles)) {
   y_vals <- intercepts[i] + slopes[i] * x_vals
-  lines(x_vals, y_vals, col = colors[i], lwd = 2)
+  lines(x_vals, y_vals, col = colors[i], lwd = 1)
 }
 y_org <- reglinorg$coefficients[1] + reglinorg$coefficients[2] * x_vals
-lines(x_vals, y_org, col = "black", lwd = 2)
-legend("bottomright", legend = mes_modeles, col = colors, lwd = 0.5, title = "Modèles")
+lines(x_vals, y_org, col = "black", lwd = 0.5)
+legend("bottomright", legend = mes_modeles, col = colors, lwd = 2, title = "Modèles")
 title("Droites de Régression")
 ```
 
@@ -161,8 +158,9 @@ utility_measures_summary %>%
 
 2) On constate que pour la plupart des modèles, l'étendue du pMSE est relativement contenue à l'exception de sample. Cart est ici le meilleur et sample est le moins bon et de loin.
 
-3) Concernant le SPECKS, on obtient les mêmes conclusions que pour le pMSE. On rappelle que le SPECKS est défini par : $$SPECKS =  $$
-4) De même pour le PO50. On rappelle qu'il est défini par : $$PO50 =  $$
+3) Concernant le SPECKS, on obtient les mêmes conclusions que pour le pMSE. On rappelle que le SPECKS est défini par : $$SPECKS =  \sup_{\hat{p}}|F_{t=0}(\hat{p}_i) - \hat{F}_{t=1}(\hat{p}_i)|$$ où $F$ est la fonction de répartition
+4) De même pour le PO50. On rappelle qu'il est défini par : $$PO50 =  100 \frac{\sum_i t_i(\hat{p}_i>c) + (1-t_i)(\hat{p}_i<c)}{\sum_i (\hat{p}_i \neq c)} - 50$$
+5) Enfin, pour le U, la différence est moins flagrante mais toujours avec sample en dernière place. On rappelle qu'il est défini par : La somme des rangs de $\hat{p}_i$ où $t_i = 1$ dans l'ordre de $\hat{p}_i$
 
 ## Recherche des individus répliqués
 ```{r repliques}
@@ -170,3 +168,10 @@ nb_repliques_all_meth %>%
   group_by(method) %>% 
   summarise(across(n_replicats, list(mean=mean, min=min, max=max, sd=sd)))
 ```
+Les modèles parametric et sample ne produisent aucun individu répliqué.
+Pour ctree, sur 500 synthétisations, 1 jeu de données possède au moins un individu répliqué
+Cart produit en moyenne 1 jeu de données
+
+
+
+
