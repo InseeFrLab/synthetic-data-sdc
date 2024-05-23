@@ -280,10 +280,7 @@ plot_nuage_bmi <- function(modele, i) {
 }
 
 # Densités ---------------------------------------------------------------------
-
-densites = function(data) {
-  liste = list()
-  
+plot_dens_comb <- function(data, variable) {
   res_simul_empile <- map(data[methodes], \(df_list) df_list %>%
                             imap(\(df, i) df %>% mutate(index_sim = i)) %>% bind_rows())
   
@@ -294,29 +291,69 @@ densites = function(data) {
   data_original <- data$original %>% mutate(model = "original")
   res_simul_empile_combined <- bind_rows(res_simul_empile_combined, data_original)
   
-  p_comb <- ggplot(res_simul_empile_combined, aes(x = bmi, color = model)) +
+  ggplot(res_simul_empile_combined, aes(x = .data[[variable]], color = model)) +
     geom_density() +
-    labs(title = "Densité de BMI pour chaque modèle en comparaison à celle pour le jeu de données original", x = "BMI", y = "Densité") +
+    labs(title = paste0("Densité de ", variable, " pour chaque modèle en comparaison à celle pour le jeu de données original"), x = variable, y = "Densité") +
     theme_minimal()
-  liste[[1]] <- p_comb
-  
-  for (i in 1:length(mes_modeles)) {
-    p_all <- ggplot(res_simul_empile[[i]], aes(x = bmi)) +
-      geom_density() +
-      labs(title = paste0("Densité de BMI ", mes_modeles[i]), x = "BMI", y = "Densité") +
-      theme_minimal()
-    liste[[i+1]] <- p_all
-  }
-  
-  p_org <- ggplot(data$original, aes(x = bmi)) +
-    geom_density() +
-    labs(title = "Densité de BMI original", x = "BMI", y = "Densité") +
-    theme_minimal()
-  liste[[length(liste)+1]] <- p_org
-  
-  print(liste)  
 }
 
+plot_dens_syn_org <- function(data, variable) {
+  liste <- list()
+  
+  res_simul_empile <- map(data[methodes], \(df_list) df_list %>%
+                            imap(\(df, i) df %>% mutate(index_sim = i)) %>% bind_rows())
+  
+  res_simul_empile_combined <- map_dfr(mes_modeles, function(model) {
+    res_simul_empile[[model]] %>% mutate(model = model)
+  })
+  
+  for (i in 1:length(mes_modeles)) {
+    p_all <- ggplot(res_simul_empile[[i]], aes(x = .data[[variable]])) +
+      geom_density() +
+      geom_density(data = data$original, aes(x = .data[[variable]]), color = "red") +
+      labs(title = paste0("Densité de ", variable, " pour le modèle ", mes_modeles[i]), x = variable, y = "Densité") +
+      theme_minimal()
+    liste[[i]] <- p_all
+  }
+  
+  return(liste)
+}
+
+densite_diff <- function(data, variable) {
+  aires <- matrix(0, nrow = 2, ncol = length(mes_modeles))
+  aires_diff <- matrix(0, nrow = 500, ncol = 6)
+  for (i in 1:length(mes_modeles)) {
+    for (j in 1:length(data[[i]])) {
+      densite_syn <- density(data[[i]][[j]][, variable])
+      densite_original <- density(data$original[, variable])
+      aire_syn <- trapz(densite_syn$x, densite_syn$y)
+      aire_original <- trapz(densite_original$x, densite_original$y)
+      aires_diff[j, i] <- aire_original - aire_syn
+    }
+    aires[1, i] <- mean(aires_diff[, i])
+    aires[2, i] <- sd(aires_diff[, i])
+  }
+  colnames(aires) <- mes_modeles
+  colnames(aires_diff) <- mes_modeles
+  row.names(aires) <- c("Moyenne différence d'aires", "Ecart-type différence d'aires")
+  return(list(aires, aires_diff))
+}
+
+bp_densite <- function(data, variable) {
+  result <- densite_diff(data, variable)
+  
+  aires_diff_long <- as.data.frame(result[[2]])
+  aires_diff_long <- aires_diff_long %>%
+    mutate(Observation = 1:nrow(aires_diff_long)) %>%
+    pivot_longer(cols = -Observation, names_to = "modele", values_to = "valeur")
+  
+  ggplot(aires_diff_long, aes(x = modele, y = valeur)) +
+    geom_boxplot() +
+    labs(title = "Boxplots des différences d'aires",
+         x = "Modèles",
+         y = "Différence d'aires") +
+    theme_minimal()
+}
 
 # Utilite ----------------------------------------------------------------------
 
@@ -344,6 +381,65 @@ utility_measures_all_meth <- imap(
   .progress = TRUE
 ) %>% list_rbind()
 
+moycum_mesures <- function() {
+  utility_measures_all_meth <- utility_measures_all_meth %>%
+    group_by(method) %>% 
+    mutate(i = 1:500) %>% 
+    mutate(across(pMSE:U, cummean, .names = "{.col}_cummean"))
+  
+  utility_measures_all_meth %>% 
+    ggplot() +
+    geom_line(aes(x = i, y = pMSE_cummean, col = method))
+}
+
+distribution_mesures <- function() {
+  utility_graph <- map(
+    c("pMSE","SPECKS","PO50","U"),
+    \(meth){
+      utility_measures_all_meth %>% 
+        ggplot( aes(x=method, y=.data[[meth]], fill=method)) +
+        geom_violin(width=1.4) +
+        geom_boxplot(width=0.1, color="grey", alpha=0.2) +
+        scale_fill_viridis(discrete = TRUE) +
+        coord_flip() +
+        theme_ipsum() +
+        theme(
+          legend.position="none",
+          plot.title = element_text(size=11)
+        ) +
+        ggtitle(paste0("distribution des ", meth)) +
+        ylab(meth) + xlab("méthode")
+    }
+  )
+  names(utility_graph) <- c("pMSE","SPECKS","PO50","U")
+  
+  return(list(utility_graph$pMSE, utility_graph$SPECKS, utility_graph$PO50, utility_graph$U))
+}
+
+resume_mesures <- function() {
+  utility_measures_summary <- utility_measures_all_meth %>% 
+    group_by(method) %>% 
+    summarise(
+      across(
+        pMSE:U, 
+        list(mean = mean, min = min, max = max, 
+             pc025 = ~quantile(., probs = 0.025),
+             pc975 = ~quantile(., probs = 0.975),
+             sd = sd
+        ),
+        .names = "{.col}_{.fn}"
+      )) %>%
+    tidyr::pivot_longer(-1, names_to = "indicateur", values_to = "val") %>% 
+    tidyr::separate(indicateur, into = c("utility","indicateur"))
+  
+  utility_measures_summary %>% 
+    filter(indicateur == "mean") %>%
+    ggplot() +
+    geom_bar(aes(x = method, y = val, fill = utility), stat = "identity")+
+    coord_flip() +
+    facet_wrap(~utility, scales = "free") +
+    theme_ipsum()
+}
 
 # Recherche des répliques ------------------------------------------------------
 
@@ -368,50 +464,8 @@ nb_repliques_all_meth <- imap(
 
 
 
-# Tests
-bmi_densite_sample <- density(res_simul_empile$sample$bmi)
-bmi_densite_original <- density(data$original$bmi)
+# Tests ------------------------------------------------------------------------
 
-x_common <- sort(union(bmi_densite_sample$x, bmi_densite_original$x))
-y_diff <- bmi_densite_original$y - bmi_densite_sample$y
-dxy <- data.frame(x = x_common, y = y_diff)
-
-
-plot(dxy[, 1], dxy[, 2], type = "l")
-
-
-densite_diff <- function(data) {
-  aires <- matrix(0, nrow = 1, ncol = length(mes_modeles))
-  for (i in 1:length(mes_modeles)) {
-    aire_vecteur <- rep(0, 500)
-    print(i)
-    for (j in 1:length(data[[i]])) {
-      densite_syn <- density(data[[i]][[j]]$bmi)
-      densite_original <- density(data$original$bmi)
-      
-      x_common <- sort(union(densite_syn$x, densite_original$x))
-      y_diff <- densite_original$y - densite_syn$y
-      dxy <- data.frame(x = x_common, y = y_diff)
-      aire_vecteur[j] <- trapz(dxy[, 1], dxy[, 2])
-      print(j)
-    }
-    aires[1, i] <- mean(aire_vecteur)
-  }
-  colnames(aires) <- mes_modeles
-  print(aires)
-}
-
-densite_diff(data)
-
-
-
-ggplot(densite_diff, aes(x = x, y = y, fill = model)) +
-  geom_area(alpha = 0.3, position = "identity") +
-  labs(title = "Différence de densité de BMI entre les modèles et les données originales",
-       x = "BMI", y = "Différence de densité") +
-  theme_ipsum() +
-  scale_fill_brewer(palette = "Set2") +
-  scale_color_brewer(palette = "Set2")
 
 
 

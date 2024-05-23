@@ -35,13 +35,13 @@ bag et cart sont ici les meilleurs modèles suivis par parametric, ctree et rf. 
 
 ## MAE
 ```{r mae}
-  table_mae
+table_mae
 ```
 On remarque que bag et rf ont des MAE très élevé allant jusqu'à être 10 fois supérieurs aux autres modèles. Sample, cart, ctree et parametric sont assez rapprochés sans qu'il n'y ait une réelle domination d'un modèle. 
 
 ## MSE
 ```{r mse}
-  table_mse
+table_mse
 ```
 On ne voit pas de réelle domination d'un modèle.
 
@@ -63,23 +63,30 @@ bmi_comp(data)
 2)  En ce qui concerne la comparaison au jeu de données original, sample, cart, ctree et bagging s'en sortent le mieux, suivis par rf puis parametric.
 
 ```{r}
-  reg_coeff[2, ]
+reg_coeff[2, ]
 ```
 reg_coeff est un vecteur comportant la moyenne des coefficients directeurs pour chaque modèles.
 
 On voit que bag, cart et ctree sont très proches, suivis par parametric (x5), rf(x11). Sample est à la ramasse
 
 ```{r graphiques bmi}
-modele = 2
-i=1
-plot_nuage_bmi(modele, i)
+modele = "sample"
+num_dataset = 1
+plot_nuage_bmi(modele, num_dataset)
 
 plot_reg_bmi()
 
-densites(res_simul)
+plot_dens_comb(data, "bmi")
+plot_dens_syn_org(data, "bmi")
 ```
 Les densités de sample, cart, et ctree sont très ressemblantes. Celles de bag et rf le sont entre elles. 
 
+```{r differences d'aires}
+densite_diff(data, "bmi")[[1]]
+
+bp_densite(data, "bmi")
+```
+On constate que parametric est le modèle ayant l'aire moyenne de la densité de la variable bmi se rapprochant le plus de la densité de la variable bmi originale. Il est aussi le modèle ayant la plus petite variabilité. Cart est le modèle ayant la plus grande variabilté.
 
 ## Mesures d'utilités
 ```{r utilite}
@@ -88,62 +95,11 @@ utility_measures_all_meth
 
 
 ```{r graphiques utilite}
-utility_measures_all_meth <- utility_measures_all_meth %>%
-  group_by(method) %>% 
-  mutate(i = 1:500) %>% 
-  mutate(across(pMSE:U, cummean, .names = "{.col}_cummean"))
+moycum_mesures()
 
-utility_measures_all_meth %>% 
-  ggplot() +
-  geom_line(aes(x = i, y = pMSE_cummean, col = method))
+distribution_mesures()
 
-
-utility_graph <- map(
-  c("pMSE","SPECKS","PO50","U"),
-  \(meth){
-    utility_measures_all_meth %>% 
-      ggplot( aes(x=method, y=.data[[meth]], fill=method)) +
-      geom_violin(width=1.4) +
-      geom_boxplot(width=0.1, color="grey", alpha=0.2) +
-      scale_fill_viridis(discrete = TRUE) +
-      coord_flip() +
-      theme_ipsum() +
-      theme(
-        legend.position="none",
-        plot.title = element_text(size=11)
-      ) +
-      ggtitle(paste0("distribution des ", meth)) +
-      ylab(meth) + xlab("méthode")
-  }
-)
-names(utility_graph) <- c("pMSE","SPECKS","PO50","U")
-utility_graph$pMSE
-utility_graph$SPECKS
-utility_graph$PO50
-utility_graph$U
-
-utility_measures_summary <- utility_measures_all_meth %>% 
-  group_by(method) %>% 
-  summarise(
-    across(
-      pMSE:U, 
-      list(mean = mean, min = min, max = max, 
-           pc025 = ~quantile(., probs = 0.025),
-           pc975 = ~quantile(., probs = 0.975),
-           sd = sd
-      ),
-      .names = "{.col}_{.fn}"
-    )) %>%
-  tidyr::pivot_longer(-1, names_to = "indicateur", values_to = "val") %>% 
-  tidyr::separate(indicateur, into = c("utility","indicateur"))
-
-utility_measures_summary %>% 
-  filter(indicateur == "mean") %>%
-  ggplot() +
-  geom_bar(aes(x = method, y = val, fill = utility), stat = "identity")+
-  coord_flip() +
-  facet_wrap(~utility, scales = "free") +
-  theme_ipsum()
+resume_mesures()
 ```
 1) Sur le premier graphique, on remarque que les moyennes cumulées se stabilisent très rapidement. On remarque de plus que cart est le meilleur modèle en terme de pMSE. Il est suivi par rf, bag et ctree. Parametric arrive ensuite avec un pMSE environ 2 fois plus élevé. Enfin, sample a un pMSE d'environ de l'ordre de 7 fois supérieur.
 
