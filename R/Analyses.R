@@ -35,7 +35,8 @@ options(max.print = 10000)
 
 varsnum = c("age", "depress", "nofriend", "height", "weight", "bmi")
 num = c("age", "nofriend", "height", "weight", "bmi")
-fac = c("sex", "agegr", "placesize", "edu", "socprof", "marital", "ls", "depress", "trust", "trustfam", "trustneigh", "sport", "smoke", "alcabuse", "alcsol", "wkabint", "englang")
+fac = c("sex", "agegr", "placesize", "edu", "socprof", "marital", "ls", "depress",
+        "trust", "trustfam", "trustneigh", "sport", "smoke", "alcabuse", "alcsol", "wkabint", "englang")
 
 # Modifier le type de depress en fonction du besoin
 #data$sample[[1]][, "depress"] <- factor(data$sample[[1]][, "depress"], levels = 0:21)
@@ -293,7 +294,9 @@ plot_dens_comb <- function(data, variable) {
   
   ggplot(data_empile_combined, aes(x = .data[[variable]], color = model)) +
     geom_density() +
-    labs(title = paste0("Densité de ", variable, " pour chaque modèle en comparaison à celle pour le jeu de données original"), x = variable, y = "Densité") +
+    labs(title = paste0("Densité de ", variable,
+                        " pour chaque modèle en comparaison à celle pour le jeu de données original"),
+                        x = variable, y = "Densité") +
     theme_minimal()
 }
 
