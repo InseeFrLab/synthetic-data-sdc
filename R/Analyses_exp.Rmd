@@ -9,10 +9,6 @@ output: html_document
 source("Analyses.R")
 ```
 
-```{r données}
-data <- res_simul 
-```
-
 ## Vue d'ensemble
 
 ```{r}
@@ -29,7 +25,7 @@ somme_cor_mat
 
 liste_mat est une liste de 6 matrices. Ces matrices sont les matrices de corrélations moyenne des simulations pour chaque modèles moins la matrice de corrélation du jeu de données original.
 
-somme_cor_mat est la somme des éléments de chaque matrices. Plus la valeur est proche de 0 plus les synthétisations produisent de bonnes corrélations.
+somme_cor_mat est la somme des éléments de chaque matrices. Plus la valeur est proche de 0 plus les synthétisations conservent de bonnes corrélations.
 
 bag et cart sont ici les meilleurs modèles suivis par parametric, ctree et rf. Sample est loin derrière.
 
@@ -46,7 +42,7 @@ table_mse
 On ne voit pas de réelle domination d'un modèle.
 
 
-## Analyse de l'IMC
+## Analyse de bmi
 
 On va vérifier deux choses :
 
@@ -78,15 +74,29 @@ plot_reg_bmi()
 
 plot_dens_comb(data, "bmi")
 plot_dens_syn_org(data, "bmi")
-```
-Les densités de sample, cart, et ctree sont très ressemblantes. Celles de bag et rf le sont entre elles. 
 
-```{r differences d'aires}
+plot_dens_syn_org(data, "height")
+plot_dens_syn_org(data, "weight")
+```
+Les densités de sample, cart, et ctree sont très ressemblantes. Celles de bag et rf le sont entre elles.
+
+On remarque des pics sur les densités, on regarde donc les densités de height et weight pour voir s'ils viennent de là et en effet c'est le cas.
+
+```{r bmi syn vs syn}
+dens_bmi()
+```
+
+```{r differences aires}
 densite_diff(data, "bmi")[[1]]
 
 bp_densite(data, "bmi")
+
+for (i in 1:length(varsnum)) {
+  print(bp_densite(data, varsnum[i]))
+}
 ```
 On constate que parametric est le modèle ayant l'aire moyenne de la densité de la variable bmi se rapprochant le plus de la densité de la variable bmi originale. Il est aussi le modèle ayant la plus petite variabilité. Cart est le modèle ayant la plus grande variabilté.
+
 
 ## Mesures d'utilités
 ```{r utilite}
@@ -119,6 +129,9 @@ Les modèles parametric et sample ne produisent aucun individu répliqué.
 Pour ctree, sur 500 synthétisations, 1 jeu de données possède au moins un individu répliqué
 Cart produit en moyenne 1 jeu de données
 
+## Scores de propensions
+```{r propension}
 
+```
 
 

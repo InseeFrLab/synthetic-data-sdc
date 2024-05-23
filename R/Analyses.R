@@ -11,20 +11,21 @@ library(abind)
 library(plotly)
 library(wesanderson)
 library(pracma)
+library(hrbrthemes)
 
 # Import des données -----------------------------------------------------------
 FILE_KEY_IN_S3 <- "20240512_sim_synthpop_sample_cart_ctree_parametric_bag_rf_500_sims.RDS"
 BUCKET = "projet-donnees-synthetiques"
 BUCKET_SIM = file.path(BUCKET, "simulations")
 
-res_simul <- aws.s3::s3read_using(
+data <- aws.s3::s3read_using(
   FUN = readRDS,
   object = FILE_KEY_IN_S3,
   bucket = BUCKET_SIM,
   opts = list("region" = "")
 )
-str(res_simul, max.level=1)
-methodes <- which(names(res_simul) != "original")
+str(data, max.level=1)
+methodes <- which(names(data) != "original")
 
 mes_modeles <- c("sample", "cart", "ctree", "parametric", "bag", "rf")
 
@@ -32,7 +33,6 @@ n_sim <- 500
 num_seed <- 40889
 options(max.print = 10000)
 
-data = res_simul
 varsnum = c("age", "depress", "nofriend", "height", "weight", "bmi")
 num = c("age", "nofriend", "height", "weight", "bmi")
 fac = c("sex", "agegr", "placesize", "edu", "socprof", "marital", "ls", "depress", "trust", "trustfam", "trustneigh", "sport", "smoke", "alcabuse", "alcsol", "wkabint", "englang")
@@ -42,8 +42,8 @@ fac = c("sex", "agegr", "placesize", "edu", "socprof", "marital", "ls", "depress
 #data$sample[[1]][, "depress"] <- as.numeric(data$sample[[1]][, "depress"])
 
 # Stats variable numériques ----------------------------------------------------
-res_simul_empile <- map(res_simul[methodes], \(df_list) df_list %>%
-                          imap(\(df, i) df %>% mutate(index_sim = i)) %>% bind_rows())
+data_empile <- map(data[methodes], \(df_list) df_list %>%
+                     imap(\(df, i) df %>% mutate(index_sim = i)) %>% bind_rows())
 
 calc_stats_mean_num <- function(df) {
   df %>% group_by(index_sim) %>%
@@ -63,7 +63,8 @@ calc_stats_mean_num <- function(df) {
       q975 = ~ quantile(., 0.975))))
 } 
 
-table_mean_num <- imap(res_simul_empile, \(df, methode) calc_stats_mean_num(df) %>% mutate(methode = methode)) %>% list_rbind() 
+table_mean_num <- imap(data_empile, \(df, methode) calc_stats_mean_num(df) %>%
+                         mutate(methode = methode)) %>% list_rbind() 
 
 
 calc_org_mean_num <- function(df) {
@@ -82,7 +83,7 @@ calc_org_mean_num <- function(df) {
     )))
 }
 
-table_org_mean_num <- calc_stats_mean_num(res_simul$original)
+table_org_mean_num <- calc_stats_mean_num(data$original)
 
 calc_stats_sd_num <- function(df) {
   df %>% group_by(index_sim) %>%
@@ -102,7 +103,7 @@ calc_stats_sd_num <- function(df) {
       q975 = ~ quantile(., 0.975))))
 }
 
-table_sd_num <- imap(res_simul_empile, \(df, methode) calc_stats_sd_num(df) %>%
+table_sd_num <- imap(data_empile, \(df, methode) calc_stats_sd_num(df) %>%
                        mutate(methode = methode)) %>% list_rbind() 
 
 
@@ -128,7 +129,7 @@ calc_stats_cat <- function(df) {
       q975 = ~ quantile(., 0.975))))
 }
 
-table_cat <- imap(res_simul_empile, \(df, methode) calc_stats_cat(df) %>%
+table_cat <- imap(data_empile, \(df, methode) calc_stats_cat(df) %>%
                     mutate(methode = methode)) %>% list_rbind() 
 
 
@@ -141,7 +142,7 @@ calc_correlation <- function(df) {
 }
 
 table_cor <- map(
-  res_simul[methodes],
+  data[methodes],
   \(list_df){
     array_cor <- map(
       list_df,
@@ -155,13 +156,13 @@ table_cor <- map(
 )
 
 cor_comp = list()
-for (i in length(mes_modeles)) {
+for (i in 1:length(mes_modeles)) {
   cor_comp[[i]] = abs(table_cor[[i]][[1]] - cor(data$original[, varsnum]))
 }
 names(cor_comp) <- mes_modeles
 
 somme_cor_mat = matrix(0, nrow = 1, ncol = 6)
-for (i in length(mes_modeles)) {
+for (i in 1:length(mes_modeles)) {
   somme_cor_mat[i] = sum(cor_comp[[i]])
 }
 colnames(somme_cor_mat) = mes_modeles
@@ -281,17 +282,16 @@ plot_nuage_bmi <- function(modele, i) {
 
 # Densités ---------------------------------------------------------------------
 plot_dens_comb <- function(data, variable) {
-  res_simul_empile <- map(data[methodes], \(df_list) df_list %>%
-                            imap(\(df, i) df %>% mutate(index_sim = i)) %>% bind_rows())
+  data_empile <- map(data[methodes], \(df_list) df_list %>%
+                       imap(\(df, i) df %>% mutate(index_sim = i)) %>% bind_rows())
   
-  res_simul_empile_combined <- map_dfr(mes_modeles, function(model) {
-    res_simul_empile[[model]] %>% mutate(model = model)
+  data_empile_combined <- map(mes_modeles, \(model) {
+    data_empile[[model]] %>% mutate(model = model)
   })
-  
   data_original <- data$original %>% mutate(model = "original")
-  res_simul_empile_combined <- bind_rows(res_simul_empile_combined, data_original)
+  data_empile_combined <- bind_rows(data_empile_combined, data_original)
   
-  ggplot(res_simul_empile_combined, aes(x = .data[[variable]], color = model)) +
+  ggplot(data_empile_combined, aes(x = .data[[variable]], color = model)) +
     geom_density() +
     labs(title = paste0("Densité de ", variable, " pour chaque modèle en comparaison à celle pour le jeu de données original"), x = variable, y = "Densité") +
     theme_minimal()
@@ -300,17 +300,17 @@ plot_dens_comb <- function(data, variable) {
 plot_dens_syn_org <- function(data, variable) {
   liste <- list()
   
-  res_simul_empile <- map(data[methodes], \(df_list) df_list %>%
-                            imap(\(df, i) df %>% mutate(index_sim = i)) %>% bind_rows())
+  data_empile <- map(data[methodes], \(df_list) df_list %>%
+                       imap(\(df, i) df %>% mutate(index_sim = i)) %>% bind_rows())
   
-  res_simul_empile_combined <- map_dfr(mes_modeles, function(model) {
-    res_simul_empile[[model]] %>% mutate(model = model)
+  data_empile_combined <- map(mes_modeles, \(model) {
+    data_empile[[model]] %>% mutate(model = model)
   })
   
   for (i in 1:length(mes_modeles)) {
-    p_all <- ggplot(res_simul_empile[[i]], aes(x = .data[[variable]])) +
+    p_all <- ggplot(data_empile[[i]], aes(x = .data[[variable]], color = "red")) +
       geom_density() +
-      geom_density(data = data$original, aes(x = .data[[variable]]), color = "red") +
+      geom_density(data = data$original, aes(x = .data[[variable]]), color = "black") +
       labs(title = paste0("Densité de ", variable, " pour le modèle ", mes_modeles[i]), x = variable, y = "Densité") +
       theme_minimal()
     liste[[i]] <- p_all
@@ -319,8 +319,36 @@ plot_dens_syn_org <- function(data, variable) {
   return(liste)
 }
 
+dens_bmi <- function() {
+  liste_bmi <- list()
+  data_empile <- map(data[methodes], \(df_list) df_list %>%
+                       imap(\(df, i) df %>% mutate(index_sim = i)) %>% bind_rows())
+  
+  data_empile_combined <- map(mes_modeles, \(model) {
+    data_empile[[model]] %>% mutate(model = model)
+  })
+  
+  for (i in 1:length(mes_modeles)) {
+    p_bmi <- ggplot(data_empile[[i]], aes(x = bmi, color = "Synthétisé")) +
+      geom_density() +
+      geom_density(data = data$original, aes(x = bmi, color = "Original")) +
+      geom_density(data = data_empile[[i]], aes(x = 10000 * weight / height ^ 2, color = "Synthétique")) +
+      labs(title = paste0("Densité de bmi originale vs synthétique vs synthétisée pour le modèle ",
+                          mes_modeles[i]), x = "bmi", y = "Densité") +
+      theme_minimal() +
+      scale_color_manual(name = "Variantes",
+                         breaks = c("Synthétisé", "Original", "Synthétique"),
+                         values = c("Synthétisé" = "red", "Original" = "black", "Synthétique" = "cyan"))
+    
+    
+    liste_bmi[[i]] <- p_bmi
+  }
+  
+  return(liste_bmi)
+}
+
 densite_diff <- function(data, variable) {
-  aires <- matrix(0, nrow = 2, ncol = length(mes_modeles))
+  aires <- matrix(0, nrow = 3, ncol = length(mes_modeles))
   aires_diff <- matrix(0, nrow = 500, ncol = 6)
   for (i in 1:length(mes_modeles)) {
     for (j in 1:length(data[[i]])) {
@@ -332,12 +360,15 @@ densite_diff <- function(data, variable) {
     }
     aires[1, i] <- mean(aires_diff[, i])
     aires[2, i] <- sd(aires_diff[, i])
+    aires[3, i] <- sum(abs(aires_diff[, i]))
   }
   colnames(aires) <- mes_modeles
   colnames(aires_diff) <- mes_modeles
-  row.names(aires) <- c("Moyenne différence d'aires", "Ecart-type différence d'aires")
+  row.names(aires) <- c("Moyenne différence d'aires", "Ecart-type différence d'aires",
+                        "Somme différence d'aires")
   return(list(aires, aires_diff))
 }
+
 
 bp_densite <- function(data, variable) {
   result <- densite_diff(data, variable)
@@ -349,10 +380,23 @@ bp_densite <- function(data, variable) {
   
   ggplot(aires_diff_long, aes(x = modele, y = valeur)) +
     geom_boxplot() +
-    labs(title = "Boxplots des différences d'aires",
+    labs(title = paste0("Boxplots des différences d'aires pour la variable ", variable),
          x = "Modèles",
          y = "Différence d'aires") +
     theme_minimal()
+}
+
+recap_diff_dens <- function(data) {
+  recap <- matrix(0, nrow = 6, ncol = length(varsnum))
+  for (i in 1:length(varsnum)) {
+    dens <- densite_diff(data, varsnum[i])[[1]]
+    for (j in 1:length(mes_modeles)) {
+      recap[j, i] <- dens[1, j]
+    }
+  }
+  colnames(recap) <- varsnum
+  row.names(recap) <- mes_modeles
+  return(recap)
 }
 
 # Utilite ----------------------------------------------------------------------
@@ -462,6 +506,40 @@ nb_repliques_all_meth <- imap(
   .progress = TRUE
 ) %>% list_rbind()
 
+
+# Scores de propensions --------------------------------------------------------
+score_propension <- function(data) {
+  liste_score <- list()
+  for (i in 1:length(mes_modeles)) {
+    liste_int <- list()
+    for (j in 1:length(data[[i]])) {
+      df_org <- data$original
+      df_syn <- data[[i]][[j]]
+      n1 <- dim(df_org)[1]
+      n2 <- dim(df_syn)[1]
+      N <- n1 + n2
+      cc <- n2 / N
+      maxit <- 200
+      
+      df.prop <- rbind(df_syn, df_org)
+      df.prop <- data.frame(df.prop, t = c(rep(1, n2), rep(0, n1)))
+      
+      logit.int <- as.formula(paste("t ~ ."))
+      fit <- suppressWarnings(glm(logit.int, data = df.prop, family = "binomial",
+                                  control = list(maxit = maxit)))
+      score <- predict(fit, type = "response")
+      liste_int[[j]] <- score
+    }
+    liste_score[[i]] <- liste_int
+  }
+  return(liste_score)
+}
+
+tictoc::tic()
+score_propension(data)
+tictoc::toc()
+
+pMSE = (sum((score - cc)^2, na.rm = T)) / N
 
 
 # Tests ------------------------------------------------------------------------
