@@ -1,26 +1,26 @@
 ---
 title: "Analyses des simulations"
 author: "Julien Helfenstein"
-date: "`r Sys.Date()`"
+date: "24/05/2024"
 output: html_document
 ---
 
-```{r packages}
+```{r donnees}
 source("Analyses.R")
 ```
 
 ## Vue d'ensemble
 
 ```{r}
-table_cat
-table_mean_num
+analyses$table_cat
+analyses$table_mean_num
 ```
 
 ## Correlations
 
 ```{r correlations}
-cor_comp
-somme_cor_mat
+analyses$cor_comp
+analyses$somme_cor_mat
 ```
 
 liste_mat est une liste de 6 matrices. Ces matrices sont les matrices de corrélations moyenne des simulations pour chaque modèles moins la matrice de corrélation du jeu de données original.
@@ -31,13 +31,13 @@ bag et cart sont ici les meilleurs modèles suivis par parametric, ctree et rf. 
 
 ## MAE
 ```{r mae}
-table_mae
+analyses$table_mae
 ```
 On remarque que bag et rf ont des MAE très élevé allant jusqu'à être 10 fois supérieurs aux autres modèles. Sample, cart, ctree et parametric sont assez rapprochés sans qu'il n'y ait une réelle domination d'un modèle. 
 
 ## MSE
 ```{r mse}
-table_mse
+analyses$table_mse
 ```
 On ne voit pas de réelle domination d'un modèle.
 
@@ -51,6 +51,7 @@ On va vérifier deux choses :
 -   Est-ce que les valeurs de la variable bmi synthétisée sont proches de celles de la variable bmi originale ?
 
 ```{r bmi comparaison}
+source("~/work/synthetic-data-sdc/R/fonctions/Graphiques_bmi.R")
 bmi_comp(data)
 ```
 
@@ -59,13 +60,14 @@ bmi_comp(data)
 2)  En ce qui concerne la comparaison au jeu de données original, sample, cart, ctree et bagging s'en sortent le mieux, suivis par rf puis parametric.
 
 ```{r}
-reg_coeff[2, ]
+analyses$reg_coeff[2, ]
 ```
 reg_coeff est un vecteur comportant la moyenne des coefficients directeurs pour chaque modèles.
 
 On voit que bag, cart et ctree sont très proches, suivis par parametric (x5), rf(x11). Sample est à la ramasse
 
 ```{r graphiques bmi}
+source("~/work/synthetic-data-sdc/R/fonctions/Densites.R")
 modele = "sample"
 num_dataset = 1
 plot_nuage_bmi(modele, num_dataset)
@@ -100,11 +102,12 @@ On constate que parametric est le modèle ayant l'aire moyenne de la densité de
 
 ## Mesures d'utilités
 ```{r utilite}
-utility_measures_all_meth
+analyses$utility_measures_all_meth
 ```
 
 
 ```{r graphiques utilite}
+source("~/work/synthetic-data-sdc/R/fonctions/Utilite.R")
 moycum_mesures()
 
 distribution_mesures()
@@ -121,17 +124,12 @@ resume_mesures()
 
 ## Recherche des individus répliqués
 ```{r repliques}
-nb_repliques_all_meth %>% 
+analyses$nb_repliques_all_meth %>% 
   group_by(method) %>% 
   summarise(across(n_replicats, list(mean=mean, min=min, max=max, sd=sd)))
 ```
 Les modèles parametric et sample ne produisent aucun individu répliqué.
 Pour ctree, sur 500 synthétisations, 1 jeu de données possède au moins un individu répliqué
 Cart produit en moyenne 1 jeu de données
-
-## Scores de propensions
-```{r propension}
-
-```
 
 
