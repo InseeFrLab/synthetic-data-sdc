@@ -60,7 +60,7 @@ Cette matrice montre les écarts moyen entre le bmi synthétique et le bmi origi
 Cart, ctreeet bag ont des bmi synthétiques proches des bmi synthétisés. Rf a un bmi synthétique meilleur que son bmi synthétisé. Parametric lui a un bmi synthétisé meilleur que son bmi synthétique.
 
 ```{r ks test}
-KS_test(data)
+analyses$KS_test
 ```
 Cette matrice comporte les p-valeurs moyenne des tests de Kolmogov-Smirnov. On apperçoit qu'elles sont toutes largement au-dessus de 0.05, donc dans l'ensemble les distributions ne sont pas significativement différentes de celle pour le jeu de données original. Cependant, pour la variable bmi pour parametric, on remarque que la p-valeur est proche de 0.05. On ne va donc pas rejetter aussi assurément que les distributions ne sont pas différentes.
 
