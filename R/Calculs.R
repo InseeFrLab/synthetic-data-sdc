@@ -1,13 +1,14 @@
 source("R/Analyses.R")
 source("R/fonctions/Correlations.R")
 source("R/fonctions/Densites.R")
-source("R/fonctions/Graphiques_bmi.R")
+source("R/fonctions/Graphiques.R")
 source("R/fonctions/Scores_propension.R")
 source("R/fonctions/Utilite.R")
 source("R/fonctions/Calculs/MAE.R")
 source("R/fonctions/Calculs/MSE.R")
 source("R/fonctions/Calculs/Statistiques_categorielles.R")
 source("R/fonctions/Calculs/Statistiques_numeriques.R")
+source("R/fonctions/Calculs/KS_test.R")
 
 data_empile <- map(data[methodes], \(df_list) df_list %>%
                      imap(\(df, i) df %>% mutate(index_sim = i)) %>% bind_rows())
@@ -107,7 +108,7 @@ nb_repliques_all_meth <- imap(
 
 resultats <- list(data_empile, data_original, data_empile_combined, table_mean_num, table_sd_num, table_cat, table_cor,
                   cor_comp, somme_cor_mat, table_mae, table_mse, reg_coeff,
-                  utility_measures_all_meth, nb_repliques_all_meth)
+                  utility_measures_all_meth, nb_repliques_all_meth, KS_test(data))
 # Export -----------------------------------------------------------------------
 BUCKET = "projet-donnees-synthetiques"
 BUCKET_SIM_2 = file.path(BUCKET, "analyses")

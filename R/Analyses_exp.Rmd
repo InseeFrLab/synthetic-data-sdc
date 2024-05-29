@@ -19,7 +19,8 @@ analyses$table_mean_num
 ## Correlations
 
 ```{r correlations}
-analyses$cor_comp
+source("~/work/synthetic-data-sdc/R/fonctions/Correlations.R")
+table_cor
 analyses$somme_cor_mat
 ```
 
@@ -51,13 +52,16 @@ On va vérifier deux choses :
 -   Est-ce que les valeurs de la variable bmi synthétisée sont proches de celles de la variable bmi originale ?
 
 ```{r bmi comparaison}
-source("~/work/synthetic-data-sdc/R/fonctions/Graphiques_bmi.R")
+source("~/work/synthetic-data-sdc/R/fonctions/Graphiques.R")
 bmi_comp(data)
 ```
+Cette matrice montre les écarts moyen entre le bmi synthétique et le bmi original puis entre le bmi synthétisé et le bmi original.
 
-1)  On constate une assez bonne synthétisation via cart, ctree, parametric et bag, une moins bonne synthétisation via rf et une vraiment moins bonne synthétisation via sample. On n'a cependant pas une valeur de 0 ce qui signifie que le modèle s'approche de la relation mais ne la reproduit pas totalement.
+Cart, ctreeet bag ont des bmi synthétiques proches des bmi synthétisés. Rf a un bmi synthétique meilleur que son bmi synthétisé. Parametric lui a un bmi synthétisé meilleur que son bmi synthétique.
 
-2)  En ce qui concerne la comparaison au jeu de données original, sample, cart, ctree et bagging s'en sortent le mieux, suivis par rf puis parametric.
+```{r ks test}
+analyses$KS_test
+```
 
 ```{r}
 analyses$reg_coeff[2, ]
@@ -83,6 +87,11 @@ plot_dens_syn_org(data, "weight")
 Les densités de sample, cart, et ctree sont très ressemblantes. Celles de bag et rf le sont entre elles.
 
 On remarque des pics sur les densités, on regarde donc les densités de height et weight pour voir s'ils viennent de là et en effet c'est le cas.
+
+```{r cdf}
+source("~/work/synthetic-data-sdc/R/fonctions/Graphiques.R")
+CDF(data, "cart", "bmi", 1)
+```
 
 ```{r bmi syn vs syn}
 dens_bmi()
