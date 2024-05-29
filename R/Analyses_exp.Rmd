@@ -47,7 +47,7 @@ On ne voit pas de réelle domination d'un modèle.
 
 On va vérifier deux choses :
 
--   Est-ce que dans les jeux de données synthétiques la variable bmi est bien synthétisé, i.e est-ce qu'elle respecte bmi = 10000 \* (weight / height \^ 2) ?
+-   Est-ce que dans les jeux de données synthétiques la variable bmi est bien synthétisé, i.e est-ce qu'elle respecte bmi = 10000 * (weight / height ^ 2) ?
 
 -   Est-ce que les valeurs de la variable bmi synthétisée sont proches de celles de la variable bmi originale ?
 

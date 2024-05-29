@@ -8,9 +8,9 @@ calc_stats_cat <- function(df) {
     summarise(across(freq, list(
       min = ~ min(.),
       max = ~ max(.),
-      mean = ~ mean(.),
-      sd = ~ sd(.),
-      cv = ~ sd(.) / mean(.),
+      mean = ~ round(mean(.), digits = 3),
+      sd = ~ round(sd(.), digits = 3),
+      cv = ~ round(sd(.) / mean(.), digits = 3),
       median = ~ median(.),
       q1 = ~ quantile(., 0.25),
       q3 = ~ quantile(., 0.75),

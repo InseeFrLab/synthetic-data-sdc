@@ -37,9 +37,10 @@ analyses <- aws.s3::s3read_using(
   bucket = BUCKET_SIM_2,
   opts = list("region" = "")
 )
-names(analyses) <- c("data_empile", "data_original", "data_empile_combined", "table_mean_num", "table_sd_num", "table_cat", "table_cor",
-                     "cor_comp", "somme_cor_mat", "table_mae", "table_mse", "reg_coeff",
-                     "utility_measures_all_meth", "nb_repliques_all_meth", "KS_test")
+names(analyses) <- c("data_empile", "data_original", "data_empile_combined", "table_mean_num",
+                     "table_sd_num", "table_cat", "table_cor", "cor_comp", "somme_cor_mat",
+                     "table_mae", "table_mse", "reg_coeff", "utility_measures_all_meth",
+                     "nb_repliques_all_meth")
 
 mes_modeles <- c("sample", "cart", "ctree", "parametric", "bag", "rf")
 
