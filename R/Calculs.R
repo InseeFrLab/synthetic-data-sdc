@@ -9,6 +9,7 @@ source("R/fonctions/Calculs/MAE.R")
 source("R/fonctions/Calculs/MSE.R")
 source("R/fonctions/Calculs/Statistiques_categorielles.R")
 source("R/fonctions/Calculs/Statistiques_numeriques.R")
+source("R/fonctions/Calculs/VCramer.R")
 
 data_empile <- map(data[methodes], \(df_list) df_list %>%
                      imap(\(df, i) df %>% mutate(index_sim = i)) %>% bind_rows())

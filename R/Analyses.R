@@ -14,6 +14,7 @@ library(pracma)
 library(hrbrthemes)
 library(rmarkdown)
 library(knitr)
+library(rcompanion)
 
 # Import des données -----------------------------------------------------------
 FILE_KEY_IN_S3_1 <- "20240512_sim_synthpop_sample_cart_ctree_parametric_bag_rf_500_sims.RDS"
