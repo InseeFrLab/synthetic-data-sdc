@@ -1,0 +1,211 @@
+---
+title: "Analyses des simulations"
+author: "Julien Helfenstein"
+date: "07/06/2024"
+output: html_document
+---
+
+On cherche à savoir quel est l'impact de la visit sequence sur l'utilité de nos synthétisations. Pour cela on va tester différentes visit sequence :
+- ordre de base
+- numériques avant catégorielles
+- en fonction ACP vars num
+- en fonction AFD vars fac
+- en fonction ACM num et fac
+
+```{r}
+library(synthpop)
+library(FactoMineR)
+library(factoextra)
+library(tictoc)
+source("~/work/synthetic-data-sdc/R/fonctions/creation_jeu.R")
+```
+
+```{r donnees}
+data <- jeudedonnees_SD2011()
+data[, "depress"] <- factor(data[, "depress"], levels = 0:21)
+num <- c("age", "nofriend", "height", "weight", "bmi")
+fac <- c("sex", "agegr", "placesize", "edu", "socprof", "marital", "ls", "depress",
+         "trust", "trustfam", "trustneigh", "sport", "smoke", "alcabuse", "alcsol",
+         "wkabint", "englang")
+data_num <- data[, num]
+data_fac <- data[, fac]
+```
+
+## Présentation des variables
+1) sex : Sexe (factor)
+2) age : Age, 2011 (numeric)
+3) agegr : Groupe d'Age, 2011 (factor)
+4) placesize : Catégorie du lieu de résidence (factor)
+5) edu : Diplôme d'études le plus élevé, 2011 (factor)
+6) socprof : Statut socio-économique, 2011 (factor)
+7) marital : État civil (factor)
+8) ls : Perception de la vie dans son ensemble (factor)
+9) depress : Indicateur des symptômes de dépression (factor)
+10) trust : Point de vue sur la confiance interpersonnelle (factor)
+11) trustfam : Confiance aux membres de sa propre famille (factor)
+12) trustneigh : Confiance aux voisins (factor)
+13) sport : Participation active à une forme de sport ou d'exercice (factor)
+14) nofriend : Nombre d'amis (numeric)
+15) smoke : Fumeur de cigarettes (factor)
+16) alcabuse : Boit trop d'alcool (factor)
+17) alcsol : A commencer à consommer de l'alcool pour faire face aux problèmes (factor)
+18) wkabint : Projets d'aller travailler à l'étranger dans les deux prochaines années (factor)
+19) englang : Connaissance de la langue anglaise (factor)
+20) height : Taille de la personne (numeric)
+21) weight : Poids de la personne (numeric)
+22) bmi : Indice de masse corporelle (numeric)
+
+
+On commence par utiliser la visit sequence proposée par défaut, celle qui suit donc l'ordre des variables dans le jeu de données.
+```{r classique}
+tictoc::tic()
+syn_classique <- syn(data)
+tictoc::toc()
+# 41.857 sec elapsed
+
+pMSE_classique <- utility.gen(syn_classique, data)$pMSE
+# 0.01945928
+```
+
+On crée maintenant une visit sequence avec les variables numériques avant les variables catégorielles et suivant l'ordre des variables dans le jeu de données.
+```{r num avant fac}
+vs_numfac1 <- c(2,14,20,21,22,1,3,4,5,6,7,8,9,10,11,12,13,15,16,17,18,19)
+tictoc::tic()
+syn_numfac1 <- syn(data, visit.sequence = vs_numfac1)
+tictoc::toc()
+# 45.447 sec elapsed
+
+pMSE_numfac1 <- utility.gen(syn_numfac1, data)$pMSE
+# 0.02106936
+```
+
+On crée maintenant une visit sequence avec les variables numériques puis une avec les variables catégorielles pour avoir une référence. Les deux visit sequence sont l'ordre original.
+```{r num et fac}
+# num : age, nofriend, height, weight, bmi
+tictoc::tic()
+syn_num <- syn(data[, num])
+tictoc::toc()
+# 0.932 sec elapsed
+
+pMSE_num <- utility.gen(syn_num, data[, num])$pMSE
+# 0.004352581
+
+# fac : sex, agegr, placesize, edu, socprof, marital, ls, depress, trust, trustfam, trustneigh, sport, smoke, alcabuse alcsol, wkabint, englang
+tictoc::tic()
+syn_fac <- syn(data[, fac])
+tictoc::toc()
+# 30.441 sec elapsed
+
+pMSE_fac <- utility.gen(syn_fac, data[, fac])$pMSE
+# 0.007969088
+```
+
+On se demande si le nombre de modalités a une influence. On va le vérifier sur le jeu de données contenant que des variables numériques puis sur le jeu de données contenant que des variables catégorielles.
+```{r modalites}
+# num : age, nofriend, height, weight, bmi
+vs_nummoda <- c(2,3,1,4,5)
+tictoc::tic()
+syn_nummoda <- syn(data[, num], visit.sequence = vs_nummoda)
+tictoc::toc()
+# 0.738 sec elapsed
+
+pMSE_nummoda <- utility.gen(syn_nummoda, data[, num])$pMSE
+# 0.005557061
+
+# fac : sex, agegr, placesize, edu, socprof, marital, ls, depress, trust, trustfam, trustneigh, sport, smoke, alcabuse alcsol, wkabint, englang
+vs_facmoda <- c(14,15,1,13,12,17,9,10,11,16,4,2,6,3,7,5,8)
+tictoc::tic()
+syn_facmoda <- syn(data[, fac], visit.sequence = vs_facmoda)
+tictoc::toc()
+# 4.648 sec elapsed
+
+pMSE_facmoda <- utility.gen(syn_facmoda, data[, fac])$pMSE
+# 0.01569002
+```
+
+On crée maintenant une visit sequence suivant ces règles :
+- Les variables numériques avant les variables catégorielles 
+- Les variables ayant le moins de modalités sont en premières
+- Départage par ordre lexicographique
+```{r num avant fac}
+vs_numfac2 <- c(14,20,2,21,22,16,17,1,15,13,19,10,11,12,18,5,3,7,4,8,6,9)
+tictoc::tic()
+syn_numfac2 <- syn(data, visit.sequence = vs_numfac2)
+tictoc::toc()
+# 8.211 sec elapsed
+
+pMSE_numfac2 <- utility.gen(syn_numfac2, data)$pMSE
+# 0.02092508
+```
+
+```{r AFDM}
+data.afdm <- FAMD(data, ncp = 100, graph = FALSE)
+#print(data.afdm)
+summary(data.afdm)
+
+eig.val <- get_eigenvalue(data.afdm)
+
+classement_var <- function() {
+  matrice <- matrix(0, nrow = 1, ncol = length(data))
+  for (i in 1:length(data)) {
+    var <- 0
+    for (j in 1:eig.val[, "variance.percent"]) {
+      var <- var + eig.val[, "variance.percent"][j] * data.afdm$var$contrib[names(data)[i], j]
+    }
+    var <- var / 100
+    matrice[1, i] <- var
+  }
+  colnames(matrice) <- names(data)
+  matrice <- matrice[, order(matrice, decreasing = TRUE)]
+  return(matrice)
+}
+
+varexp <- function() {
+  barplot(eig.val[, 2], 
+          names.arg = 1:nrow(eig.val), 
+          main = "Variance expliquée par dimensions (%)",
+          xlab = "Principales dimensions",
+          ylab = "Pourcentage de variance",
+          col ="steelblue")
+  # Add connected line segments to the plot
+  lines(x = 1:nrow(eig.val), eig.val[, 2], 
+        type = "b", pch = 19, col = "red")
+  print(barplot)
+}
+
+
+fviz_famd_var(data.afdm, repel = TRUE)
+contrib1 <- fviz_contrib(data.afdm, "var", axes = 1)
+contrib2 <- fviz_contrib(data.afdm, "var", axes = 2)
+
+print(list(eig.val, varexp(), contrib1, contrib2))
+```
+Ma fonction classement_var sort une matrice donnant la moyenne des contributions de chaque variables pondérée par le pourcentage de variance expliqué par chaque dimension. J'ai fait cela pour tenir compte de toutes les dimensions mais en leur donnant peu d'importance à la fin. Dans l'idée, plus la valeur est élevée, plus la variable est contributrice. Pour autant je me retrouve avec des résultats étonnant : la valeur pour trustfam est plus élevée que celle pour le sex ce qui est étrange. On va tout de même tester l'ordre obtenu pour créer notre visit sequence.
+
+```{r AFDM suite}
+vs_afdm <- c(6,3,7,5,9,2,21,11,12,1,19,20,22,8,4,16,17,13,15,10,18,14)
+tictoc::tic()
+syn_afdm <- syn(data, visit.sequence = vs_afdm)
+tictoc::toc()
+# 54.214 sec elapsed
+
+pMSE_afdm <- utility.gen(syn_afdm, data)$pMSE
+# 0.01787327
+```
+
+On teste ensuite avec une visite sequence générée aléatoirement
+```{r aleatoire}
+vs_aleatoire <- sample(1:22)
+tictoc::tic()
+syn_aleatoire <- syn(data, visit.sequence = vs_aleatoire)
+tictoc::toc()
+# 71.526 sec elapsed
+
+pMSE_aleatoire <- utility.gen(syn_aleatoire, data)$pMSE
+# 0.02272717
+```
+
+
+
+
+
