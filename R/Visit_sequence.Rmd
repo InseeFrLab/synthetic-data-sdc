@@ -205,7 +205,11 @@ pMSE_aleatoire <- utility.gen(syn_aleatoire, data)$pMSE
 # 0.02272717
 ```
 
+```{r resultats}
+resultats <- data.frame(pMSE_classique, pMSE_numfac1, pMSE_numfac2, pMSE_afdm, pMSE_aleatoire, pMSE_num, pMSE_nummoda, pMSE_fac, pMSE_facmoda)
 
+resultats
+```
 
 
 
