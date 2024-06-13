@@ -29,6 +29,7 @@ fac <- c("sex", "agegr", "placesize", "edu", "socprof", "marital", "ls", "depres
          "wkabint", "englang")
 data_num <- data[, num]
 data_fac <- data[, fac]
+mat_resu <- matrix(0, nrow = 2, ncol = 10)
 ```
 
 ## Présentation des variables
@@ -58,6 +59,7 @@ data_fac <- data[, fac]
 
 On commence par utiliser la visit sequence proposée par défaut, celle qui suit donc l'ordre des variables dans le jeu de données.
 ```{r classique}
+mat_classique <- matrix(0, nrow = 2, ncol = 50)
 tictoc::tic()
 syn_classique <- syn(data)
 tictoc::toc()
@@ -140,7 +142,6 @@ pMSE_numfac2 <- utility.gen(syn_numfac2, data)$pMSE
 
 ```{r AFDM}
 data.afdm <- FAMD(data, ncp = 100, graph = FALSE)
-#print(data.afdm)
 summary(data.afdm)
 
 eig.val <- get_eigenvalue(data.afdm)
@@ -167,7 +168,6 @@ varexp <- function() {
           xlab = "Principales dimensions",
           ylab = "Pourcentage de variance",
           col ="steelblue")
-  # Add connected line segments to the plot
   lines(x = 1:nrow(eig.val), eig.val[, 2], 
         type = "b", pch = 19, col = "red")
   print(barplot)
@@ -178,7 +178,7 @@ fviz_famd_var(data.afdm, repel = TRUE)
 contrib1 <- fviz_contrib(data.afdm, "var", axes = 1)
 contrib2 <- fviz_contrib(data.afdm, "var", axes = 2)
 
-print(list(eig.val, varexp(), contrib1, contrib2))
+print(list(contrib1, varexp()))
 ```
 Ma fonction classement_var sort une matrice donnant la moyenne des contributions de chaque variables pondérée par le pourcentage de variance expliqué par chaque dimension. J'ai fait cela pour tenir compte de toutes les dimensions mais en leur donnant peu d'importance à la fin. Dans l'idée, plus la valeur est élevée, plus la variable est contributrice. Pour autant je me retrouve avec des résultats étonnant : la valeur pour trustfam est plus élevée que celle pour le sex ce qui est étrange. On va tout de même tester l'ordre obtenu pour créer notre visit sequence.
 
@@ -205,11 +205,68 @@ pMSE_aleatoire <- utility.gen(syn_aleatoire, data)$pMSE
 # 0.02272717
 ```
 
-```{r resultats}
-resultats <- data.frame(pMSE_classique, pMSE_numfac1, pMSE_numfac2, pMSE_afdm, pMSE_aleatoire, pMSE_num, pMSE_nummoda, pMSE_fac, pMSE_facmoda)
+On teste en mettant à la suite des variables qui ne sont pas corrélées
+```{r non correle}
+# trustneigh,depress,wight,trust,agegr,alcsol,socprof,sport,alcabuse,edu,wkabint,
+# placesize,height,trustfam,bmi,nofriend,smoke,marital,ls,sex,englang,age
+vs_noncorrele <- c(12,9,21,10,3,17,6,13,16,5,18,4,20,11,22,14,15,7,8,1,19,2)
+tictoc::tic()
+syn_noncorrele <- syn(data, visit.sequence = vs_noncorrele) 
+tictoc::toc()
+# 60.558 sec elapsed
 
-resultats
+pMSE_noncorrele <- utility.gen(syn_noncorrele, data)$pMSE
+# 0.01784704
 ```
 
+```{r resultats}
+mat_resu
+```
+On constate un pMSE moyen meilleur pour les synthétisations via la visit sequence optimisé via une AFDM. C'est une faible amélioration (4% meilleure que la visit sequence classique et 10% meilleure que la visit sequence aléatoire) mais seulement 50 simulations ont été faites.
 
+```{r tests}
+library(corrplot)
+library(ggplot2)
+library(polycor)
+library(reshape2)
+library(vcd)
+
+
+mix_corr <- function(data) {
+  n <- ncol(data)
+  cor_matrix <- matrix(NA, n, n)
+  colnames(cor_matrix) <- colnames(data)
+  rownames(cor_matrix) <- colnames(data)
+  
+  for (i in 1:n) {
+    for (j in 1:n) {
+      if (i == j) {
+        cor_matrix[i, j] <- 1
+      } else {
+        x <- data[[i]]
+        y <- data[[j]]
+        
+        if (is.numeric(x) && is.numeric(y)) {
+          cor_matrix[i, j] <- cor(x, y)
+        } else if (is.factor(x) && is.factor(y)) {
+          cor_matrix[i, j] <- assocstats(table(x, y))$cramer
+        } else if ((is.numeric(x) && is.factor(y)) || (is.factor(x) && is.numeric(y))) {
+          cor_matrix[i, j] <- hetcor(data.frame(x, y))$correlations[1, 2]
+        }
+      }
+    }
+  }
+  return(cor_matrix)
+}
+
+cor_matrix <- mixed_correlations(datasets$original)
+
+corrplot(cor_matrix, method = "color", addCoef.col = "black", number.cex = 0.7, tl.cex = 0.8, tl.col = "black")
+
+cor_df <- as.data.frame(as.table(cor_matrix))
+cor_df <- cor_df[complete.cases(cor_df), ]
+cor_df <- cor_df[order(abs(cor_df$Freq), decreasing = TRUE), ]
+
+print(cor_df)
+```
 

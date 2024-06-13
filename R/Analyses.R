@@ -94,3 +94,5 @@ fac = c("sex", "agegr", "placesize", "edu", "socprof", "marital", "ls", "depress
 # 
 
 # Tests ------------------------------------------------------------------------
+
+
