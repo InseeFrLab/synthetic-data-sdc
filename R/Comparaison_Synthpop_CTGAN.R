@@ -1,4 +1,5 @@
 if (!requireNamespace("aws.s3", quietly = TRUE)) install.packages("aws.s3"); library(aws.s3)
+if (!requireNamespace("synthpop", quietly = TRUE)) install.packages("synthpop"); library(synthpop)
 
 # Import des données -----------------------------------------------------------
 FILE_KEY_IN_S3_1 <- "20240512_sim_synthpop_sample_cart_ctree_parametric_bag_rf_500_sims.RDS"
@@ -26,3 +27,13 @@ ctgan <- aws.s3::s3read_using(
   opts = list("region" = "")
 )
 ctgan <- ctgan[, 2:23]
+
+# Utilite ----------------------------------------------------------------------
+utilite <- utility.gen(data$original, ctgan)
+
+
+
+
+
+
+
