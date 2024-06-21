@@ -1,6 +1,8 @@
 if (!requireNamespace("aws.s3", quietly = TRUE)) install.packages("aws.s3"); library(aws.s3)
 if (!requireNamespace("synthpop", quietly = TRUE)) install.packages("synthpop"); library(synthpop)
 
+source("R/fonctions/Scores_propension.R")
+
 # Import des données -----------------------------------------------------------
 FILE_KEY_IN_S3_1 <- "20240512_sim_synthpop_sample_cart_ctree_parametric_bag_rf_500_sims.RDS"
 BUCKET = "projet-donnees-synthetiques"
@@ -31,7 +33,8 @@ ctgan <- ctgan[, 2:23]
 # Utilite ----------------------------------------------------------------------
 utilite <- utility.gen(data$original, ctgan)
 
-
+score_propension(data$original, ctgan)$pMSE
+score_propension(data$original, data$cart[[1]])$pMSE
 
 
 
