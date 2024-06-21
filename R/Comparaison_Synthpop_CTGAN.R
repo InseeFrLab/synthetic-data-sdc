@@ -28,13 +28,24 @@ ctgan <- aws.s3::s3read_using(
   bucket = BUCKET,
   opts = list("region" = "")
 )
+ctgan <- as.data.frame(ctgan) # car ctgan est un tibble
 ctgan <- ctgan[, 2:23]
+#ctgan[fac] <- factor(ctgan[, fac])
+
+num = c("age", "depress", "nofriend", "height", "weight", "bmi")
+fac = c("sex", "agegr", "placesize", "edu", "socprof", "marital", "ls", "trust",
+        "trustfam", "trustneigh", "sport", "smoke", "alcabuse", "alcsol", "wkabint",
+        "englang")
 
 # Utilite ----------------------------------------------------------------------
-utilite <- utility.gen(data$original, ctgan)
+#utilite <- utility.gen(data$original, ctgan)
 
 score_propension(data$original, ctgan)$pMSE
 score_propension(data$original, data$cart[[1]])$pMSE
+
+CIO(data$original[, num], ctgan[, num])
+CIO(data$original[, num], data$cart[[1]][, num])
+
 
 
 
