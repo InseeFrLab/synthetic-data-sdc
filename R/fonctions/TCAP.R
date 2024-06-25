@@ -45,25 +45,25 @@ calc_TCAP <- function(data_org, data_syn_filtered, K_s, T_s) {
   return(TCAP)
 }
 
-#data_org <- data$original
-#data_syn <- data$cart[[1]]
-#K_s <- c("sex", "age")
-#T_s <- "socprof"
+data_org <- data$original
+data_syn <- data$cart[[1]]
+K_s <- c("sex", "age")
+T_s <- "socprof"
 
 tictoc::tic()
-#WEAP <- calc_WEAP(data_syn, K_s, T_s)
+WEAP <- calc_WEAP(data_syn, K_s, T_s)
 tictoc::toc()
 # 3390.303 sec elapsed
 
-#data_syn_filtered <- filter_WEAP_1(data_syn, WEAP)
+data_syn_filtered <- filter_WEAP_1(data_syn, WEAP)
 
 tictoc::tic()
-#TCAP <- calc_TCAP(data_org, data_syn_filtered, K_s, T_s)
+TCAP <- calc_TCAP(data_org, data_syn_filtered, K_s, T_s)
 tictoc::toc()
 # 128.286 sec elapsed
 
-#print(TCAP)
-#print(mean(TCAP, na.rm = TRUE))
+print(TCAP)
+print(mean(TCAP, na.rm = TRUE))
 
 # Tests ------------------------------------------------------------------------
 
