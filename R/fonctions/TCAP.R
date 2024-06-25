@@ -26,7 +26,7 @@ filter_WEAP_1 <- function(data_syn, WEAP) {
 
 calc_TCAP <- function(data_org, data_syn_filtered, K_s, T_s) {
   n <- nrow(data_syn_filtered)
-  TCAP <- rep(NA, n)
+  TCAP <- rep(0, n)
   
   for (i in 1:n) {
     K_i <- data_syn_filtered[i, K_s]
@@ -51,13 +51,13 @@ K_s <- c("sex", "age")
 T_s <- "socprof"
 
 tictoc::tic()
-WEAP <- calc_WEAP(data_syn, K_s, T_s)
+WEAP <- calc_WEAP(data_syn, K_s, T_s) # 3390.303 sec elapsed
 tictoc::toc()
 
 data_syn_filtered <- filter_WEAP_1(data_syn, WEAP)
 
 tictoc::tic()
-TCAP <- calc_TCAP(data_org, data_syn_filtered, K_s, T_s)
+TCAP <- calc_TCAP(data_org, data_syn_filtered, K_s, T_s) #  sec elapsed
 tictoc::toc()
 
 print(TCAP)
