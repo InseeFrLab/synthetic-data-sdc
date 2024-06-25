@@ -1,69 +1,75 @@
-calc_WEAP <- function(data_syn, K_s, T_s) {
-  n <- nrow(data_syn)
-  WEAP <- rep(0, n)
+calc_TCAP <- function(data_org, data_syn, K_s, T_s) {
+  WEAP_s <- data_syn %>% 
+    group_by(across(all_of(K_s))) %>%
+    mutate(nb_ind_by_cle = n()) %>%
+    ungroup() %>%
+    group_by(across(all_of(c(K_s, T_s)))) %>%
+    mutate(num = n()) %>%
+    ungroup() %>%
+    mutate(WEAP = num / denom)
   
-  for (i in 1:n) {
-    K_i <- data_syn[i, K_s]
-    T_i <- data_syn[i, T_s]
-    
-    num <- sum(T_i == data_syn[, T_s] & apply(data_syn[, K_s], 1, function(row) all(row == K_i)))
-    denom <- sum(apply(data_syn[, K_s], 1, function(row) all(row == K_i)))
-    
-    if (denom == 0) {
-      WEAP[i] <- 0
-    } else {
-      WEAP[i] <- num / denom
-    }
+  if (sum(WEAP_s$WEAP == 1) == 0) {
+    return("TCAP indéfini")
   }
-  
-  return(WEAP)
-}
-
-filter_WEAP_1 <- function(data_syn, WEAP) {
-  data_syn_filtered <- data_syn[WEAP == 1, ]
-  return(data_syn_filtered)
-}
-
-calc_TCAP <- function(data_org, data_syn_filtered, K_s, T_s) {
-  n <- nrow(data_syn_filtered)
-  TCAP <- rep(0, n)
-  
-  for (i in 1:n) {
-    K_i <- data_syn_filtered[i, K_s]
-    T_i <- data_syn_filtered[i, T_s]
+  else {
+    TCAP <- merge(
+      data_org,
+      WEAP_s %>% filter(WEAP == 1) %>% select(all_of(K_s), WEAP) %>% unique(),
+      by = K_s,
+      all.x = F,
+      all.y = F
+    ) %>%
+      group_by(across(all_of(K_s))) %>%
+      mutate(nb_ind_by_cle = n()) %>%
+      ungroup() %>%
+      group_by(across(all_of(c(K_s, T_s)))) %>%
+      mutate(num = n()) %>%
+      ungroup() %>%
+      mutate(TCAP = num / nb_ind_by_cle)
     
-    num <- sum(T_i == data_org[, T_s] & apply(data_org[, K_s], 1, function(row) all(row == K_i)))
-    denom <- sum(apply(data_org[, K_s], 1, function(row) all(row == K_i)))
-    
-    if (denom == 0) {
-      TCAP[i] <- NA
-    } else {
-      TCAP[i] <- num / denom
-    }
+    return(mean(TCAP$TCAP, na.rm = T))
   }
-  
-  return(TCAP)
 }
 
-data_org <- data$original
-data_syn <- data$cart[[1]]
-K_s <- c("sex", "age")
-T_s <- "socprof"
+var_quasi_id <- c("sex", "age", "agegr", "placesize", "edu", "socprof", "marital")
+var_sensi <- c("depress", "trust", "trustfam", "trustneigh", "ls", "smoke", "alcabuse", "alcsol")
 
-tictoc::tic()
-WEAP <- calc_WEAP(data_syn, K_s, T_s)
-tictoc::toc()
-# 3390.303 sec elapsed
+calc_TCAP(data$original, data$cart[[1]], c("sex", "age"), "depress")            # 0.1809821
+calc_TCAP(data$original, data$ctree[[1]], c("sex", "age"), "depress")           # 0.1634573
+calc_TCAP(data$original, data$parametric[[1]], c("sex", "age"), "depress")      # 0.2538661
+calc_TCAP(data$original, data$rf[[1]], c("sex", "age"), "depress")              # 0.2195462
+calc_TCAP(data$original, data$bag[[1]], c("sex", "age"), "depress")             # 0.2345012
+calc_TCAP(data$original, data$sample[[1]], c("sex", "age"), "depress")          # 0.1878088
 
-data_syn_filtered <- filter_WEAP_1(data_syn, WEAP)
+calc_TCAP(data$original, data$cart[[1]], c("sex", "age"), var_sensi)
 
-tictoc::tic()
-TCAP <- calc_TCAP(data_org, data_syn_filtered, K_s, T_s)
-tictoc::toc()
-# 128.286 sec elapsed
 
-print(TCAP)
-print(mean(TCAP, na.rm = TRUE))
+
+WEAP_s <- data$cart[[1]] %>% 
+  group_by(across(all_of(K_s))) %>%
+  mutate(nb_ind_by_cle = n()) %>%
+  ungroup() %>%
+  group_by(across(all_of(c(K_s, T_s)))) %>%
+  mutate(num = n()) %>%
+  ungroup() %>%
+  mutate(WEAP = num / denom)
+
+
+
+TCAP <- merge(
+  data$original,
+  WEAP_s %>% filter(WEAP == 1) %>% select(all_of(K_s), WEAP) %>% unique(),
+  by = K_s,
+  all.x = F,
+  all.y = F
+) %>%
+  group_by(across(all_of(K_s))) %>%
+  mutate(nb_ind_by_cle = n()) %>%
+  ungroup() %>%
+  group_by(across(all_of(c(K_s, T_s)))) %>%
+  mutate(num = n()) %>%
+  ungroup() %>%
+  mutate(TCAP = num / nb_ind_by_cle) %>% str()
 
 # Tests ------------------------------------------------------------------------
 
