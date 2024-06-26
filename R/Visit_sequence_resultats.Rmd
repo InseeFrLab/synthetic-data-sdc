@@ -66,7 +66,6 @@ tictoc::toc()
 # 41.857 sec elapsed
 
 pMSE_classique <- utility.gen(syn_classique, df)$pMSE
-# 0.01945928
 ```
 
 On crée maintenant une visit sequence avec les variables numériques avant les variables catégorielles et suivant l'ordre des variables dans le jeu de données.
@@ -78,7 +77,6 @@ tictoc::toc()
 # 45.447 sec elapsed
 
 pMSE_numfac1 <- utility.gen(syn_numfac1, df)$pMSE
-# 0.02106936
 ```
 
 On crée maintenant une visit sequence avec les variables numériques puis une avec les variables catégorielles pour avoir une référence. Les deux visit sequence sont l'ordre original.
@@ -90,7 +88,6 @@ tictoc::toc()
 # 0.932 sec elapsed
 
 pMSE_num <- utility.gen(syn_num, df[, num])$pMSE
-# 0.004352581
 
 # fac : sex, agegr, placesize, edu, socprof, marital, ls, depress, trust, trustfam, trustneigh, sport, smoke, alcabuse alcsol, wkabint, englang
 tictoc::tic()
@@ -99,7 +96,6 @@ tictoc::toc()
 # 30.441 sec elapsed
 
 pMSE_fac <- utility.gen(syn_fac, df[, fac])$pMSE
-# 0.007969088
 ```
 
 On se demande si le nombre de modalités a une influence. On va le vérifier sur le jeu de données contenant que des variables numériques puis sur le jeu de données contenant que des variables catégorielles.
@@ -112,7 +108,6 @@ tictoc::toc()
 # 0.738 sec elapsed
 
 pMSE_nummoda <- utility.gen(syn_nummoda, df[, num])$pMSE
-# 0.005557061
 
 # fac : sex, agegr, placesize, edu, socprof, marital, ls, depress, trust, trustfam, trustneigh, sport, smoke, alcabuse alcsol, wkabint, englang
 vs_facmoda <- c(14,15,1,13,12,17,9,10,11,16,4,2,6,3,7,5,8)
@@ -122,7 +117,6 @@ tictoc::toc()
 # 4.648 sec elapsed
 
 pMSE_facmoda <- utility.gen(syn_facmoda, df[, fac])$pMSE
-# 0.01569002
 ```
 
 On crée maintenant une visit sequence suivant ces règles :
@@ -137,7 +131,6 @@ tictoc::toc()
 # 8.211 sec elapsed
 
 pMSE_numfac2 <- utility.gen(syn_numfac2, df)$pMSE
-# 0.02092508
 ```
 
 ```{r AFDM}
@@ -190,7 +183,6 @@ tictoc::toc()
 # 54.214 sec elapsed
 
 pMSE_afdm <- utility.gen(syn_afdm, df)$pMSE
-# 0.01787327
 ```
 
 On teste ensuite avec une visite sequence générée aléatoirement
@@ -202,7 +194,6 @@ tictoc::toc()
 # 71.526 sec elapsed
 
 pMSE_aleatoire <- utility.gen(syn_aleatoire, df)$pMSE
-# 0.02272717
 ```
 
 On teste en mettant à la suite des variables qui ne sont pas corrélées
@@ -211,12 +202,11 @@ On teste en mettant à la suite des variables qui ne sont pas corrélées
 # placesize,height,trustfam,bmi,nofriend,smoke,marital,ls,sex,englang,age
 vs_noncorrele <- c(12,9,21,10,3,17,6,13,16,5,18,4,20,11,22,14,15,7,8,1,19,2)
 tictoc::tic()
-syn_noncorrele <- syn(df, visit.sequence = vs_noncorrele) 
+syn_noncorrele <- syn(data$original, visit.sequence = vs_noncorrele)
 tictoc::toc()
 # 60.558 sec elapsed
 
-pMSE_noncorrele <- utility.gen(syn_noncorrele, df)$pMSE
-# 0.01784704
+pMSE_noncorrele <- utility.gen(syn_noncorrele, data$original)$pMSE
 ```
 
 ```{r resultats}
@@ -225,6 +215,11 @@ mat_resu
 On constate un pMSE moyen meilleur pour les synthétisations via la visit sequence optimisé via une AFDM. C'est une faible amélioration (4% meilleure que la visit sequence classique et 10% meilleure que la visit sequence aléatoire) mais seulement 50 simulations ont été faites.
 
 ```{r tests}
-
+mat <- matrix(0, nrow = 1, ncol = 10)
+for (i in 1:10) {
+  synth <- syn(data$original, visit.sequence = vs_afdm)
+  mat[1, i] <- utility.gen(synth, data$original, nperms = 1)$pMSE
+}
+mean(mat[1, ])
 ```
 

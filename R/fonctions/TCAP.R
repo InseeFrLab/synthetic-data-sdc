@@ -8,7 +8,7 @@ calc_TCAP <- function(data_org, data_syn, K_s, T_s) {
     group_by(across(all_of(c(K_s, T_s)))) %>%
     mutate(num = n()) %>%
     ungroup() %>%
-    mutate(WEAP = num / denom)
+    mutate(WEAP = num / nb_ind_by_cle)
   
   if (sum(WEAP_s$WEAP == 1) == 0) {
     return("TCAP indéfini")
@@ -75,7 +75,6 @@ calc_TCAP <- function(data_org, data_syn, K_s, T_s) {
 #   mutate(TCAP = num / nb_ind_by_cle) %>% str()
 
 # Tests ------------------------------------------------------------------------
-
 
 
 

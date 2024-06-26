@@ -54,29 +54,31 @@ tictoc::toc()
 
 # Quelques graphiques -----------------------------
 
-utility_measures_all_meth <- utility_measures_all_meth %>%
+analyses$utility_measures_all_meth <- analyses$utility_measures_all_meth %>%
   group_by(method) %>% 
   mutate(i = 1:500) %>% 
   mutate(across(pMSE:U, cummean, .names = "{.col}_cummean"))
 
-utility_measures_all_meth %>% 
+analyses$utility_measures_all_meth %>% 
   ggplot() +
-  geom_line(aes(x = i, y = pMSE_cummean, col = method))
+  geom_line(aes(x = i, y = pMSE_cummean, col = method)) +
+  theme_minimal(base_size = 20)
 
 
 utility_graph <- map(
   c("pMSE","SPECKS","PO50","U"),
   \(meth){
-    utility_measures_all_meth %>% 
+    analyses$utility_measures_all_meth %>% 
       ggplot( aes(x=method, y=.data[[meth]], fill=method)) +
       geom_violin(width=1.4) +
       geom_boxplot(width=0.1, color="grey", alpha=0.2) +
       scale_fill_viridis(discrete = TRUE) +
       coord_flip() +
-      theme_ipsum() +
+      geom_hline(yintercept = 0.0447829, linetype = "dashed", color = "red",) +
+      theme_ipsum(base_size = 20) +
       theme(
         legend.position="none",
-        plot.title = element_text(size=11)
+        plot.title = element_text(size=20)
       ) +
       ggtitle(paste0("distribution des ", meth)) +
       ylab(meth) + xlab("méthode")
@@ -88,7 +90,7 @@ utility_graph$SPECKS
 utility_graph$PO50
 utility_graph$U
 
-utility_measures_summary <- utility_measures_all_meth %>% 
+utility_measures_summary <- analyses$utility_measures_all_meth %>% 
   group_by(method) %>% 
   summarise(
     across(
@@ -109,7 +111,7 @@ utility_measures_summary %>%
   geom_bar(aes(x = method, y = val, fill = utility), stat = "identity")+
   coord_flip() +
   facet_wrap(~utility, scales = "free") +
-  theme_ipsum()
+  theme_ipsum(base_size = 20)
 
 
 # Recherche des répliques -------------------------------------
