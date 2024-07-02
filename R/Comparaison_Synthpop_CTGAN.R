@@ -43,9 +43,10 @@ fac = c("sex", "agegr", "placesize", "edu", "socprof", "marital", "ls", "trust",
 score_propension(data$original, ctgan)$pMSE
 score_propension(data$original, data$cart[[1]])$pMSE
 
-CIO(data$original[, num], ctgan[, num])
-CIO(data$original[, num], data$cart[[1]][, num])
 
+# Tests ------------------------------------------------------------------------
+dim(subset(data$cart[[1]], marital == "MARRIED" & age < 18))[1]
+dim(subset(ctgan, marital == "MARRIED" & age < 18))[1]
 
 
 
