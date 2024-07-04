@@ -1,1 +1,1 @@
-epochs : 10
+discriminator_decay : 0.00000001
