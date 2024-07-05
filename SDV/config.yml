@@ -1,1 +1,1 @@
-discriminator_decay : 0.00000001
+batch_size : 1000
