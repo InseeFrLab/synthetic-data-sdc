@@ -1,1 +1,9 @@
-batch_size : 1000
+batch_size : 750
+embedding_dim : 64
+discriminator_steps : 1
+discriminator_decay : 0.000001
+generator_decay : 0.0000001
+pac : 50
+discriminator_lr : 0.005
+generator_lr : 0.001
+epochs : 10
