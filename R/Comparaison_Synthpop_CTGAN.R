@@ -50,5 +50,19 @@ dim(subset(ctgan, marital == "MARRIED" & age < 18))[1]
 
 
 
+test_ctgan <- read.csv("~/work/synthetic-data-sdc/bs_100_disc_lr_0.0001_gen_lr_1e-08.csv")
+test_ctgan <- test_ctgan[,2:23]
+pMSE_bs_100_disc_lr_1_4_gen_lr_1_8 <- utility.gen(test_ctgan, data$original)$pMSE
+
+
+mat_bs_100[3,1] <- pMSE_bs_100_disc_lr_1_8_gen_lr_1_1
+mat_bs_100[3,2] <- pMSE_bs_100_disc_lr_1_8_gen_lr_1_4
+mat_bs_100[1,3] <- pMSE_bs_100_disc_lr_1_1_gen_lr_1_8
+mat_bs_100[3,3] <- pMSE_bs_100_disc_lr_1_8_gen_lr_1_8
+
+
+
+
+
 
 
