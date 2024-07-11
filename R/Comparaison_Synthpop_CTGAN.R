@@ -49,18 +49,56 @@ dim(subset(data$cart[[1]], marital == "MARRIED" & age < 18))[1]
 dim(subset(ctgan, marital == "MARRIED" & age < 18))[1]
 
 
+tvae_mat_bs_1000 <- matrix(0, nrow=4, ncol=4)
+colnames(tvae_mat_bs_1000) <- c("[64,64]", "[128,128]", "[256,256]", "[128,128,128]")
+row.names(tvae_mat_bs_1000) <- c("[64,64]", "[128,128]", "[256,256]", "[128,128,128]")
+tvae_mat_bs_500 <- matrix(0, nrow=4, ncol=4)
+colnames(tvae_mat_bs_500) <- c("[64,64]", "[128,128]", "[256,256]", "[128,128,128]")
+row.names(tvae_mat_bs_500) <- c("[64,64]", "[128,128]", "[256,256]", "[128,128,128]")
+tvae_mat_bs_100 <- matrix(0, nrow=4, ncol=4)
+colnames(tvae_mat_bs_100) <- c("[64,64]", "[128,128]", "[256,256]", "[128,128,128]")
+row.names(tvae_mat_bs_100) <- c("[64,64]", "[128,128]", "[256,256]", "[128,128,128]")
 
-test_ctgan <- read.csv("~/work/synthetic-data-sdc/bs_100_disc_lr_0.0001_gen_lr_1e-08.csv")
-test_ctgan <- test_ctgan[,2:23]
-pMSE_bs_100_disc_lr_1_4_gen_lr_1_8 <- utility.gen(test_ctgan, data$original)$pMSE
+test_tvae <- read.csv("~/work/synthetic-data-sdc/bs_500_comp_dims_[256, 256]_decomp_dims_[128, 128, 128].csv")
+test_tvae <- test_tvae[,2:23]
+pMSE_bs_500_cd_256_256_dd_128_128_128 <- utility.gen(test_tvae, data$original)$pMSE
+
+tvae_mat_bs_100[3,3] <- pMSE_bs_100_cd_256_256_dd_256_256
+
+tvae_mat_bs_1000[3,4] <- pMSE_bs_1000_cd_256_256_dd_128_128_128
+
+tvae_mat_bs_500[3,4] <- pMSE_bs_500_cd_256_256_dd_128_128_128
 
 
-mat_bs_100[3,1] <- pMSE_bs_100_disc_lr_1_8_gen_lr_1_1
-mat_bs_100[3,2] <- pMSE_bs_100_disc_lr_1_8_gen_lr_1_4
-mat_bs_100[1,3] <- pMSE_bs_100_disc_lr_1_1_gen_lr_1_8
-mat_bs_100[3,3] <- pMSE_bs_100_disc_lr_1_8_gen_lr_1_8
 
 
+liste_matrices_ctgan <- list(ctgan_mat_bs_100,
+                       ctgan_mat_bs_500,
+                       ctgan_mat_bs_1000)
+
+liste_matrices_tvae <- list(tvae_mat_bs_100,
+                             tvae_mat_bs_500,
+                             tvae_mat_bs_1000)
+
+FILE_KEY_OUT_S3 <- "pMSE_ctgan.RDS"
+FILE_KEY_OUT_S3_tvae <- "pMSE_tvae.RDS"
+
+
+aws.s3::s3write_using(
+  liste_matrices_ctgan,
+  FUN = saveRDS,
+  object = FILE_KEY_OUT_S3,
+  bucket = BUCKET_SIM_1,
+  opts = list("region" = "")
+)
+
+aws.s3::s3write_using(
+  liste_matrices_tvae,
+  FUN = saveRDS,
+  object = FILE_KEY_OUT_S3_tvae,
+  bucket = BUCKET_SIM_1,
+  opts = list("region" = "")
+)
 
 
 

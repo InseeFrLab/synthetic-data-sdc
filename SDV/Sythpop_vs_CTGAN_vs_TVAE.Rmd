@@ -1,0 +1,43 @@
+---
+title: "Synthpop vs CTGAN vs TVAE"
+author: "Julien Helfenstein"
+date: "11/07/2024"
+output: html_document
+---
+
+```{r données}
+FILE_KEY_IN_S3_ctgan <- "pMSE_ctgan.RDS"
+BUCKET = "projet-donnees-synthetiques"
+BUCKET_SIM_1 = file.path(BUCKET, "simulations")
+
+pMSE_ctgan <- aws.s3::s3read_using(
+  FUN = readRDS,
+  object = FILE_KEY_IN_S3_ctgan,
+  bucket = BUCKET_SIM_1,
+  opts = list("region" = "")
+)
+names(pMSE_ctgan) <- c("mat_bs_100", "mat_bs_500", "mat_bs_1000")
+str(pMSE_ctgan, max.level=1)
+```
+
+On va commencer par regarder les résultats des modèles pour les différentes combinaisons d'hyperparamètres pour CTGAN.
+
+```{r pMSE ctgan}
+print(pMSE_ctgan)
+```
+
+On constate que la combinaion d'hyperparamètres permettant d'obtenir le meilleur pMSE est la combinaison : batch_size = 100, generator_lr = 0.001 et discriminator_lr = 0.0001. On obtient grâce à cette combinaison un pMSE de 0.075 contre 0.0241 pour le modèle CART.
+
+Cette combinaison donne une gen_loss = -0.679 et une disc_loss = 0.765. 
+
+La meilleur combinaison en terme de loss est : batch_size = 500, disc_lr = 0.0001 et gen_lr = 0.0001 qui donne une gen_loss = -1.133 et une disc_loss = 0.023. (voir scatter plot de disc_loss en fonction de gen_loss)
+
+
+Passons au TVAE
+```{r pMSE tvae}
+
+```
+
+On constate que le pMSE baisse à mesure que l'on baisse batch_size et on semble voir également qu'il baisse en augmentant le nombre de neurones par couche mais également en augmentant le nombre de couche.
+
+Concernant la loss, 
