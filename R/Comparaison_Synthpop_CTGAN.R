@@ -59,15 +59,13 @@ tvae_mat_bs_100 <- matrix(0, nrow=4, ncol=4)
 colnames(tvae_mat_bs_100) <- c("[64,64]", "[128,128]", "[256,256]", "[128,128,128]")
 row.names(tvae_mat_bs_100) <- c("[64,64]", "[128,128]", "[256,256]", "[128,128,128]")
 
-test_tvae <- read.csv("~/work/synthetic-data-sdc/bs_500_comp_dims_[256, 256]_decomp_dims_[128, 128, 128].csv")
+test_tvae <- read.csv("~/work/synthetic-data-sdc/bs_100_comp_dims_[128, 128, 128]_decomp_dims_[128, 128, 128].csv")
 test_tvae <- test_tvae[,2:23]
-pMSE_bs_500_cd_256_256_dd_128_128_128 <- utility.gen(test_tvae, data$original)$pMSE
+pMSE_bs_100_cd_128_128_128_dd_128_128_128 <- utility.gen(test_tvae, data$original)$pMSE
 
-tvae_mat_bs_100[3,3] <- pMSE_bs_100_cd_256_256_dd_256_256
+tvae_mat_bs_100[4,4] <- pMSE_bs_100_cd_128_128_128_dd_128_128_128
 
-tvae_mat_bs_1000[3,4] <- pMSE_bs_1000_cd_256_256_dd_128_128_128
 
-tvae_mat_bs_500[3,4] <- pMSE_bs_500_cd_256_256_dd_128_128_128
 
 
 
@@ -75,10 +73,16 @@ tvae_mat_bs_500[3,4] <- pMSE_bs_500_cd_256_256_dd_128_128_128
 liste_matrices_ctgan <- list(ctgan_mat_bs_100,
                        ctgan_mat_bs_500,
                        ctgan_mat_bs_1000)
+names(liste_matrices_ctgan) <- c("ctgan_mat_bs_100",
+                                 "ctgan_mat_bs_500",
+                                 "ctgan_mat_bs_1000")
 
 liste_matrices_tvae <- list(tvae_mat_bs_100,
                              tvae_mat_bs_500,
                              tvae_mat_bs_1000)
+names(liste_matrices_tvae) <- c("tvae_mat_bs_100",
+                                "tvae_mat_bs_500",
+                                "tvae_mat_bs_1000")
 
 FILE_KEY_OUT_S3 <- "pMSE_ctgan.RDS"
 FILE_KEY_OUT_S3_tvae <- "pMSE_tvae.RDS"
