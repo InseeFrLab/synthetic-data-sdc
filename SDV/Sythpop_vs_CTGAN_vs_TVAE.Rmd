@@ -7,6 +7,7 @@ output: html_document
 
 ```{r données}
 FILE_KEY_IN_S3_ctgan <- "pMSE_ctgan.RDS"
+FILE_KEY_IN_S3_tvae <- "pMSE_tvae.RDS"
 BUCKET = "projet-donnees-synthetiques"
 BUCKET_SIM_1 = file.path(BUCKET, "simulations")
 
@@ -18,6 +19,15 @@ pMSE_ctgan <- aws.s3::s3read_using(
 )
 names(pMSE_ctgan) <- c("mat_bs_100", "mat_bs_500", "mat_bs_1000")
 str(pMSE_ctgan, max.level=1)
+
+pMSE_tvae <- aws.s3::s3read_using(
+  FUN = readRDS,
+  object = FILE_KEY_IN_S3_tvae,
+  bucket = BUCKET_SIM_1,
+  opts = list("region" = "")
+)
+names(pMSE_tvae) <- c("mat_bs_100", "mat_bs_500", "mat_bs_1000")
+str(pMSE_tvae, max.level=1)
 ```
 
 On va commencer par regarder les résultats des modèles pour les différentes combinaisons d'hyperparamètres pour CTGAN.
@@ -32,12 +42,27 @@ Cette combinaison donne une gen_loss = -0.679 et une disc_loss = 0.765.
 
 La meilleur combinaison en terme de loss est : batch_size = 500, disc_lr = 0.0001 et gen_lr = 0.0001 qui donne une gen_loss = -1.133 et une disc_loss = 0.023. (voir scatter plot de disc_loss en fonction de gen_loss)
 
+*batch_size* : - On a obtenu notre meilleur pMSE en ayant baissé le batch_size mais en regadant le scatter plot on n'a pas l'impression que cela soit une réelle tendance. Il faudrait plus de simulations pour se faire une idée.
+- En revanche concernant les loss il semblerait bien que baisser le batch_size est un impact positif sur notre pMSE.
+
+*discriminator_lr et generator_lr* : - Le pMSE est le meilleur pour un discriminator_lr et un generator_lr de 1e-04.
+- Par contre la discriminator_loss est la meilleur pour un discriminator_lr et un generator_lr de 1e-08.
 
 Passons au TVAE
 ```{r pMSE tvae}
-
+print(pMSE_tvae)
 ```
 
-On constate que le pMSE baisse à mesure que l'on baisse batch_size et on semble voir également qu'il baisse en augmentant le nombre de neurones par couche mais également en augmentant le nombre de couche.
+On constate que le pMSE baisse à mesure que l'on baisse batch_size et on semble voir également qu'il baisse en augmentant le nombre de neurones par couche. Par contre augmenter le nombre de couches à nombre de neurones constant ne semble pas améliorer le pMSE.
 
-Concernant la loss, 
+La meilleur combinaison en terme de pMSE est : batch_size = 100, compress_dims = [256, 256] et decompress_dims = [256, 256]. On teste alors avec batch_size = 10 en gardant compress_dims et decompress_dims les mêmes et on trouve un pMSE de 0.1193025. On se rend donc compte que le batch_size optimal est entre 10 et 100.
+
+Pour notre meilleur combinaison on trouve une loss de 8.09 ce qui est la meilleure loss de nos modèles.
+
+*batch_size* : On remarque que plus le batch_size est haut plus la loss est concentrée autour de valeurs élevée. Lorsque l'on baisse le bacth_size, l'étendue augmente mais atteint des valeurs plus basses. Evidemment en baissant le batch_size on augmente le temps de traitement.
+
+*compress_dims* : On constate qu'en augmentant le nombre de neurones à nombre de couches fixe, la loss ainsi que le pMSE s'améliorent.
+
+*decompress_dims* : Même résultats que pour compress_dims 
+
+
