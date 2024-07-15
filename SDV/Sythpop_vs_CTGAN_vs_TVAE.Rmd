@@ -66,3 +66,13 @@ Pour notre meilleur combinaison on trouve une loss de 8.09 ce qui est la meilleu
 *decompress_dims* : Même résultats que pour compress_dims 
 
 
+```{r afdm}
+
+```
+
+
+
+
+
+
+
