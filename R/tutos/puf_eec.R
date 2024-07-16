@@ -72,25 +72,6 @@ table(puf$HEFFEMP, useNA = "always") # => NA
 hist(puf$HEFFTOT)
 table(puf$HEFFTOT, useNA = "always") # => NA
 
-# Préprocessing ----------------------------------------------------------------
-char <- setdiff(names(puf), c("EXTRIAN", "HEFFEMP", "HEFFTOT", "HHABEMP", "HHABTOT"))
-
-data_puf <- puf[, (char) := lapply(.SD, as.character), .SDcols = char] # On passe les variables nécessaire en character
-data_puf <- data_puf[data_puf$TRIM == 1,] # Premier Trimestre
-data_puf <- data_puf[,-c("ANNEE", "TRIM")] # On retire les variables ANNEE et TRIM
-
-# Synthétisation ---------------------------------------------------------------
-data_puf <- data_puf[, -c("IDENT", "NAFANTG004N", "NAFG004UN", "NAFG010UN", 
-                          "NAFG017UN", "NAFG021UN", "NAFG038UN", "PCS1", "PCS1Q")]
-
-tic()
-syn_puf <- syn(data_puf, maxfaclevels = 90, seed = 1)
-toc()
-pMSE_data_puf <- utility.gen(syn_puf, puf_test)$pMSE
-
-# Tests ------------------------------------------------------------------------
-
-table(data_puf$COUPL_LOG, data_puf$TYPLOG5)
 
 
 
