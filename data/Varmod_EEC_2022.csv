@@ -1,0 +1,1200 @@
+COD_VAR;LIB_VAR;COD_MOD;LIB_MOD;TYPE_VAR;LONG_VAR
+AAC;Exercice d'une activité professionnelle régulière antérieure, pour les inactifs, chômeurs et personnes ayant une activité temporaire ou d'appoint autre qu'un emploi informel;1;Oui;CHAR;1
+AAC;Exercice d'une activité professionnelle régulière antérieure, pour les inactifs, chômeurs et personnes ayant une activité temporaire ou d'appoint autre qu'un emploi informel;2;Non;CHAR;1
+AAC;Exercice d'une activité professionnelle régulière antérieure, pour les inactifs, chômeurs et personnes ayant une activité temporaire ou d'appoint autre qu'un emploi informel;9;Non réponse;CHAR;1
+AAC;Exercice d'une activité professionnelle régulière antérieure, pour les inactifs, chômeurs et personnes ayant une activité temporaire ou d'appoint autre qu'un emploi informel;;Hors champ;CHAR;1
+ACTEU;Statut d'activité au sens du Bureau International du Travail (BIT);1;Emploi;CHAR;1
+ACTEU;Statut d'activité au sens du Bureau International du Travail (BIT);2;Chômage;CHAR;1
+ACTEU;Statut d'activité au sens du Bureau International du Travail (BIT);3;Non Inactivité;CHAR;1
+AGE6;;00;14 ans ou moins;CHAR;2
+AGE6;;15;15-24 ans;CHAR;2
+AGE6;;25;25-49 ans;CHAR;2
+AGE6;;50;50-64 ans;CHAR;2
+AGE6;;65;65-89 ans;CHAR;2
+AGE6;;90;90 ans ou plus;CHAR;2
+ANCCHOM;Ancienneté au chômage;1;Moins d'un mois;CHAR;2
+ANCCHOM;Ancienneté au chômage;2;De 1 mois à moins de 3 mois;CHAR;2
+ANCCHOM;Ancienneté au chômage;3;De 3 mois à moins de 6 mois;CHAR;2
+ANCCHOM;Ancienneté au chômage;4;De 6 mois à moins de 12 mois;CHAR;2
+ANCCHOM;Ancienneté au chômage;5;De 12 mois à moins de 18 mois;CHAR;2
+ANCCHOM;Ancienneté au chômage;6;De 18 mois à moins de 24 mois;CHAR;2
+ANCCHOM;Ancienneté au chômage;7;De 2 ans à moins de 4 ans;CHAR;2
+ANCCHOM;Ancienneté au chômage;8;4 ans ou plus;CHAR;2
+ANCCHOM;Ancienneté au chômage;9;Non réponse;CHAR;2
+ANCCHOM;Ancienneté au chômage;;Hors champ;CHAR;2
+ANCEMPL4;Ancienneté en 4 tranches (emploi principal);1;Moins d'un an;CHAR;1
+ANCEMPL4;Ancienneté en 4 tranches (emploi principal);2;De 1 an à moins de 5 ans;CHAR;1
+ANCEMPL4;Ancienneté en 4 tranches (emploi principal);3;De 5 ans à moins de 10 ans;CHAR;1
+ANCEMPL4;Ancienneté en 4 tranches (emploi principal);4;10 ans ou plus;CHAR;1
+ANCEMPL4;Ancienneté en 4 tranches (emploi principal);9;Non réponse;CHAR;1
+ANCEMPL4;Ancienneté en 4 tranches (emploi principal);;Hors champ;CHAR;1
+ANCSSEMP;Ancienneté sans emploi;1;Moins d'un mois;CHAR;2
+ANCSSEMP;Ancienneté sans emploi;2;De 1 mois à moins de 3 mois;CHAR;2
+ANCSSEMP;Ancienneté sans emploi;3;De 3 mois à moins de 6 mois;CHAR;2
+ANCSSEMP;Ancienneté sans emploi;4;De 6 mois à moins de 12 mois;CHAR;2
+ANCSSEMP;Ancienneté sans emploi;5;De 12 mois à moins de 18 mois;CHAR;2
+ANCSSEMP;Ancienneté sans emploi;6;De 18 mois à moins de 24 mois;CHAR;2
+ANCSSEMP;Ancienneté sans emploi;7;De 2 ans à moins de 4 ans;CHAR;2
+ANCSSEMP;Ancienneté sans emploi;8;4 ans à moins de 10 ans;CHAR;2
+ANCSSEMP;Ancienneté sans emploi;9;10 ans ou plus;CHAR;2
+ANCSSEMP;Ancienneté sans emploi;99;Non réponse;CHAR;2
+ANCSSEMP;Ancienneté sans emploi;;Hors champ;CHAR;2
+ANNEE;Année de référence de l'enquête;2022;Année de référence sur 4 positions;CHAR;4
+CHPUB;Nature de l'employeur (emploi principal);1;Une entreprise privée ou une association;CHAR;1
+CHPUB;Nature de l'employeur (emploi principal);2;Une entreprise publique (EDF, La Poste, SNCF...);CHAR;1
+CHPUB;Nature de l'employeur (emploi principal);3;L'État ou un établissement public administratif (Universités, Pôle Emploi, CNRS...);CHAR;1
+CHPUB;Nature de l'employeur (emploi principal);4;Une collectivité territoriale;CHAR;1
+CHPUB;Nature de l'employeur (emploi principal);5;Un hôpital ou un établissement médico-social (maison de retraite, Ehpad...) public;CHAR;1
+CHPUB;Nature de l'employeur (emploi principal);6;Un organisme de Sécurité sociale (Caf, MSA, Urssaf, CPAM, Carsat...);CHAR;1
+CHPUB;Nature de l'employeur (emploi principal);7;Un particulier;CHAR;1
+CHPUB;Nature de l'employeur (emploi principal);9;Non réponse;CHAR;1
+CHPUB;Nature de l'employeur (emploi principal);;Hors champ;CHAR;1
+CL_EMPLOI;Classe d'emploi (emploi principal);I1;Emploi indépendant de niveau supérieur;CHAR;3
+CL_EMPLOI;Classe d'emploi (emploi principal);I2;Emploi indépendant de niveau intermédiaire;CHAR;3
+CL_EMPLOI;Classe d'emploi (emploi principal);I3;Emploi de petit indépendant, avec salarié ou aide familiale;CHAR;3
+CL_EMPLOI;Classe d'emploi (emploi principal);I4;Emploi de petit indépendant, sans salarié ou aide familiale;CHAR;3
+CL_EMPLOI;Classe d'emploi (emploi principal);A1;Emploi salarié de niveau supérieur, d'orientation technique, en CDI;CHAR;3
+CL_EMPLOI;Classe d'emploi (emploi principal);A2;Emploi salarié de niveau supérieur, d'orientation tertiaire, en CDI;CHAR;3
+CL_EMPLOI;Classe d'emploi (emploi principal);A3;Emploi salarié de niveau supérieur, fonctionnaire;CHAR;3
+CL_EMPLOI;Classe d'emploi (emploi principal);A4;Emploi salarié de niveau supérieur, en contrat à durée limitée;CHAR;3
+CL_EMPLOI;Classe d'emploi (emploi principal);B1;Emploi salarié de niveau intermédiaire, d'orientation technique, en CDI;CHAR;3
+CL_EMPLOI;Classe d'emploi (emploi principal);B2;Emploi salarié de niveau intermédiaire, d'orientation tertiaire, en CDI;CHAR;3
+CL_EMPLOI;Classe d'emploi (emploi principal);B3;Emploi salarié de niveau intermédiaire, fonctionnaire;CHAR;3
+CL_EMPLOI;Classe d'emploi (emploi principal);B4;Emploi salarié de niveau intermédiaire, en contrat à durée limitée;CHAR;3
+CL_EMPLOI;Classe d'emploi (emploi principal);C1;Emploi salarié qualifié, d'orientation ouvrière, en CDI;CHAR;3
+CL_EMPLOI;Classe d'emploi (emploi principal);C2;Emploi salarié qualifié, d'orientation employée, en CDI;CHAR;3
+CL_EMPLOI;Classe d'emploi (emploi principal);C3;Emploi salarié qualifié, fonctionnaire;CHAR;3
+CL_EMPLOI;Classe d'emploi (emploi principal);C4;Emploi salarié qualifié, en contrat à durée limitée;CHAR;3
+CL_EMPLOI;Classe d'emploi (emploi principal);D1;Emploi salarié peu qualifié, d'orientation ouvrière, en CDI;CHAR;3
+CL_EMPLOI;Classe d'emploi (emploi principal);D2;Emploi salarié peu qualifié, d'orientation employée, en CDI;CHAR;3
+CL_EMPLOI;Classe d'emploi (emploi principal);D3;Emploi salarié peu qualifié, fonctionnaire;CHAR;3
+CL_EMPLOI;Classe d'emploi (emploi principal);D4;Emploi salarié peu qualifié, en contrat à durée limitée;CHAR;3
+CL_EMPLOI;Classe d'emploi (emploi principal);99;Non connue;CHAR;3
+CL_EMPLOI;Classe d'emploi (emploi principal);;Hors champ;CHAR;3
+COUPL_LOG;En couple avec quelqu'un vivant dans le logement;1;Oui;CHAR;1
+COUPL_LOG;En couple avec quelqu'un vivant dans le logement;2;Non;CHAR;1
+DEMNE;A effectué au moins une démarche de recherche d'emploi au cours des 4 dernières semaines;1;Oui;CHAR;1
+DEMNE;A effectué au moins une démarche de recherche d'emploi au cours des 4 dernières semaines;2;Non;CHAR;1
+DEMNE;A effectué au moins une démarche de recherche d'emploi au cours des 4 dernières semaines;9;Non réponse;CHAR;1
+DEMNE;A effectué au moins une démarche de recherche d'emploi au cours des 4 dernières semaines;;Hors champ;CHAR;1
+DIP7;Diplôme le plus élevé obtenu (7 postes);1;Diplôme de nvieau bac+5 ou plus (doctorat, master ou équivalent);CHAR;1
+DIP7;Diplôme le plus élevé obtenu (7 postes);2;Diplôme de nvieau bac+3/4 (licence, maîtrise ou équivalent);CHAR;1
+DIP7;Diplôme le plus élevé obtenu (7 postes);3;Diplôme de nvieau bac+2 (DUT, BTS, Deug ou équivalent);CHAR;1
+DIP7;Diplôme le plus élevé obtenu (7 postes);4;Bac général, technologique, professionnel ou équivalent;CHAR;1
+DIP7;Diplôme le plus élevé obtenu (7 postes);5;CAP, BEP ou équivalent;CHAR;1
+DIP7;Diplôme le plus élevé obtenu (7 postes);6;BEPC, DNB, brevet des collèges;CHAR;1
+DIP7;Diplôme le plus élevé obtenu (7 postes);7;Aucun diplôme, certificat d'études primaires;CHAR;1
+DIP7;Diplôme le plus élevé obtenu (7 postes);9;Non réponse;CHAR;1
+DIP7;Diplôme le plus élevé obtenu (7 postes);;Hors champ;CHAR;1
+DISPONE;Disponible pour travailler;1;Oui;CHAR;1
+DISPONE;Disponible pour travailler;2;Non;CHAR;1
+DISPONE;Disponible pour travailler;9;Non réponse;CHAR;1
+DISPONE;Disponible pour travailler;;Hors champ;CHAR;1
+DISPPLC;Disponible pour travailler plus d'heures;1;Oui;CHAR;1
+DISPPLC;Disponible pour travailler plus d'heures;2;Non;CHAR;1
+DISPPLC;Disponible pour travailler plus d'heures;9;Non réponse;CHAR;1
+DISPPLC;Disponible pour travailler plus d'heures;;Hors champ;CHAR;1
+ENFRED;Individu avec au moins un enfant dans le logement, au trimestre courant;1;Oui;CHAR;1
+ENFRED;Individu avec au moins un enfant dans le logement, au trimestre courant;2;Non;CHAR;1
+EXTRIAN;Coefficient annuel de pondération des individus;....;Coefficient de pondération;NUM;12.9
+HALOR;Halo autour du chômage;1;Oui;CHAR;1
+HALOR;Halo autour du chômage;2;Non;CHAR;1
+HALOR;Halo autour du chômage;;Hors champ;CHAR;1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);;Sans objet (ACTEU distinct de 1);NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);0.0;0 heure;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);1.0;1 heure;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);1.5;1.5 heure;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);2.0;2 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);2.5;2.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);3.0;3 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);3.5;3.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);4.0;4 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);4.5;4.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);5.0;5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);5.5;5.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);6.0;6 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);6.5;6.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);7.0;7 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);7.5;7.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);8.0;8 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);8.5;8.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);9.0;9 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);9.5;9.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);10.0;10 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);10.5;10.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);11.0;11 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);11.5;11.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);12.0;12 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);12.5;12.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);13.0;13 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);13.5;13.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);14.0;14 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);14.5;14.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);15.0;15 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);15.5;15.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);16.0;16 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);16.5;16.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);17.0;17 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);17.5;17.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);18.0;18 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);18.5;18.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);19.0;19 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);19.5;19.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);20.0;20 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);20.5;20.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);21.0;21 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);21.5;21.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);22.0;22 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);22.5;22.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);23.0;23 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);23.5;23.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);24.0;24 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);24.5;24.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);25.0;25 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);25.5;25.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);26.0;26 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);26.5;26.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);27.0;27 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);27.5;27.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);28.0;28 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);28.5;28.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);29.0;29 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);29.5;29.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);30.0;30 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);30.5;30.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);31.0;31 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);31.5;31.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);32.0;32 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);32.5;32.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);33.0;33 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);33.5;33.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);34.0;34 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);34.5;34.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);35.0;35 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);35.5;35.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);36.0;36 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);36.5;36.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);37.0;37 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);37.5;37.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);38.0;38 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);38.5;38.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);39.0;39 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);39.5;39.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);40.0;40 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);40.5;40.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);41.0;41 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);41.5;41.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);42.0;42 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);42.5;42.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);43.0;43 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);43.5;43.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);44.0;44 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);44.5;44.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);45.0;45 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);45.5;45.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);46.0;46 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);46.5;46.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);47.0;47 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);47.5;47.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);48.0;48 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);48.5;48.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);49.0;49 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);49.5;49.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);50.0;50 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);50.5;50.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);51.0;51 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);51.5;51.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);52.0;52 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);52.5;52.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);53.0;53 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);53.5;53.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);54.0;54 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);54.5;54.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);55.0;55 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);55.5;55.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);56.0;56 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);56.5;56.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);57.0;57 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);57.5;57.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);58.0;58 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);58.5;58.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);59.0;59 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);59.5;59.5 heures;NUM;4.1
+HEFFEMP;Nombre d'heures effectivement travaillées au cours de la semaine de référence (emploi principal);60.0;60 heures ou plus;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);;Sans objet (ACTEU distinct de 1);NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);0.0;0 heure;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);1.0;1 heure;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);1.5;1.5 heure;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);2.0;2 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);2.5;2.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);3.0;3 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);3.5;3.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);4.0;4 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);4.5;4.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);5.0;5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);5.5;5.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);6.0;6 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);6.5;6.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);7.0;7 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);7.5;7.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);8.0;8 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);8.5;8.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);9.0;9 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);9.5;9.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);10.0;10 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);10.5;10.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);11.0;11 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);11.5;11.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);12.0;12 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);12.5;12.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);13.0;13 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);13.5;13.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);14.0;14 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);14.5;14.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);15.0;15 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);15.5;15.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);16.0;16 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);16.5;16.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);17.0;17 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);17.5;17.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);18.0;18 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);18.5;18.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);19.0;19 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);19.5;19.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);20.0;20 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);20.5;20.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);21.0;21 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);21.5;21.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);22.0;22 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);22.5;22.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);23.0;23 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);23.5;23.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);24.0;24 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);24.5;24.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);25.0;25 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);25.5;25.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);26.0;26 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);26.5;26.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);27.0;27 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);27.5;27.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);28.0;28 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);28.5;28.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);29.0;29 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);29.5;29.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);30.0;30 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);30.5;30.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);31.0;31 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);31.5;31.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);32.0;32 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);32.5;32.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);33.0;33 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);33.5;33.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);34.0;34 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);34.5;34.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);35.0;35 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);35.5;35.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);36.0;36 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);36.5;36.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);37.0;37 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);37.5;37.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);38.0;38 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);38.5;38.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);39.0;39 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);39.5;39.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);40.0;40 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);40.5;40.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);41.0;41 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);41.5;41.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);42.0;42 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);42.5;42.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);43.0;43 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);43.5;43.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);44.0;44 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);44.5;44.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);45.0;45 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);45.5;45.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);46.0;46 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);46.5;46.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);47.0;47 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);47.5;47.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);48.0;48 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);48.5;48.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);49.0;49 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);49.5;49.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);50.0;50 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);50.5;50.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);51.0;51 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);51.5;51.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);52.0;52 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);52.5;52.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);53.0;53 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);53.5;53.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);54.0;54 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);54.5;54.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);55.0;55 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);55.5;55.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);56.0;56 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);56.5;56.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);57.0;57 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);57.5;57.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);58.0;58 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);58.5;58.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);59.0;59 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);59.5;59.5 heures;NUM;4.1
+HEFFTOT;Nombre d'heures effectivement travaillées au cours de la semaine de référence (ensemble des emplois);60.0;60 heures ou plus;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);;Sans objet (ACTEU distinct de 1);NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);1.0;1 heure;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);1.5;1.5 heure;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);2.0;2 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);2.5;2.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);3.0;3 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);3.5;3.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);4.0;4 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);4.5;4.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);5.0;5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);5.5;5.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);6.0;6 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);6.5;6.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);7.0;7 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);7.5;7.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);8.0;8 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);8.5;8.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);9.0;9 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);9.5;9.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);10.0;10 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);10.5;10.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);11.0;11 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);11.5;11.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);12.0;12 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);12.5;12.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);13.0;13 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);13.5;13.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);14.0;14 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);14.5;14.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);15.0;15 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);15.5;15.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);16.0;16 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);16.5;16.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);17.0;17 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);17.5;17.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);18.0;18 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);18.5;18.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);19.0;19 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);19.5;19.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);20.0;20 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);20.5;20.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);21.0;21 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);21.5;21.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);22.0;22 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);22.5;22.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);23.0;23 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);23.5;23.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);24.0;24 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);24.5;24.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);25.0;25 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);25.5;25.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);26.0;26 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);26.5;26.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);27.0;27 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);27.5;27.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);28.0;28 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);28.5;28.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);29.0;29 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);29.5;29.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);30.0;30 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);30.5;30.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);31.0;31 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);31.5;31.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);32.0;32 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);32.5;32.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);33.0;33 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);33.5;33.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);34.0;34 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);34.5;34.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);35.0;35 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);35.5;35.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);36.0;36 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);36.5;36.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);37.0;37 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);37.5;37.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);38.0;38 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);38.5;38.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);39.0;39 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);39.5;39.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);40.0;40 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);40.5;40.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);41.0;41 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);41.5;41.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);42.0;42 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);42.5;42.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);43.0;43 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);43.5;43.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);44.0;44 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);44.5;44.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);45.0;45 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);45.5;45.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);46.0;46 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);46.5;46.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);47.0;47 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);47.5;47.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);48.0;48 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);48.5;48.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);49.0;49 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);49.5;49.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);50.0;50 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);51.0;51 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);52.0;52 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);52.5;52.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);53.0;53 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);54.0;54 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);54.5;54.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);55.0;55 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);55.5;55.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);56.0;56 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);57.0;57 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);57.5;57.5 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);58.0;58 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);59.0;59 heures;NUM;4.1
+HHABEMP;Nombre d'heures habituellement travaillées par semaine (emploi principal);60.0;60 heures ou plus;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);;Sans objet (ACTEU distinct de 1);NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);1.0;1 heure;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);1.5;1.5 heure;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);2.0;2 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);2.5;2.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);3.0;3 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);3.5;3.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);4.0;4 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);4.5;4.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);5.0;5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);5.5;5.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);6.0;6 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);6.5;6.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);7.0;7 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);7.5;7.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);8.0;8 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);8.5;8.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);9.0;9 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);9.5;9.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);10.0;10 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);10.5;10.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);11.0;11 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);11.5;11.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);12.0;12 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);12.5;12.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);13.0;13 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);13.5;13.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);14.0;14 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);14.5;14.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);15.0;15 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);15.5;15.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);16.0;16 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);16.5;16.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);17.0;17 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);17.5;17.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);18.0;18 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);18.5;18.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);19.0;19 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);19.5;19.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);20.0;20 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);20.5;20.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);21.0;21 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);21.5;21.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);22.0;22 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);22.5;22.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);23.0;23 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);23.5;23.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);24.0;24 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);24.5;24.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);25.0;25 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);25.5;25.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);26.0;26 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);26.5;26.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);27.0;27 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);27.5;27.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);28.0;28 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);28.5;28.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);29.0;29 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);29.5;29.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);30.0;30 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);30.5;30.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);31.0;31 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);31.5;31.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);32.0;32 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);32.5;32.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);33.0;33 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);33.5;33.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);34.0;34 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);34.5;34.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);35.0;35 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);35.5;35.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);36.0;36 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);36.5;36.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);37.0;37 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);37.5;37.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);38.0;38 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);38.5;38.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);39.0;39 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);39.5;39.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);40.0;40 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);40.5;40.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);41.0;41 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);41.5;41.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);42.0;42 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);42.5;42.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);43.0;43 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);43.5;43.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);44.0;44 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);44.5;44.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);45.0;45 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);45.5;45.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);46.0;46 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);46.5;46.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);47.0;47 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);47.5;47.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);48.0;48 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);48.5;48.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);49.0;49 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);49.5;49.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);50.0;50 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);50.5;50.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);51.0;51 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);51.5;51.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);52.0;52 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);52.5;52.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);53.0;53 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);53.5;53.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);54.0;54 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);54.5;54.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);55.0;55 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);55.5;55.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);56.0;56 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);56.5;56.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);57.0;57 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);57.5;57.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);58.0;58 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);58.5;58.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);59.0;59 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);59.5;59.5 heures;NUM;4.1
+HHABTOT;Nombre d'heures habituellement travaillées par semaine (ensemble des emplois);60.0;60 heures ou plus;NUM;4.1
+IDENT;Numéro identifiant anonymisé de logement;....;Identifiant sur 8 positions;CHAR;8
+ISCO2;Code ISCO (emploi principal, niveau 2);00;Professions militaires;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);01;Officiers des forces armées;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);02;Sous-officiers des forces armées;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);03;Autres membres des forces armées;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);10;Directeurs, cadres de direction et gérants;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);11;Directeurs généraux, cadres supérieurs et membres de l'Exécutif et des corps législatifs;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);12;Directeurs de services administratifs et commerciaux;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);13;Directeurs et cadres de direction, production et services spécialisés;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);14;Directeurs et gérants de l'hôtellerie, la restauration, le commerce et autres services;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);20;Professions intellectuelles et scientifiques;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);21;Spécialistes des sciences techniques;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);22;Spécialistes de la santé;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);23;Spécialistes de l'enseignement;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);24;Spécialistes en administratioon d'entreprises;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);25;Spécialistes des technologies de l'information et des communications;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);26;Spécialistes de la justice, des sciences sociales et de la culture;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);30;Professions intermédiaires;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);31;Professions intermédiaires des sciences et techniques;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);32;Professions intermédiaires de la santé;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);33;Professions intermédiaires, finance et administration;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);34;Professions intermédiaires des services juridiques, des services sociaux et assimilés;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);35;Techniciens de l'information et des communications;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);40;Employés de type administratif;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);41;Employés de bureau;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);42;Employés de réception, guichetiers et assimilés;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);43;Employés des services comptables et d'approvisionnement;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);44;Autres employés de type administratif;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);50;Personnel des services directs aux particuliers, commerçants et vendeurs;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);51;Personnel des services directs aux particuliers;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);52;Commerçants et vendeurs;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);53;Personnel soignant;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);54;Personnel des services de protection et de sécurité;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);60;Agriculteurs et ouvriers qualifiés de l'agriculture, de la sylviculture et de la pêche;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);61;Agriculteurs et ouvriers qualifiés de l'agriculture commerciale;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);62;Professions commerciales qualifiées de la sylviculture, de la pêche et de la chasse;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);63;Agriculteurs, pêcheurs, chasseurs et cueilleurs de subsistance;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);70;Métiers qualifiés de l'industrie et de l'artisanat;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);71;Métiers qualifiés du bâtiment et assimilés, sauf électriciens;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);72;Métiers qualifiés de la métallurgie, de la construction mécanique et assimilés;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);73;Métiers qualifiés de l'artisanat et de l'imprimerie;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);74;Métiers de l'électricité et de l'électrotechinque;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);75;Métiers de l'alimentation, du travail sur bois, de l'habillement et autres métiers qualifiés de l'in;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);80;Conducteurs d'installations et de machines, et ouvriers de l'assemblage;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);81;Conducterus de machines et d'installations fixes;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);82;Ouvriers de l'assemblage;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);83;Conducteurs de véhicules et d'engins lourds de levage et de manoeuvre;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);90;Professions élémentaires;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);91;Aides de ménage;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);92;Manoeuvres de l'agriculture, de la pêche et de la sylviculture;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);93;Manoeuvres des mines, du bâtiment et des travaux publics, des industries manufacturières et des tran;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);94;Assistant de fabrication de l'alimentation;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);95;Vendeurs ambulants et autres travailleurs des petits métiers des rues et assimilés;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);96;Eboueurs et autres travailleurs non qualifiés;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);99;Non codés;CHAR;4
+ISCO2;Code ISCO (emploi principal, niveau 2);;Hors champ;CHAR;4
+METRODOM;Région du logement de résidence en 2 modalités (Métropole vs DOM);1;France métropolitaine;CHAR;1
+METRODOM;Région du logement de résidence en 2 modalités (Métropole vs DOM);2;Départements d'outre-mer (hors Mayotte);CHAR;1
+MRANE;A contacté Pôle Emploi, une mission locale pour trouver un emploi ou a répondu à une de leurs offres d'emploi;1;Oui;CHAR;1
+MRANE;A contacté Pôle Emploi, une mission locale pour trouver un emploi ou a répondu à une de leurs offres d'emploi;2;Non;CHAR;1
+MRANE;A contacté Pôle Emploi, une mission locale pour trouver un emploi ou a répondu à une de leurs offres d'emploi;9;Non réponse;CHAR;1
+MRANE;A contacté Pôle Emploi, une mission locale pour trouver un emploi ou a répondu à une de leurs offres d'emploi;;Hors champ;CHAR;1
+MRBNE;A contacté une agence d’intérim ou un opérateur privé de placement ou répondu à une de leurs offres d’emploi;1;Oui;CHAR;1
+MRBNE;A contacté une agence d’intérim ou un opérateur privé de placement ou répondu à une de leurs offres d’emploi;2;Non;CHAR;1
+MRBNE;A contacté une agence d’intérim ou un opérateur privé de placement ou répondu à une de leurs offres d’emploi;9;Non réponse;CHAR;1
+MRBNE;A contacté une agence d’intérim ou un opérateur privé de placement ou répondu à une de leurs offres d’emploi;;Hors champ;CHAR;1
+MRCNE;Fait appel à votre entourage (famille, amis, collègues, syndicats…) pour aider dans les recherches d’emploi;1;Oui;CHAR;1
+MRCNE;Fait appel à votre entourage (famille, amis, collègues, syndicats…) pour aider dans les recherches d’emploi;2;Non;CHAR;1
+MRCNE;Fait appel à votre entourage (famille, amis, collègues, syndicats…) pour aider dans les recherches d’emploi;9;Non réponse;CHAR;1
+MRCNE;Fait appel à votre entourage (famille, amis, collègues, syndicats…) pour aider dans les recherches d’emploi;;Hors champ;CHAR;1
+MRDNE;A déposé ou actualisé son CV sur Internet;1;Oui;CHAR;1
+MRDNE;A déposé ou actualisé son CV sur Internet;2;Non;CHAR;1
+MRDNE;A déposé ou actualisé son CV sur Internet;9;Non réponse;CHAR;1
+MRDNE;A déposé ou actualisé son CV sur Internet;;Hors champ;CHAR;1
+MRENE;A passé une annonce pour trouver un emploi ou répondu à une offre d'emploi;1;Oui;CHAR;1
+MRENE;A passé une annonce pour trouver un emploi ou répondu à une offre d'emploi;2;Non;CHAR;1
+MRENE;A passé une annonce pour trouver un emploi ou répondu à une offre d'emploi;9;Non réponse;CHAR;1
+MRENE;A passé une annonce pour trouver un emploi ou répondu à une offre d'emploi;;Hors champ;CHAR;1
+MRFNE;A étudié des offres d’emploi, y compris sur Internet;1;Oui;CHAR;1
+MRFNE;A étudié des offres d’emploi, y compris sur Internet;2;Non;CHAR;1
+MRFNE;A étudié des offres d’emploi, y compris sur Internet;9;Non réponse;CHAR;1
+MRFNE;A étudié des offres d’emploi, y compris sur Internet;;Hors champ;CHAR;1
+MRGNE;A passé un concours pour entrer dans le secteur public;1;Oui;CHAR;1
+MRGNE;A passé un concours pour entrer dans le secteur public;2;Non;CHAR;1
+MRGNE;A passé un concours pour entrer dans le secteur public;9;Non réponse;CHAR;1
+MRGNE;A passé un concours pour entrer dans le secteur public;;Hors champ;CHAR;1
+MRHNE;A passé un test ou un entretien d’embauche;1;Oui;CHAR;1
+MRHNE;A passé un test ou un entretien d’embauche;2;Non;CHAR;1
+MRHNE;A passé un test ou un entretien d’embauche;9;Non réponse;CHAR;1
+MRHNE;A passé un test ou un entretien d’embauche;;Hors champ;CHAR;1
+MRINE;A contacté un employeur par candidature spontanée ou lors d’un salon professionnel ou d’un forum de l’emploi ou en réponse à la sollicitation d’un chasseur de tête;1;Oui;CHAR;1
+MRINE;A contacté un employeur par candidature spontanée ou lors d’un salon professionnel ou d’un forum de l’emploi ou en réponse à la sollicitation d’un chasseur de tête;2;Non;CHAR;1
+MRINE;A contacté un employeur par candidature spontanée ou lors d’un salon professionnel ou d’un forum de l’emploi ou en réponse à la sollicitation d’un chasseur de tête;9;Non réponse;CHAR;1
+MRINE;A contacté un employeur par candidature spontanée ou lors d’un salon professionnel ou d’un forum de l’emploi ou en réponse à la sollicitation d’un chasseur de tête;;Hors champ;CHAR;1
+MRJNE;A réalisé des démarches pour vous installer à votre compte (par exemple, recherche de locaux, demande d’autorisation, démarches auprès des banques…);1;Oui;CHAR;1
+MRJNE;A réalisé des démarches pour vous installer à votre compte (par exemple, recherche de locaux, demande d’autorisation, démarches auprès des banques…);2;Non;CHAR;1
+MRJNE;A réalisé des démarches pour vous installer à votre compte (par exemple, recherche de locaux, demande d’autorisation, démarches auprès des banques…);9;Non réponse;CHAR;1
+MRJNE;A réalisé des démarches pour vous installer à votre compte (par exemple, recherche de locaux, demande d’autorisation, démarches auprès des banques…);;Hors champ;CHAR;1
+NAFANTG004N;Activité économique du dernier employeur (NAF rév 2) en 4 postes;00;Non réponse;CHAR;2
+NAFANTG004N;Activité économique du dernier employeur (NAF rév 2) en 4 postes;ES;Agriculture;CHAR;2
+NAFANTG004N;Activité économique du dernier employeur (NAF rév 2) en 4 postes;ET;Industrie;CHAR;2
+NAFANTG004N;Activité économique du dernier employeur (NAF rév 2) en 4 postes;EU;Construction;CHAR;2
+NAFANTG004N;Activité économique du dernier employeur (NAF rév 2) en 4 postes;EV;Tertiaire;CHAR;2
+NAFANTG004N;Activité économique du dernier employeur (NAF rév 2) en 4 postes;;Hors champ;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;01;Culture et production animale, chasse et services annexes;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;02;Sylviculture et exploitation forestière;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;03;Pêche et aquaculture;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;05;Extraction de houille et de lignite;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;06;Extraction d'hydrocarbures;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;07;Extraction de minerais métalliques;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;08;Autres industries extractives;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;09;Services de soutien aux industries extractives;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;10;Industries alimentaires;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;11;Fabrication de boissons;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;12;Fabrication de produits à base de tabac;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;13;Fabrication de textiles;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;14;Industrie de l'habillement;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;15;Industrie du cuir et de la chaussure;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;16;"Travail du bois et fabrication d'articles en bois et en liège, à l'exception des meubles ; fabricati";CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;17;Industrie du papier et du carton;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;18;Imprimerie et reproduction d'enregistrements;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;19;Cokéfaction et raffinage;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;20;Industrie chimique;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;21;Industrie pharmaceutique;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;22;Fabrication de produits en caoutchouc et en plastique;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;23;Fabrication d'autres produits minéraux non métalliques;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;24;Métallurgie;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;25;Fabrication de produits métalliques, à l'exception des machines et des équipements;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;26;Fabrication de produits informatiques, électroniques et optiques;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;27;Fabrication d'équipements électriques;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;28;Fabrication de machines et équipements n.c.a.;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;29;Industrie automobile;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;30;Fabrication d'autres matériels de transport;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;31;Fabrication de meubles;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;32;Autres industries manufacturières;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;33;Réparation et installation de machines et d'équipements;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;35;Production et distribution d'électricité, de gaz, de vapeur et d'air conditionné;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;36;Captage, traitement et distribution d'eau;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;37;Collecte et traitement des eaux usées;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;38;"Collecte, traitement et élimination des déchets ; récupération";CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;39;Dépollution et autres services de gestion des déchets;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;41;Construction de bâtiments;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;42;Génie civil;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;43;Travaux de construction spécialisés;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;45;Commerce et réparation d'automobiles et de motocycles;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;46;Commerce de gros, à l'exception des automobiles et des motocycles;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;47;Commerce de détail, à l'exception des automobiles et des motocycles;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;49;Transports terrestres et transport par conduites;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;50;Transports par eau;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;51;Transports aériens;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;52;Entreposage et services auxiliaires des transports;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;53;Activités de poste et de courrier;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;55;Hébergement;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;56;Restauration;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;58;Édition;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;59;"Production de films cinématographiques, de vidéo et de programmes de télévision ; enregistrement son";CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;60;Programmation et diffusion;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;61;Télécommunications;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;62;Programmation, conseil et autres activités informatiques;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;63;Services d'information;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;64;Activités des services financiers, hors assurance et caisses de retraite;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;65;Assurance;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;66;Activités auxiliaires de services financiers et d'assurance;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;68;Activités immobilières;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;69;Activités juridiques et comptables;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;70;"Activités des sièges sociaux ; conseil de gestion";CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;71;"Activités d'architecture et d'ingénierie ; activités de contrôle et analyses techniques";CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;72;Recherche-développement scientifique;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;73;Publicité et études de marché;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;74;Autres activités spécialisées, scientifiques et techniques;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;75;Activités vétérinaires;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;77;Activités de location et location-bail;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;78;Activités liées à l'emploi;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;79;Activités des agences de voyage, voyagistes, services de réservation et activités connexes;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;80;Enquêtes et sécurité;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;81;Services relatifs aux bâtiments et aménagement paysager;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;82;Activités administratives et autres activités de soutien aux entreprises;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;84;"Administration publique et défense ; sécurité sociale obligatoire";CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;85;Enseignement;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;86;Activités pour la santé humaine;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;87;Hébergement médico-social et social;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;88;Action sociale sans hébergement;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;90;Activités créatives, artistiques et de spectacle;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;91;Bibliothèques, archives, musées et autres activités culturelles;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;92;Organisation de jeux de hasard et d'argent;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;93;Activités sportives, récréatives et de loisirs;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;94;Activités des organisations associatives;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;95;Réparation d'ordinateurs et de biens personnels et domestiques;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;96;Autres services personnels;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;97;Activités des ménages en tant qu'employeurs de personnel domestiques;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;98;Activités indifférenciées des ménages en tant que producteurs de biens et services pour usage propre;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;99;Activités des organisations et organismes extraterritoriaux;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;00;Non réponse;CHAR;2
+NAFANTG088N;Activité économique du dernier employeur (NAF rév 2) en 88 postes;;Hors champ;CHAR;2
+NAFG004UN;Activité économique de l'établissement de l'emploi principal (Nomenclature 2008, 4 postes). Intérimaires classés dans le secteur utilisateur;00;Non réponse;CHAR;2
+NAFG004UN;Activité économique de l'établissement de l'emploi principal (Nomenclature 2008, 4 postes). Intérimaires classés dans le secteur utilisateur;ES;Agriculture;CHAR;2
+NAFG004UN;Activité économique de l'établissement de l'emploi principal (Nomenclature 2008, 4 postes). Intérimaires classés dans le secteur utilisateur;ET;Industrie;CHAR;2
+NAFG004UN;Activité économique de l'établissement de l'emploi principal (Nomenclature 2008, 4 postes). Intérimaires classés dans le secteur utilisateur;EU;Construction;CHAR;2
+NAFG004UN;Activité économique de l'établissement de l'emploi principal (Nomenclature 2008, 4 postes). Intérimaires classés dans le secteur utilisateur;EV;Tertiaire;CHAR;2
+NAFG004UN;Activité économique de l'établissement de l'emploi principal (Nomenclature 2008, 4 postes). Intérimaires classés dans le secteur utilisateur;;Hors champ;CHAR;2
+NAFG010UN;Activité économique de l'établissement de l'emploi principal (Nomenclature 2008, 10 postes). Intérimaires classés dans le secteur utilisateur;00;Non réponse;CHAR;2
+NAFG010UN;Activité économique de l'établissement de l'emploi principal (Nomenclature 2008, 10 postes). Intérimaires classés dans le secteur utilisateur;AZ;Agriculture, sylviculture et pêche;CHAR;2
+NAFG010UN;Activité économique de l'établissement de l'emploi principal (Nomenclature 2008, 10 postes). Intérimaires classés dans le secteur utilisateur;BE;Industrie manufacturière, industries extratives et autres;CHAR;2
+NAFG010UN;Activité économique de l'établissement de l'emploi principal (Nomenclature 2008, 10 postes). Intérimaires classés dans le secteur utilisateur;FZ;Construction;CHAR;2
+NAFG010UN;Activité économique de l'établissement de l'emploi principal (Nomenclature 2008, 10 postes). Intérimaires classés dans le secteur utilisateur;GI;Commerce de gros et de détail, transports, hébergement et restauration;CHAR;2
+NAFG010UN;Activité économique de l'établissement de l'emploi principal (Nomenclature 2008, 10 postes). Intérimaires classés dans le secteur utilisateur;JZ;Information et communication;CHAR;2
+NAFG010UN;Activité économique de l'établissement de l'emploi principal (Nomenclature 2008, 10 postes). Intérimaires classés dans le secteur utilisateur;KZ;Activités financières et d'assurance;CHAR;2
+NAFG010UN;Activité économique de l'établissement de l'emploi principal (Nomenclature 2008, 10 postes). Intérimaires classés dans le secteur utilisateur;LZ;Activités immobilières;CHAR;2
+NAFG010UN;Activité économique de l'établissement de l'emploi principal (Nomenclature 2008, 10 postes). Intérimaires classés dans le secteur utilisateur;MN;Activités spécialisées, scientifiques et techniques et activités de services administratifs et de so;CHAR;2
+NAFG010UN;Activité économique de l'établissement de l'emploi principal (Nomenclature 2008, 10 postes). Intérimaires classés dans le secteur utilisateur;OQ;Administration publique, enseignement, santé humaine et action sociale;CHAR;2
+NAFG010UN;Activité économique de l'établissement de l'emploi principal (Nomenclature 2008, 10 postes). Intérimaires classés dans le secteur utilisateur;RU;Autres activités de services;CHAR;2
+NAFG010UN;Activité économique de l'établissement de l'emploi principal (Nomenclature 2008, 10 postes). Intérimaires classés dans le secteur utilisateur;;Hors champ;CHAR;2
+NAFG017UN;Activité économique de l'établissement de l'emploi principal (Nomenclature 2008, 17 postes). Intérimaires classés dans le secteur utilisateur;00;Non réponse;CHAR;2
+NAFG017UN;Activité économique de l'établissement de l'emploi principal (Nomenclature 2008, 17 postes). Intérimaires classés dans le secteur utilisateur;AZ;Agriculture, sylviculture et pêche;CHAR;2
+NAFG017UN;Activité économique de l'établissement de l'emploi principal (Nomenclature 2008, 17 postes). Intérimaires classés dans le secteur utilisateur;DE;Industries extractives, énergie, eau, gestion des déchets et dépollution;CHAR;2
+NAFG017UN;Activité économique de l'établissement de l'emploi principal (Nomenclature 2008, 17 postes). Intérimaires classés dans le secteur utilisateur;C1;Fabrication de denrées alimentaires, de boissons et de produits à base de tabac;CHAR;2
+NAFG017UN;Activité économique de l'établissement de l'emploi principal (Nomenclature 2008, 17 postes). Intérimaires classés dans le secteur utilisateur;C2;Cokéfaction et raffinage;CHAR;2
+NAFG017UN;Activité économique de l'établissement de l'emploi principal (Nomenclature 2008, 17 postes). Intérimaires classés dans le secteur utilisateur;C3;"Fabrication d'équipements électriques, électroniques, informatiques ; fabrication de machines";CHAR;2
+NAFG017UN;Activité économique de l'établissement de l'emploi principal (Nomenclature 2008, 17 postes). Intérimaires classés dans le secteur utilisateur;C4;Fabrication de matériels de transport;CHAR;2
+NAFG017UN;Activité économique de l'établissement de l'emploi principal (Nomenclature 2008, 17 postes). Intérimaires classés dans le secteur utilisateur;C5;Fabrication d'autres produits industriels;CHAR;2
+NAFG017UN;Activité économique de l'établissement de l'emploi principal (Nomenclature 2008, 17 postes). Intérimaires classés dans le secteur utilisateur;FZ;Construction;CHAR;2
+NAFG017UN;Activité économique de l'établissement de l'emploi principal (Nomenclature 2008, 17 postes). Intérimaires classés dans le secteur utilisateur;GZ;"Commerce ; réparation d'automobile et de motocycles";CHAR;2
+NAFG017UN;Activité économique de l'établissement de l'emploi principal (Nomenclature 2008, 17 postes). Intérimaires classés dans le secteur utilisateur;HZ;Transports et entreposage;CHAR;2
+NAFG017UN;Activité économique de l'établissement de l'emploi principal (Nomenclature 2008, 17 postes). Intérimaires classés dans le secteur utilisateur;IZ;Hébergement et restauration;CHAR;2
+NAFG017UN;Activité économique de l'établissement de l'emploi principal (Nomenclature 2008, 17 postes). Intérimaires classés dans le secteur utilisateur;JZ;Information et communication;CHAR;2
+NAFG017UN;Activité économique de l'établissement de l'emploi principal (Nomenclature 2008, 17 postes). Intérimaires classés dans le secteur utilisateur;KZ;Activités financières et d'assurance;CHAR;2
+NAFG017UN;Activité économique de l'établissement de l'emploi principal (Nomenclature 2008, 17 postes). Intérimaires classés dans le secteur utilisateur;LZ;Activités immobilières;CHAR;2
+NAFG017UN;Activité économique de l'établissement de l'emploi principal (Nomenclature 2008, 17 postes). Intérimaires classés dans le secteur utilisateur;MN;"Activités scientifiques et techniques ; services administratifs et de soutien";CHAR;2
+NAFG017UN;Activité économique de l'établissement de l'emploi principal (Nomenclature 2008, 17 postes). Intérimaires classés dans le secteur utilisateur;OQ;Administration publique, enseignement, santé humaine et action sociale;CHAR;2
+NAFG017UN;Activité économique de l'établissement de l'emploi principal (Nomenclature 2008, 17 postes). Intérimaires classés dans le secteur utilisateur;RU;Autres activités de services;CHAR;2
+NAFG017UN;Activité économique de l'établissement de l'emploi principal (Nomenclature 2008, 17 postes). Intérimaires classés dans le secteur utilisateur;;Hors champ;CHAR;2
+NAFG021UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 21 postes). Intérimaires classés dans le secteur utilisateur;0;Non réponse;CHAR;1
+NAFG021UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 21 postes). Intérimaires classés dans le secteur utilisateur;A;Agriculture, sylviculture et pêche;CHAR;1
+NAFG021UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 21 postes). Intérimaires classés dans le secteur utilisateur;B;Industries extractives;CHAR;1
+NAFG021UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 21 postes). Intérimaires classés dans le secteur utilisateur;C;Industries manufacturières;CHAR;1
+NAFG021UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 21 postes). Intérimaires classés dans le secteur utilisateur;D;Production et distribution d'électricité, de gaz, de vapeur et d'air conditionné;CHAR;1
+NAFG021UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 21 postes). Intérimaires classés dans le secteur utilisateur;E;"Production et distribution d'eau ; assainissement, gestion des déchets et dépollution";CHAR;1
+NAFG021UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 21 postes). Intérimaires classés dans le secteur utilisateur;F;Construction;CHAR;1
+NAFG021UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 21 postes). Intérimaires classés dans le secteur utilisateur;G;"Commerce ; réparation d'automobiles et de motocycles";CHAR;1
+NAFG021UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 21 postes). Intérimaires classés dans le secteur utilisateur;H;Transports et entreposage;CHAR;1
+NAFG021UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 21 postes). Intérimaires classés dans le secteur utilisateur;I;Hébergement et restauration;CHAR;1
+NAFG021UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 21 postes). Intérimaires classés dans le secteur utilisateur;J;Information et communication;CHAR;1
+NAFG021UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 21 postes). Intérimaires classés dans le secteur utilisateur;K;Activités financières et d'assurance;CHAR;1
+NAFG021UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 21 postes). Intérimaires classés dans le secteur utilisateur;L;Activités immobilières;CHAR;1
+NAFG021UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 21 postes). Intérimaires classés dans le secteur utilisateur;M;Activités spécialisées, scientifiques et techniques;CHAR;1
+NAFG021UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 21 postes). Intérimaires classés dans le secteur utilisateur;N;Activités de services administratifs et de soutien;CHAR;1
+NAFG021UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 21 postes). Intérimaires classés dans le secteur utilisateur;O;Administration publique;CHAR;1
+NAFG021UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 21 postes). Intérimaires classés dans le secteur utilisateur;P;Enseignement;CHAR;1
+NAFG021UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 21 postes). Intérimaires classés dans le secteur utilisateur;Q;Santé humaine et action sociale;CHAR;1
+NAFG021UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 21 postes). Intérimaires classés dans le secteur utilisateur;R;Arts, spectables et activités récréatives;CHAR;1
+NAFG021UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 21 postes). Intérimaires classés dans le secteur utilisateur;S;Autres activités de services;CHAR;1
+NAFG021UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 21 postes). Intérimaires classés dans le secteur utilisateur;T;"Activités des ménages en tant qu'employeurs ; activités indifférenciées des ménages en tant que prod";CHAR;1
+NAFG021UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 21 postes). Intérimaires classés dans le secteur utilisateur;U;Activités extra-territoriales;CHAR;1
+NAFG021UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 21 postes). Intérimaires classés dans le secteur utilisateur;;Hors champ;CHAR;1
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;00;Non renseigné;CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;AZ;Agriculture, sylviculture et pêche;CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;BZ;Industries extractives;CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;CA;Fabrication de denrées alimentaires, de boissons et de produits à base de tabac;CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;CB;Fabrication de textiles, industries de l'habillement, industrie du cuir et de la chaussure;CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;CC;Travail du bois, industries du papier et imprimerie;CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;CD;Cokéfaction et raffinage;CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;CE;Industrie chimique;CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;CF;Industrie pharmaceutique;CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;CG;Fabrication de produits en caoutchouc et en plastique ainsi que d'autres produits minéraux non métal;CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;CH;Métallurgie et fabrication de produits métalliques à l'exception des machines et des équipements;CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;CI;Fabrication de produits informatiques, électroniques et optiques;CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;CJ;Fabrication d'équipements électriques;CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;CK;Fabrication de machines et équipements n.c.a.;CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;CL;Fabrication de matériels de transport;CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;CM;"Autres industries manufacturières ; réparation et installation de machines et d'équipements";CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;DZ;Production et distribution d'électricité, de gaz, de vapeur et d'air conditionné;CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;EZ;"Production et distribution d'eau ; assainissement, gestion des déchets et dépollution";CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;FZ;Construction;CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;GZ;"Commerce ; réparation d'automobiles et de motocycles";CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;HZ;Transports et entreposage;CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;IZ;Hébergement et restauration;CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;JA;Edition, audiovisuel et diffusion;CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;JB;Télécommunications;CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;JC;Activités informatiques et services d'information;CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;KZ;Activités financières et d'assurance;CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;LZ;Activités immobilières;CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;MA;Activités juridiques, comptables, de gestion, d'architecture, d'ingénierie, de contrôle et d'analyse;CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;MB;Recherche-développement scientifique;CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;MC;Autres activités spécialisées, scientifiques et techniques;CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;NZ;Activités de services administratifs et de soutien;CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;OZ;Administration publique;CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;PZ;Enseignement;CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;QA;Activités pour la santé humaine;CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;QB;Hébergement médico-social et social et action sociale sans hébergement;CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;RZ;Arts, spectacles et activités récréatives;CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;SZ;Autres activités de services;CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;TZ;"Activités des ménages en tant qu'employeurs ; activités indifférenciées des ménages en tant que prod";CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;UZ;Activités extra-territoriales;CHAR;2
+NAFG038UN;Activité économique de l'établissement de l'emploi principal (Nomenclature Agrégée 2008, 38 postes). Intérimaires classés dans le secteur utilisateur;;Hors champ;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;01;Culture et production animale, chasse et services annexes;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;02;Sylviculture et exploitation forestière;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;03;Pêche et aquaculture;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;05;Extraction de houille et de lignite;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;06;Extraction d'hydrocarbures;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;07;Extraction de minerais métalliques;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;08;Autres industries extractives;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;09;Services de soutien aux industries extractives;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;10;Industries alimentaires;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;11;Fabrication de boissons;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;12;Fabrication de produits à base de tabac;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;13;Fabrication de textiles;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;14;Industrie de l'habillement;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;15;Industrie du cuir et de la chaussure;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;16;"Travail du bois et fabrication d'articles en bois et en liège, à l'exception des meubles ; fabricati";CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;17;Industrie du papier et du carton;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;18;Imprimerie et reproduction d'enregistrements;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;19;Cokéfaction et raffinage;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;20;Industrie chimique;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;21;Industrie pharmaceutique;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;22;Fabrication de produits en caoutchouc et en plastique;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;23;Fabrication d'autres produits minéraux non métalliques;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;24;Métallurgie;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;25;Fabrication de produits métalliques, à l'exception des machines et des équipements;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;26;Fabrication de produits informatiques, électroniques et optiques;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;27;Fabrication d'équipements électriques;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;28;Fabrication de machines et équipements n.c.a.;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;29;Industrie automobile;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;30;Fabrication d'autres matériels de transport;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;31;Fabrication de meubles;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;32;Autres industries manufacturières;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;33;Réparation et installation de machines et d'équipements;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;35;Production et distribution d'électricité, de gaz, de vapeur et d'air conditionné;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;36;Captage, traitement et distribution d'eau;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;37;Collecte et traitement des eaux usées;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;38;"Collecte, traitement et élimination des déchets ; récupération";CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;39;Dépollution et autres services de gestion des déchets;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;41;Construction de bâtiments;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;42;Génie civil;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;43;Travaux de construction spécialisés;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;45;Commerce et réparation d'automobiles et de motocycles;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;46;Commerce de gros, à l'exception des automobiles et des motocycles;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;47;Commerce de détail, à l'exception des automobiles et des motocycles;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;49;Transports terrestres et transport par conduites;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;50;Transports par eau;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;51;Transports aériens;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;52;Entreposage et services auxiliaires des transports;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;53;Activités de poste et de courrier;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;55;Hébergement;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;56;Restauration;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;58;Édition;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;59;"Production de films cinématographiques, de vidéo et de programmes de télévision ; enregistrement son";CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;60;Programmation et diffusion;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;61;Télécommunications;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;62;Programmation, conseil et autres activités informatiques;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;63;Services d'information;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;64;Activités des services financiers, hors assurance et caisses de retraite;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;65;Assurance;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;66;Activités auxiliaires de services financiers et d'assurance;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;68;Activités immobilières;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;69;Activités juridiques et comptables;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;70;"Activités des sièges sociaux ; conseil de gestion";CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;71;"Activités d'architecture et d'ingénierie ; activités de contrôle et analyses techniques";CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;72;Recherche-développement scientifique;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;73;Publicité et études de marché;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;74;Autres activités spécialisées, scientifiques et techniques;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;75;Activités vétérinaires;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;77;Activités de location et location-bail;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;78;Activités liées à l'emploi;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;79;Activités des agences de voyage, voyagistes, services de réservation et activités connexes;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;80;Enquêtes et sécurité;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;81;Services relatifs aux bâtiments et aménagement paysager;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;82;Activités administratives et autres activités de soutien aux entreprises;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;84;"Administration publique et défense ; sécurité sociale obligatoire";CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;85;Enseignement;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;86;Activités pour la santé humaine;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;87;Hébergement médico-social et social;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;88;Action sociale sans hébergement;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;90;Activités créatives, artistiques et de spectacle;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;91;Bibliothèques, archives, musées et autres activités culturelles;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;92;Organisation de jeux de hasard et d'argent;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;93;Activités sportives, récréatives et de loisirs;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;94;Activités des organisations associatives;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;95;Réparation d'ordinateurs et de biens personnels et domestiques;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;96;Autres services personnels;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;97;Activités des ménages en tant qu'employeurs de personnel domestiques;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;98;Activités indifférenciées des ménages en tant que producteurs de biens et services pour usage propre;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;99;Activités des organisations et organismes extraterritoriaux;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;00;Non réponse;CHAR;2
+NAFG088UN;Activité économique de l'établissement de l'emploi principal (NAF rév 2, 88 postes). Intérimaires classés dans le secteur utilisateur;;Hors champ;CHAR;2
+NOI;Numéro identifiant de l'individu dans le logement;01;Individu 01;CHAR;2
+NOI;Numéro identifiant de l'individu dans le logement;02;Individu 02;CHAR;2
+NOI;Numéro identifiant de l'individu dans le logement;03;Individu 03;CHAR;2
+NOI;Numéro identifiant de l'individu dans le logement;04;Individu 04;CHAR;2
+NOI;Numéro identifiant de l'individu dans le logement;05;Individu 05;CHAR;2
+NOI;Numéro identifiant de l'individu dans le logement;06;Individu 06;CHAR;2
+NOI;Numéro identifiant de l'individu dans le logement;07;Individu 07;CHAR;2
+NOI;Numéro identifiant de l'individu dans le logement;08;Individu 08;CHAR;2
+NOI;Numéro identifiant de l'individu dans le logement;09;Individu 09;CHAR;2
+NOI;Numéro identifiant de l'individu dans le logement;10;Individu 10;CHAR;2
+NOI;Numéro identifiant de l'individu dans le logement;11;Individu 11;CHAR;2
+NOI;Numéro identifiant de l'individu dans le logement;12;Individu 12;CHAR;2
+NOI;Numéro identifiant de l'individu dans le logement;13;Individu 13;CHAR;2
+NOI;Numéro identifiant de l'individu dans le logement;15;Individu 15;CHAR;2
+OFFICC;Individu inscrit comme demandeur d'emploi auprès de Pôle Emploi, un opérateur de placement ou une association d'insertion;1;Oui;CHAR;1
+OFFICC;Individu inscrit comme demandeur d'emploi auprès de Pôle Emploi, un opérateur de placement ou une association d'insertion;2;Non;CHAR;1
+OFFICC;Individu inscrit comme demandeur d'emploi auprès de Pôle Emploi, un opérateur de placement ou une association d'insertion;9;Non réponse;CHAR;1
+OFFICC;Individu inscrit comme demandeur d'emploi auprès de Pôle Emploi, un opérateur de placement ou une association d'insertion;;Hors champ;CHAR;1
+PASTRA;N'a pas travaillé la semaine de référence mais a un emploi rémunéré;1;Oui;CHAR;1
+PASTRA;N'a pas travaillé la semaine de référence mais a un emploi rémunéré;2;Non;CHAR;1
+PASTRA;N'a pas travaillé la semaine de référence mais a un emploi rémunéré;9;Non réponse;CHAR;1
+PASTRA;N'a pas travaillé la semaine de référence mais a un emploi rémunéré;;Hors champ;CHAR;1
+PASTRB;A trouvé un emploi qui commence plus tard;1;Oui et dans 3 mois ou moins;CHAR;1
+PASTRB;A trouvé un emploi qui commence plus tard;2;Oui et dans plus de 3 mois;CHAR;1
+PASTRB;A trouvé un emploi qui commence plus tard;3;Non;CHAR;1
+PASTRB;A trouvé un emploi qui commence plus tard;9;Non réponse;CHAR;1
+PASTRB;A trouvé un emploi qui commence plus tard;;Hors champ;CHAR;1
+PCS1;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 1;0;Non codé;CHAR;1
+PCS1;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 1;1;Agriculteurs exploitants;CHAR;1
+PCS1;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 1;2;Artisans, commerçants et chefs d'entreprise;CHAR;1
+PCS1;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 1;3;Cadres et professions intellectuelles supérieures;CHAR;1
+PCS1;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 1;4;Professions intermédiaires;CHAR;1
+PCS1;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 1;5;Employés;CHAR;1
+PCS1;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 1;6;Ouvriers;CHAR;1
+PCS1;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 1;;Hors champ;CHAR;1
+PCS1Q;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 1 qualifié/peu qualifié;00;Non codé;CHAR;2
+PCS1Q;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 1 qualifié/peu qualifié;10;Agriculteurs exploitants;CHAR;2
+PCS1Q;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 1 qualifié/peu qualifié;20;Artisans, commerçants et chefs d'entreprise;CHAR;2
+PCS1Q;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 1 qualifié/peu qualifié;30;Cadres et professions intellectuelles supérieures;CHAR;2
+PCS1Q;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 1 qualifié/peu qualifié;40;Professions intermédiaires;CHAR;2
+PCS1Q;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 1 qualifié/peu qualifié;51;Employés qualifiés;CHAR;2
+PCS1Q;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 1 qualifié/peu qualifié;52;Employés peu qualifiés;CHAR;2
+PCS1Q;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 1 qualifié/peu qualifié;61;Ouvriers qualifiés;CHAR;2
+PCS1Q;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 1 qualifié/peu qualifié;62;Ouvriers peu qualifiés;CHAR;2
+PCS1Q;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 1 qualifié/peu qualifié;;Hors champ;CHAR;2
+PCS2;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 2;00;Non codée;CHAR;2
+PCS2;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 2;10;Exploitants agricoles, forestiers, pêcheurs et aquaculteurs;CHAR;2
+PCS2;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 2;20;Artisans, commerçants et chefs d'entreprise;CHAR;2
+PCS2;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 2;21;Artisans;CHAR;2
+PCS2;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 2;22;Commerçants et assimilés;CHAR;2
+PCS2;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 2;23;Chefs d'entreprise de plus de 10 personnes;CHAR;2
+PCS2;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 2;30;Cadres et professions intellectuelles supérieures;CHAR;2
+PCS2;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 2;31;Professions libérales;CHAR;2
+PCS2;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 2;33;Cadres de la fonction publique;CHAR;2
+PCS2;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 2;34;Professeurs et professions scientifiques supérieures;CHAR;2
+PCS2;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 2;35;Professions de l’information, de l’art et des spectacles;CHAR;2
+PCS2;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 2;37;Cadres des services administratifs et commerciaux d’entreprise;CHAR;2
+PCS2;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 2;38;Ingénieurs et cadres techniques d’entreprise;CHAR;2
+PCS2;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 2;40;Professions intermédiaires;CHAR;2
+PCS2;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 2;42;Professions de l’enseignement primaire et professionnel, de la formation continue et du sport;CHAR;2
+PCS2;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 2;43;Professions intermédiaires de la santé et du travail social;CHAR;2
+PCS2;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 2;44;Ministres du culte et religieux consacrés;CHAR;2
+PCS2;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 2;45;Professions intermédiaires de la fonction publique (administration, sécurité);CHAR;2
+PCS2;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 2;46;Professions intermédiaires administratives et commerciales des entreprises;CHAR;2
+PCS2;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 2;47;Techniciens;CHAR;2
+PCS2;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 2;48;Agents de maîtrise (hors maîtrise administrative);CHAR;2
+PCS2;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 2;50;Employés;CHAR;2
+PCS2;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 2;52;Employés administratifs de la fonction publique, agents de service et auxiliaires de santé;CHAR;2
+PCS2;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 2;53;Policiers, militaires, pompiers, agents de sécurité privés;CHAR;2
+PCS2;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 2;54;Employés administratifs d’entreprise;CHAR;2
+PCS2;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 2;55;Employés de commerce;CHAR;2
+PCS2;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 2;56;Personnels des services directs aux particuliers;CHAR;2
+PCS2;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 2;60;Ouvriers;CHAR;2
+PCS2;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 2;62;Ouvriers qualifiés de type industriel;CHAR;2
+PCS2;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 2;63;Ouvriers qualifiés de type artisanal;CHAR;2
+PCS2;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 2;64;Conducteurs de véhicules de transport, chauffeurs-livreurs, coursiers;CHAR;2
+PCS2;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 2;65;Conducteurs d’engins, caristes, magasiniers et ouvriers du transport (non routier);CHAR;2
+PCS2;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 2;67;Ouvriers peu qualifiés de type industriel;CHAR;2
+PCS2;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 2;68;Ouvriers peu qualifiés de type artisanal;CHAR;2
+PCS2;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 2;69;Ouvriers agricoles, des travaux forestiers, de la pêche et de l’aquaculture;CHAR;2
+PCS2;Catégorie socio-professionnelle (PCS) de l'emploi principal - Niveau 2;;Hors champ;CHAR;2
+PUB3FP;Statut public ou privé de l'employeur (variable redressée);1;État;CHAR;1
+PUB3FP;Statut public ou privé de l'employeur (variable redressée);2;Collectivités territoriales;CHAR;1
+PUB3FP;Statut public ou privé de l'employeur (variable redressée);3;Hôpitaux publics;CHAR;1
+PUB3FP;Statut public ou privé de l'employeur (variable redressée);4;Secteur privé;CHAR;1
+PUB3FP;Statut public ou privé de l'employeur (variable redressée);;Hors champ;CHAR;1
+RABS;Principale raison d'absence au travail pendant la semaine de référence;1;Congés (y compris RTT, récupérataion, CET...);CHAR;2
+RABS;Principale raison d'absence au travail pendant la semaine de référence;2;Congé maladie (y compris arrêt après un accident au travail);CHAR;2
+RABS;Principale raison d'absence au travail pendant la semaine de référence;3;Congé de maternité / paternité;CHAR;2
+RABS;Principale raison d'absence au travail pendant la semaine de référence;4;Congé parental;CHAR;2
+RABS;Principale raison d'absence au travail pendant la semaine de référence;5;Aménagement du temps de travail (horaires flexibles, repos compensateurs, temps partiel...);CHAR;2
+RABS;Principale raison d'absence au travail pendant la semaine de référence;6;Formation autorisée par l'employeur;CHAR;2
+RABS;Principale raison d'absence au travail pendant la semaine de référence;7;Période de morte saison dans le cadre d'une activité saisonnière;CHAR;2
+RABS;Principale raison d'absence au travail pendant la semaine de référence;8;Période précédant le début d'un emploi;CHAR;2
+RABS;Principale raison d'absence au travail pendant la semaine de référence;9;Chômage partiel (chômage technique, chômage intempéries, dispositif d'activité partielle);CHAR;2
+RABS;Principale raison d'absence au travail pendant la semaine de référence;10;Autre raisons (grève, enfant malade...);CHAR;2
+RABS;Principale raison d'absence au travail pendant la semaine de référence;99;Non réponse;CHAR;2
+RABS;Principale raison d'absence au travail pendant la semaine de référence;;Hors champ;CHAR;2
+RAISDISPPLC;Raison de non disponibilité à travailler davantage;1;Études ou formation;CHAR;1
+RAISDISPPLC;Raison de non disponibilité à travailler davantage;2;Problèmes de santé ou situation de handicap;CHAR;1
+RAISDISPPLC;Raison de non disponibilité à travailler davantage;3;Attente d'un enfant;CHAR;1
+RAISDISPPLC;Raison de non disponibilité à travailler davantage;4;Garde d'enfant ou d'un proche;CHAR;1
+RAISDISPPLC;Raison de non disponibilité à travailler davantage;5;Emploi actuel;CHAR;1
+RAISDISPPLC;Raison de non disponibilité à travailler davantage;6;Pour une autre raison;CHAR;1
+RAISDISPPLC;Raison de non disponibilité à travailler davantage;9;Non réponse;CHAR;1
+RAISDISPPLC;Raison de non disponibilité à travailler davantage;;Hors champ;CHAR;1
+RAISNDISPONE;Raison principale de non disponibilité;1;Suivait (ou avait le projet de suivre) des études ou une formation;CHAR;2
+RAISNDISPONE;Raison principale de non disponibilité;2;Avait des problèmes de santé ou était en situation de handicap;CHAR;2
+RAISNDISPONE;Raison principale de non disponibilité;3;Attendait un enfant;CHAR;2
+RAISNDISPONE;Raison principale de non disponibilité;4;S'occupait de ses enfants ou d'un proche;CHAR;2
+RAISNDISPONE;Raison principale de non disponibilité;5;Etait en vacances, prenait du temps pour soi ou réfléchissait à son avenir;CHAR;2
+RAISNDISPONE;Raison principale de non disponibilité;6;Etait à la retraite ou proche de la retraite;CHAR;2
+RAISNDISPONE;Raison principale de non disponibilité;7;Avait des difficultés pour se dépacer (par le permis de conduire, voiture en panne, pas de transport;CHAR;2
+RAISNDISPONE;Raison principale de non disponibilité;8;Déménagement;CHAR;2
+RAISNDISPONE;Raison principale de non disponibilité;9;Avait des problèmes de papier / titre de séjour;CHAR;2
+RAISNDISPONE;Raison principale de non disponibilité;10;Pour une autre raison;CHAR;2
+RAISNDISPONE;Raison principale de non disponibilité;99;Non réponse;CHAR;2
+RAISNDISPONE;Raison principale de non disponibilité;;Hors champ;CHAR;2
+RAISNRECNE;Raison principale de non recherche d'emploi;1;Pensait qu'il n'y avait pas d'emploi disponible qui convienne;CHAR;2
+RAISNRECNE;Raison principale de non recherche d'emploi;2;Ne pensait pas trouver d'emploi, était découragé(e);CHAR;2
+RAISNRECNE;Raison principale de non recherche d'emploi;3;Suivait (ou avait le projet de suivre) des études ou une formation;CHAR;2
+RAISNRECNE;Raison principale de non recherche d'emploi;4;Avait des problèmes de santé ou était en situation de handicap;CHAR;2
+RAISNRECNE;Raison principale de non recherche d'emploi;5;Sur le point d'avoir un enfant;CHAR;2
+RAISNRECNE;Raison principale de non recherche d'emploi;6;S'occupait d'enfant(s) ou d'un proche;CHAR;2
+RAISNRECNE;Raison principale de non recherche d'emploi;7;Attenfait le résultat de démarches antérieures (pour trouver un emploi salariés ou se mettre à son c;CHAR;2
+RAISNRECNE;Raison principale de non recherche d'emploi;8;Avait des difficultés pour se déplacer (pas le permis de conduire, voiture en panne, pas de transpor;CHAR;2
+RAISNRECNE;Raison principale de non recherche d'emploi;9;Avait des problèmes de papier / titre de séjour;CHAR;2
+RAISNRECNE;Raison principale de non recherche d'emploi;10;Démenagement;CHAR;2
+RAISNRECNE;Raison principale de non recherche d'emploi;11;Etait en vacances, prenait du temps pour soi ou réfléchissait à son avenir;CHAR;2
+RAISNRECNE;Raison principale de non recherche d'emploi;12;Pour une autre raison;CHAR;2
+RAISNRECNE;Raison principale de non recherche d'emploi;99;Non réponse;CHAR;2
+RAISNRECNE;Raison principale de non recherche d'emploi;;Hors champ;CHAR;2
+RAISNSOUNE;Raison principale de non souhait de travailler;1;Suivait (ou avait le projet de suivre) des études ou une formation;CHAR;2
+RAISNSOUNE;Raison principale de non souhait de travailler;2;Etait à la retraite ou proche de la retraite;CHAR;2
+RAISNSOUNE;Raison principale de non souhait de travailler;3;Avait des problèmes de santé ou était en situation de handicap;CHAR;2
+RAISNSOUNE;Raison principale de non souhait de travailler;4;Sur le point d'avoir un enfant;CHAR;2
+RAISNSOUNE;Raison principale de non souhait de travailler;5;S'occupait d'enfant(s) ou d'un proche;CHAR;2
+RAISNSOUNE;Raison principale de non souhait de travailler;6;Souhaitait rester au foyer;CHAR;2
+RAISNSOUNE;Raison principale de non souhait de travailler;7;Avait des problèmes de papier / titre de séjour;CHAR;2
+RAISNSOUNE;Raison principale de non souhait de travailler;8;Etait en vacances, prenait du temps pour réfléchir à son avenir;CHAR;2
+RAISNSOUNE;Raison principale de non souhait de travailler;9;Démenagement;CHAR;2
+RAISNSOUNE;Raison principale de non souhait de travailler;10;N'avait pas envie ou pas besoin de travailler;CHAR;2
+RAISNSOUNE;Raison principale de non souhait de travailler;11;Pour une autre raison;CHAR;2
+RAISNSOUNE;Raison principale de non souhait de travailler;99;Non réponse;CHAR;2
+RAISNSOUNE;Raison principale de non souhait de travailler;;Hors champ;CHAR;2
+RAISTP;Raison principale de temps partiel;1;N'a pas trouvé d'emploi à temps complet;CHAR;1
+RAISTP;Raison principale de temps partiel;2;Exerce une autre activité professionnelle;CHAR;1
+RAISTP;Raison principale de temps partiel;3;Pour s'occuper de ses enfatns ou d'un proche;CHAR;1
+RAISTP;Raison principale de temps partiel;4;Pour raison de santé ou de handicap;CHAR;1
+RAISTP;Raison principale de temps partiel;5;Pour suivre des études ou une formation;CHAR;1
+RAISTP;Raison principale de temps partiel;6;Pour disposer d'un revenu d'appoint (en plus des études, retraite,...);CHAR;1
+RAISTP;Raison principale de temps partiel;7;Pour avoir du temps libre;CHAR;1
+RAISTP;Raison principale de temps partiel;8;Pour une autre raison;CHAR;1
+RAISTP;Raison principale de temps partiel;9;Non réponse;CHAR;1
+RAISTP;Raison principale de temps partiel;;Hors champ;CHAR;1
+RECNE;A recherché un emploi au cours des 4 dernières semaines;1;Oui;CHAR;1
+RECNE;A recherché un emploi au cours des 4 dernières semaines;2;Non;CHAR;1
+RECNE;A recherché un emploi au cours des 4 dernières semaines;9;Non réponse;CHAR;1
+RECNE;A recherché un emploi au cours des 4 dernières semaines;;Hors champ;CHAR;1
+SALTYP;Nature du contrat (emploi principal);1;Fonctionnaire;CHAR;2
+SALTYP;Nature du contrat (emploi principal);2;CDI;CHAR;2
+SALTYP;Nature du contrat (emploi principal);3;CDD;CHAR;2
+SALTYP;Nature du contrat (emploi principal);4;Intérim;CHAR;2
+SALTYP;Nature du contrat (emploi principal);5;Apprentissage;CHAR;2
+SALTYP;Nature du contrat (emploi principal);6;Contrat de professionnalisation;CHAR;2
+SALTYP;Nature du contrat (emploi principal);7;Stage;CHAR;2
+SALTYP;Nature du contrat (emploi principal);8;Sans contrat, ni stage;CHAR;2
+SALTYP;Nature du contrat (emploi principal);9;Non réponse;CHAR;2
+SALTYP;Nature du contrat (emploi principal);;Hors champ;CHAR;2
+SEXE;Sexe;1;Homme;CHAR;1
+SEXE;Sexe;2;Femme;CHAR;1
+SOU_C;Souhaite travailler (personnes sans emploi);1;Souhaite travailler et recherche un travail;CHAR;1
+SOU_C;Souhaite travailler (personnes sans emploi);2;Souhaite travailler et a déjà trouvé un travail;CHAR;1
+SOU_C;Souhaite travailler (personnes sans emploi);3;Souhaite travailler et ne recherche pas de travail;CHAR;1
+SOU_C;Souhaite travailler (personnes sans emploi);4;Ne souhaite pas travailler;CHAR;1
+SOUSEMPL;Sous-emploi, par composantes;1;En temps partiel, souhaite travailler plus, disponible pour le faire et à la recherche d'un nouvel e;CHAR;1
+SOUSEMPL;Sous-emploi, par composantes;2;En temps partiel, souhaite travailler plus, disponible pour le faire mais ne recherche pas de nouvel;CHAR;1
+SOUSEMPL;Sous-emploi, par composantes;3;En période de chômage partiel (chômage technique, chômage intempéries, dispositif d'activité partiel;CHAR;1
+SOUSEMPL;Sous-emploi, par composantes;;Hors champ;CHAR;1
+SOUSEMPLR;Sous-emploi;1;Oui;CHAR;1
+SOUSEMPLR;Sous-emploi;2;Non;CHAR;1
+SOUSEMPLR;Sous-emploi;9;Non réponse;CHAR;1
+SOUSEMPLR;Sous-emploi;;Hors champ;CHAR;1
+SOU_C;Souhaite travailler (personnes sans emploi);;Hors champ;CHAR;1
+STATUT;Statut (Salarié, Non salarié) dans l'emploi principal;1;Indépendant;CHAR;1
+STATUT;Statut (Salarié, Non salarié) dans l'emploi principal;2;Salarié;CHAR;1
+STATUT;Statut (Salarié, Non salarié) dans l'emploi principal;9;Non réponse;CHAR;1
+STATUT;Statut (Salarié, Non salarié) dans l'emploi principal;;Hors champ;CHAR;1
+STATUTDET;Statut détaillé (emploi principal);10;Indépendant;CHAR;2
+STATUTDET;Statut détaillé (emploi principal);21;CDI, fonctionnaire;CHAR;2
+STATUTDET;Statut détaillé (emploi principal);22;CDD;CHAR;2
+STATUTDET;Statut détaillé (emploi principal);23;Intérim;CHAR;2
+STATUTDET;Statut détaillé (emploi principal);24;Alternance, stage;CHAR;2
+STATUTDET;Statut détaillé (emploi principal);25;Sans contrat, ni stage;CHAR;2
+STATUTDET;Statut détaillé (emploi principal);99;Non réponse;CHAR;2
+STATUTDET;Statut détaillé (emploi principal);;Hors champ;CHAR;2
+STC;Statut (Emploi principal);1;À son compte;CHAR;1
+STC;Statut (Emploi principal);2;Gérant(e) de société ou chef d'entreprise salarié(e);CHAR;1
+STC;Statut (Emploi principal);3;Salarié(e);CHAR;1
+STC;Statut (Emploi principal);4;Travaille, sans être rémunéré(e), avec un membre de sa famille;CHAR;1
+STC;Statut (Emploi principal);9;Non réponse;CHAR;1
+STC;Statut (Emploi principal);;Hors champ;CHAR;1
+STCOMM2020;Statut de la commune dans l'unité urbaine (sur la population 2017);H;Hors unité urbaine;CHAR;1
+STCOMM2020;Statut de la commune dans l'unité urbaine (sur la population 2017);C;Ville-centre;CHAR;1
+STCOMM2020;Statut de la commune dans l'unité urbaine (sur la population 2017);B;Banlieue;CHAR;1
+STCOMM2020;Statut de la commune dans l'unité urbaine (sur la population 2017);I;Ville isolée;CHAR;1
+STCOMM2020;Statut de la commune dans l'unité urbaine (sur la population 2017);9;Non réponse;CHAR;1
+STPLC;Souhaiterait travailler plus d'heures avec une hausse de revenu correspondante;1;Oui;CHAR;1
+STPLC;Souhaiterait travailler plus d'heures avec une hausse de revenu correspondante;2;Non;CHAR;1
+STPLC;Souhaiterait travailler plus d'heures avec une hausse de revenu correspondante;9;Non réponse;CHAR;1
+STPLC;Souhaiterait travailler plus d'heures avec une hausse de revenu correspondante;;Hors champ;CHAR;1
+TEMP;A un emploi pendant la semaine de référence;1;Oui;CHAR;1
+TEMP;A un emploi pendant la semaine de référence;2;Non;CHAR;1
+TEMP;A un emploi pendant la semaine de référence;9;Non réponse;CHAR;1
+TEMP;A un emploi pendant la semaine de référence;;Hors champ;CHAR;1
+TPPRED;Temps de travail (emploi principal);1;Temps complet;CHAR;1
+TPPRED;Temps de travail (emploi principal);2;Temps partiel;CHAR;1
+TPPRED;Temps de travail (emploi principal);;Hors champ;CHAR;1
+TRAREF;A travaille au moins une heure pendant la semaine de référence;1;Oui;CHAR;1
+TRAREF;A travaille au moins une heure pendant la semaine de référence;2;Non;CHAR;1
+TRAREF;A travaille au moins une heure pendant la semaine de référence;9;Non réponse;CHAR;1
+TRAREF;A travaille au moins une heure pendant la semaine de référence;;Hors champ;CHAR;1
+TRIM;Trimestre de référence de l'enquête;1;1er trimestre;CHAR;1
+TRIM;Trimestre de référence de l'enquête;2;2e trimestre;CHAR;1
+TRIM;Trimestre de référence de l'enquête;3;3e trimestre;CHAR;1
+TRIM;Trimestre de référence de l'enquête;4;4e trimestre;CHAR;1
+TXTPPRED;Taux de temps partiel (emploi principal);1;Moins d'un mi-temps (<50%);CHAR;1
+TXTPPRED;Taux de temps partiel (emploi principal);2;Un mi-temps (50%);CHAR;1
+TXTPPRED;Taux de temps partiel (emploi principal);3;Entre 50% et 80%;CHAR;1
+TXTPPRED;Taux de temps partiel (emploi principal);4;80 %;CHAR;1
+TXTPPRED;Taux de temps partiel (emploi principal);5;Plus de 80 %;CHAR;1
+TXTPPRED;Taux de temps partiel (emploi principal);;Hors champ;CHAR;1
+TYPLOG5;Configuration familiale du logement;1;Personne seule;CHAR;1
+TYPLOG5;Configuration familiale du logement;2;Famille monoparentale;CHAR;1
+TYPLOG5;Configuration familiale du logement;3;Couple sans enfant;CHAR;1
+TYPLOG5;Configuration familiale du logement;4;Couple avec enfant;CHAR;1
+TYPLOG5;Configuration familiale du logement;5;Autre;CHAR;1
+TYPLOG5;Configuration familiale du logement;;Hors champ;CHAR;1

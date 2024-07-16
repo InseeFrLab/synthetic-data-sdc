@@ -1,6 +1,20 @@
-library(dplyr)
+if (!requireNamespace("dplyr", quietly = TRUE)) install.packages("dplyr"); library(dplyr)
+if (!requireNamespace("synthpop", quietly = TRUE)) install.packages("synthpop"); library(synthpop)
+if (!requireNamespace("tictoc", quietly = TRUE)) install.packages("tictoc"); library(tictoc)
+if (!requireNamespace("aws.s3", quietly = TRUE)) install.packages("aws.s3"); library(aws.s3)
 
-download.file("https://www.insee.fr/fr/statistiques/fichier/7657353/FD_csv_EEC22.zip", destfile = "data/eec_puf.zip")
+# Importation ------------------------------------------------------------------
+BUCKET = "projet-donnees-synthetiques"
+FILE_KEY_IN_S3 = "puf_preprocessed.RDS"
+data_puf <- aws.s3::s3read_using(
+  FUN = readRDS,
+  object = FILE_KEY_IN_S3,
+  bucket = BUCKET,
+  opts = list("region" = "")
+)
+
+download.file("https://www.insee.fr/fr/statistiques/fichier/7657353/FD_csv_EEC22.zip",
+              destfile = "data/eec_puf.zip")
 
 # le dictionnaire des variables est disponible ici
 # https://www.insee.fr/fr/statistiques/fichier/7657353/EEC%202022%20_%20Dictionnaire%20des%20codes%20_%20Fichier%20detail.pdf
@@ -57,6 +71,36 @@ table(puf$HEFFEMP, useNA = "always") # => NA
 
 hist(puf$HEFFTOT)
 table(puf$HEFFTOT, useNA = "always") # => NA
+
+# Préprocessing ----------------------------------------------------------------
+char <- setdiff(names(puf), c("EXTRIAN", "HEFFEMP", "HEFFTOT", "HHABEMP", "HHABTOT"))
+
+data_puf <- puf[, (char) := lapply(.SD, as.character), .SDcols = char] # On passe les variables nécessaire en character
+data_puf <- data_puf[data_puf$TRIM == 1,] # Premier Trimestre
+data_puf <- data_puf[,-c("ANNEE", "TRIM")] # On retire les variables ANNEE et TRIM
+
+# Synthétisation ---------------------------------------------------------------
+var_test <- c("ACTEU", "AGE6", "COUPL_LOG", "IDENT", "TYPLOG5")
+puf_test <- data_puf[, c("ACTEU", "AGE6", "COUPL_LOG", "IDENT", "TYPLOG5")]
+vs_ident_debut <- c("IDENT", "ACTEU", "AGE6", "COUPL_LOG", "TYPLOG5")
+vs_ident_fin <- c("ACTEU", "AGE6", "COUPL_LOG", "TYPLOG5", "IDENT")
+
+tic()
+syn_puf_ident_debut <- syn(puf_test, visit.sequence = vs_ident_debut, seed = 1)
+toc()
+pMSE_ident_debut <- utility.gen(syn_puf_ident_debut, puf_test)$pMSE
+
+tic()
+syn_puf_ident_fin <- syn(puf_test, visit.sequence = vs_ident_fin, seed = 1)
+toc()
+pMSE_ident_fin <- utility.gen(syn_puf_ident_fin, puf_test)$pMSE
+
+# Tests ------------------------------------------------------------------------
+
+table(data_puf$COUPL_LOG, data_puf$TYPLOG5)
+
+
+
 
 
 
