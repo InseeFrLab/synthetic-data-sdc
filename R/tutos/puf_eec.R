@@ -80,20 +80,13 @@ data_puf <- data_puf[data_puf$TRIM == 1,] # Premier Trimestre
 data_puf <- data_puf[,-c("ANNEE", "TRIM")] # On retire les variables ANNEE et TRIM
 
 # Synthétisation ---------------------------------------------------------------
-var_test <- c("ACTEU", "AGE6", "COUPL_LOG", "IDENT", "TYPLOG5")
-puf_test <- data_puf[, c("ACTEU", "AGE6", "COUPL_LOG", "IDENT", "TYPLOG5")]
-vs_ident_debut <- c("IDENT", "ACTEU", "AGE6", "COUPL_LOG", "TYPLOG5")
-vs_ident_fin <- c("ACTEU", "AGE6", "COUPL_LOG", "TYPLOG5", "IDENT")
+data_puf <- data_puf[, -c("IDENT", "NAFANTG004N", "NAFG004UN", "NAFG010UN", 
+                          "NAFG017UN", "NAFG021UN", "NAFG038UN", "PCS1", "PCS1Q")]
 
 tic()
-syn_puf_ident_debut <- syn(puf_test, visit.sequence = vs_ident_debut, seed = 1)
+syn_puf <- syn(data_puf, maxfaclevels = 90, seed = 1)
 toc()
-pMSE_ident_debut <- utility.gen(syn_puf_ident_debut, puf_test)$pMSE
-
-tic()
-syn_puf_ident_fin <- syn(puf_test, visit.sequence = vs_ident_fin, seed = 1)
-toc()
-pMSE_ident_fin <- utility.gen(syn_puf_ident_fin, puf_test)$pMSE
+pMSE_data_puf <- utility.gen(syn_puf, puf_test)$pMSE
 
 # Tests ------------------------------------------------------------------------
 
