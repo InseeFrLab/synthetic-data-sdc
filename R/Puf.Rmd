@@ -1,0 +1,143 @@
+---
+title: "Enquête Emploi en Continu de 2022"
+author: "Julien Helfenstein"
+date: "16/07/2024"
+output: html_document
+---
+
+```{r donnees}
+BUCKET = "projet-donnees-synthetiques"
+FILE_KEY_IN_S3 = "puf_preprocessed.RDS"
+data_puf <- aws.s3::s3read_using(
+  FUN = readRDS,
+  object = FILE_KEY_IN_S3,
+  bucket = BUCKET,
+  opts = list("region" = "")
+)
+```
+
+Notre jeu de données est le puf au trimestre 1. Cherchons des filtres nous permettant de voir si la synthétisation de notre jeu de données s'est bien passée.
+
+**HEFFEMP et ACTEU = 2 ou 3 :** Une personne ayant un nombre d'heures effectivement travaillées au cours de la semaine de référence ne peut pas être au chômage (ACTEU = 2) ou inactive.
+```{r}
+table(data_puf$HEFFEMP, data_puf$ACTEU, useNA = "always")
+```
+
+**TXTPPRED et TPPRED = 1 :** Si une personne est à temps complet (TPPRED = 1) elle ne peut pas avoir un taux de temps partiel autre que NA.
+
+```{r}
+table(data_puf$TXTPPRED, data_puf$TPPRED, useNA = "always")
+```
+
+**TRAREF = 1 et ACTEU = 2 ou 3 :** Si une personnes a travaillé au moins une heure pendant la semaine de référence (TRAREF = 1) elle ne peut être au chômage ou inactive (ACTEU = 2 ou 3).
+
+```{r}
+table(data_puf$TRAREF, data_puf$ACTEU, useNA = "always")
+```
+
+**TRAREF = 9 et ACTEU = 2 ou 3 :** Si une personnes a travaillé au moins une heure pendant la semaine de référence (TRAREF = 1) elle ne peut être au chômage ou inactive (ACTEU = 2 ou 3).
+
+```{r}
+table(data_puf$TRAREF, data_puf$ACTEU, useNA = "always")
+```
+
+**COUPL_LOG = 1 et TYPLOG = 1 :** Une personne se déclarant en couple avec une personne du logement (COUPL_LOG = 1) ne peut se considérer comme personne seule (TYPLOG5 = 1) sachant qu'il y a comme autre modalité de TYPLOG5 : "Famille monoparentale", "Couple sans enfant", "Couple avec enfant(s)" et "Autre". Cependant on en trouve dans la table originale. On regarde alors les identifiants logement de ces individus pour voir si certains sont dans le même logement ou non.
+
+```{r}
+table(data_puf$COUPL_LOG, data_puf$TYPLOG5, useNA = "always")
+
+length(data_puf[data_puf$COUPL_LOG == 1 & data_puf$TYPLOG5 == 1,"IDENT"]) == length(unique(data_puf[data_puf$COUPL_LOG == 1 & data_puf$TYPLOG5 == 1,"IDENT"]))
+```
+
+**TEMP = 1 et ACTEU = 2 ou 3 :** Une personne ayant un emploi pendant la semaine de référence (TEMP = 1) ne peut être au chômage (ACTEU = 2) ou inactive (ACTEU = 3).
+
+```{r}
+table(data_puf$TEMP, data_puf$ACTEU, useNA = "always")
+```
+
+**STATUT = 1 ou 2 et ATCEU = 2 ou 3 :** Si une personne est indéprendante (STATUT = 1) ou salariée (STATUT = 2) elle ne peut être au chômage (ACTEU = 2) ou inactive (ACTEU = 3).
+
+```{r}
+table(data_puf$STATUT, data_puf$ACTEU, useNA = "always")
+```
+
+**STATUTDET et ACTEU = 2 ou 3 :** Même raison qu'au dessus.
+
+```{r}
+table(data_puf$STATUTDET, data_puf$ACTEU, useNA = "always")
+```
+
+**STC et ACTEU = 2 ou 3 :** Même raison qu'au dessus.
+
+```{r}
+table(data_puf$STC, data_puf$ACTEU, useNA = "always")
+```
+
+**SALTYP et ACTEU = 2 ou 3 :** Une personne au chômage (ACTEU = 2) ou inactive (ACTEU = 3) doit répondre NA quand on lui demande la nature du contrat pour son emploi principal (SALTYP).
+
+```{r}
+table(data_puf$SALTYP, data_puf$ACTEU, useNA = "always")
+```
+
+**TPPRED = 1 et RAISTP :** Si une personne est en temps complet (TPPRED = 1) elle ne peut donner de raison principale de temps partiel (RAISTP).
+
+```{r}
+table(data_puf$TPPRED, data_puf$RAISTP, useNA = "always")
+```
+
+**PUB3FP et ACTEU = 2 ou 3 :** Une personne au chômage (ACTEU = 2) ou inactive (ACTEU = 3) ne peut donner le statut public ou privé de l'employeur (PUB3FP).
+
+```{r}
+table(data_puf$PUB3FP, data_puf$ACTEU, useNA = "always")
+```
+
+**PASTRA = 1 et ACTEU = 2 ou 3 :** Une personne n'ayant pas travaillé la semaine de référence mais ayant un emploi rémunéré (PASTRA = 1) ne devrait pas être au chômage (ACTEU = 2) ou inactive (ACTEU = 3). Cependant, on en trouve dans la table originale.
+
+```{r}
+table(data_puf$PASTRA, data_puf$ACTEU, useNA = "always")
+```
+
+**ANCSSEMP = 1 et ACTEU = 1 :** Une personne en emploi (ACTEU = 1) doit répondre NA lorsqu'on lui demande l'ancienneté sans emploi (ANCSSEMP).
+
+```{r}
+table(data_puf$ANCSSEMP, data_puf$ACTEU, useNA = "always")
+```
+
+**CHPUB et ACTEU = 2 ou 3 :** Une personne au chômage (ACTEU = 2) ou inactive (ACTEU = 3) ne peut donner la nature l'employeur (CHPUB).
+
+```{r}
+table(data_puf$CHPUB, data_puf$ACTEU, useNA = "always")
+```
+
+**CL_EMPLOI et ACTEU = 2 ou 3 :** Une personne au chômage (ACTEU = 2) ou inactive (ACTEU = 3) ne peut donner la classe d'emploi de l'emploi principal (CL_EMPLOI).
+
+```{r}
+table(data_puf$CL_EMPLOI, data_puf$ACTEU, useNA = "always")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
