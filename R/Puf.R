@@ -17,7 +17,8 @@ puf <- aws.s3::s3read_using(
 
 
 # AFDM -------------------------------------------------------------------------
-puf.afdm <- FAMD(puf, ncp = 100, graph = FALSE)
+puf.afdm <- FAMD(puf, ncp = 500, graph = FALSE)
+puf.afdm$eig[, 3]
 
 eig.val <- puf.afdm$eig[, 1]
 
