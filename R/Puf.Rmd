@@ -4,7 +4,10 @@ author: "Julien Helfenstein"
 date: "16/07/2024"
 output: html_document
 ---
-
+```{r packages}
+if (!requireNamespace("ggplot2", quietly = TRUE)) install.packages("ggplot2"); library(ggplot2)
+if (!requireNamespace("dplyr", quietly = TRUE)) install.packages("ddplyr"); library(dplyr)
+```
 ```{r donnees}
 BUCKET = "projet-donnees-synthetiques"
 FILE_KEY_IN_S3 = "puf_preprocessed.RDS"
@@ -16,7 +19,10 @@ data_puf <- aws.s3::s3read_using(
 )
 ```
 
-Notre jeu de données est le puf au trimestre 1. Cherchons des filtres nous permettant de voir si la synthétisation de notre jeu de données s'est bien passée.
+Notre jeu de données est le puf au trimestre 1. 
+
+# Filtres
+Cherchons des filtres nous permettant de voir si la synthétisation de notre jeu de données s'est bien passée.
 
 **HEFFEMP et ACTEU = 2 ou 3 :** Une personne ayant un nombre d'heures effectivement travaillées au cours de la semaine de référence ne peut pas être au chômage (ACTEU = 2) ou inactive.
 ```{r}
@@ -115,15 +121,62 @@ table(data_puf$CHPUB, data_puf$ACTEU, useNA = "always")
 table(data_puf$CL_EMPLOI, data_puf$ACTEU, useNA = "always")
 ```
 
+# Synthétisation
+On synthétise les variables suivantes : ACTEU, AGE6, COUPL_LOG, NAFG004UN, NAFG010UN, NAFG017UN, TYPLOG5
 
+```{r effectifs}
+variables <- c("ACTEU", "AGE6", "COUPL_LOG", "NAFG004UN", "NAFG010UN", "NAFG017UN", "TYPLOG5")
+liste_graph <- list()
 
+for (i in 1:length(variables)) {
+  freq_puf_mod <- puf_mod %>%
+    count(.data[[variables[i]]]) %>%
+    rename(effectif = n) %>%
+    mutate(dataset = "Original")
+  
+  freq_syn_puf_mod <- syn_puf_mod$syn %>%
+    count(.data[[variables[i]]]) %>%
+    rename(effectif = n) %>%
+    mutate(dataset = "Synthétique")
+  
+  freq_combined <- bind_rows(freq_puf_mod, freq_syn_puf_mod)
+  
+  plt <- ggplot(freq_combined, aes(x = .data[[variables[i]]], y = effectif, fill = dataset)) +
+    geom_bar(stat = "identity", position = position_dodge()) +
+    labs(title = paste("Comparaison des effectifs de", variables[i]),
+         x = variables[i],
+         y = "Effectif",
+         fill = "Jeu de données") +
+    scale_fill_manual(values = c("Original" = "#1A3C5A", "Synthétique" = "#4187BF")) +
+    theme_minimal()
+  
+  liste_graph[[i]] <- plt
+}
+print(liste_graph)
+```
 
+```{r pMSE}
+pMSE_syn_puf_mod <- utility.gen(syn_puf_mod$syn, puf_mod)$pMSE
+print(pMSE_syn_puf_mod)
 
+utility.tables(syn_puf_mod, puf_mod, tab.stats = "pMSE", plot.stat = "pMSE")
+```
 
+```{r}
+print("ACTEU en fonction de NAFG004UN - original")
+print(table(puf_mod$ACTEU,puf_mod$NAFG004UN, useNA = "always"))
+print("ACTEU en fonction de NAFG004UN - synthétique")
+print(table(syn_puf_mod$syn$ACTEU,syn_puf_mod$syn$NAFG004UN, useNA = "always"))
+```
+On constate que les personnes en emploi (ACTEU = 1) ont toutes répondues et que les personnes au chômage (ACTEU = 2) et inactives (ACTEU = 3) n'ont pas répondues.
 
-
-
-
+```{r}
+print("NAFG010UN en fonction de NAFG004UN - original")
+print(table(puf_mod$NAFG010UN,puf_mod$NAFG004UN, useNA = "always"))
+print("NAFG010UN en fonction de NAFG004UN - synthétique")
+print(table(syn_puf_mod$syn$NAFG010UN,syn_puf_mod$syn$NAFG004UN, useNA = "always"))
+```
+On ne remarque aucune incohérence.
 
 
 
