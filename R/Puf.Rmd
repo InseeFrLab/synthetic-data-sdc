@@ -155,6 +155,8 @@ for (i in 1:length(variables)) {
 print(liste_graph)
 ```
 
+Comme on s'y attendait, CART produit de très bon résultats.
+
 ```{r pMSE}
 pMSE_syn_puf_mod <- utility.gen(syn_puf_mod$syn, puf_mod)$pMSE
 print(pMSE_syn_puf_mod)
