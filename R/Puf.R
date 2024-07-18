@@ -15,60 +15,55 @@ puf <- aws.s3::s3read_using(
   opts = list("region" = "")
 )
 
-
 # AFDM -------------------------------------------------------------------------
-puf.afdm <- FAMD(puf, ncp = 500, graph = FALSE)
+puf.afdm <- FAMD(puf, ncp = 1000, graph = FALSE)
 puf.afdm$eig[, 3]
 
-eig.val <- puf.afdm$eig[, 1]
 
-classement_var <- function() {
-  matrice <- matrix(0, nrow = 1, ncol = length(puf))
-  for (i in 1:length(puf)) {
+classement_var <- function(data, data.afdm) {
+  eig.val <- data.afdm$eig
+  matrice <- matrix(0, nrow = 1, ncol = length(data))
+  for (i in 1:length(data)) {
     var <- 0
-    for (j in 1:eig.val[, "variance.percent"]) {
-      var <- var + eig.val[, "variance.percent"][j] * puf.afdm$var$contrib[names(puf)[i], j]
+    for (j in 1:eig.val[, 2]) {
+      var <- var + eig.val[, 2][j] * data.afdm$var$contrib[names(data)[i], j]
     }
-    var <- var / 100
     matrice[1, i] <- var
   }
-  colnames(matrice) <- names(puf)
+  colnames(matrice) <- names(data)
   matrice <- matrice[, order(matrice, decreasing = TRUE)]
-  return(matrice)
+  ordre <- names(matrice)
+  return(list(matrice, ordre))
 }
 
-varexp <- function() {
-  barplot(eig.val[, 2], 
-          names.arg = 1:nrow(eig.val), 
+varexp <- function(data.afdm) {
+  barplot(data.afdm$eig[, 2], 
+          names.arg = 1:nrow(data.afdm$eig), 
           main = "Variance expliquée par dimensions (%)",
           xlab = "Principales dimensions",
           ylab = "Pourcentage de variance",
           col ="steelblue")
-  lines(x = 1:nrow(eig.val), eig.val[, 2], 
+  lines(x = 1:nrow(data.afdm$eig), data.afdm$eig[, 2], 
         type = "b", pch = 19, col = "red")
-  print(barplot)
+  return(barplot)
 }
 
 # Tests ------------------------------------------------------------------------
-for (i in 1:length(puf)) {
-  cat(names(puf)[i], " : ", sum(is.na(puf[[names(puf)[i]]])), "\n")
-}
-
-variables <- c("ACTEU", "AGE6", "COUPL_LOG", "NAFG004UN", "NAFG010UN", "NAFG017UN", "TYPLOG5")
-
-puf_mod <- puf[, c("ACTEU", "AGE6", "COUPL_LOG", "NAFG004UN", "NAFG010UN", "NAFG017UN", "TYPLOG5")]
+puf_test <- puf[, -c("NAFANTG088N", "NAFG021UN", "NAFG038UN", "NAFG088UN")]
+puf_test.afdm <- FAMD(puf_test, ncp = 1000, graph = FALSE)
 
 
 tic()
-syn_puf <- syn(puf,
+syn_puf_test <- syn(puf_test,
+                    visit.sequence = classement_var(puf_test, puf_test.afdm)[[2]],
                     maxfaclevels = 100,
                     cont.na = list(HEFFEMP = -8,
-                                   HEFFTOT = -8,
-                                   HHABEMP = -8,
-                                   HHABTOT = -8),
+                              HEFFTOT = -8,
+                              HHABEMP = -8,
+                              HHABTOT = -8),
                     seed = 1)
 toc()
-pMSE_puf <- utility.gen(syn_puf, puf)$pMSE
+pMSE_puf <- utility.gen(syn_puf_test, puf_test)$pMSE
 
 
 

@@ -151,33 +151,32 @@ pMSE_numfac2 <- utility.gen(syn_numfac2, data$original)$pMSE
 df.afdm <- FAMD(data$original, ncp = 100, graph = FALSE)
 summary(df.afdm)
 
-eig.val <- get_eigenvalue(df.afdm)
-
-classement_var <- function() {
-  matrice <- matrix(0, nrow = 1, ncol = length(data$original))
-  for (i in 1:length(data$original)) {
+classement_var <- function(data, data.afdm) {
+  eig.val <- data.afdm$eig
+  matrice <- matrix(0, nrow = 1, ncol = length(data))
+  for (i in 1:length(data)) {
     var <- 0
-    for (j in 1:eig.val[, "variance.percent"]) {
-      var <- var + eig.val[, "variance.percent"][j] * df.afdm$var$contrib[names(data$original)[i], j]
+    for (j in 1:eig.val[, 2]) {
+      var <- var + eig.val[, 2][j] * data.afdm$var$contrib[names(data)[i], j]
     }
-    var <- var / 100
     matrice[1, i] <- var
   }
-  colnames(matrice) <- names(data$original)
+  colnames(matrice) <- names(data)
   matrice <- matrice[, order(matrice, decreasing = TRUE)]
-  return(matrice)
+  ordre <- names(matrice)
+  return(list(matrice, ordre))
 }
 
-varexp <- function() {
-  barplot(eig.val[, 2], 
-          names.arg = 1:nrow(eig.val), 
+varexp <- function(data.afdm) {
+  barplot(data.afdm$eig[, 2], 
+          names.arg = 1:nrow(data.afdm$eig), 
           main = "Variance expliquée par dimensions (%)",
           xlab = "Principales dimensions",
           ylab = "Pourcentage de variance",
           col ="steelblue")
-  lines(x = 1:nrow(eig.val), eig.val[, 2], 
+  lines(x = 1:nrow(data.afdm$eig), data.afdm$eig[, 2], 
         type = "b", pch = 19, col = "red")
-  print(barplot)
+  return(barplot)
 }
 
 
