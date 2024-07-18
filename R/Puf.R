@@ -4,6 +4,7 @@ if (!requireNamespace("tictoc", quietly = TRUE)) install.packages("tictoc"); lib
 if (!requireNamespace("aws.s3", quietly = TRUE)) install.packages("aws.s3"); library(aws.s3)
 if (!requireNamespace("FactoMineR", quietly = TRUE)) install.packages("FactoMineR"); library(FactoMineR)
 if (!requireNamespace("ggplot2", quietly = TRUE)) install.packages("ggplot2"); library(ggplot2)
+if (!requireNamespace("rcompanion", quietly = TRUE)) install.packages("rcompanion"); library(rcompanion)
 
 # Importation ------------------------------------------------------------------
 BUCKET = "projet-donnees-synthetiques"
@@ -48,40 +49,96 @@ varexp <- function(data.afdm) {
   return(barplot)
 }
 
-# Tests ------------------------------------------------------------------------
-puf_test <- puf[, -c("NAFANTG088N", "NAFG021UN", "NAFG038UN", "NAFG088UN")]
-puf_test.afdm <- FAMD(puf_test, ncp = 1000, graph = FALSE)
-
-
 tic()
-syn_puf_test <- syn(puf_test,
+syn_afdm <- syn(puf_test,
                     visit.sequence = classement_var(puf_test, puf_test.afdm)[[2]],
                     maxfaclevels = 100,
                     cont.na = list(HEFFEMP = -8,
-                              HEFFTOT = -8,
-                              HHABEMP = -8,
-                              HHABTOT = -8),
+                                   HEFFTOT = -8,
+                                   HHABEMP = -8,
+                                   HHABTOT = -8),
                     seed = 1)
 toc()
-pMSE_puf <- utility.gen(syn_puf_test, puf_test)$pMSE
+
+
+tic()
+pMSE_afdm <- utility.gen(syn_afdm, puf_test)$pMSE
+toc()
+
+# Tests ------------------------------------------------------------------------
+puf_test <- puf[, -c("ISCO2", "NAFANTG088N", "NAFG038UN", "NAFG088UN", "PCS2")]
+num_test <- c("EXTRIAN", "HEFFEMP", "HEFFTOT", "HHABEMP", "HHABTOT")
+fac_test <- setdiff(names(puf_test), num_test)
+vs_num_fac <- c(num_test, fac_test)
+
+puf_test.afdm <- FAMD(puf_test, ncp = 400, graph = FALSE)
+
+tic()
+syn_ini <- syn(puf[, 23:32],
+               seed = 1)
+toc()
+
+pm <- syn_ini$predictor.matrix
+
+# 16 premières variables
+
+tic()
+syn1 <- syn(puf_test,
+            visit.sequence = names(puf_test)[1:16],
+            maxfaclevels = 100,
+            drop.not.used = FALSE,
+            seed = 1)
+toc()
+
+# 16 suivantes
+tic()
+syn2 <- syn(puf_test,
+            visit.sequence = names(puf_test)[17:32],
+            maxfaclevels = 100,
+            cont.na = list(HEFFEMP = -8,
+                           HEFFTOT = -8,
+                           HHABEMP = -8,
+                           HHABTOT = -8),
+            drop.not.used = FALSE,
+            seed = 1)
+toc()
+
+# 16 suivantes
+tic()
+syn3 <- syn(puf_test,
+            visit.sequence = names(puf_test)[33:48],
+            maxfaclevels = 100,
+            drop.not.used = FALSE,
+            seed = 1)
+toc()
+
+# 17 dernières variables
+tic()
+syn4 <- syn(puf_test,
+            visit.sequence = names(puf_test)[49:65],
+            maxfaclevels = 100,
+            drop.not.used = FALSE,
+            seed = 1)
+toc()
+###
+puf_syn <- puf_test
+puf_syn[, 1:16] <- syn1$syn[, 1:16]
+puf_syn[, 17:32] <- syn2$syn[, 17:32]
+puf_syn[, 33:48] <- syn3$syn[, 33:48]
+puf_syn[, 49:65] <- syn4$syn[, 49:65]
+###
+
+utility.gen(puf_syn, puf_test, nperms = 1)$pMSE # 0.1914136
+
+utility.gen(puf_syn, puf_test, nperms = 1)$pMSE # 0.1914136
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+for (i in 1:length(puf)) {
+  #cat(names(puf)[i], " : ", sum(is.na(puf[[names(puf)[i]]])), "\n")
+  cat(names(puf)[i], " : ", sum(puf[[names(puf)[i]]] == ""), "\n")
+}
 
 
 
