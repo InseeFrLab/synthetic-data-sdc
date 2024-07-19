@@ -1,3 +1,6 @@
+if (!requireNamespace("vcd", quietly = TRUE)) install.packages("vcd"); library(vcd)
+if (!requireNamespace("polycor", quietly = TRUE)) install.packages("polycor"); library(polycor)
+
 mixed_correlations <- function(data) {
   n <- ncol(data)
   cor_matrix <- matrix(NA, n, n)
