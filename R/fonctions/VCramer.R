@@ -1,8 +1,8 @@
-VCramer <- function(data) {
+VCramer <- function(data, variable) {
   liste_vcramer <- list()
   for (i in 1:length(mes_modeles)) {
     for (j in 1:length(data[[i]])) {
-      data[[i]][[j]][, "depress"] <- factor(data[[i]][[j]][, "depress"], levels = 0:21)
+      data[[i]][[j]][, variable] <- factor(data[[i]][[j]][, variable], levels = 0:21)
       mat_vcramer <- matrix(0, nrow = length(fac), ncol = length(fac))
       for (k in 1:length(fac)) {
         for (l in 1:length(fac)) {
@@ -36,11 +36,11 @@ VCramer <- function(data) {
   return(list(mat_recap, liste))
 }
 
-VCramer1 <- function(data) {
+VCramer1 <- function(data, variable) {
   liste_vcramer <- list()
   for (i in 1:length(mes_modeles)) {
     for (j in 1:length(data[[i]])) {
-      data[[i]][[j]][, "depress"] <- factor(data[[i]][[j]][, "depress"], levels = 0:21)
+      data[[i]][[j]][, variable] <- factor(data[[i]][[j]][, variable], levels = 0:21)
       mat_vcramer <- matrix(0, nrow = length(fac), ncol = length(fac))
       for (k in 1:length(fac)) {
         for (l in 1:length(fac)) {

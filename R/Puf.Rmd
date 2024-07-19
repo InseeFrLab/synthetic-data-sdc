@@ -17,6 +17,10 @@ data_puf <- aws.s3::s3read_using(
   bucket = BUCKET,
   opts = list("region" = "")
 )
+
+puf_test <- puf[, -c("ISCO2", "NAFANTG088N", "NAFG038UN", "NAFG088UN", "PCS2")]
+num_test <- c("EXTRIAN", "HEFFEMP", "HEFFTOT", "HHABEMP", "HHABTOT")
+fac_test <- setdiff(names(puf_test), num_test)
 ```
 
 Notre jeu de données est le puf au trimestre 1. 
@@ -121,30 +125,49 @@ table(data_puf$CHPUB, data_puf$ACTEU, useNA = "always")
 table(data_puf$CL_EMPLOI, data_puf$ACTEU, useNA = "always")
 ```
 
+Passons maintenant à un jeu de données réduit. On enlève à puf les variables suivantes : ANNEE, TRIM, IDENT, ISCO2, NAFANTG088N, NAFG038UN et PCS2. On se retrouve donc avec un jeu de données de 65 variables.
+
+# Corrélations
+```{r}
+cor(puf_test[, ..num_test])
+```
+
+
 # Synthétisation
-On synthétise les variables suivantes : ACTEU, AGE6, COUPL_LOG, NAFG004UN, NAFG010UN, NAFG017UN, TYPLOG5
+Synthétisons maintenant le jeu de données et commençons par comparer les effectifs entre le jeu de données original et synthétique.
+
+```{r synthetisation}
+tic()
+syn_test <- syn(puf_test,
+                maxfaclevels = 100,
+                seed = 1)
+toc()
+# 1465 sec
+
+pMSE_test <- utility.gen(syn_test, puf_test, nperms = 1)$pMSE # 0.00089271
+SPECKS_test <- utility.gen(syn_test, puf_test, nperms = 1)$SPECKS # 0.0285
+```
 
 ```{r effectifs}
-variables <- c("ACTEU", "AGE6", "COUPL_LOG", "NAFG004UN", "NAFG010UN", "NAFG017UN", "TYPLOG5")
 liste_graph <- list()
 
-for (i in 1:length(variables)) {
-  freq_puf_mod <- puf_mod %>%
-    count(.data[[variables[i]]]) %>%
+for (i in 1:length(puf_test)) {
+  freq_puf_test <- puf_test %>%
+    count(.data[[names(puf_test)[i]]]) %>%
     rename(effectif = n) %>%
     mutate(dataset = "Original")
   
-  freq_syn_puf_mod <- syn_puf_mod$syn %>%
-    count(.data[[variables[i]]]) %>%
+  freq_syn_puf <- syn_test$syn %>%
+    count(.data[[names(syn_test$syn)[i]]]) %>%
     rename(effectif = n) %>%
     mutate(dataset = "Synthétique")
   
-  freq_combined <- bind_rows(freq_puf_mod, freq_syn_puf_mod)
+  freq_combined <- bind_rows(freq_puf_test, freq_syn_puf)
   
-  plt <- ggplot(freq_combined, aes(x = .data[[variables[i]]], y = effectif, fill = dataset)) +
+  plt <- ggplot(freq_combined, aes(x = .data[[names(puf_test)[i]]], y = effectif, fill = dataset)) +
     geom_bar(stat = "identity", position = position_dodge()) +
-    labs(title = paste("Comparaison des effectifs de", variables[i]),
-         x = variables[i],
+    labs(title = paste("Comparaison des effectifs de", names(puf_test)[i]),
+         x = names(puf_test)[i],
          y = "Effectif",
          fill = "Jeu de données") +
     scale_fill_manual(values = c("Original" = "#1A3C5A", "Synthétique" = "#4187BF")) +
@@ -157,42 +180,131 @@ print(liste_graph)
 
 Comme on s'y attendait, CART produit de très bon résultats.
 
-```{r pMSE}
-pMSE_syn_puf_mod <- utility.gen(syn_puf_mod$syn, puf_mod)$pMSE
-print(pMSE_syn_puf_mod)
+# Croisements de variables
+```{r}
+source("~/work/synthetic-data-sdc/R/fonctions/Croisements_variables.R")
 
-utility.tables(syn_puf_mod, puf_mod, tab.stats = "pMSE", plot.stat = "pMSE")
+croisements(puf_test, syn_test$syn, "ACTEU", "TYPLOG5")
 ```
+
+```{r Utlité}
+pMSE_syn_test <- utility.gen(syn_test$syn, puf_test, nperms = 1)$pMSE
+SPECKS_syn_test <- utility.gen(syn_test$syn, puf_test, nperms = 1)$SPECKS
+cat("Le pMSE est de : ", pMSE_syn_test, " et le SPECKS est de : ", SPECKS_syn_test)
+
+#utility.tables(syn_test, puf_test, tab.stats = "pMSE", plot.stat = "pMSE")
+```
+
+Regardons si des individus ont été répliqués dans le jeu de données synthétique
+
+```{r repliques}
+replicated.uniques(syn_test, puf_test)
+
+cat("Le nombre d'individus identiques dans le jeu de données original est de : ", sum(duplicated(puf_test)))
+cat("Le nombre d'individus identiques dans le jeu de donnes synthétiques est de : ", sum(duplicated(syn_test$syn)))
+
+df_comb <- rbind(puf_test, syn_test$syn)
+cat("Le nombre d'individus identiques dans df_comb est de : ", sum(duplicated(df_comb)))
+
+cat("Au final le nombre d'individus identiques entre le jeu de données original est le jeu de donnes synthétiques est de : ", sum(duplicated(syn_test$syn)) - sum(duplicated(puf_test)) - sum(duplicated(syn_test$syn)))
+```
+
+Le jeu de données original présente déjà des individus partagant les mêmes caractéristiques (hors EXTRIAN). Le jeu de données synthétiques possède également des individus en double (toujours hors EXTRIAN). On les retire donc du calcul pour au final trouver 2669 individus répliqués. Sur notre précédent jeu de données on ne dépassait jamais les 10 individus répliqués (sur 4603 individus).
+
+
+# Synthétisation de variable à l'aide de rpart 
+Pour réussir à synthétiser nous avons dû retirer les variables possédant trop de modalités dont NAFG038UN. Essayons de la synthétiser en fonction de toutes les autres variables à l'aide de rpart.
 
 ```{r}
-print("ACTEU en fonction de NAFG004UN - original")
-print(table(puf_mod$ACTEU,puf_mod$NAFG004UN, useNA = "always"))
-print("ACTEU en fonction de NAFG004UN - synthétique")
-print(table(syn_puf_mod$syn$ACTEU,syn_puf_mod$syn$NAFG004UN, useNA = "always"))
+df <- cbind(puf_test, puf[, "NAFG038UN"])
+fit <- rpart(NAFG038UN ~ ., data = df)
+
+#rpart.plot(fit)
+
+
+naf38_pred <- predict(fit, df, type = "class")
 ```
-On constate que les personnes en emploi (ACTEU = 1) ont toutes répondues et que les personnes au chômage (ACTEU = 2) et inactives (ACTEU = 3) n'ont pas répondues.
+
+Le problème est que maintenant NAFG038UN se retouve tout à la fin alors que normalement elle devrait être juste derrière NAFG021UN.
+
+
+# AFDM
+Faisons une AFDM nous permettant d'implémenter notre indicateur dans le but d'optimiser la visit sequence et espérer avoir des meilleurs résultats en terme de pMSE et peut-être même de temps de compilation
+
+```{r afdm}
+#puf.afdm <- FAMD(puf_test, ncp = 1000, graph = FALSE)
+
+varexp(puf.afdm)
+print(classement_var(puf_test, puf.afdm))[[1]]
+```
+Notre fonction classment_var nous retourne deux objets : la valeur de l'indicateur que l'on a créé pour chaque variable et l'ordre optimal des variables selon cet indicateur.
+L'indicateur est le pourcentage de variance expliqué par chaque dimensions multiplié par l'importance de chaque variable sur ces dimensions. Au final plus la valeur est élevée plus cette variable à de l'importance et donc est synthétisée en tôt.
+
+Servons nous de cette visit sequence pour synthétiser à nouveau et comparer par rapport à l'ordre de base des variables.
+
+```{r afdm suite}
+tic()
+syn_afdm <- syn(puf_test,
+                visit.sequence = classement_var(puf_test, puf.afdm)[[2]],
+                maxfaclevels = 100,
+                cont.na = list(HEFFEMP = -8,
+                               HEFFTOT = -8,
+                               HHABEMP = -8,
+                               HHABTOT = -8),
+                seed = 1)
+toc()
+# 1331 secondes
+
+pMSE_afdm <- utility.gen(syn_afdm, puf_test, nperms = 1)$pMSE # 0.01901162
+SPECKS_afdm <- utility.gen(syn_afdm, puf_test, nperms = 1)$SPECKS # 0.118
+```
+
+On se rend compte que les résultats ne sont pas meilleurs.
+
+Testons maintenant de synthétiser le jeu de données en n'utilisant qu'une partie des variables à la fois puis en concaténant les résulats à la fin et comparons à notre synthèse classique.
 
 ```{r}
-print("NAFG010UN en fonction de NAFG004UN - original")
-print(table(puf_mod$NAFG010UN,puf_mod$NAFG004UN, useNA = "always"))
-print("NAFG010UN en fonction de NAFG004UN - synthétique")
-print(table(syn_puf_mod$syn$NAFG010UN,syn_puf_mod$syn$NAFG004UN, useNA = "always"))
+# 16 premières variables
+syn1 <- syn(puf_test,
+            visit.sequence = names(puf_test)[1:16],
+            maxfaclevels = 100,
+            drop.not.used = FALSE,
+            seed = 1)
+
+# 16 suivantes
+syn2 <- syn(puf_test,
+            visit.sequence = names(puf_test)[17:32],
+            maxfaclevels = 100,
+            cont.na = list(HEFFEMP = -8,
+                           HEFFTOT = -8,
+                           HHABEMP = -8,
+                           HHABTOT = -8),
+            drop.not.used = FALSE,
+            seed = 1)
+
+# 16 suivantes
+syn3 <- syn(puf_test,
+            visit.sequence = names(puf_test)[33:48],
+            maxfaclevels = 100,
+            drop.not.used = FALSE,
+            seed = 1)
+
+# 17 dernières
+syn4 <- syn(puf_test,
+            visit.sequence = names(puf_test)[49:65],
+            maxfaclevels = 100,
+            drop.not.used = FALSE,
+            seed = 1)
+###
+puf_comb <- puf_test
+puf_comb[, 1:16] <- syn1$syn[, 1:16]
+puf_comb[, 17:32] <- syn2$syn[, 17:32]
+puf_comb[, 33:48] <- syn3$syn[, 33:48]
+puf_comb[, 49:65] <- syn4$syn[, 49:65]
+###
+
+pMSE_puf_comb <- utility.gen(puf_comb, puf_test, nperms = 1)$pMSE # 0.19141358
+SPECKS_puf_comb <- utility.gen(puf_comb, puf_test, nperms = 1)$SPECKS #
 ```
-On ne remarque aucune incohérence.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

@@ -5,6 +5,9 @@ if (!requireNamespace("aws.s3", quietly = TRUE)) install.packages("aws.s3"); lib
 if (!requireNamespace("FactoMineR", quietly = TRUE)) install.packages("FactoMineR"); library(FactoMineR)
 if (!requireNamespace("ggplot2", quietly = TRUE)) install.packages("ggplot2"); library(ggplot2)
 if (!requireNamespace("rcompanion", quietly = TRUE)) install.packages("rcompanion"); library(rcompanion)
+if (!requireNamespace("rpart", quietly = TRUE)) install.packages("rpart"); library(rpart)
+if (!requireNamespace("rpart.plot", quietly = TRUE)) install.packages("rpart.plot"); library(rpart.plot)
+source("~/work/synthetic-data-sdc/R/fonctions/Correlations_mixtes.R")
 
 # Importation ------------------------------------------------------------------
 BUCKET = "projet-donnees-synthetiques"
@@ -17,7 +20,7 @@ puf <- aws.s3::s3read_using(
 )
 
 # AFDM -------------------------------------------------------------------------
-puf.afdm <- FAMD(puf, ncp = 1000, graph = FALSE)
+puf.afdm <- FAMD(puf_test, ncp = 1000, graph = FALSE)
 puf.afdm$eig[, 3]
 
 
@@ -51,18 +54,18 @@ varexp <- function(data.afdm) {
 
 tic()
 syn_afdm <- syn(puf_test,
-                    visit.sequence = classement_var(puf_test, puf_test.afdm)[[2]],
-                    maxfaclevels = 100,
-                    cont.na = list(HEFFEMP = -8,
-                                   HEFFTOT = -8,
-                                   HHABEMP = -8,
-                                   HHABTOT = -8),
-                    seed = 1)
+                visit.sequence = classement_var(puf_test, puf.afdm)[[2]],
+                maxfaclevels = 100,
+                cont.na = list(HEFFEMP = -8,
+                               HEFFTOT = -8,
+                               HHABEMP = -8,
+                               HHABTOT = -8),
+                seed = 1)
 toc()
-
+# 1331 sec 
 
 tic()
-pMSE_afdm <- utility.gen(syn_afdm, puf_test)$pMSE
+pMSE_afdm <- utility.gen(syn_afdm, puf_test, nperms = 1)$pMSE
 toc()
 
 # Tests ------------------------------------------------------------------------
@@ -128,11 +131,28 @@ puf_syn[, 33:48] <- syn3$syn[, 33:48]
 puf_syn[, 49:65] <- syn4$syn[, 49:65]
 ###
 
-utility.gen(puf_syn, puf_test, nperms = 1)$pMSE # 0.1914136
+tic()
+syn_test <- syn(puf_test,
+                maxfaclevels = 100,
+                seed = 1)
+toc()
+# 1465 sec
+
+tic()
+syn_ctree <- syn(puf_test,
+                 maxfaclevels = 100,
+                 method = "ctree",
+                 seed = 1)
+toc()
+
+
+pMSE_ctree <- utility.gen(syn_ctree, puf_test, nperms = 1)$pMSE
 
 utility.gen(puf_syn, puf_test, nperms = 1)$pMSE # 0.1914136
 
+pMSE_cart <- utility.gen(syn_test, puf_test, nperms = 1)$pMSE # 0.0008927075
 
+write.csv(puf_test, "~/work/synthetic-data-sdc/TableEvaluator/puf.csv")
 
 
 for (i in 1:length(puf)) {
@@ -140,5 +160,65 @@ for (i in 1:length(puf)) {
   cat(names(puf)[i], " : ", sum(puf[[names(puf)[i]]] == ""), "\n")
 }
 
+# Croisements ------------------------------------------------------------------
+croisements <- function(dataorg, datasyn, variable1, variable2) {
+  liste <- list()
+  liste[[1]] <- table(dataorg[[variable1]], dataorg[[variable2]], useNA = "always")
+  liste[[2]] <- table(datasyn[[variable1]], datasyn[[variable2]], useNA = "always")
+  names(liste) <- c("Original", "Synthétique")
+  return(liste)
+}
 
+# Graphiques -------------------------------------------------------------------
+
+liste_graph <- list()
+
+for (i in 1:length(puf_test)) {
+  freq_puf_test <- puf_test %>%
+    count(.data[[names(puf_test)[i]]]) %>%
+    rename(effectif = n) %>%
+    mutate(dataset = "Original")
+  
+  freq_syn_puf <- syn_test$syn %>%
+    count(.data[[names(syn_test$syn)[i]]]) %>%
+    rename(effectif = n) %>%
+    mutate(dataset = "Synthétique")
+  
+  freq_combined <- bind_rows(freq_puf_test, freq_syn_puf)
+  
+  plt <- ggplot(freq_combined, aes(x = .data[[names(puf_test)[i]]], y = effectif, fill = dataset)) +
+    geom_bar(stat = "identity", position = position_dodge()) +
+    labs(title = paste("Comparaison des effectifs de", names(puf_test)[i]),
+         x = names(puf_test)[i],
+         y = "Effectif",
+         fill = "Jeu de données") +
+    scale_fill_manual(values = c("Original" = "#1A3C5A", "Synthétique" = "#4187BF")) +
+    theme_minimal()
+  
+  liste_graph[[i]] <- plt
+}
+print(liste_graph)
+
+# Corrélations
+mixed_correlations(puf_test)
+
+
+
+# Répliqués --------------------------------------------------------------------
+replicated.uniques(syn_test, puf_test)
+
+duplicated(puf_test)
+duplicated(syn_test$syn)
+
+df_comb <- rbind(puf_test, syn_test$syn)
+duplicated(df_comb)
+
+# Rpart ------------------------------------------------------------------------
+df <- cbind(puf_test, puf[, "NAFG038UN"])
+fit <- rpart(NAFG038UN ~ ., data = df)
+
+rpart.plot(fit)
+
+
+naf38_pred <- predict(fit, df, type = "class")
 
