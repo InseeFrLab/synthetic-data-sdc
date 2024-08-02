@@ -2,6 +2,7 @@ if (!requireNamespace("dplyr", quietly = TRUE)) install.packages("dplyr"); libra
 if (!requireNamespace("synthpop", quietly = TRUE)) install.packages("synthpop"); library(synthpop)
 if (!requireNamespace("tictoc", quietly = TRUE)) install.packages("tictoc"); library(tictoc)
 if (!requireNamespace("aws.s3", quietly = TRUE)) install.packages("aws.s3"); library(aws.s3)
+if (!requireNamespace("tidyr", quietly = TRUE)) install.packages("tidyr"); library(tidyr)
 if (!requireNamespace("FactoMineR", quietly = TRUE)) install.packages("FactoMineR"); library(FactoMineR)
 if (!requireNamespace("ggplot2", quietly = TRUE)) install.packages("ggplot2"); library(ggplot2)
 if (!requireNamespace("rcompanion", quietly = TRUE)) install.packages("rcompanion"); library(rcompanion)
@@ -9,16 +10,31 @@ if (!requireNamespace("rpart", quietly = TRUE)) install.packages("rpart"); libra
 if (!requireNamespace("rpart.plot", quietly = TRUE)) install.packages("rpart.plot"); library(rpart.plot)
 source("~/work/synthetic-data-sdc/R/fonctions/Correlations_mixtes.R")
 
+# Preprocessing ----------------------------------------------------------------
+puf <- puf %>%
+  mutate_if(is.numeric, as.factor) %>%
+  mutate(across(all_of(num), as.numeric)) %>%
+  mutate(across(all_of(fac), ~replace_na(as.character(.), "999"))) %>%
+  mutate(across(all_of(num), ~replace_na(., -8))) %>%
+  mutate_if(is.character, as.factor)
+
 # Importation ------------------------------------------------------------------
 BUCKET = "projet-donnees-synthetiques"
-FILE_KEY_IN_S3 = "puf_preprocessed.RDS"
+FILE_KEY_IN_S3_1 = "puf_preprocessed.RDS"
 puf <- aws.s3::s3read_using(
   FUN = readRDS,
-  object = FILE_KEY_IN_S3,
+  object = FILE_KEY_IN_S3_1,
   bucket = BUCKET,
   opts = list("region" = "")
 )
 
+FILE_KEY_IN_S3_2 = "puf.RDS"
+puf <- aws.s3::s3read_using(
+  FUN = readRDS,
+  object = FILE_KEY_IN_S3_2,
+  bucket = BUCKET,
+  opts = list("region" = "")
+)
 # AFDM -------------------------------------------------------------------------
 puf.afdm <- FAMD(puf_test, ncp = 1000, graph = FALSE)
 puf.afdm$eig[, 3]
