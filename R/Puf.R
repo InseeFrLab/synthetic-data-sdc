@@ -85,7 +85,8 @@ pMSE_afdm <- utility.gen(syn_afdm, puf_test, nperms = 1)$pMSE
 toc()
 
 # Tests ------------------------------------------------------------------------
-puf_test <- puf[, -c("ISCO2", "NAFANTG088N", "NAFG038UN", "NAFG088UN", "PCS2")]
+#puf_test <- puf[, -c("ISCO2", "NAFANTG088N", "NAFG038UN", "NAFG088UN", "PCS2")]
+puf_test <- cbind(puf[, 1:20], puf[, 22:33], puf[, 35:38], puf[, 41:46], puf[, 48:70])
 num_test <- c("EXTRIAN", "HEFFEMP", "HEFFTOT", "HHABEMP", "HHABTOT")
 fac_test <- setdiff(names(puf_test), num_test)
 vs_num_fac <- c(num_test, fac_test)
@@ -230,11 +231,182 @@ df_comb <- rbind(puf_test, syn_test$syn)
 duplicated(df_comb)
 
 # Rpart ------------------------------------------------------------------------
-df <- cbind(puf_test, puf[, "NAFG038UN"])
-fit <- rpart(NAFG038UN ~ ., data = df)
+tic()
+syn_test <- syn(puf_test,
+                maxfaclevels = 100,
+                seed = 1)
+toc()
+# 1465 sec
 
-rpart.plot(fit)
+# ISCO2 --------------------------------------------------------------------
+df_isco <- cbind(puf_test[, 1:20],
+                 puf[, "ISCO2"],
+                 puf_test[, 21:65]
+)
+fit_isco <- rpart(ISCO2 ~ ., data = df_isco, method = "class")
+isco_pred <- predict(fit_isco, df_isco, type = "class")
+
+confusion_matrix <- table(isco_pred, df_isco$ISCO2)
+accuracy <- sum(diag(confusion_matrix)) / sum(confusion_matrix)
+print(paste("Accuracy:", accuracy))
+
+syn_puf_isco <- cbind(syn_test$syn[, 1:20],
+                      isco_pred,
+                      syn_test$syn[, 21:65])
+names(syn_puf_isco)[21] = "ISCO2"
+
+pMSE_puf_isco <- utility.gen(syn_puf_isco,
+                             df_isco,
+                             nperms = 1)$pMSE                                   # 0.11994
+# ------------------------------------------------------------------------------
+
+# NAFANTG088N ------------------------------------------------------------------
+df_nafant88 <- cbind(puf_test[, 1:20],
+                     puf[, "ISCO2"],
+                     puf_test[, 21:33],
+                     puf[, "NAFANTG088N"],
+                     puf_test[, 34:65]
+)
+fit_nafant88 <- rpart(NAFANTG088N ~ ., data = df_nafant88, method = "class")
+
+nafant88_pred <- predict(fit_nafant88, df_nafant88, type = "class")
+
+confusion_matrix <- table(nafant88_pred, df_nafant88$NAFANTG088N)
+accuracy <- sum(diag(confusion_matrix)) / sum(confusion_matrix)
+print(paste("Accuracy:", accuracy))
+
+syn_puf_nafant88 <- cbind(syn_test$syn[, 1:20],
+                          isco_pred,
+                          syn_test$syn[, 21:33],
+                          nafant_pred,
+                          syn_test$syn[, 34:65]
+)
+names(syn_puf_nafant88)[21] = "ISCO2"
+names(syn_puf_nafant88)[34] = "NAFANTG088N"
+
+pMSE_puf_nafant88 <- utility.gen(syn_puf_nafant88,
+                                 df_nafant88,
+                                 nperms = 1)$pMSE                               # 
+# ------------------------------------------------------------------------------
+
+# NAFG038UN --------------------------------------------------------------------
+df_naf38 <- cbind(puf_test[, 1:20],
+                  puf[, "ISCO2"],
+                  puf_test[, 21:33],
+                  puf[, "NAFANTG088N"],
+                  puf_test[, 34:38],
+                  puf[, "NAFG038UN"],
+                  puf_test[, 39:65]
+)
+fit_naf38 <- rpart(NAFG038UN ~ ., data = df_naf38, method = "class")
+
+naf38_pred <- predict(fit_naf38, df_naf38, type = "class")
+
+confusion_matrix <- table(naf38_pred, df_naf38$NAFG038UN)
+accuracy <- sum(diag(confusion_matrix)) / sum(confusion_matrix)
+print(paste("Accuracy:", accuracy))
+
+syn_puf_naf38 <- cbind(syn_test$syn[, 1:20],
+                       isco_pred,
+                       syn_test$syn[, 21:33],
+                       nafant_pred,
+                       syn_test$syn[, 34:38],
+                       naf38_pred,
+                       syn_test$syn[, 39:65]
+)
+names(syn_puf_naf38)[21] = "ISCO2"
+names(syn_puf_naf38)[34] = "NAFANTG088N"
+names(syn_puf_naf38)[39] = "NAFG038UN"
+
+pMSE_puf_naf38 <- utility.gen(syn_puf_naf38,
+                              df_naf38,
+                              nperms = 1)$pMSE                               # 
+# ------------------------------------------------------------------------------
+
+# NAFG088UN --------------------------------------------------------------------
+df_naf88 <- cbind(puf_test[, 1:20],
+                  puf[, "ISCO2"],
+                  puf_test[, 21:33],
+                  puf[, "NAFANTG088N"],
+                  puf_test[, 34:38],
+                  puf[, "NAFG038UN"],
+                  puf[, "NAFG088UN"],
+                  puf_test[, 39:65]
+)
+fit_naf88 <- rpart(NAFG088UN ~ ., data = df_naf88, method = "class")
+
+naf88_pred <- predict(fit_naf88, df_naf88, type = "class")
+
+confusion_matrix <- table(naf88_pred, df_naf88$NAFG088UN)
+accuracy <- sum(diag(confusion_matrix)) / sum(confusion_matrix)
+print(paste("Accuracy:", accuracy))
+
+syn_puf_naf88 <- cbind(syn_test$syn[, 1:20],
+                       isco_pred,
+                       syn_test$syn[, 21:33],
+                       nafant_pred,
+                       syn_test$syn[, 34:38],
+                       naf38_pred,
+                       naf88_pred,
+                       syn_test$syn[, 39:65]
+)
+names(syn_puf_naf88)[21] = "ISCO2"
+names(syn_puf_naf88)[34] = "NAFANTG088N"
+names(syn_puf_naf88)[39] = "NAFG038UN"
+names(syn_puf_naf88)[40] = "NAFG088UN"
+
+pMSE_puf_naf88 <- utility.gen(syn_puf_naf88,
+                              df_naf88,
+                              nperms = 1)$pMSE  
+# ------------------------------------------------------------------------------
+
+# PCS2 -------------------------------------------------------------------------
+df_pcs <- cbind(puf_test[, 1:20],
+                puf[, "ISCO2"],
+                puf_test[, 21:33],
+                puf[, "NAFANTG088N"],
+                puf_test[, 34:38],
+                puf[, "NAFG038UN"],
+                puf[, "NAFG088UN"],
+                puf_test[, 39:46],
+                puf[, "PCS2"],
+                puf_test[, 47:65]
+)
+fit_pcs <- rpart(PCS2 ~ ., data = df_pcs, method = "class")
+
+pcs_pred <- predict(fit_pcs, df_pcs, type = "class")
+
+confusion_matrix <- table(pcs_pred, df_pcs$PCS2)
+accuracy <- sum(diag(confusion_matrix)) / sum(confusion_matrix)
+print(paste("Accuracy:", accuracy))
+
+syn_puf_pcs <- cbind(syn_test$syn[, 1:20],
+                     isco_pred,
+                     syn_test$syn[, 21:33],
+                     nafant_pred,
+                     syn_test$syn[, 34:38],
+                     naf38_pred,
+                     naf88_pred,
+                     syn_test$syn[, 39:46],
+                     pcs_pred,
+                     syn_test$syn[, 47:65]
+)
+names(syn_puf_pcs)[21] = "ISCO2"
+names(syn_puf_pcs)[34] = "NAFANTG088N"
+names(syn_puf_pcs)[39] = "NAFG038UN"
+names(syn_puf_pcs)[40] = "NAFG088UN"
+names(syn_puf_pcs)[47] = "PCS2"
+
+pMSE_puf_pcs <- utility.gen(syn_puf_pcs,
+                            df_pcs,
+                            nperms = 1)$pMSE  
+# ------------------------------------------------------------------------------
 
 
-naf38_pred <- predict(fit, df, type = "class")
+
+
+
+
+
+
 
