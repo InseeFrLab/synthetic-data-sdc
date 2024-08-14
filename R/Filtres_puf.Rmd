@@ -39,13 +39,13 @@ table(puf$TRAREF, puf$ACTEU, useNA = "always")
 ```
 
 **TRAREF = 9 et ACTEU = 2 ou 3 :** Si une personnes a travaillé au moins une heure pendant la semaine de référence (TRAREF = 1) elle ne peut être au chômage ou inactive (ACTEU = 2 ou 3).
-
+JJ : Il s'agit d'un doublon du précédent filtre 
 ```{r}
 table(puf$TRAREF, puf$ACTEU, useNA = "always")
 ```
 
 **COUPL_LOG = 1 et TYPLOG = 1 :** Une personne se déclarant en couple avec une personne du logement (COUPL_LOG = 1) ne peut se considérer comme personne seule (TYPLOG5 = 1) sachant qu'il y a comme autre modalité de TYPLOG5 : "Famille monoparentale", "Couple sans enfant", "Couple avec enfant(s)" et "Autre". Cependant on en trouve dans la table originale. On regarde alors les identifiants logement de ces individus pour voir si certains sont dans le même logement ou non.
-
+JJ: Petit oubli:  Une personne se déclarant en couple avec une personne du logement ne pas être **une personne seule** ni **une famille monoparentale**! 
 ```{r}
 table(puf$COUPL_LOG, puf$TYPLOG5, useNA = "always")
 
@@ -58,7 +58,7 @@ length(puf[puf$COUPL_LOG == 1 & puf$TYPLOG5 == 1,"IDENT"]) == length(unique(puf[
 table(puf$TEMP, puf$ACTEU, useNA = "always")
 ```
 
-**STATUT = 1 ou 2 et ATCEU = 2 ou 3 :** Si une personne est indéprendante (STATUT = 1) ou salariée (STATUT = 2) elle ne peut être au chômage (ACTEU = 2) ou inactive (ACTEU = 3).
+**STATUT = 1 ou 2 et ATCEU = 2 ou 3 :** Si une personne est indépendante (STATUT = 1) ou salariée (STATUT = 2) elle ne peut être au chômage (ACTEU = 2) ou inactive (ACTEU = 3).
 
 ```{r}
 table(puf$STATUT, puf$ACTEU, useNA = "always")
@@ -95,7 +95,7 @@ table(puf$PUB3FP, puf$ACTEU, useNA = "always")
 ```
 
 **PASTRA = 1 et ACTEU = 2 ou 3 :** Une personne n'ayant pas travaillé la semaine de référence mais ayant un emploi rémunéré (PASTRA = 1) ne devrait pas être au chômage (ACTEU = 2) ou inactive (ACTEU = 3). Cependant, on en trouve dans la table originale.
-
+JJ: Si le filtre ne permet pas de parfaitement discriminer les cas, on peut le retirer.
 ```{r}
 table(puf$PASTRA, puf$ACTEU, useNA = "always")
 ```
