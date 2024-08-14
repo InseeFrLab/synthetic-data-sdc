@@ -4,10 +4,7 @@ author: "Julien Helfenstein"
 date: "14/08/2024"
 output: html_document
 ---
-```{r packages}
-if (!requireNamespace("ggplot2", quietly = TRUE)) install.packages("ggplot2"); library(ggplot2)
-if (!requireNamespace("dplyr", quietly = TRUE)) install.packages("ddplyr"); library(dplyr)
-```
+
 ```{r donnees}
 BUCKET = "projet-donnees-synthetiques"
 FILE_KEY_IN_S3 = "puf.RDS"
