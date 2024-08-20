@@ -1,0 +1,159 @@
+---
+title: "Resultats des synthétisations via CTGAN et TVAE"
+author: "Julien Helfenstein"
+date: "20/08/2024"
+output: html_document
+---
+
+```{r donnees}
+if (!requireNamespace("dplyr", quietly = TRUE)) install.packages("dplyr"); library(dplyr)
+if (!requireNamespace("synthpop", quietly = TRUE)) install.packages("synthpop"); library(synthpop)
+if (!requireNamespace("tictoc", quietly = TRUE)) install.packages("tictoc"); library(tictoc)
+if (!requireNamespace("aws.s3", quietly = TRUE)) install.packages("aws.s3"); library(aws.s3)
+if (!requireNamespace("tidyr", quietly = TRUE)) install.packages("tidyr"); library(tidyr)
+
+# Importation ------------------------------------------------------------------
+BUCKET = "projet-donnees-synthetiques"
+FILE_KEY_IN_S3 = "puf_preprocessed.RDS"
+puf <- aws.s3::s3read_using(
+  FUN = readRDS,
+  object = FILE_KEY_IN_S3,
+  bucket = BUCKET,
+  opts = list("region" = "")
+)
+```
+
+Regadons si les modèles CTGAN et TVAE créent des incohérences.
+
+```{r tvae 4 10}
+table(puf$NAFG004UN, puf$NAFG010UN)
+table(puf71_tvae$NAFG004UN, puf71_tvae$NAFG010UN)
+```
+
+On voit qu'entre le niveau 4 et 10, on trouve beaucoup d'individus incohérents
+
+```{r tvae 10 17}
+table(puf$NAFG010UN, puf$NAFG017UN)
+table(puf71_tvae$NAFG010UN, puf71_tvae$NAFG017UN)
+```
+Il en est de même pour le passage du niveau 10 à 17.
+
+
+Regardons si la variale IDENT a bien été synthétisée.
+```{r ident}
+puf_sans_annee_trim$IDENT[1:20]
+puf71_tvae$IDENT[1:20]
+```
+Les valeurs synthétisées n'ont aucun sens !
+
+
+Passons à la variable EXTRIAN qui est un coefficient de pondération.
+```{r ident}
+sum(puf_sans_annee_trim$EXTRIAN)
+sum(puf71_tvae$EXTRIAN)
+```
+La somme des coefficients de pondération synthétique est bien loin de la somme réelle.
+
+
+Maintenant, appliquons nos filtres :
+```{r}
+table(puf$HEFFEMP, puf$ACTEU, useNA = "always")
+table(puf71_tvae$HEFFEMP, puf71_tvae$ACTEU, useNA = "always")
+```
+Les colonnes ACTEU = 2 et ACTEU = 3 devraient être vides sauf pour la ligne HEFFEMP = -8 or ce n'est pas le cas.
+
+```{r}
+table(puf$TXTPPRED, puf$TPPRED, useNA = "always")
+table(puf71_tvae$TXTPPRED, puf71_tvae$TPPRED, useNA = "always")
+```
+La colonne TPPRED = 1 devrait être vide sauf pour la ligne "999" or ce n'est pas le cas. De même la colonne "999" devrait être vide sauf pour la ligne "999".
+
+```{r}
+table(puf$TRAREF, puf$ACTEU, useNA = "always")
+table(puf71_tvae$TRAREF, puf71_tvae$ACTEU, useNA = "always")
+```
+Si une personnes a travaillé au moins une heure pendant la semaine de référence (TRAREF = 1) elle ne peut être au chômage ou inactive (ACTEU = 2 ou 3).
+
+
+```{r}
+table(puf$COUPL_LOG, puf$TYPLOG5, useNA = "always")
+table(puf71_tvae$COUPL_LOG, puf71_tvae$TYPLOG5, useNA = "always")
+```
+COUPL_LOG = 2 et TYPLOG5 = 3 ne devrait pas être là.
+
+
+```{r}
+table(puf$TEMP, puf$ACTEU, useNA = "always")
+table(puf71_tvae$TEMP, puf71_tvae$ACTEU, useNA = "always")
+```
+Une personne ayant un emploi pendant la semaine de référence (TEMP = 1) ne peut être au chômage (ACTEU = 2) ou inactive (ACTEU = 3). On a donc une légère incohérence.
+
+
+```{r}
+table(puf$STATUT, puf$ACTEU, useNA = "always")
+table(puf71_tvae$STATUT, puf71_tvae$ACTEU, useNA = "always")
+```
+Si une personne est indépendante (STATUT = 1) ou salariée (STATUT = 2) elle ne peut être au chômage (ACTEU = 2) ou inactive (ACTEU = 3).
+
+```{r}
+table(puf$STATUTDET, puf$ACTEU, useNA = "always")
+table(puf71_tvae$STATUTDET, puf71_tvae$ACTEU, useNA = "always")
+```
+
+```{r}
+table(puf$STC, puf$ACTEU, useNA = "always")
+table(puf71_tvae$STC, puf71_tvae$ACTEU, useNA = "always")
+```
+
+
+```{r}
+table(puf$SALTYP, puf$ACTEU, useNA = "always")
+table(puf71_tvae$SALTYP, puf71_tvae$ACTEU, useNA = "always")
+```
+Une personne au chômage (ACTEU = 2) ou inactive (ACTEU = 3) doit répondre NA quand on lui demande la nature du contrat pour son emploi principal (SALTYP).
+
+
+
+```{r}
+table(puf$TPPRED, puf$RAISTP, useNA = "always")
+table(puf71_tvae$TPPRED, puf71_tvae$RAISTP, useNA = "always")
+```
+Si une personne est en temps complet (TPPRED = 1) elle ne peut donner de raison principale de temps partiel (RAISTP).
+
+
+
+```{r}
+table(puf$PUB3FP, puf$ACTEU, useNA = "always")
+table(puf71_tvae$PUB3FP, puf71_tvae$ACTEU, useNA = "always")
+```
+Une personne au chômage (ACTEU = 2) ou inactive (ACTEU = 3) ne peut donner le statut public ou privé de l'employeur (PUB3FP).
+
+
+
+```{r}
+table(puf$ANCSSEMP, puf$ACTEU, useNA = "always")
+table(puf71_tvae$ANCSSEMP, puf71_tvae$ACTEU, useNA = "always")
+```
+Une personne en emploi (ACTEU = 1) doit répondre NA lorsqu'on lui demande l'ancienneté sans emploi (ANCSSEMP).
+
+
+```{r}
+table(puf$CHPUB, puf$ACTEU, useNA = "always")
+table(puf71_tvae$CHPUB, puf71_tvae$ACTEU, useNA = "always")
+```
+Une personne au chômage (ACTEU = 2) ou inactive (ACTEU = 3) ne peut donner la nature l'employeur (CHPUB).
+
+
+```{r}
+table(puf$CL_EMPLOI, puf$ACTEU, useNA = "always")
+table(puf71_tvae$CL_EMPLOI, puf71_tvae$ACTEU, useNA = "always")
+```
+Une personne au chômage (ACTEU = 2) ou inactive (ACTEU = 3) ne peut donner la classe d'emploi de l'emploi principal (CL_EMPLOI).
+
+
+Au final on constate que le modèle TVAE n'arrive pas à satisfaire nos filtres. Il faudrait donc trouver le moyen le moyen d'ajouter des règles. Passons maintenant à l'analyse du modèle CTGAN.
+
+
+
+
+

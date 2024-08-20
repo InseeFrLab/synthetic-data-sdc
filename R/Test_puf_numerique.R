@@ -56,20 +56,8 @@ pMSE_df2 <- utility.gen(syn2, df2, nperms = 1)
 
 
 # Tests ------------------------------------------------------------------------
-puf71_tvae <- aws.s3::s3read_using(
-  FUN = readr::read_csv,
-  object = "puf71_tvae.csv",
-  bucket = BUCKET,
-  opts = list("region" = "")
-)
 
-aws.s3::s3write_using(
-  puf71_tvae,
-  FUN = readr::write_csv, 
-  append = TRUE,
-  object = "puf71_tvae.csv",
-  bucket = BUCKET,
-  opts = list("region" = "")
-)
 
-write.csv("~/work/synthetic-data-sdc/TableEvaluator/puf71_tvae.csv")
+
+
+

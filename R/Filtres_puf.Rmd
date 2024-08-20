@@ -21,7 +21,7 @@ Notre jeu de données est le fichier puf au trimestre 1.
 # Filtres
 Cherchons des filtres nous permettant de voir si la synthétisation de notre jeu de données s'est bien passée.
 
-**HEFFEMP et ACTEU = 2 ou 3 :** Une personne ayant un nombre d'heures effectivement travaillées au cours de la semaine de référence ne peut pas être au chômage (ACTEU = 2) ou inactive.
+**HEFFEMP et ACTEU = 2 ou 3 :** Une personne ayant un nombre d'heures effectivement travaillées au cours de la semaine de référence ne peut pas être au chômage ou inactive (ACTEU = 2 ou 3).
 ```{r}
 table(puf$HEFFEMP, puf$ACTEU, useNA = "always")
 ```
@@ -94,11 +94,6 @@ table(puf$TPPRED, puf$RAISTP, useNA = "always")
 table(puf$PUB3FP, puf$ACTEU, useNA = "always")
 ```
 
-**PASTRA = 1 et ACTEU = 2 ou 3 :** Une personne n'ayant pas travaillé la semaine de référence mais ayant un emploi rémunéré (PASTRA = 1) ne devrait pas être au chômage (ACTEU = 2) ou inactive (ACTEU = 3). Cependant, on en trouve dans la table originale.
-JJ: Si le filtre ne permet pas de parfaitement discriminer les cas, on peut le retirer.
-```{r}
-table(puf$PASTRA, puf$ACTEU, useNA = "always")
-```
 
 **ANCSSEMP = 1 et ACTEU = 1 :** Une personne en emploi (ACTEU = 1) doit répondre NA lorsqu'on lui demande l'ancienneté sans emploi (ANCSSEMP).
 
