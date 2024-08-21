@@ -1,0 +1,2000 @@
+Etape 1:
+Effectif RETIRED: 999
+Moyenne cumulée effectif REITRED: 999.0
+Coefficient Pearson entre height et weight: 0.38189196249961344
+Moyenne cumulée coefficient Pearson entre height et weight: 0.38189196249961344
+Effectif FEMALE: 2230
+Moyenne cumulée effectif FEMALE: 2230.0
+Effectif 45-59: 1469
+Moyenne cumulée effectif 45-59: 1469.0
+
+Etape 2:
+Effectif RETIRED: 1003
+Moyenne cumulée effectif REITRED: 1001.0
+Coefficient Pearson entre height et weight: 0.41114384660718045
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39651790455339697
+Effectif FEMALE: 2210
+Moyenne cumulée effectif FEMALE: 2220.0
+Effectif 45-59: 1475
+Moyenne cumulée effectif 45-59: 1472.0
+
+Etape 3:
+Effectif RETIRED: 1040
+Moyenne cumulée effectif REITRED: 1014.0
+Coefficient Pearson entre height et weight: 0.38646397171616975
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39316659360765455
+Effectif FEMALE: 2196
+Moyenne cumulée effectif FEMALE: 2212.0
+Effectif 45-59: 1471
+Moyenne cumulée effectif 45-59: 1471.6666666666667
+
+Etape 4:
+Effectif RETIRED: 971
+Moyenne cumulée effectif REITRED: 1003.25
+Coefficient Pearson entre height et weight: 0.4014083894355533
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39522704256462926
+Effectif FEMALE: 2232
+Moyenne cumulée effectif FEMALE: 2217.0
+Effectif 45-59: 1523
+Moyenne cumulée effectif 45-59: 1484.5
+
+Etape 5:
+Effectif RETIRED: 1052
+Moyenne cumulée effectif REITRED: 1013.0
+Coefficient Pearson entre height et weight: 0.3889083816631477
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3939633103843329
+Effectif FEMALE: 2262
+Moyenne cumulée effectif FEMALE: 2226.0
+Effectif 45-59: 1521
+Moyenne cumulée effectif 45-59: 1491.8
+
+Etape 6:
+Effectif RETIRED: 1010
+Moyenne cumulée effectif REITRED: 1012.5
+Coefficient Pearson entre height et weight: 0.38864194464442264
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39307641609434785
+Effectif FEMALE: 2225
+Moyenne cumulée effectif FEMALE: 2225.8333333333335
+Effectif 45-59: 1502
+Moyenne cumulée effectif 45-59: 1493.5
+
+Etape 7:
+Effectif RETIRED: 1017
+Moyenne cumulée effectif REITRED: 1013.1428571428571
+Coefficient Pearson entre height et weight: 0.4028784638193825
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3944767086264957
+Effectif FEMALE: 2233
+Moyenne cumulée effectif FEMALE: 2226.8571428571427
+Effectif 45-59: 1448
+Moyenne cumulée effectif 45-59: 1487.0
+
+Etape 8:
+Effectif RETIRED: 1022
+Moyenne cumulée effectif REITRED: 1014.25
+Coefficient Pearson entre height et weight: 0.4115388659700304
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39660947829443755
+Effectif FEMALE: 2241
+Moyenne cumulée effectif FEMALE: 2228.625
+Effectif 45-59: 1447
+Moyenne cumulée effectif 45-59: 1482.0
+
+Etape 9:
+Effectif RETIRED: 1017
+Moyenne cumulée effectif REITRED: 1014.5555555555555
+Coefficient Pearson entre height et weight: 0.4138467238785919
+Moyenne cumulée coefficient Pearson entre height et weight: 0.398524727803788
+Effectif FEMALE: 2233
+Moyenne cumulée effectif FEMALE: 2229.1111111111113
+Effectif 45-59: 1480
+Moyenne cumulée effectif 45-59: 1481.7777777777778
+
+Etape 10:
+Effectif RETIRED: 997
+Moyenne cumulée effectif REITRED: 1012.8
+Coefficient Pearson entre height et weight: 0.39576193846360946
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3982484488697701
+Effectif FEMALE: 2231
+Moyenne cumulée effectif FEMALE: 2229.3
+Effectif 45-59: 1506
+Moyenne cumulée effectif 45-59: 1484.2
+
+Etape 11:
+Effectif RETIRED: 1011
+Moyenne cumulée effectif REITRED: 1012.6363636363636
+Coefficient Pearson entre height et weight: 0.3978234886808509
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39820981612532297
+Effectif FEMALE: 2200
+Moyenne cumulée effectif FEMALE: 2226.6363636363635
+Effectif 45-59: 1474
+Moyenne cumulée effectif 45-59: 1483.2727272727273
+
+Etape 12:
+Effectif RETIRED: 1006
+Moyenne cumulée effectif REITRED: 1012.0833333333334
+Coefficient Pearson entre height et weight: 0.3826036721619443
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3969093041283747
+Effectif FEMALE: 2223
+Moyenne cumulée effectif FEMALE: 2226.3333333333335
+Effectif 45-59: 1476
+Moyenne cumulée effectif 45-59: 1482.6666666666667
+
+Etape 13:
+Effectif RETIRED: 995
+Moyenne cumulée effectif REITRED: 1010.7692307692307
+Coefficient Pearson entre height et weight: 0.3889019152851786
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3962933511404366
+Effectif FEMALE: 2230
+Moyenne cumulée effectif FEMALE: 2226.6153846153848
+Effectif 45-59: 1473
+Moyenne cumulée effectif 45-59: 1481.923076923077
+
+Etape 14:
+Effectif RETIRED: 980
+Moyenne cumulée effectif REITRED: 1008.5714285714286
+Coefficient Pearson entre height et weight: 0.38262354289420725
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39531693626570596
+Effectif FEMALE: 2252
+Moyenne cumulée effectif FEMALE: 2228.4285714285716
+Effectif 45-59: 1425
+Moyenne cumulée effectif 45-59: 1477.857142857143
+
+Etape 15:
+Effectif RETIRED: 984
+Moyenne cumulée effectif REITRED: 1006.9333333333333
+Coefficient Pearson entre height et weight: 0.3973148812149868
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39545013259565803
+Effectif FEMALE: 2234
+Moyenne cumulée effectif FEMALE: 2228.8
+Effectif 45-59: 1527
+Moyenne cumulée effectif 45-59: 1481.1333333333334
+
+Etape 16:
+Effectif RETIRED: 1045
+Moyenne cumulée effectif REITRED: 1009.3125
+Coefficient Pearson entre height et weight: 0.4008231044940697
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3957859433393087
+Effectif FEMALE: 2207
+Moyenne cumulée effectif FEMALE: 2227.4375
+Effectif 45-59: 1474
+Moyenne cumulée effectif 45-59: 1480.6875
+
+Etape 17:
+Effectif RETIRED: 1008
+Moyenne cumulée effectif REITRED: 1009.2352941176471
+Coefficient Pearson entre height et weight: 0.4048318799354618
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39631805725672953
+Effectif FEMALE: 2225
+Moyenne cumulée effectif FEMALE: 2227.294117647059
+Effectif 45-59: 1461
+Moyenne cumulée effectif 45-59: 1479.5294117647059
+
+Etape 18:
+Effectif RETIRED: 998
+Moyenne cumulée effectif REITRED: 1008.6111111111111
+Coefficient Pearson entre height et weight: 0.39710907062335515
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3963620024437643
+Effectif FEMALE: 2266
+Moyenne cumulée effectif FEMALE: 2229.4444444444443
+Effectif 45-59: 1509
+Moyenne cumulée effectif 45-59: 1481.1666666666667
+
+Etape 19:
+Effectif RETIRED: 1033
+Moyenne cumulée effectif REITRED: 1009.8947368421053
+Coefficient Pearson entre height et weight: 0.38498363778938594
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3957631411461654
+Effectif FEMALE: 2235
+Moyenne cumulée effectif FEMALE: 2229.7368421052633
+Effectif 45-59: 1487
+Moyenne cumulée effectif 45-59: 1481.4736842105262
+
+Etape 20:
+Effectif RETIRED: 986
+Moyenne cumulée effectif REITRED: 1008.7
+Coefficient Pearson entre height et weight: 0.40499357611251674
+Moyenne cumulée coefficient Pearson entre height et weight: 0.396224662894483
+Effectif FEMALE: 2262
+Moyenne cumulée effectif FEMALE: 2231.35
+Effectif 45-59: 1448
+Moyenne cumulée effectif 45-59: 1479.8
+
+Etape 21:
+Effectif RETIRED: 1000
+Moyenne cumulée effectif REITRED: 1008.2857142857143
+Coefficient Pearson entre height et weight: 0.3802588538693018
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3954643862742363
+Effectif FEMALE: 2268
+Moyenne cumulée effectif FEMALE: 2233.095238095238
+Effectif 45-59: 1479
+Moyenne cumulée effectif 45-59: 1479.7619047619048
+
+Etape 22:
+Effectif RETIRED: 1010
+Moyenne cumulée effectif REITRED: 1008.3636363636364
+Coefficient Pearson entre height et weight: 0.3786128056008121
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39469840533453515
+Effectif FEMALE: 2261
+Moyenne cumulée effectif FEMALE: 2234.3636363636365
+Effectif 45-59: 1447
+Moyenne cumulée effectif 45-59: 1478.2727272727273
+
+Etape 23:
+Effectif RETIRED: 984
+Moyenne cumulée effectif REITRED: 1007.304347826087
+Coefficient Pearson entre height et weight: 0.40227036181561077
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3950276208337123
+Effectif FEMALE: 2214
+Moyenne cumulée effectif FEMALE: 2233.478260869565
+Effectif 45-59: 1479
+Moyenne cumulée effectif 45-59: 1478.304347826087
+
+Etape 24:
+Effectif RETIRED: 986
+Moyenne cumulée effectif REITRED: 1006.4166666666666
+Coefficient Pearson entre height et weight: 0.39073106645122363
+Moyenne cumulée coefficient Pearson entre height et weight: 0.394848597734442
+Effectif FEMALE: 2220
+Moyenne cumulée effectif FEMALE: 2232.9166666666665
+Effectif 45-59: 1472
+Moyenne cumulée effectif 45-59: 1478.0416666666667
+
+Etape 25:
+Effectif RETIRED: 992
+Moyenne cumulée effectif REITRED: 1005.84
+Coefficient Pearson entre height et weight: 0.41216743655567567
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3955413512872913
+Effectif FEMALE: 2244
+Moyenne cumulée effectif FEMALE: 2233.36
+Effectif 45-59: 1513
+Moyenne cumulée effectif 45-59: 1479.44
+
+Etape 26:
+Effectif RETIRED: 978
+Moyenne cumulée effectif REITRED: 1004.7692307692307
+Coefficient Pearson entre height et weight: 0.4192031843363257
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3964514217891772
+Effectif FEMALE: 2227
+Moyenne cumulée effectif FEMALE: 2233.1153846153848
+Effectif 45-59: 1457
+Moyenne cumulée effectif 45-59: 1478.576923076923
+
+Etape 27:
+Effectif RETIRED: 956
+Moyenne cumulée effectif REITRED: 1002.9629629629629
+Coefficient Pearson entre height et weight: 0.3745236525978976
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3956392821895002
+Effectif FEMALE: 2233
+Moyenne cumulée effectif FEMALE: 2233.1111111111113
+Effectif 45-59: 1518
+Moyenne cumulée effectif 45-59: 1480.037037037037
+
+Etape 28:
+Effectif RETIRED: 975
+Moyenne cumulée effectif REITRED: 1001.9642857142857
+Coefficient Pearson entre height et weight: 0.3860006845751361
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39529504656041575
+Effectif FEMALE: 2242
+Moyenne cumulée effectif FEMALE: 2233.4285714285716
+Effectif 45-59: 1490
+Moyenne cumulée effectif 45-59: 1480.392857142857
+
+Etape 29:
+Effectif RETIRED: 999
+Moyenne cumulée effectif REITRED: 1001.8620689655172
+Coefficient Pearson entre height et weight: 0.39017918951215375
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39511863769668254
+Effectif FEMALE: 2197
+Moyenne cumulée effectif FEMALE: 2232.1724137931033
+Effectif 45-59: 1465
+Moyenne cumulée effectif 45-59: 1479.8620689655172
+
+Etape 30:
+Effectif RETIRED: 1004
+Moyenne cumulée effectif REITRED: 1001.9333333333333
+Coefficient Pearson entre height et weight: 0.382942985760164
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3947127826321319
+Effectif FEMALE: 2200
+Moyenne cumulée effectif FEMALE: 2231.1
+Effectif 45-59: 1488
+Moyenne cumulée effectif 45-59: 1480.1333333333334
+
+Etape 31:
+Effectif RETIRED: 1004
+Moyenne cumulée effectif REITRED: 1002.0
+Coefficient Pearson entre height et weight: 0.41208072106006366
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3952730387104523
+Effectif FEMALE: 2227
+Moyenne cumulée effectif FEMALE: 2230.967741935484
+Effectif 45-59: 1463
+Moyenne cumulée effectif 45-59: 1479.5806451612902
+
+Etape 32:
+Effectif RETIRED: 1004
+Moyenne cumulée effectif REITRED: 1002.0625
+Coefficient Pearson entre height et weight: 0.39919305461470334
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39539553920746007
+Effectif FEMALE: 2239
+Moyenne cumulée effectif FEMALE: 2231.21875
+Effectif 45-59: 1450
+Moyenne cumulée effectif 45-59: 1478.65625
+
+Etape 33:
+Effectif RETIRED: 979
+Moyenne cumulée effectif REITRED: 1001.3636363636364
+Coefficient Pearson entre height et weight: 0.37664197610899425
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39482724941659747
+Effectif FEMALE: 2224
+Moyenne cumulée effectif FEMALE: 2231.0
+Effectif 45-59: 1451
+Moyenne cumulée effectif 45-59: 1477.8181818181818
+
+Etape 34:
+Effectif RETIRED: 971
+Moyenne cumulée effectif REITRED: 1000.4705882352941
+Coefficient Pearson entre height et weight: 0.3928916965484264
+Moyenne cumulée coefficient Pearson entre height et weight: 0.394770321391063
+Effectif FEMALE: 2228
+Moyenne cumulée effectif FEMALE: 2230.9117647058824
+Effectif 45-59: 1514
+Moyenne cumulée effectif 45-59: 1478.8823529411766
+
+Etape 35:
+Effectif RETIRED: 998
+Moyenne cumulée effectif REITRED: 1000.4
+Coefficient Pearson entre height et weight: 0.3896866357798165
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39462507323074164
+Effectif FEMALE: 2224
+Moyenne cumulée effectif FEMALE: 2230.714285714286
+Effectif 45-59: 1505
+Moyenne cumulée effectif 45-59: 1479.6285714285714
+
+Etape 36:
+Effectif RETIRED: 1007
+Moyenne cumulée effectif REITRED: 1000.5833333333334
+Coefficient Pearson entre height et weight: 0.3953941493367274
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3946464364559079
+Effectif FEMALE: 2223
+Moyenne cumulée effectif FEMALE: 2230.5
+Effectif 45-59: 1521
+Moyenne cumulée effectif 45-59: 1480.7777777777778
+
+Etape 37:
+Effectif RETIRED: 996
+Moyenne cumulée effectif REITRED: 1000.4594594594595
+Coefficient Pearson entre height et weight: 0.3890985781882901
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39449649434056694
+Effectif FEMALE: 2234
+Moyenne cumulée effectif FEMALE: 2230.5945945945946
+Effectif 45-59: 1496
+Moyenne cumulée effectif 45-59: 1481.1891891891892
+
+Etape 38:
+Effectif RETIRED: 968
+Moyenne cumulée effectif REITRED: 999.6052631578947
+Coefficient Pearson entre height et weight: 0.4086606978933427
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3948692365393242
+Effectif FEMALE: 2235
+Moyenne cumulée effectif FEMALE: 2230.7105263157896
+Effectif 45-59: 1503
+Moyenne cumulée effectif 45-59: 1481.7631578947369
+
+Etape 39:
+Effectif RETIRED: 1015
+Moyenne cumulée effectif REITRED: 1000.0
+Coefficient Pearson entre height et weight: 0.4065140746913087
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3951678221329648
+Effectif FEMALE: 2207
+Moyenne cumulée effectif FEMALE: 2230.102564102564
+Effectif 45-59: 1438
+Moyenne cumulée effectif 45-59: 1480.6410256410256
+
+Etape 40:
+Effectif RETIRED: 1007
+Moyenne cumulée effectif REITRED: 1000.175
+Coefficient Pearson entre height et weight: 0.40310365428273126
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39536621793670895
+Effectif FEMALE: 2217
+Moyenne cumulée effectif FEMALE: 2229.775
+Effectif 45-59: 1513
+Moyenne cumulée effectif 45-59: 1481.45
+
+Etape 41:
+Effectif RETIRED: 1018
+Moyenne cumulée effectif REITRED: 1000.609756097561
+Coefficient Pearson entre height et weight: 0.4105234175871216
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3957359057330605
+Effectif FEMALE: 2262
+Moyenne cumulée effectif FEMALE: 2230.560975609756
+Effectif 45-59: 1481
+Moyenne cumulée effectif 45-59: 1481.439024390244
+
+Etape 42:
+Effectif RETIRED: 1019
+Moyenne cumulée effectif REITRED: 1001.047619047619
+Coefficient Pearson entre height et weight: 0.39602838443694166
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3957428695117243
+Effectif FEMALE: 2266
+Moyenne cumulée effectif FEMALE: 2231.404761904762
+Effectif 45-59: 1480
+Moyenne cumulée effectif 45-59: 1481.404761904762
+
+Etape 43:
+Effectif RETIRED: 1019
+Moyenne cumulée effectif REITRED: 1001.4651162790698
+Coefficient Pearson entre height et weight: 0.4076295830369113
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3960193047099845
+Effectif FEMALE: 2261
+Moyenne cumulée effectif FEMALE: 2232.093023255814
+Effectif 45-59: 1504
+Moyenne cumulée effectif 45-59: 1481.9302325581396
+
+Etape 44:
+Effectif RETIRED: 1027
+Moyenne cumulée effectif REITRED: 1002.0454545454545
+Coefficient Pearson entre height et weight: 0.40079223057694546
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39612778029787
+Effectif FEMALE: 2254
+Moyenne cumulée effectif FEMALE: 2232.590909090909
+Effectif 45-59: 1505
+Moyenne cumulée effectif 45-59: 1482.4545454545455
+
+Etape 45:
+Effectif RETIRED: 983
+Moyenne cumulée effectif REITRED: 1001.6222222222223
+Coefficient Pearson entre height et weight: 0.40618047095471776
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39635117342357773
+Effectif FEMALE: 2190
+Moyenne cumulée effectif FEMALE: 2231.6444444444446
+Effectif 45-59: 1493
+Moyenne cumulée effectif 45-59: 1482.6888888888889
+
+Etape 46:
+Effectif RETIRED: 1040
+Moyenne cumulée effectif REITRED: 1002.4565217391304
+Coefficient Pearson entre height et weight: 0.39436349689850553
+Moyenne cumulée coefficient Pearson entre height et weight: 0.396307963064337
+Effectif FEMALE: 2250
+Moyenne cumulée effectif FEMALE: 2232.0434782608695
+Effectif 45-59: 1461
+Moyenne cumulée effectif 45-59: 1482.2173913043478
+
+Etape 47:
+Effectif RETIRED: 1002
+Moyenne cumulée effectif REITRED: 1002.4468085106383
+Coefficient Pearson entre height et weight: 0.4140528209495228
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39668551323210693
+Effectif FEMALE: 2243
+Moyenne cumulée effectif FEMALE: 2232.276595744681
+Effectif 45-59: 1425
+Moyenne cumulée effectif 45-59: 1481.0
+
+Etape 48:
+Effectif RETIRED: 999
+Moyenne cumulée effectif REITRED: 1002.375
+Coefficient Pearson entre height et weight: 0.3964328452914951
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3966802493166775
+Effectif FEMALE: 2214
+Moyenne cumulée effectif FEMALE: 2231.8958333333335
+Effectif 45-59: 1481
+Moyenne cumulée effectif 45-59: 1481.0
+
+Etape 49:
+Effectif RETIRED: 967
+Moyenne cumulée effectif REITRED: 1001.6530612244898
+Coefficient Pearson entre height et weight: 0.406546170696484
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3968815946509593
+Effectif FEMALE: 2214
+Moyenne cumulée effectif FEMALE: 2231.530612244898
+Effectif 45-59: 1480
+Moyenne cumulée effectif 45-59: 1480.9795918367347
+
+Etape 50:
+Effectif RETIRED: 1018
+Moyenne cumulée effectif REITRED: 1001.98
+Coefficient Pearson entre height et weight: 0.40136855494078233
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3969713338567557
+Effectif FEMALE: 2248
+Moyenne cumulée effectif FEMALE: 2231.86
+Effectif 45-59: 1500
+Moyenne cumulée effectif 45-59: 1481.36
+
+Etape 51:
+Effectif RETIRED: 982
+Moyenne cumulée effectif REITRED: 1001.5882352941177
+Coefficient Pearson entre height et weight: 0.4179950754129636
+Moyenne cumulée coefficient Pearson entre height et weight: 0.397383564083348
+Effectif FEMALE: 2219
+Moyenne cumulée effectif FEMALE: 2231.607843137255
+Effectif 45-59: 1488
+Moyenne cumulée effectif 45-59: 1481.4901960784314
+
+Etape 52:
+Effectif RETIRED: 998
+Moyenne cumulée effectif REITRED: 1001.5192307692307
+Coefficient Pearson entre height et weight: 0.3712298394908473
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39688060784118456
+Effectif FEMALE: 2221
+Moyenne cumulée effectif FEMALE: 2231.403846153846
+Effectif 45-59: 1497
+Moyenne cumulée effectif 45-59: 1481.7884615384614
+
+Etape 53:
+Effectif RETIRED: 982
+Moyenne cumulée effectif REITRED: 1001.1509433962265
+Coefficient Pearson entre height et weight: 0.38772789311798994
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39670791511055825
+Effectif FEMALE: 2224
+Moyenne cumulée effectif FEMALE: 2231.264150943396
+Effectif 45-59: 1487
+Moyenne cumulée effectif 45-59: 1481.8867924528302
+
+Etape 54:
+Effectif RETIRED: 995
+Moyenne cumulée effectif REITRED: 1001.0370370370371
+Coefficient Pearson entre height et weight: 0.37589341858482633
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3963224614711929
+Effectif FEMALE: 2212
+Moyenne cumulée effectif FEMALE: 2230.9074074074074
+Effectif 45-59: 1472
+Moyenne cumulée effectif 45-59: 1481.7037037037037
+
+Etape 55:
+Effectif RETIRED: 1024
+Moyenne cumulée effectif REITRED: 1001.4545454545455
+Coefficient Pearson entre height et weight: 0.4089669160719329
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3965523606457518
+Effectif FEMALE: 2241
+Moyenne cumulée effectif FEMALE: 2231.090909090909
+Effectif 45-59: 1493
+Moyenne cumulée effectif 45-59: 1481.909090909091
+
+Etape 56:
+Effectif RETIRED: 1020
+Moyenne cumulée effectif REITRED: 1001.7857142857143
+Coefficient Pearson entre height et weight: 0.36803769235225114
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39604317014051066
+Effectif FEMALE: 2228
+Moyenne cumulée effectif FEMALE: 2231.035714285714
+Effectif 45-59: 1470
+Moyenne cumulée effectif 45-59: 1481.6964285714287
+
+Etape 57:
+Effectif RETIRED: 1037
+Moyenne cumulée effectif REITRED: 1002.4035087719299
+Coefficient Pearson entre height et weight: 0.3992104900077073
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39609873715572463
+Effectif FEMALE: 2258
+Moyenne cumulée effectif FEMALE: 2231.5087719298244
+Effectif 45-59: 1452
+Moyenne cumulée effectif 45-59: 1481.1754385964912
+
+Etape 58:
+Effectif RETIRED: 987
+Moyenne cumulée effectif REITRED: 1002.1379310344828
+Coefficient Pearson entre height et weight: 0.38805944276206755
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39596012863169605
+Effectif FEMALE: 2224
+Moyenne cumulée effectif FEMALE: 2231.3793103448274
+Effectif 45-59: 1481
+Moyenne cumulée effectif 45-59: 1481.1724137931035
+
+Etape 59:
+Effectif RETIRED: 1030
+Moyenne cumulée effectif REITRED: 1002.6101694915254
+Coefficient Pearson entre height et weight: 0.39412593375568217
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39592904058295003
+Effectif FEMALE: 2231
+Moyenne cumulée effectif FEMALE: 2231.3728813559323
+Effectif 45-59: 1434
+Moyenne cumulée effectif 45-59: 1480.3728813559321
+
+Etape 60:
+Effectif RETIRED: 1011
+Moyenne cumulée effectif REITRED: 1002.75
+Coefficient Pearson entre height et weight: 0.4097746223707435
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3961598002794133
+Effectif FEMALE: 2225
+Moyenne cumulée effectif FEMALE: 2231.266666666667
+Effectif 45-59: 1431
+Moyenne cumulée effectif 45-59: 1479.55
+
+Etape 61:
+Effectif RETIRED: 1007
+Moyenne cumulée effectif REITRED: 1002.8196721311475
+Coefficient Pearson entre height et weight: 0.3646233934744467
+Moyenne cumulée coefficient Pearson entre height et weight: 0.395642810003922
+Effectif FEMALE: 2215
+Moyenne cumulée effectif FEMALE: 2231.0
+Effectif 45-59: 1469
+Moyenne cumulée effectif 45-59: 1479.377049180328
+
+Etape 62:
+Effectif RETIRED: 1029
+Moyenne cumulée effectif REITRED: 1003.241935483871
+Coefficient Pearson entre height et weight: 0.4150509391077897
+Moyenne cumulée coefficient Pearson entre height et weight: 0.395955844344307
+Effectif FEMALE: 2216
+Moyenne cumulée effectif FEMALE: 2230.7580645161293
+Effectif 45-59: 1420
+Moyenne cumulée effectif 45-59: 1478.4193548387098
+
+Etape 63:
+Effectif RETIRED: 1016
+Moyenne cumulée effectif REITRED: 1003.4444444444445
+Coefficient Pearson entre height et weight: 0.3925166204606324
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39590125348901056
+Effectif FEMALE: 2245
+Moyenne cumulée effectif FEMALE: 2230.9841269841268
+Effectif 45-59: 1537
+Moyenne cumulée effectif 45-59: 1479.3492063492063
+
+Etape 64:
+Effectif RETIRED: 958
+Moyenne cumulée effectif REITRED: 1002.734375
+Coefficient Pearson entre height et weight: 0.40586085621289947
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3960568722815713
+Effectif FEMALE: 2268
+Moyenne cumulée effectif FEMALE: 2231.5625
+Effectif 45-59: 1487
+Moyenne cumulée effectif 45-59: 1479.46875
+
+Etape 65:
+Effectif RETIRED: 976
+Moyenne cumulée effectif REITRED: 1002.3230769230769
+Coefficient Pearson entre height et weight: 0.3801067294818322
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39581148546926764
+Effectif FEMALE: 2202
+Moyenne cumulée effectif FEMALE: 2231.107692307692
+Effectif 45-59: 1509
+Moyenne cumulée effectif 45-59: 1479.923076923077
+
+Etape 66:
+Effectif RETIRED: 996
+Moyenne cumulée effectif REITRED: 1002.2272727272727
+Coefficient Pearson entre height et weight: 0.38716306682687984
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3956804488231708
+Effectif FEMALE: 2260
+Moyenne cumulée effectif FEMALE: 2231.5454545454545
+Effectif 45-59: 1472
+Moyenne cumulée effectif 45-59: 1479.8030303030303
+
+Etape 67:
+Effectif RETIRED: 992
+Moyenne cumulée effectif REITRED: 1002.0746268656717
+Coefficient Pearson entre height et weight: 0.40442809966679605
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39581101077606073
+Effectif FEMALE: 2238
+Moyenne cumulée effectif FEMALE: 2231.6417910447763
+Effectif 45-59: 1514
+Moyenne cumulée effectif 45-59: 1480.313432835821
+
+Etape 68:
+Effectif RETIRED: 992
+Moyenne cumulée effectif REITRED: 1001.9264705882352
+Coefficient Pearson entre height et weight: 0.380998480480435
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3955931794481839
+Effectif FEMALE: 2207
+Moyenne cumulée effectif FEMALE: 2231.279411764706
+Effectif 45-59: 1452
+Moyenne cumulée effectif 45-59: 1479.8970588235295
+
+Etape 69:
+Effectif RETIRED: 989
+Moyenne cumulée effectif REITRED: 1001.7391304347826
+Coefficient Pearson entre height et weight: 0.4077124486154048
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3957688210303176
+Effectif FEMALE: 2215
+Moyenne cumulée effectif FEMALE: 2231.0434782608695
+Effectif 45-59: 1533
+Moyenne cumulée effectif 45-59: 1480.6666666666667
+
+Etape 70:
+Effectif RETIRED: 1011
+Moyenne cumulée effectif REITRED: 1001.8714285714286
+Coefficient Pearson entre height et weight: 0.38684281180055813
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3956413066127496
+Effectif FEMALE: 2238
+Moyenne cumulée effectif FEMALE: 2231.1428571428573
+Effectif 45-59: 1473
+Moyenne cumulée effectif 45-59: 1480.557142857143
+
+Etape 71:
+Effectif RETIRED: 1019
+Moyenne cumulée effectif REITRED: 1002.112676056338
+Coefficient Pearson entre height et weight: 0.39250885084723325
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3955971875174606
+Effectif FEMALE: 2207
+Moyenne cumulée effectif FEMALE: 2230.8028169014083
+Effectif 45-59: 1500
+Moyenne cumulée effectif 45-59: 1480.8309859154929
+
+Etape 72:
+Effectif RETIRED: 996
+Moyenne cumulée effectif REITRED: 1002.0277777777778
+Coefficient Pearson entre height et weight: 0.3884741381571417
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3954982562763451
+Effectif FEMALE: 2194
+Moyenne cumulée effectif FEMALE: 2230.2916666666665
+Effectif 45-59: 1493
+Moyenne cumulée effectif 45-59: 1481.0
+
+Etape 73:
+Effectif RETIRED: 1023
+Moyenne cumulée effectif REITRED: 1002.3150684931506
+Coefficient Pearson entre height et weight: 0.4087408692576664
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39567966193362347
+Effectif FEMALE: 2178
+Moyenne cumulée effectif FEMALE: 2229.5753424657532
+Effectif 45-59: 1461
+Moyenne cumulée effectif 45-59: 1480.7260273972602
+
+Etape 74:
+Effectif RETIRED: 993
+Moyenne cumulée effectif REITRED: 1002.1891891891892
+Coefficient Pearson entre height et weight: 0.39753622868882504
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3957047506735586
+Effectif FEMALE: 2229
+Moyenne cumulée effectif FEMALE: 2229.5675675675675
+Effectif 45-59: 1488
+Moyenne cumulée effectif 45-59: 1480.8243243243244
+
+Etape 75:
+Effectif RETIRED: 998
+Moyenne cumulée effectif REITRED: 1002.1333333333333
+Coefficient Pearson entre height et weight: 0.399589797545934
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39575655129852366
+Effectif FEMALE: 2235
+Moyenne cumulée effectif FEMALE: 2229.64
+Effectif 45-59: 1494
+Moyenne cumulée effectif 45-59: 1481.0
+
+Etape 76:
+Effectif RETIRED: 1014
+Moyenne cumulée effectif REITRED: 1002.2894736842105
+Coefficient Pearson entre height et weight: 0.39121978924930384
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3956968570610339
+Effectif FEMALE: 2237
+Moyenne cumulée effectif FEMALE: 2229.7368421052633
+Effectif 45-59: 1472
+Moyenne cumulée effectif 45-59: 1480.8815789473683
+
+Etape 77:
+Effectif RETIRED: 940
+Moyenne cumulée effectif REITRED: 1001.4805194805194
+Coefficient Pearson entre height et weight: 0.38095318488054786
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3955053807989497
+Effectif FEMALE: 2222
+Moyenne cumulée effectif FEMALE: 2229.6363636363635
+Effectif 45-59: 1504
+Moyenne cumulée effectif 45-59: 1481.1818181818182
+
+Etape 78:
+Effectif RETIRED: 1012
+Moyenne cumulée effectif REITRED: 1001.6153846153846
+Coefficient Pearson entre height et weight: 0.39793864571827997
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3955365765030437
+Effectif FEMALE: 2234
+Moyenne cumulée effectif FEMALE: 2229.6923076923076
+Effectif 45-59: 1462
+Moyenne cumulée effectif 45-59: 1480.9358974358975
+
+Etape 79:
+Effectif RETIRED: 1041
+Moyenne cumulée effectif REITRED: 1002.1139240506329
+Coefficient Pearson entre height et weight: 0.38415096598127796
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3953924548508694
+Effectif FEMALE: 2212
+Moyenne cumulée effectif FEMALE: 2229.46835443038
+Effectif 45-59: 1461
+Moyenne cumulée effectif 45-59: 1480.6835443037974
+
+Etape 80:
+Effectif RETIRED: 986
+Moyenne cumulée effectif REITRED: 1001.9125
+Coefficient Pearson entre height et weight: 0.4053575319837881
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3955170183150309
+Effectif FEMALE: 2203
+Moyenne cumulée effectif FEMALE: 2229.1375
+Effectif 45-59: 1473
+Moyenne cumulée effectif 45-59: 1480.5875
+
+Etape 81:
+Effectif RETIRED: 986
+Moyenne cumulée effectif REITRED: 1001.716049382716
+Coefficient Pearson entre height et weight: 0.39358666114126384
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3954931867449844
+Effectif FEMALE: 2233
+Moyenne cumulée effectif FEMALE: 2229.185185185185
+Effectif 45-59: 1454
+Moyenne cumulée effectif 45-59: 1480.2592592592594
+
+Etape 82:
+Effectif RETIRED: 1011
+Moyenne cumulée effectif REITRED: 1001.829268292683
+Coefficient Pearson entre height et weight: 0.35986005211471567
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3950586363226641
+Effectif FEMALE: 2251
+Moyenne cumulée effectif FEMALE: 2229.451219512195
+Effectif 45-59: 1496
+Moyenne cumulée effectif 45-59: 1480.4512195121952
+
+Etape 83:
+Effectif RETIRED: 1009
+Moyenne cumulée effectif REITRED: 1001.9156626506024
+Coefficient Pearson entre height et weight: 0.3879076466023535
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3949724798200097
+Effectif FEMALE: 2214
+Moyenne cumulée effectif FEMALE: 2229.265060240964
+Effectif 45-59: 1498
+Moyenne cumulée effectif 45-59: 1480.6626506024097
+
+Etape 84:
+Effectif RETIRED: 1005
+Moyenne cumulée effectif REITRED: 1001.952380952381
+Coefficient Pearson entre height et weight: 0.38629648817282003
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3948691942051622
+Effectif FEMALE: 2255
+Moyenne cumulée effectif FEMALE: 2229.5714285714284
+Effectif 45-59: 1485
+Moyenne cumulée effectif 45-59: 1480.7142857142858
+
+Etape 85:
+Effectif RETIRED: 1003
+Moyenne cumulée effectif REITRED: 1001.964705882353
+Coefficient Pearson entre height et weight: 0.39609920061073284
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39488366486875714
+Effectif FEMALE: 2246
+Moyenne cumulée effectif FEMALE: 2229.764705882353
+Effectif 45-59: 1458
+Moyenne cumulée effectif 45-59: 1480.4470588235295
+
+Etape 86:
+Effectif RETIRED: 991
+Moyenne cumulée effectif REITRED: 1001.8372093023256
+Coefficient Pearson entre height et weight: 0.4023713961911993
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3949707315120414
+Effectif FEMALE: 2215
+Moyenne cumulée effectif FEMALE: 2229.593023255814
+Effectif 45-59: 1448
+Moyenne cumulée effectif 45-59: 1480.0697674418604
+
+Etape 87:
+Effectif RETIRED: 990
+Moyenne cumulée effectif REITRED: 1001.7011494252873
+Coefficient Pearson entre height et weight: 0.38774501306070414
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3948876772769685
+Effectif FEMALE: 2203
+Moyenne cumulée effectif FEMALE: 2229.287356321839
+Effectif 45-59: 1485
+Moyenne cumulée effectif 45-59: 1480.1264367816093
+
+Etape 88:
+Effectif RETIRED: 993
+Moyenne cumulée effectif REITRED: 1001.6022727272727
+Coefficient Pearson entre height et weight: 0.3899102186569645
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3948311152471957
+Effectif FEMALE: 2248
+Moyenne cumulée effectif FEMALE: 2229.5
+Effectif 45-59: 1505
+Moyenne cumulée effectif 45-59: 1480.409090909091
+
+Etape 89:
+Effectif RETIRED: 1021
+Moyenne cumulée effectif REITRED: 1001.8202247191011
+Coefficient Pearson entre height et weight: 0.4006870864251822
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39489691267616184
+Effectif FEMALE: 2215
+Moyenne cumulée effectif FEMALE: 2229.3370786516853
+Effectif 45-59: 1479
+Moyenne cumulée effectif 45-59: 1480.3932584269662
+
+Etape 90:
+Effectif RETIRED: 1023
+Moyenne cumulée effectif REITRED: 1002.0555555555555
+Coefficient Pearson entre height et weight: 0.39751528955768767
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3949260057526232
+Effectif FEMALE: 2238
+Moyenne cumulée effectif FEMALE: 2229.4333333333334
+Effectif 45-59: 1431
+Moyenne cumulée effectif 45-59: 1479.8444444444444
+
+Etape 91:
+Effectif RETIRED: 982
+Moyenne cumulée effectif REITRED: 1001.8351648351648
+Coefficient Pearson entre height et weight: 0.39293994973097646
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3949041809611765
+Effectif FEMALE: 2199
+Moyenne cumulée effectif FEMALE: 2229.098901098901
+Effectif 45-59: 1469
+Moyenne cumulée effectif 45-59: 1479.7252747252746
+
+Etape 92:
+Effectif RETIRED: 1017
+Moyenne cumulée effectif REITRED: 1002.0
+Coefficient Pearson entre height et weight: 0.3836847074991748
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39478223016267655
+Effectif FEMALE: 2212
+Moyenne cumulée effectif FEMALE: 2228.913043478261
+Effectif 45-59: 1472
+Moyenne cumulée effectif 45-59: 1479.641304347826
+
+Etape 93:
+Effectif RETIRED: 969
+Moyenne cumulée effectif REITRED: 1001.6451612903226
+Coefficient Pearson entre height et weight: 0.3893636936244845
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39472396632893253
+Effectif FEMALE: 2212
+Moyenne cumulée effectif FEMALE: 2228.7311827956987
+Effectif 45-59: 1522
+Moyenne cumulée effectif 45-59: 1480.0967741935483
+
+Etape 94:
+Effectif RETIRED: 999
+Moyenne cumulée effectif REITRED: 1001.6170212765958
+Coefficient Pearson entre height et weight: 0.379136972177899
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3945581472422194
+Effectif FEMALE: 2235
+Moyenne cumulée effectif FEMALE: 2228.7978723404253
+Effectif 45-59: 1521
+Moyenne cumulée effectif 45-59: 1480.531914893617
+
+Etape 95:
+Effectif RETIRED: 994
+Moyenne cumulée effectif REITRED: 1001.5368421052632
+Coefficient Pearson entre height et weight: 0.41829896600124805
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3948080505975775
+Effectif FEMALE: 2250
+Moyenne cumulée effectif FEMALE: 2229.021052631579
+Effectif 45-59: 1447
+Moyenne cumulée effectif 45-59: 1480.178947368421
+
+Etape 96:
+Effectif RETIRED: 1006
+Moyenne cumulée effectif REITRED: 1001.5833333333334
+Coefficient Pearson entre height et weight: 0.38100242869274636
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39466424203606887
+Effectif FEMALE: 2241
+Moyenne cumulée effectif FEMALE: 2229.1458333333335
+Effectif 45-59: 1504
+Moyenne cumulée effectif 45-59: 1480.4270833333333
+
+Etape 97:
+Effectif RETIRED: 1000
+Moyenne cumulée effectif REITRED: 1001.5670103092783
+Coefficient Pearson entre height et weight: 0.40073919467436914
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39472687041378335
+Effectif FEMALE: 2253
+Moyenne cumulée effectif FEMALE: 2229.3917525773195
+Effectif 45-59: 1461
+Moyenne cumulée effectif 45-59: 1480.2268041237114
+
+Etape 98:
+Effectif RETIRED: 988
+Moyenne cumulée effectif REITRED: 1001.4285714285714
+Coefficient Pearson entre height et weight: 0.3985393574326636
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39476577334254737
+Effectif FEMALE: 2267
+Moyenne cumulée effectif FEMALE: 2229.7755102040815
+Effectif 45-59: 1463
+Moyenne cumulée effectif 45-59: 1480.0510204081634
+
+Etape 99:
+Effectif RETIRED: 1042
+Moyenne cumulée effectif REITRED: 1001.8383838383838
+Coefficient Pearson entre height et weight: 0.39293358477178225
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39474726638728713
+Effectif FEMALE: 2229
+Moyenne cumulée effectif FEMALE: 2229.7676767676767
+Effectif 45-59: 1486
+Moyenne cumulée effectif 45-59: 1480.111111111111
+
+Etape 100:
+Effectif RETIRED: 1002
+Moyenne cumulée effectif REITRED: 1001.84
+Coefficient Pearson entre height et weight: 0.37320516974508844
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39453184542086517
+Effectif FEMALE: 2240
+Moyenne cumulée effectif FEMALE: 2229.87
+Effectif 45-59: 1479
+Moyenne cumulée effectif 45-59: 1480.1
+
+Etape 101:
+Effectif RETIRED: 1015
+Moyenne cumulée effectif REITRED: 1001.9702970297029
+Coefficient Pearson entre height et weight: 0.3766207133767528
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39435450747983436
+Effectif FEMALE: 2215
+Moyenne cumulée effectif FEMALE: 2229.7227722772277
+Effectif 45-59: 1464
+Moyenne cumulée effectif 45-59: 1479.9405940594058
+
+Etape 102:
+Effectif RETIRED: 984
+Moyenne cumulée effectif REITRED: 1001.7941176470588
+Coefficient Pearson entre height et weight: 0.40714663294787906
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3944799204746191
+Effectif FEMALE: 2225
+Moyenne cumulée effectif FEMALE: 2229.676470588235
+Effectif 45-59: 1513
+Moyenne cumulée effectif 45-59: 1480.264705882353
+
+Etape 103:
+Effectif RETIRED: 1023
+Moyenne cumulée effectif REITRED: 1002.0
+Coefficient Pearson entre height et weight: 0.39176581282843936
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39445356991494746
+Effectif FEMALE: 2219
+Moyenne cumulée effectif FEMALE: 2229.5728155339807
+Effectif 45-59: 1414
+Moyenne cumulée effectif 45-59: 1479.621359223301
+
+Etape 104:
+Effectif RETIRED: 964
+Moyenne cumulée effectif REITRED: 1001.6346153846154
+Coefficient Pearson entre height et weight: 0.4103161296094135
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39460609452739426
+Effectif FEMALE: 2281
+Moyenne cumulée effectif FEMALE: 2230.0673076923076
+Effectif 45-59: 1529
+Moyenne cumulée effectif 45-59: 1480.0961538461538
+
+Etape 105:
+Effectif RETIRED: 978
+Moyenne cumulée effectif REITRED: 1001.4095238095238
+Coefficient Pearson entre height et weight: 0.3718999577655462
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39438984560585283
+Effectif FEMALE: 2231
+Moyenne cumulée effectif FEMALE: 2230.0761904761903
+Effectif 45-59: 1453
+Moyenne cumulée effectif 45-59: 1479.8380952380953
+
+Etape 106:
+Effectif RETIRED: 1041
+Moyenne cumulée effectif REITRED: 1001.7830188679245
+Coefficient Pearson entre height et weight: 0.3955894060369004
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3944011622136929
+Effectif FEMALE: 2228
+Moyenne cumulée effectif FEMALE: 2230.056603773585
+Effectif 45-59: 1480
+Moyenne cumulée effectif 45-59: 1479.8396226415093
+
+Etape 107:
+Effectif RETIRED: 992
+Moyenne cumulée effectif REITRED: 1001.6915887850467
+Coefficient Pearson entre height et weight: 0.37304984616142023
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3942016172038586
+Effectif FEMALE: 2256
+Moyenne cumulée effectif FEMALE: 2230.299065420561
+Effectif 45-59: 1488
+Moyenne cumulée effectif 45-59: 1479.9158878504672
+
+Etape 108:
+Effectif RETIRED: 993
+Moyenne cumulée effectif REITRED: 1001.6111111111111
+Coefficient Pearson entre height et weight: 0.38811431144748715
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39414525326167
+Effectif FEMALE: 2235
+Moyenne cumulée effectif FEMALE: 2230.3425925925926
+Effectif 45-59: 1507
+Moyenne cumulée effectif 45-59: 1480.1666666666667
+
+Etape 109:
+Effectif RETIRED: 1014
+Moyenne cumulée effectif REITRED: 1001.7247706422019
+Coefficient Pearson entre height et weight: 0.4014869141887043
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3942126079490739
+Effectif FEMALE: 2234
+Moyenne cumulée effectif FEMALE: 2230.376146788991
+Effectif 45-59: 1503
+Moyenne cumulée effectif 45-59: 1480.3761467889908
+
+Etape 110:
+Effectif RETIRED: 1048
+Moyenne cumulée effectif REITRED: 1002.1454545454545
+Coefficient Pearson entre height et weight: 0.39863016619532415
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3942527675694944
+Effectif FEMALE: 2244
+Moyenne cumulée effectif FEMALE: 2230.5
+Effectif 45-59: 1461
+Moyenne cumulée effectif 45-59: 1480.2
+
+Etape 111:
+Effectif RETIRED: 981
+Moyenne cumulée effectif REITRED: 1001.9549549549549
+Coefficient Pearson entre height et weight: 0.4223713949204524
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39450608853662017
+Effectif FEMALE: 2272
+Moyenne cumulée effectif FEMALE: 2230.873873873874
+Effectif 45-59: 1489
+Moyenne cumulée effectif 45-59: 1480.2792792792793
+
+Etape 112:
+Effectif RETIRED: 987
+Moyenne cumulée effectif REITRED: 1001.8214285714286
+Coefficient Pearson entre height et weight: 0.4034015078968824
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39458551192376534
+Effectif FEMALE: 2233
+Moyenne cumulée effectif FEMALE: 2230.8928571428573
+Effectif 45-59: 1467
+Moyenne cumulée effectif 45-59: 1480.1607142857142
+
+Etape 113:
+Effectif RETIRED: 999
+Moyenne cumulée effectif REITRED: 1001.7964601769911
+Coefficient Pearson entre height et weight: 0.39519680859025436
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3945909216287785
+Effectif FEMALE: 2222
+Moyenne cumulée effectif FEMALE: 2230.8141592920356
+Effectif 45-59: 1502
+Moyenne cumulée effectif 45-59: 1480.353982300885
+
+Etape 114:
+Effectif RETIRED: 1003
+Moyenne cumulée effectif REITRED: 1001.8070175438596
+Coefficient Pearson entre height et weight: 0.4026353411341877
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3946614867121593
+Effectif FEMALE: 2239
+Moyenne cumulée effectif FEMALE: 2230.8859649122805
+Effectif 45-59: 1468
+Moyenne cumulée effectif 45-59: 1480.2456140350878
+
+Etape 115:
+Effectif RETIRED: 968
+Moyenne cumulée effectif REITRED: 1001.5130434782609
+Coefficient Pearson entre height et weight: 0.3895412508865642
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39461696292237153
+Effectif FEMALE: 2286
+Moyenne cumulée effectif FEMALE: 2231.365217391304
+Effectif 45-59: 1460
+Moyenne cumulée effectif 45-59: 1480.0695652173913
+
+Etape 116:
+Effectif RETIRED: 1033
+Moyenne cumulée effectif REITRED: 1001.7844827586207
+Coefficient Pearson entre height et weight: 0.4073957273790564
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39472712468492915
+Effectif FEMALE: 2231
+Moyenne cumulée effectif FEMALE: 2231.362068965517
+Effectif 45-59: 1456
+Moyenne cumulée effectif 45-59: 1479.8620689655172
+
+Etape 117:
+Effectif RETIRED: 969
+Moyenne cumulée effectif REITRED: 1001.5042735042736
+Coefficient Pearson entre height et weight: 0.3645702604026944
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3944693737081579
+Effectif FEMALE: 2241
+Moyenne cumulée effectif FEMALE: 2231.4444444444443
+Effectif 45-59: 1509
+Moyenne cumulée effectif 45-59: 1480.111111111111
+
+Etape 118:
+Effectif RETIRED: 1010
+Moyenne cumulée effectif REITRED: 1001.5762711864406
+Coefficient Pearson entre height et weight: 0.41849754090307867
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39467300224370805
+Effectif FEMALE: 2229
+Moyenne cumulée effectif FEMALE: 2231.423728813559
+Effectif 45-59: 1493
+Moyenne cumulée effectif 45-59: 1480.2203389830509
+
+Etape 119:
+Effectif RETIRED: 1017
+Moyenne cumulée effectif REITRED: 1001.7058823529412
+Coefficient Pearson entre height et weight: 0.38881257534313635
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3946237549588293
+Effectif FEMALE: 2228
+Moyenne cumulée effectif FEMALE: 2231.3949579831933
+Effectif 45-59: 1456
+Moyenne cumulée effectif 45-59: 1480.0168067226891
+
+Etape 120:
+Effectif RETIRED: 1012
+Moyenne cumulée effectif REITRED: 1001.7916666666666
+Coefficient Pearson entre height et weight: 0.3977892472052481
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3946501340608828
+Effectif FEMALE: 2242
+Moyenne cumulée effectif FEMALE: 2231.483333333333
+Effectif 45-59: 1463
+Moyenne cumulée effectif 45-59: 1479.875
+
+Etape 121:
+Effectif RETIRED: 969
+Moyenne cumulée effectif REITRED: 1001.5206611570248
+Coefficient Pearson entre height et weight: 0.3889044387535233
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39460264897569797
+Effectif FEMALE: 2248
+Moyenne cumulée effectif FEMALE: 2231.619834710744
+Effectif 45-59: 1511
+Moyenne cumulée effectif 45-59: 1480.1322314049587
+
+Etape 122:
+Effectif RETIRED: 998
+Moyenne cumulée effectif REITRED: 1001.4918032786885
+Coefficient Pearson entre height et weight: 0.4033898286663523
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39467467503873616
+Effectif FEMALE: 2244
+Moyenne cumulée effectif FEMALE: 2231.72131147541
+Effectif 45-59: 1461
+Moyenne cumulée effectif 45-59: 1479.9754098360656
+
+Etape 123:
+Effectif RETIRED: 969
+Moyenne cumulée effectif REITRED: 1001.2276422764228
+Coefficient Pearson entre height et weight: 0.37071153305698173
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39447985274620156
+Effectif FEMALE: 2252
+Moyenne cumulée effectif FEMALE: 2231.8861788617887
+Effectif 45-59: 1488
+Moyenne cumulée effectif 45-59: 1480.040650406504
+
+Etape 124:
+Effectif RETIRED: 981
+Moyenne cumulée effectif REITRED: 1001.0645161290323
+Coefficient Pearson entre height et weight: 0.389637663263186
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39444080283101596
+Effectif FEMALE: 2211
+Moyenne cumulée effectif FEMALE: 2231.717741935484
+Effectif 45-59: 1448
+Moyenne cumulée effectif 45-59: 1479.782258064516
+
+Etape 125:
+Effectif RETIRED: 1045
+Moyenne cumulée effectif REITRED: 1001.416
+Coefficient Pearson entre height et weight: 0.4019005913667737
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39450048113930203
+Effectif FEMALE: 2185
+Moyenne cumulée effectif FEMALE: 2231.344
+Effectif 45-59: 1470
+Moyenne cumulée effectif 45-59: 1479.704
+
+Etape 126:
+Effectif RETIRED: 1003
+Moyenne cumulée effectif REITRED: 1001.4285714285714
+Coefficient Pearson entre height et weight: 0.40499105552236114
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39458373966615173
+Effectif FEMALE: 2213
+Moyenne cumulée effectif FEMALE: 2231.1984126984125
+Effectif 45-59: 1482
+Moyenne cumulée effectif 45-59: 1479.7222222222222
+
+Etape 127:
+Effectif RETIRED: 995
+Moyenne cumulée effectif REITRED: 1001.3779527559055
+Coefficient Pearson entre height et weight: 0.3769042927203263
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3944445314224838
+Effectif FEMALE: 2224
+Moyenne cumulée effectif FEMALE: 2231.1417322834645
+Effectif 45-59: 1572
+Moyenne cumulée effectif 45-59: 1480.4488188976377
+
+Etape 128:
+Effectif RETIRED: 1013
+Moyenne cumulée effectif REITRED: 1001.46875
+Coefficient Pearson entre height et weight: 0.4040435969728906
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39451952412209634
+Effectif FEMALE: 2209
+Moyenne cumulée effectif FEMALE: 2230.96875
+Effectif 45-59: 1442
+Moyenne cumulée effectif 45-59: 1480.1484375
+
+Etape 129:
+Effectif RETIRED: 997
+Moyenne cumulée effectif REITRED: 1001.4341085271318
+Coefficient Pearson entre height et weight: 0.4097711880771616
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3946377540752364
+Effectif FEMALE: 2253
+Moyenne cumulée effectif FEMALE: 2231.139534883721
+Effectif 45-59: 1473
+Moyenne cumulée effectif 45-59: 1480.093023255814
+
+Etape 130:
+Effectif RETIRED: 990
+Moyenne cumulée effectif REITRED: 1001.3461538461538
+Coefficient Pearson entre height et weight: 0.4088732965966166
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39474725824847773
+Effectif FEMALE: 2221
+Moyenne cumulée effectif FEMALE: 2231.0615384615385
+Effectif 45-59: 1498
+Moyenne cumulée effectif 45-59: 1480.2307692307693
+
+Etape 131:
+Effectif RETIRED: 997
+Moyenne cumulée effectif REITRED: 1001.3129770992366
+Coefficient Pearson entre height et weight: 0.3772103162225357
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3946133884620202
+Effectif FEMALE: 2231
+Moyenne cumulée effectif FEMALE: 2231.06106870229
+Effectif 45-59: 1473
+Moyenne cumulée effectif 45-59: 1480.175572519084
+
+Etape 132:
+Effectif RETIRED: 996
+Moyenne cumulée effectif REITRED: 1001.2727272727273
+Coefficient Pearson entre height et weight: 0.3854462724883186
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39454394061373455
+Effectif FEMALE: 2251
+Moyenne cumulée effectif FEMALE: 2231.212121212121
+Effectif 45-59: 1494
+Moyenne cumulée effectif 45-59: 1480.280303030303
+
+Etape 133:
+Effectif RETIRED: 1003
+Moyenne cumulée effectif REITRED: 1001.2857142857143
+Coefficient Pearson entre height et weight: 0.4044569747558575
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39461847470502875
+Effectif FEMALE: 2226
+Moyenne cumulée effectif FEMALE: 2231.1729323308273
+Effectif 45-59: 1476
+Moyenne cumulée effectif 45-59: 1480.248120300752
+
+Etape 134:
+Effectif RETIRED: 1014
+Moyenne cumulée effectif REITRED: 1001.3805970149253
+Coefficient Pearson entre height et weight: 0.3938868793584901
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3946130150382635
+Effectif FEMALE: 2245
+Moyenne cumulée effectif FEMALE: 2231.276119402985
+Effectif 45-59: 1416
+Moyenne cumulée effectif 45-59: 1479.7686567164178
+
+Etape 135:
+Effectif RETIRED: 992
+Moyenne cumulée effectif REITRED: 1001.3111111111111
+Coefficient Pearson entre height et weight: 0.4205065834642624
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39480481924882643
+Effectif FEMALE: 2229
+Moyenne cumulée effectif FEMALE: 2231.259259259259
+Effectif 45-59: 1499
+Moyenne cumulée effectif 45-59: 1479.911111111111
+
+Etape 136:
+Effectif RETIRED: 998
+Moyenne cumulée effectif REITRED: 1001.2867647058823
+Coefficient Pearson entre height et weight: 0.4010339702401092
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3948506218296447
+Effectif FEMALE: 2199
+Moyenne cumulée effectif FEMALE: 2231.0220588235293
+Effectif 45-59: 1454
+Moyenne cumulée effectif 45-59: 1479.7205882352941
+
+Etape 137:
+Effectif RETIRED: 1017
+Moyenne cumulée effectif REITRED: 1001.4014598540145
+Coefficient Pearson entre height et weight: 0.4071223711969903
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39494019664254504
+Effectif FEMALE: 2238
+Moyenne cumulée effectif FEMALE: 2231.07299270073
+Effectif 45-59: 1459
+Moyenne cumulée effectif 45-59: 1479.5693430656934
+
+Etape 138:
+Effectif RETIRED: 1013
+Moyenne cumulée effectif REITRED: 1001.4855072463768
+Coefficient Pearson entre height et weight: 0.37654527582041347
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3948069001148484
+Effectif FEMALE: 2251
+Moyenne cumulée effectif FEMALE: 2231.217391304348
+Effectif 45-59: 1491
+Moyenne cumulée effectif 45-59: 1479.6521739130435
+
+Etape 139:
+Effectif RETIRED: 1026
+Moyenne cumulée effectif REITRED: 1001.6618705035971
+Coefficient Pearson entre height et weight: 0.40779416808934293
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39490033369739874
+Effectif FEMALE: 2217
+Moyenne cumulée effectif FEMALE: 2231.115107913669
+Effectif 45-59: 1464
+Moyenne cumulée effectif 45-59: 1479.5395683453237
+
+Etape 140:
+Effectif RETIRED: 1026
+Moyenne cumulée effectif REITRED: 1001.8357142857143
+Coefficient Pearson entre height et weight: 0.42700929216534217
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3951296834007412
+Effectif FEMALE: 2224
+Moyenne cumulée effectif FEMALE: 2231.0642857142857
+Effectif 45-59: 1473
+Moyenne cumulée effectif 45-59: 1479.4928571428572
+
+Etape 141:
+Effectif RETIRED: 1014
+Moyenne cumulée effectif REITRED: 1001.9219858156029
+Coefficient Pearson entre height et weight: 0.37941712129959965
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3950182467900948
+Effectif FEMALE: 2249
+Moyenne cumulée effectif FEMALE: 2231.191489361702
+Effectif 45-59: 1461
+Moyenne cumulée effectif 45-59: 1479.3617021276596
+
+Etape 142:
+Effectif RETIRED: 1029
+Moyenne cumulée effectif REITRED: 1002.112676056338
+Coefficient Pearson entre height et weight: 0.37780389576256024
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39489701896595725
+Effectif FEMALE: 2245
+Moyenne cumulée effectif FEMALE: 2231.288732394366
+Effectif 45-59: 1453
+Moyenne cumulée effectif 45-59: 1479.1760563380283
+
+Etape 143:
+Effectif RETIRED: 984
+Moyenne cumulée effectif REITRED: 1001.986013986014
+Coefficient Pearson entre height et weight: 0.3869284692340851
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3948412948419581
+Effectif FEMALE: 2225
+Moyenne cumulée effectif FEMALE: 2231.244755244755
+Effectif 45-59: 1461
+Moyenne cumulée effectif 45-59: 1479.048951048951
+
+Etape 144:
+Effectif RETIRED: 1013
+Moyenne cumulée effectif REITRED: 1002.0625
+Coefficient Pearson entre height et weight: 0.3968496713728395
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39485524190120036
+Effectif FEMALE: 2238
+Moyenne cumulée effectif FEMALE: 2231.2916666666665
+Effectif 45-59: 1471
+Moyenne cumulée effectif 45-59: 1478.9930555555557
+
+Etape 145:
+Effectif RETIRED: 1010
+Moyenne cumulée effectif REITRED: 1002.1172413793104
+Coefficient Pearson entre height et weight: 0.39394115046343015
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3948489378223192
+Effectif FEMALE: 2225
+Moyenne cumulée effectif FEMALE: 2231.248275862069
+Effectif 45-59: 1435
+Moyenne cumulée effectif 45-59: 1478.6896551724137
+
+Etape 146:
+Effectif RETIRED: 1022
+Moyenne cumulée effectif REITRED: 1002.2534246575342
+Coefficient Pearson entre height et weight: 0.4013849419481229
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39489370497386583
+Effectif FEMALE: 2243
+Moyenne cumulée effectif FEMALE: 2231.328767123288
+Effectif 45-59: 1459
+Moyenne cumulée effectif 45-59: 1478.554794520548
+
+Etape 147:
+Effectif RETIRED: 1040
+Moyenne cumulée effectif REITRED: 1002.5102040816327
+Coefficient Pearson entre height et weight: 0.39979699610978214
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3949270606958789
+Effectif FEMALE: 2191
+Moyenne cumulée effectif FEMALE: 2231.0544217687075
+Effectif 45-59: 1470
+Moyenne cumulée effectif 45-59: 1478.4965986394557
+
+Etape 148:
+Effectif RETIRED: 1012
+Moyenne cumulée effectif REITRED: 1002.5743243243244
+Coefficient Pearson entre height et weight: 0.4003685139354959
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3949638272718223
+Effectif FEMALE: 2247
+Moyenne cumulée effectif FEMALE: 2231.162162162162
+Effectif 45-59: 1459
+Moyenne cumulée effectif 45-59: 1478.3648648648648
+
+Etape 149:
+Effectif RETIRED: 1021
+Moyenne cumulée effectif REITRED: 1002.6979865771812
+Coefficient Pearson entre height et weight: 0.39304547163504266
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39495095240177674
+Effectif FEMALE: 2186
+Moyenne cumulée effectif FEMALE: 2230.8590604026845
+Effectif 45-59: 1420
+Moyenne cumulée effectif 45-59: 1477.9731543624162
+
+Etape 150:
+Effectif RETIRED: 992
+Moyenne cumulée effectif REITRED: 1002.6266666666667
+Coefficient Pearson entre height et weight: 0.4021667829780301
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39499905793895174
+Effectif FEMALE: 2272
+Moyenne cumulée effectif FEMALE: 2231.133333333333
+Effectif 45-59: 1481
+Moyenne cumulée effectif 45-59: 1477.9933333333333
+
+Etape 151:
+Effectif RETIRED: 981
+Moyenne cumulée effectif REITRED: 1002.4834437086092
+Coefficient Pearson entre height et weight: 0.38538835874494076
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39493541092442186
+Effectif FEMALE: 2224
+Moyenne cumulée effectif FEMALE: 2231.0860927152316
+Effectif 45-59: 1515
+Moyenne cumulée effectif 45-59: 1478.2384105960266
+
+Etape 152:
+Effectif RETIRED: 1020
+Moyenne cumulée effectif REITRED: 1002.5986842105264
+Coefficient Pearson entre height et weight: 0.4130909503422439
+Moyenne cumulée coefficient Pearson entre height et weight: 0.395054855262697
+Effectif FEMALE: 2199
+Moyenne cumulée effectif FEMALE: 2230.875
+Effectif 45-59: 1519
+Moyenne cumulée effectif 45-59: 1478.5065789473683
+
+Etape 153:
+Effectif RETIRED: 999
+Moyenne cumulée effectif REITRED: 1002.5751633986928
+Coefficient Pearson entre height et weight: 0.4118733946212991
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3951647803565441
+Effectif FEMALE: 2263
+Moyenne cumulée effectif FEMALE: 2231.0849673202615
+Effectif 45-59: 1480
+Moyenne cumulée effectif 45-59: 1478.516339869281
+
+Etape 154:
+Effectif RETIRED: 1016
+Moyenne cumulée effectif REITRED: 1002.6623376623377
+Coefficient Pearson entre height et weight: 0.39147420437758573
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39514081557746
+Effectif FEMALE: 2254
+Moyenne cumulée effectif FEMALE: 2231.2337662337663
+Effectif 45-59: 1421
+Moyenne cumulée effectif 45-59: 1478.142857142857
+
+Etape 155:
+Effectif RETIRED: 1009
+Moyenne cumulée effectif REITRED: 1002.7032258064517
+Coefficient Pearson entre height et weight: 0.41211557815034433
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3952503301747044
+Effectif FEMALE: 2229
+Moyenne cumulée effectif FEMALE: 2231.2193548387095
+Effectif 45-59: 1518
+Moyenne cumulée effectif 45-59: 1478.4
+
+Etape 156:
+Effectif RETIRED: 1001
+Moyenne cumulée effectif REITRED: 1002.6923076923077
+Coefficient Pearson entre height et weight: 0.39010445561240387
+Moyenne cumulée coefficient Pearson entre height et weight: 0.395217343799305
+Effectif FEMALE: 2215
+Moyenne cumulée effectif FEMALE: 2231.1153846153848
+Effectif 45-59: 1444
+Moyenne cumulée effectif 45-59: 1478.179487179487
+
+Etape 157:
+Effectif RETIRED: 976
+Moyenne cumulée effectif REITRED: 1002.5222929936306
+Coefficient Pearson entre height et weight: 0.38974945217780543
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3951825164641362
+Effectif FEMALE: 2251
+Moyenne cumulée effectif FEMALE: 2231.2420382165606
+Effectif 45-59: 1473
+Moyenne cumulée effectif 45-59: 1478.1464968152866
+
+Etape 158:
+Effectif RETIRED: 1044
+Moyenne cumulée effectif REITRED: 1002.7848101265823
+Coefficient Pearson entre height et weight: 0.4164218575276253
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3953169426733988
+Effectif FEMALE: 2274
+Moyenne cumulée effectif FEMALE: 2231.512658227848
+Effectif 45-59: 1496
+Moyenne cumulée effectif 45-59: 1478.259493670886
+
+Etape 159:
+Effectif RETIRED: 999
+Moyenne cumulée effectif REITRED: 1002.7610062893082
+Coefficient Pearson entre height et weight: 0.38560783106666235
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3952558790783879
+Effectif FEMALE: 2226
+Moyenne cumulée effectif FEMALE: 2231.4779874213837
+Effectif 45-59: 1459
+Moyenne cumulée effectif 45-59: 1478.138364779874
+
+Etape 160:
+Effectif RETIRED: 987
+Moyenne cumulée effectif REITRED: 1002.6625
+Coefficient Pearson entre height et weight: 0.3939952267248031
+Moyenne cumulée coefficient Pearson entre height et weight: 0.395248000001178
+Effectif FEMALE: 2209
+Moyenne cumulée effectif FEMALE: 2231.3375
+Effectif 45-59: 1460
+Moyenne cumulée effectif 45-59: 1478.025
+
+Etape 161:
+Effectif RETIRED: 1011
+Moyenne cumulée effectif REITRED: 1002.7142857142857
+Coefficient Pearson entre height et weight: 0.3738699870149959
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39511521731182286
+Effectif FEMALE: 2244
+Moyenne cumulée effectif FEMALE: 2231.416149068323
+Effectif 45-59: 1444
+Moyenne cumulée effectif 45-59: 1477.8136645962734
+
+Etape 162:
+Effectif RETIRED: 1002
+Moyenne cumulée effectif REITRED: 1002.7098765432099
+Coefficient Pearson entre height et weight: 0.3788770113563912
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3950149814725918
+Effectif FEMALE: 2248
+Moyenne cumulée effectif FEMALE: 2231.5185185185187
+Effectif 45-59: 1442
+Moyenne cumulée effectif 45-59: 1477.5925925925926
+
+Etape 163:
+Effectif RETIRED: 1017
+Moyenne cumulée effectif REITRED: 1002.7975460122699
+Coefficient Pearson entre height et weight: 0.4022929312511253
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39505963147123313
+Effectif FEMALE: 2200
+Moyenne cumulée effectif FEMALE: 2231.325153374233
+Effectif 45-59: 1488
+Moyenne cumulée effectif 45-59: 1477.6564417177915
+
+Etape 164:
+Effectif RETIRED: 1041
+Moyenne cumulée effectif REITRED: 1003.030487804878
+Coefficient Pearson entre height et weight: 0.399162212821691
+Moyenne cumulée coefficient Pearson entre height et weight: 0.395084647211175
+Effectif FEMALE: 2224
+Moyenne cumulée effectif FEMALE: 2231.2804878048782
+Effectif 45-59: 1454
+Moyenne cumulée effectif 45-59: 1477.5121951219512
+
+Etape 165:
+Effectif RETIRED: 1020
+Moyenne cumulée effectif REITRED: 1003.1333333333333
+Coefficient Pearson entre height et weight: 0.40082765861294267
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39511945334088266
+Effectif FEMALE: 2252
+Moyenne cumulée effectif FEMALE: 2231.4060606060607
+Effectif 45-59: 1473
+Moyenne cumulée effectif 45-59: 1477.4848484848485
+
+Etape 166:
+Effectif RETIRED: 1006
+Moyenne cumulée effectif REITRED: 1003.1506024096385
+Coefficient Pearson entre height et weight: 0.3641880070995192
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3949331193273804
+Effectif FEMALE: 2210
+Moyenne cumulée effectif FEMALE: 2231.277108433735
+Effectif 45-59: 1496
+Moyenne cumulée effectif 45-59: 1477.5963855421687
+
+Etape 167:
+Effectif RETIRED: 1020
+Moyenne cumulée effectif REITRED: 1003.251497005988
+Coefficient Pearson entre height et weight: 0.3765237756271165
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39482288373636093
+Effectif FEMALE: 2221
+Moyenne cumulée effectif FEMALE: 2231.2155688622756
+Effectif 45-59: 1478
+Moyenne cumulée effectif 45-59: 1477.5988023952095
+
+Etape 168:
+Effectif RETIRED: 1019
+Moyenne cumulée effectif REITRED: 1003.3452380952381
+Coefficient Pearson entre height et weight: 0.41575784227492935
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39494749658480477
+Effectif FEMALE: 2264
+Moyenne cumulée effectif FEMALE: 2231.410714285714
+Effectif 45-59: 1437
+Moyenne cumulée effectif 45-59: 1477.357142857143
+
+Etape 169:
+Effectif RETIRED: 992
+Moyenne cumulée effectif REITRED: 1003.2781065088758
+Coefficient Pearson entre height et weight: 0.39243797944951414
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39493264737098643
+Effectif FEMALE: 2233
+Moyenne cumulée effectif FEMALE: 2231.420118343195
+Effectif 45-59: 1460
+Moyenne cumulée effectif 45-59: 1477.2544378698226
+
+Etape 170:
+Effectif RETIRED: 1019
+Moyenne cumulée effectif REITRED: 1003.3705882352941
+Coefficient Pearson entre height et weight: 0.39669812091596507
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39494303250948637
+Effectif FEMALE: 2255
+Moyenne cumulée effectif FEMALE: 2231.5588235294117
+Effectif 45-59: 1454
+Moyenne cumulée effectif 45-59: 1477.1176470588234
+
+Etape 171:
+Effectif RETIRED: 1007
+Moyenne cumulée effectif REITRED: 1003.3918128654971
+Coefficient Pearson entre height et weight: 0.38669082001558025
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3948947739568904
+Effectif FEMALE: 2234
+Moyenne cumulée effectif FEMALE: 2231.5730994152045
+Effectif 45-59: 1489
+Moyenne cumulée effectif 45-59: 1477.187134502924
+
+Etape 172:
+Effectif RETIRED: 977
+Moyenne cumulée effectif REITRED: 1003.2383720930233
+Coefficient Pearson entre height et weight: 0.4007477884725383
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39492880311105116
+Effectif FEMALE: 2237
+Moyenne cumulée effectif FEMALE: 2231.6046511627906
+Effectif 45-59: 1468
+Moyenne cumulée effectif 45-59: 1477.1337209302326
+
+Etape 173:
+Effectif RETIRED: 1030
+Moyenne cumulée effectif REITRED: 1003.393063583815
+Coefficient Pearson entre height et weight: 0.3955983996156453
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39493267361107776
+Effectif FEMALE: 2243
+Moyenne cumulée effectif FEMALE: 2231.6705202312137
+Effectif 45-59: 1480
+Moyenne cumulée effectif 45-59: 1477.150289017341
+
+Etape 174:
+Effectif RETIRED: 1010
+Moyenne cumulée effectif REITRED: 1003.4310344827586
+Coefficient Pearson entre height et weight: 0.3991683969161411
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3949570168484631
+Effectif FEMALE: 2237
+Moyenne cumulée effectif FEMALE: 2231.7011494252874
+Effectif 45-59: 1467
+Moyenne cumulée effectif 45-59: 1477.0919540229886
+
+Etape 175:
+Effectif RETIRED: 986
+Moyenne cumulée effectif REITRED: 1003.3314285714285
+Coefficient Pearson entre height et weight: 0.40813048954974507
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3950322938353276
+Effectif FEMALE: 2269
+Moyenne cumulée effectif FEMALE: 2231.9142857142856
+Effectif 45-59: 1527
+Moyenne cumulée effectif 45-59: 1477.3771428571429
+
+Etape 176:
+Effectif RETIRED: 979
+Moyenne cumulée effectif REITRED: 1003.1931818181819
+Coefficient Pearson entre height et weight: 0.38449469977057293
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3949724211417779
+Effectif FEMALE: 2240
+Moyenne cumulée effectif FEMALE: 2231.9602272727275
+Effectif 45-59: 1463
+Moyenne cumulée effectif 45-59: 1477.2954545454545
+
+Etape 177:
+Effectif RETIRED: 1039
+Moyenne cumulée effectif REITRED: 1003.3954802259886
+Coefficient Pearson entre height et weight: 0.4215405740655124
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3951225237006691
+Effectif FEMALE: 2207
+Moyenne cumulée effectif FEMALE: 2231.8192090395482
+Effectif 45-59: 1477
+Moyenne cumulée effectif 45-59: 1477.2937853107344
+
+Etape 178:
+Effectif RETIRED: 1008
+Moyenne cumulée effectif REITRED: 1003.4213483146067
+Coefficient Pearson entre height et weight: 0.40802462688338853
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39519500742641467
+Effectif FEMALE: 2269
+Moyenne cumulée effectif FEMALE: 2232.0280898876404
+Effectif 45-59: 1440
+Moyenne cumulée effectif 45-59: 1477.0842696629213
+
+Etape 179:
+Effectif RETIRED: 994
+Moyenne cumulée effectif REITRED: 1003.3687150837989
+Coefficient Pearson entre height et weight: 0.41064089680932175
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3952812973112354
+Effectif FEMALE: 2248
+Moyenne cumulée effectif FEMALE: 2232.117318435754
+Effectif 45-59: 1464
+Moyenne cumulée effectif 45-59: 1477.0111731843576
+
+Etape 180:
+Effectif RETIRED: 1030
+Moyenne cumulée effectif REITRED: 1003.5166666666667
+Coefficient Pearson entre height et weight: 0.4107436738328278
+Moyenne cumulée coefficient Pearson entre height et weight: 0.395367199403022
+Effectif FEMALE: 2244
+Moyenne cumulée effectif FEMALE: 2232.1833333333334
+Effectif 45-59: 1454
+Moyenne cumulée effectif 45-59: 1476.8833333333334
+
+Etape 181:
+Effectif RETIRED: 1034
+Moyenne cumulée effectif REITRED: 1003.6850828729282
+Coefficient Pearson entre height et weight: 0.38928457199611366
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39533359372674076
+Effectif FEMALE: 2239
+Moyenne cumulée effectif FEMALE: 2232.220994475138
+Effectif 45-59: 1454
+Moyenne cumulée effectif 45-59: 1476.756906077348
+
+Etape 182:
+Effectif RETIRED: 1014
+Moyenne cumulée effectif REITRED: 1003.7417582417582
+Coefficient Pearson entre height et weight: 0.406439706283905
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3953946163232087
+Effectif FEMALE: 2219
+Moyenne cumulée effectif FEMALE: 2232.1483516483518
+Effectif 45-59: 1462
+Moyenne cumulée effectif 45-59: 1476.6758241758241
+
+Etape 183:
+Effectif RETIRED: 1023
+Moyenne cumulée effectif REITRED: 1003.8469945355191
+Coefficient Pearson entre height et weight: 0.40895012269349684
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3954686901285108
+Effectif FEMALE: 2213
+Moyenne cumulée effectif FEMALE: 2232.0437158469945
+Effectif 45-59: 1468
+Moyenne cumulée effectif 45-59: 1476.6284153005465
+
+Etape 184:
+Effectif RETIRED: 1014
+Moyenne cumulée effectif REITRED: 1003.9021739130435
+Coefficient Pearson entre height et weight: 0.40394247094321556
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3955147432851125
+Effectif FEMALE: 2215
+Moyenne cumulée effectif FEMALE: 2231.9510869565215
+Effectif 45-59: 1501
+Moyenne cumulée effectif 45-59: 1476.7608695652175
+
+Etape 185:
+Effectif RETIRED: 1019
+Moyenne cumulée effectif REITRED: 1003.9837837837838
+Coefficient Pearson entre height et weight: 0.3770556905440364
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39541496462164727
+Effectif FEMALE: 2260
+Moyenne cumulée effectif FEMALE: 2232.1027027027026
+Effectif 45-59: 1442
+Moyenne cumulée effectif 45-59: 1476.572972972973
+
+Etape 186:
+Effectif RETIRED: 1001
+Moyenne cumulée effectif REITRED: 1003.9677419354839
+Coefficient Pearson entre height et weight: 0.3985950100784408
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39543206164023215
+Effectif FEMALE: 2215
+Moyenne cumulée effectif FEMALE: 2232.010752688172
+Effectif 45-59: 1476
+Moyenne cumulée effectif 45-59: 1476.5698924731182
+
+Etape 187:
+Effectif RETIRED: 1048
+Moyenne cumulée effectif REITRED: 1004.2032085561498
+Coefficient Pearson entre height et weight: 0.3717085024817577
+Moyenne cumulée coefficient Pearson entre height et weight: 0.395305197687513
+Effectif FEMALE: 2236
+Moyenne cumulée effectif FEMALE: 2232.0320855614973
+Effectif 45-59: 1469
+Moyenne cumulée effectif 45-59: 1476.5294117647059
+
+Etape 188:
+Effectif RETIRED: 1036
+Moyenne cumulée effectif REITRED: 1004.3723404255319
+Coefficient Pearson entre height et weight: 0.39273490858089827
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3952915259369459
+Effectif FEMALE: 2206
+Moyenne cumulée effectif FEMALE: 2231.8936170212764
+Effectif 45-59: 1463
+Moyenne cumulée effectif 45-59: 1476.4574468085107
+
+Etape 189:
+Effectif RETIRED: 974
+Moyenne cumulée effectif REITRED: 1004.2116402116402
+Coefficient Pearson entre height et weight: 0.374605520095349
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3951820761705882
+Effectif FEMALE: 2207
+Moyenne cumulée effectif FEMALE: 2231.7619047619046
+Effectif 45-59: 1499
+Moyenne cumulée effectif 45-59: 1476.5767195767196
+
+Etape 190:
+Effectif RETIRED: 987
+Moyenne cumulée effectif REITRED: 1004.1210526315789
+Coefficient Pearson entre height et weight: 0.41301882638369275
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3952759538032887
+Effectif FEMALE: 2245
+Moyenne cumulée effectif FEMALE: 2231.8315789473686
+Effectif 45-59: 1496
+Moyenne cumulée effectif 45-59: 1476.678947368421
+
+Etape 191:
+Effectif RETIRED: 990
+Moyenne cumulée effectif REITRED: 1004.0471204188482
+Coefficient Pearson entre height et weight: 0.4059802613465723
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3953319972982797
+Effectif FEMALE: 2245
+Moyenne cumulée effectif FEMALE: 2231.9005235602094
+Effectif 45-59: 1472
+Moyenne cumulée effectif 45-59: 1476.65445026178
+
+Etape 192:
+Effectif RETIRED: 1045
+Moyenne cumulée effectif REITRED: 1004.2604166666666
+Coefficient Pearson entre height et weight: 0.39991850178751254
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3953558853424945
+Effectif FEMALE: 2256
+Moyenne cumulée effectif FEMALE: 2232.0260416666665
+Effectif 45-59: 1462
+Moyenne cumulée effectif 45-59: 1476.578125
+
+Etape 193:
+Effectif RETIRED: 1004
+Moyenne cumulée effectif REITRED: 1004.259067357513
+Coefficient Pearson entre height et weight: 0.3970731327214765
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3953647829973078
+Effectif FEMALE: 2180
+Moyenne cumulée effectif FEMALE: 2231.7564766839378
+Effectif 45-59: 1460
+Moyenne cumulée effectif 45-59: 1476.4922279792745
+
+Etape 194:
+Effectif RETIRED: 1016
+Moyenne cumulée effectif REITRED: 1004.319587628866
+Coefficient Pearson entre height et weight: 0.4014149348332165
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39539596934697746
+Effectif FEMALE: 2198
+Moyenne cumulée effectif FEMALE: 2231.582474226804
+Effectif 45-59: 1465
+Moyenne cumulée effectif 45-59: 1476.4329896907216
+
+Etape 195:
+Effectif RETIRED: 1005
+Moyenne cumulée effectif REITRED: 1004.3230769230769
+Coefficient Pearson entre height et weight: 0.37923468409693956
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39531309096107986
+Effectif FEMALE: 2228
+Moyenne cumulée effectif FEMALE: 2231.5641025641025
+Effectif 45-59: 1513
+Moyenne cumulée effectif 45-59: 1476.6205128205129
+
+Etape 196:
+Effectif RETIRED: 1008
+Moyenne cumulée effectif REITRED: 1004.3418367346939
+Coefficient Pearson entre height et weight: 0.37704914563964903
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3952199075665827
+Effectif FEMALE: 2240
+Moyenne cumulée effectif FEMALE: 2231.6071428571427
+Effectif 45-59: 1426
+Moyenne cumulée effectif 45-59: 1476.3622448979593
+
+Etape 197:
+Effectif RETIRED: 991
+Moyenne cumulée effectif REITRED: 1004.274111675127
+Coefficient Pearson entre height et weight: 0.4001423952872014
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3952448948138955
+Effectif FEMALE: 2229
+Moyenne cumulée effectif FEMALE: 2231.5939086294416
+Effectif 45-59: 1469
+Moyenne cumulée effectif 45-59: 1476.3248730964467
+
+Etape 198:
+Effectif RETIRED: 1034
+Moyenne cumulée effectif REITRED: 1004.4242424242424
+Coefficient Pearson entre height et weight: 0.4160997193916372
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39535022221075283
+Effectif FEMALE: 2202
+Moyenne cumulée effectif FEMALE: 2231.4444444444443
+Effectif 45-59: 1440
+Moyenne cumulée effectif 45-59: 1476.141414141414
+
+Etape 199:
+Effectif RETIRED: 1011
+Moyenne cumulée effectif REITRED: 1004.4572864321608
+Coefficient Pearson entre height et weight: 0.4123066975794301
+Moyenne cumulée coefficient Pearson entre height et weight: 0.3954354306296909
+Effectif FEMALE: 2247
+Moyenne cumulée effectif FEMALE: 2231.522613065327
+Effectif 45-59: 1468
+Moyenne cumulée effectif 45-59: 1476.1005025125628
+
+Etape 200:
+Effectif RETIRED: 986
+Moyenne cumulée effectif REITRED: 1004.365
+Coefficient Pearson entre height et weight: 0.4000640447477597
+Moyenne cumulée coefficient Pearson entre height et weight: 0.39545857370028126
+Effectif FEMALE: 2246
+Moyenne cumulée effectif FEMALE: 2231.595
+Effectif 45-59: 1495
+Moyenne cumulée effectif 45-59: 1476.195
+
