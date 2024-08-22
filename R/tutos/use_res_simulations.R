@@ -74,7 +74,6 @@ analyses$utility_measures_all_meth %>%
   geom_line(aes(x = i, y = pMSE_cummean, col = method)) +
   theme_minimal(base_size = 20)
 
-# Même chose qu'au dessus en enlevant le modèle sample
 analyses_filtered <- analyses$utility_measures_all_meth %>%
   filter(method != "sample")
 
@@ -84,7 +83,6 @@ analyses_filtered %>%
   theme_minimal(base_size = 20)
 
 
-# Assurez-vous que les légendes sont activées
 utility_graph <- map(
   c("pMSE","SPECKS","PO50","U"),
   \(meth){
