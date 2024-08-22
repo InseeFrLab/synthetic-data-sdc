@@ -21,6 +21,16 @@ res_simul <- aws.s3::s3read_using(
 str(res_simul, max.level=1)
 methodes <- which(names(res_simul) != "original")
 
+analyses <- aws.s3::s3read_using(
+  FUN = readRDS,
+  object = FILE_KEY_IN_S3_2,
+  bucket = BUCKET_SIM_2,
+  opts = list("region" = "")
+)
+names(analyses) <- c("data_empile", "data_original", "data_empile_combined", "table_mean_num",
+                     "table_org_mean_num", "table_sd_num", "table_cat", "table_cor",
+                     "cor_comp", "somme_cor_mat", "table_mae", "table_mse", "reg_coeff",
+                     "utility_measures_all_meth", "nb_repliques_all_meth", "KS_test")
 
 # Calcul mesures d'utilité par méthodes ------------------
 tictoc::tic()
@@ -64,20 +74,28 @@ analyses$utility_measures_all_meth %>%
   geom_line(aes(x = i, y = pMSE_cummean, col = method)) +
   theme_minimal(base_size = 20)
 
+# Même chose qu'au dessus en enlevant le modèle sample
+analyses_filtered <- analyses$utility_measures_all_meth %>%
+  filter(method != "sample")
 
+analyses_filtered %>%
+  ggplot() +
+  geom_line(aes(x = i, y = pMSE_cummean, col = method)) +
+  theme_minimal(base_size = 20)
+
+
+# Assurez-vous que les légendes sont activées
 utility_graph <- map(
   c("pMSE","SPECKS","PO50","U"),
   \(meth){
     analyses$utility_measures_all_meth %>% 
-      ggplot( aes(x=method, y=.data[[meth]], fill=method)) +
+      ggplot(aes(x=method, y=.data[[meth]], fill=method)) +
       geom_violin(width=1.4) +
       geom_boxplot(width=0.1, color="grey", alpha=0.2) +
       scale_fill_viridis(discrete = TRUE) +
       coord_flip() +
-      geom_hline(yintercept = 0.0447829, linetype = "dashed", color = "red",) +
       theme_ipsum(base_size = 20) +
       theme(
-        legend.position="none",
         plot.title = element_text(size=20)
       ) +
       ggtitle(paste0("distribution des ", meth)) +
@@ -85,6 +103,7 @@ utility_graph <- map(
   }
 )
 names(utility_graph) <- c("pMSE","SPECKS","PO50","U")
+
 utility_graph$pMSE
 utility_graph$SPECKS
 utility_graph$PO50

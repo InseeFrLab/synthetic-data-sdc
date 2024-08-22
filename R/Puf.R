@@ -400,7 +400,35 @@ names(syn_puf_pcs)[47] = "PCS2"
 pMSE_puf_pcs <- utility.gen(syn_puf_pcs,
                             df_pcs,
                             nperms = 1)$pMSE  
+# CIO --------------------------------------------------------------------------
+modlog <- glm(CHOMAGE ~ ., data = df, family = binomial)
+modlog_cart <- glm(CHOMAGE ~ ., data = df_cart, family = binomial)
+
+
+summary(modlog)
 # ------------------------------------------------------------------------------
+puf_cart <- aws.s3::s3read_using(
+  FUN = readr::read_csv,
+  object = "puf_cart.csv",
+  bucket = BUCKET,
+  opts = list("region" = "")
+)
+
+df_cart <- puf_cart %>%
+  select(c("ACTEU", "AGE6", "COUPL_LOG", "DIP7", "ENFRED", "SEXE", "TYPLOG5"))
+
+df_cart$ACTEU <- ifelse(df_cart$ACTEU == 2, 'OUI', 'NON')
+
+names(df_cart) <- c("CHOMAGE", "AGE6", "COUPL_LOG", "DIP7", "ENFRED", "SEXE", "TYPLOG5")
+
+aws.s3::s3write_using(
+  df_cart,
+  FUN = saveRDS,
+  object = "puf_cart_7_vars_avec_CHOMAGE_cree_pour_test_CIO.RDS",
+  bucket = BUCKET,
+  opts = list("region" = "")
+)
+
 
 
 
