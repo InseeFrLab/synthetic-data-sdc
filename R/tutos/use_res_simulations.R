@@ -21,6 +21,9 @@ res_simul <- aws.s3::s3read_using(
 str(res_simul, max.level=1)
 methodes <- which(names(res_simul) != "original")
 
+FILE_KEY_IN_S3_2 <- "resultats_analyses.RDS"
+BUCKET_SIM_2 = file.path(BUCKET, "analyses")
+
 analyses <- aws.s3::s3read_using(
   FUN = readRDS,
   object = FILE_KEY_IN_S3_2,
@@ -124,11 +127,21 @@ utility_measures_summary <- analyses$utility_measures_all_meth %>%
 
 utility_measures_summary %>% 
   filter(indicateur == "mean") %>%
+  mutate(method = factor(method, levels = c("sample","parametric","ctree","bag","rf","cart"), ordered = TRUE)) %>% 
   ggplot() +
   geom_bar(aes(x = method, y = val, fill = utility), stat = "identity")+
+  scale_y_continuous("") +
+  xlab("") +
   coord_flip() +
   facet_wrap(~utility, scales = "free") +
-  theme_ipsum(base_size = 20)
+  guides(fill = "none") +
+  theme_minimal(base_size = 20) +
+  theme(panel.grid.minor = element_blank(),
+        panel.grid.major.x = element_line(size = 0.5),
+        panel.grid.major.y = element_blank(),
+        axis.text.x = element_text(angle = 45, size = 16, vjust = 0.5))
+
+ggsave(filename = "utility_summary_fcs.pdf", device = "pdf", width=29, height=21, units="cm")
 
 
 # Recherche des répliques -------------------------------------
