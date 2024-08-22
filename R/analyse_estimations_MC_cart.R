@@ -58,4 +58,31 @@ std <- valeurs_stds/valeurs_moyennes *100
 
 
 
+cummeans |>
+  mutate(s = 1:n()) |>
+  tidyr::pivot_longer(1:4, names_to = "variable", values_to = "val") |>
+  mutate(variable = factor(variable, levels = c("retired","corr_taille_poids","female","alcsol"), ordered = TRUE)) |>
+  ggplot() +
+  geom_line(aes(x = s, y=val, color=variable)) +
+  geom_hline(
+    data = valeurs_originales |> tidyr::pivot_longer(1:4, names_to = "variable", values_to = "val") |>
+      mutate(variable = factor(variable, levels = c("retired","corr_taille_poids","female","alcsol"), ordered = TRUE)),
+    aes(yintercept = val, col = variable), linetype = "dotted"
+  ) +
+  geom_line(
+    data = cumq005 |> mutate(s = 1:n()) |> tidyr::pivot_longer(1:4, names_to = "variable", values_to = "val") |>
+      mutate(variable = factor(variable, levels = c("retired","corr_taille_poids","female","alcsol"), ordered = TRUE)),
+    aes(x = s, y = val, col = variable), linetype = "dashed"
+  ) +
+  geom_line(
+    data = cumq095 |> mutate(s = 1:n()) |> tidyr::pivot_longer(1:4, names_to = "variable", values_to = "val") |>
+      mutate(variable = factor(variable, levels = c("retired","corr_taille_poids","female","alcsol"), ordered = TRUE)),
+    aes(x = s, y = val, col = variable), linetype = "dotdash"
+  ) +
+  scale_color_brewer("", type = "qual", palette = 6) +
+  labs(x="",y="") +
+  guides(color = "none") +
+  facet_wrap(~variable, scales = "free") +
+  theme_minimal()
+
 
