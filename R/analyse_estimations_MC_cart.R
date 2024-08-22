@@ -58,6 +58,13 @@ std <- valeurs_stds/valeurs_moyennes *100
 
 
 
+labels = c(
+  retired = "Nombre de retraités (socprof = RETIRED)",
+  corr_taille_poids = "Coefficient de corrélation entre Poids et Taille",
+  female = "Nombre de femmes",
+  alcsol = "Nombre d'individus déclarant un usage solitaire de l'alcool"
+)
+
 cummeans |>
   mutate(s = 1:n()) |>
   tidyr::pivot_longer(1:4, names_to = "variable", values_to = "val") |>
@@ -82,7 +89,13 @@ cummeans |>
   scale_color_brewer("", type = "qual", palette = 6) +
   labs(x="",y="") +
   guides(color = "none") +
-  facet_wrap(~variable, scales = "free") +
-  theme_minimal()
+  facet_wrap(~variable, scales = "free", labeller = labeller(variable = labels)) +
+  theme_light() +
+  theme(panel.grid = element_blank(), 
+        panel.background = element_rect(colour = "black"), 
+        axis.line = element_line(size = 0.25, colour = "black"), 
+        strip.background = element_rect(fill="white"),
+        strip.text = element_text(colour="black")
+  )
 
 
