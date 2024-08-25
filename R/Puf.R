@@ -430,6 +430,68 @@ aws.s3::s3write_using(
 )
 
 
+# Filtres ----------------------------------------------------------------------
+source("~/work/synthetic-data-sdc/R/fonctions/Naf_incorrect.R")
+source("~/work/synthetic-data-sdc/R/fonctions/Filtres_puf.R")
+
+# Filtres CART -----------------------------------------------------------------
+puf_cart <- puf_cart[, 2:66]
+
+puf_cart <- puf_cart %>%
+  mutate_if(is.numeric, as.factor) %>%
+  mutate_if(is.character, as.factor) %>%
+  mutate(across(all_of(num), as.numeric))
+
+
+filtres_puf(puf_cart)
+
+#NAF
+naf_incorrect(puf_cart)
+
+# Filtres TVAE -----------------------------------------------------------------
+puf65_tvae <- read.csv("~/work/synthetic-data-sdc/TableEvaluator/puf65_tvae.csv")
+puf65_tvae <- puf65_tvae[, 2:66]
+
+puf65_tvae <- puf65_tvae %>%
+  mutate_if(is.numeric, as.factor) %>%
+  mutate_if(is.character, as.factor) %>%
+  mutate(across(all_of(num), as.numeric))
+
+filtres_puf(puf65_tvae)
+
+# NAF
+naf_incorrect(puf65_tvae)
+
+
+# Filtres CTGAN -----------------------------------------------------------------
+puf65_ctgan <- aws.s3::s3read_using(
+  FUN = readr::read_csv,
+  object = "puf65_ctgan.csv",
+  bucket = BUCKET,
+  opts = list("region" = "")
+)
+
+puf65_ctgan <- puf65_ctgan[, 2:66]
+
+puf65_ctgan <- puf65_ctgan %>%
+  mutate_if(is.numeric, as.factor) %>%
+  mutate_if(is.character, as.factor) %>%
+  mutate(across(all_of(num), as.numeric))
+
+
+filtres_puf(puf65_ctgan)
+
+# NAF
+naf_incorrect(puf65_ctgan)
 
 
 
+
+
+
+
+
+
+
+
+  
