@@ -38,7 +38,7 @@ table(puf$TXTPPRED, puf$TPPRED, useNA = "always")
 table(puf$TRAREF, puf$ACTEU, useNA = "always")
 ```
 
-**TRAREF = 9 et ACTEU = 2 ou 3 :** Si une personnes a travaillé au moins une heure pendant la semaine de référence (TRAREF = 1) elle ne peut être au chômage ou inactive (ACTEU = 2 ou 3).
+**TRAREF = 1 et ACTEU = 2 ou 3 :** Si une personnes a travaillé au moins une heure pendant la semaine de référence (TRAREF = 1) elle ne peut être au chômage ou inactive (ACTEU = 2 ou 3).
 JJ : Il s'agit d'un doublon du précédent filtre 
 ```{r}
 table(puf$TRAREF, puf$ACTEU, useNA = "always")
@@ -95,7 +95,7 @@ table(puf$PUB3FP, puf$ACTEU, useNA = "always")
 ```
 
 
-**ANCSSEMP = 1 et ACTEU = 1 :** Une personne en emploi (ACTEU = 1) doit répondre NA lorsqu'on lui demande l'ancienneté sans emploi (ANCSSEMP).
+**ANCSSEMP et ACTEU = 1 :** Une personne en emploi (ACTEU = 1) doit répondre NA lorsqu'on lui demande l'ancienneté sans emploi (ANCSSEMP).
 
 ```{r}
 table(puf$ANCSSEMP, puf$ACTEU, useNA = "always")
