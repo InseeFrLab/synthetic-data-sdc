@@ -20,7 +20,7 @@ classement_var <- function(data, all_num = FALSE) {
   for (i in 1:ncol(data)) {
     var <- 0
     for (j in seq_along(eig.val[, 2])) {
-      var <- var + eig.val[, 2][j] * data.fact$var$contrib[names(data)[i], j]
+      var <- var + eig.val[, 2][j] * data.fact$var$contrib[names(data)[i], j] / 100
     }
     matrice[1, i] <- var
   }

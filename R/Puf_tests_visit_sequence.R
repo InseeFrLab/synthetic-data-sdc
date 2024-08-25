@@ -4,7 +4,7 @@ if (!requireNamespace("tictoc", quietly = TRUE)) install.packages("tictoc"); lib
 if (!requireNamespace("aws.s3", quietly = TRUE)) install.packages("aws.s3"); library(aws.s3)
 if (!requireNamespace("tidyr", quietly = TRUE)) install.packages("tidyr"); library(tidyr)
 if (!requireNamespace("FactoMineR", quietly = TRUE)) install.packages("FactoMineR"); library(FactoMineR)
-
+if (!requireNamespace("factoextra", quietly = TRUE)) install.packages("factoextra"); library(factoextra)
 
 # Importation ------------------------------------------------------------------
 BUCKET = "projet-donnees-synthetiques"
@@ -51,7 +51,7 @@ classement_var <- function(data, data.afdm) {
   for (i in 1:length(data)) {
     var <- 0
     for (j in 1:eig.val[, 2]) {
-      var <- var + eig.val[, 2][j] * data.afdm$var$contrib[names(data)[i], j]
+      var <- var + eig.val[, 2][j] * data.afdm$var$contrib[names(data)[i], j] / 100
     }
     matrice[1, i] <- var
   }
@@ -74,23 +74,39 @@ varexp <- function(data.afdm) {
 }
 
 # AFDM -------------------------------------------------------------------------
-# Puf65
-df.afdm <- FAMD(puf65, ncp = 1000, graph = FALSE)
+# PUF65
+tictoc::tic()
+syn_df <- syn(df,
+              maxfaclevels = 100,
+              seed = 1)
+tictoc::toc()
+
+tictoc::tic()
+pMSE_df <- utility.gen(syn_df, df, nperms = 1)$pMSE
+tictoc::toc()
+
+# AFDM
+
+df.afdm <- FAMD(df, ncp = 1000, graph = FALSE)
+
+vs_df_afdm <- classement_var(df, df.afdm)[[2]]
 
 tictoc::tic()
 syn_df_afdm <- syn(df,
-                visit.sequence = classement_var(df, df.afdm)[[2]],
+                visit.sequence = vs_df_afdm,
                 maxfaclevels = 100,
                 seed = 1)
 tictoc::toc()
-# 1331 sec 
+
+df_syn_afdm <- syn_df_afdm$syn
+df <- as.data.frame(df)
 
 tictoc::tic()
-pMSE_df_afdm <- utility.gen(syn_df_afdm, df, nperms = 1)$pMSE
+pMSE_df_afdm <- utility.gen(df_syn_afdm, df, nperms = 1)$pMSE
 tictoc::toc()
 
 # Puf_cart
-df_cart.afdm <- FAMD(puf_cart, ncp = 1000, graph = FALSE)
+df_cart.afdm <- FAMD(df_cart, ncp = 1000, graph = FALSE)
 
 tictoc::tic()
 syn_df_cart_afdm <- syn(df_cart,
@@ -98,7 +114,9 @@ syn_df_cart_afdm <- syn(df_cart,
                    maxfaclevels = 100,
                    seed = 1)
 tictoc::toc()
-# 1331 sec 
+
+df_syn_cart_afdm <- syn_df_cart_afdm$syn
+df_cart <- as.data.frame(df_cart) 
 
 tictoc::tic()
 pMSE_df_cart_afdm <- utility.gen(syn_df_cart_afdm, df_cart, nperms = 1)$pMSE
