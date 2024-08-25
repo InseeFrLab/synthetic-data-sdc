@@ -53,7 +53,7 @@ filtres_puf <- function(data) {
       # Une personne au chômage (ACTEU = 2) ou inactive (ACTEU = 3) ne peut donner
       # le statut public ou privé de l'employeur (PUB3FP).
   
-  filtre10 <- sum(table(data$PUB3FP, data$ACTEU)[1:dim(table(data$TPPRED, data$RAISTP))[1]-1, 2:3])
+  filtre10 <- sum(table(data$PUB3FP, data$ACTEU)[1:dim(table(data$PUB3FP, data$ACTEU))[1]-1, 2:3])
   
   # ANCSSEMP = 1 et ACTEU = 1
       # Une personne en emploi (ACTEU = 1) doit répondre NA lorsqu'on lui demande
