@@ -1,4 +1,4 @@
-naf_incorrect <- function(data_org, data_syn) {
+naf_incorrect <- function(data_syn) {
   # NAFG004UN et NAFG010UN
   incorrect1 <- dim(data_syn)[1] -
     table(data_syn$NAFG004UN, data_syn$NAFG010UN)["00", "00"] -
@@ -24,8 +24,8 @@ naf_incorrect <- function(data_org, data_syn) {
     table(data_syn$NAFG004UN, data_syn$NAFG017UN)["ET", "C3"] -
     table(data_syn$NAFG004UN, data_syn$NAFG017UN)["ET", "C4"] -
     table(data_syn$NAFG004UN, data_syn$NAFG017UN)["ET", "C5"] -
-    table(data_syn$NAFG004UN, data_syn$NAFG017UN)["ET", "DE"]
-  table(data_syn$NAFG004UN, data_syn$NAFG017UN)["EU", "FZ"] -
+    table(data_syn$NAFG004UN, data_syn$NAFG017UN)["ET", "DE"] -
+    table(data_syn$NAFG004UN, data_syn$NAFG017UN)["EU", "FZ"] -
     table(data_syn$NAFG004UN, data_syn$NAFG017UN)["EV", "GZ"] -
     table(data_syn$NAFG004UN, data_syn$NAFG017UN)["EV", "HZ"] -
     table(data_syn$NAFG004UN, data_syn$NAFG017UN)["EV", "IZ"] -
@@ -72,8 +72,8 @@ naf_incorrect <- function(data_org, data_syn) {
     table(data_syn$NAFG010UN, data_syn$NAFG017UN)["BE", "C3"] -
     table(data_syn$NAFG010UN, data_syn$NAFG017UN)["BE", "C4"] -
     table(data_syn$NAFG010UN, data_syn$NAFG017UN)["BE", "C5"] -
-    table(data_syn$NAFG010UN, data_syn$NAFG017UN)["BE", "DE"]
-  table(data_syn$NAFG010UN, data_syn$NAFG017UN)["FZ", "FZ"] -
+    table(data_syn$NAFG010UN, data_syn$NAFG017UN)["BE", "DE"] -
+    table(data_syn$NAFG010UN, data_syn$NAFG017UN)["FZ", "FZ"] -
     table(data_syn$NAFG010UN, data_syn$NAFG017UN)["GI", "GZ"] -
     table(data_syn$NAFG010UN, data_syn$NAFG017UN)["GI", "HZ"] -
     table(data_syn$NAFG010UN, data_syn$NAFG017UN)["GI", "IZ"] -
