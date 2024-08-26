@@ -90,17 +90,6 @@ for (i in 1:length(puf)) {
 }
 
 
-
-# Répliqués --------------------------------------------------------------------
-replicated.uniques(syn_test, puf_test)
-
-duplicated(puf_test)
-duplicated(syn_test$syn)
-
-df_comb <- rbind(puf_test, syn_test$syn)
-duplicated(df_comb)
-
-
 # Jeux de donnés ---------------------------------------------------------------
 df <- data$original %>%
   select(c("sex", "age", "placesize", "edu", "socprof", "ls", "alcsol"))
@@ -120,6 +109,26 @@ df_ctgan <- df_ctgan[, 2:23] %>%
 
 df_ctgan <- as.data.frame(df_ctgan)
 
+# Répliqués --------------------------------------------------------------------
+# CART
+replicated.uniques(syn_cart, df)
+# no.unique : 3264, no.replications = 411, per.replications = 8.928959
+df_comb_cart <- rbind(df, df_cart)
+sum(duplicated(df_comb_cart)) # 2629
+
+#CTGAN
+replicated.uniques(syn_ctgan, df)
+# no.unique : 3264, no.replications = 377, per.replications = 8.190311
+df_comb_ctgan <- rbind(df, df_ctgan)
+sum(duplicated(df_comb_ctgan)) # 2049
+
+#TVAE
+replicated.uniques(syn_tvae, df)
+# no.unique : 3264, no.replications = 344, per.replications = 7.473387
+df_comb_tvae <- rbind(df, df_tvae)
+sum(duplicated(df_comb_tvae)) # 3341
+
+
 # Synthétisations --------------------------------------------------------------
 syn_cart <- syn(df_cart,
                 seed = 1)
@@ -131,6 +140,7 @@ syn_ctgan$syn <- df_ctgan
 syn_tvae <- syn(df_tvae,
                 seed = 1)
 syn_tvae$syn <- df_tvae
+
 # CIO --------------------------------------------------------------------------
 model.ods <- glm(alcsol ~ ., data = df, family = binomial)
 model.sds_cart <- glm.synds(alcsol ~ ., data = syn_cart, family = binomial)
