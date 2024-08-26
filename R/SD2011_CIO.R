@@ -112,19 +112,35 @@ all_cios %>%
   scale_color_brewer(type = "qual", palette = 2) +
   scale_x_continuous(breaks = 1:6, labels = sort(unique(all_confints$`1-original`$vars))) +
   scale_y_continuous(expand = c(0,0)) +
-  theme_minimal(base_size = 14) +
+  theme_minimal(base_size = 20) +
   guides(color = guide_legend("Modèle")) +
   theme(
     axis.line = element_line(linewidth = 0.45, colour = "grey5"),
-    legend.position = c(0.15,0.15), legend.background = element_rect(fill = "white"),
+    legend.position = c(0.15,0.3), legend.background = element_rect(fill = "white"),
     panel.grid.minor = element_blank(),
-    # panel.grid.minor = element_blank()
+    panel.grid.major = element_line(linewidth = 0.5)
   ) +
   xlab("") +
   ylab("Coefficient de régression")
 
-ggsave(filename = "sd2011_intervalle_confiance_lm.pdf", device = "pdf", width = 12, height = 6)
+ggsave(filename = "sd2011_intervalle_confiance_lm.pdf", device = "pdf", width = 12, height = 4)
 
+
+resume_original <- summary(lm(weight ~ height + sex + age + edu, data = df))$coefficients[,c(1,4)] 
+
+all_cios %>% 
+  ungroup() %>% 
+  filter(modele != "1-original") %>% 
+  select(modele, vars, cio) %>% 
+  tidyr::pivot_wider(names_from = modele, values_from = cio) %>% 
+  full_join(resume_original %>% 
+              as_tibble() %>% 
+              mutate(vars = rownames(resume_original)) %>% 
+              slice(-1)) %>% 
+  select(1, 5,6,2:4) %>% 
+  knitr::kable(
+    format = "latex", digits = 3, booktabs = TRUE
+  )
 
 # # Synthétisations --------------------------------------------------------------
 # syn_cart <- syn(df_cart,
