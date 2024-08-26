@@ -125,11 +125,11 @@ syn_cart <- syn(df_cart,
                 seed = 1)
 
 syn_ctgan <- syn(df_ctgan,
-                seed = 1)
+                 seed = 1)
 syn_ctgan$syn <- df_ctgan
 
 syn_tvae <- syn(df_tvae,
-                 seed = 1)
+                seed = 1)
 syn_tvae$syn <- df_tvae
 # CIO --------------------------------------------------------------------------
 model.ods <- glm(alcsol ~ ., data = df, family = binomial)
@@ -205,4 +205,3 @@ naf_incorrect(puf65_ctgan)
 
 
 
-  
