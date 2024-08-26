@@ -30,44 +30,121 @@ df_ctgan <- aws.s3::s3read_using(
   opts = list("region" = "")
 )
 
-# Jeux de donnés ---------------------------------------------------------------
-df <- data$original %>%
-  select(c("sex", "age", "placesize", "edu", "socprof", "ls", "alcsol"))
 
-df_cart <- data$cart[[1]] %>%
-  select(c("sex", "age", "placesize", "edu", "socprof", "ls", "alcsol"))
+# Jeux de donnés ---------------------------------------------------------------
+df <- data$original
+
+sexe_levels <- levels(df$sex)
+edu_levels <- levels(df$edu)
+
+df_cart <- data$cart[[1]]
+df_cart$sex <- factor(df_cart$sex, levels =sexe_levels)
+df_cart$edu <- factor(df_cart$edu, levels =edu_levels)
 
 df_tvae <- df_tvae[, 2:23] %>%
-  select(c("sex", "age", "placesize", "edu", "socprof", "ls", "alcsol")) %>%
+  # select(c("sex", "age", "placesize", "edu", "socprof", "ls", "alcsol")) %>%
   mutate_if(is.character, as.factor)
+
+df_tvae$sex <- factor(df_tvae$sex, levels =sexe_levels)
+df_tvae$edu <- factor(df_tvae$edu, levels =edu_levels)
 
 df_tvae <- as.data.frame(df_tvae)
 
 df_ctgan <- df_ctgan[, 2:23] %>%
-  select(c("sex", "age", "placesize", "edu", "socprof", "ls", "alcsol")) %>%
+  # select(c("sex", "age", "placesize", "edu", "socprof", "ls", "alcsol")) %>%
   mutate_if(is.character, as.factor) 
 
 df_ctgan <- as.data.frame(df_ctgan)
 
-# Synthétisations --------------------------------------------------------------
-syn_cart <- syn(df_cart,
-                seed = 1)
+df_ctgan$sex <- factor(df_ctgan$sex, levels =sexe_levels)
+df_ctgan$edu <- factor(df_ctgan$edu, levels =edu_levels)
 
-syn_ctgan <- syn(df_ctgan,
-                 seed = 1)
-syn_ctgan$syn <- df_ctgan
 
-syn_tvae <- syn(df_tvae,
-                seed = 1)
-syn_tvae$syn <- df_tvae
+# Modèle original -----------
 
-# CIO --------------------------------------------------------------------------
-model.ods <- glm(alcsol ~ ., data = df, family = binomial)
-model.sds_cart <- glm.synds(alcsol ~ ., data = syn_cart, family = binomial)
-model.sds_ctgan <- glm.synds(alcsol ~ ., data = syn_ctgan, family = binomial)
-model.sds_tvae <- glm.synds(alcsol ~ ., data = syn_tvae, family = binomial)
+get_confint <- function(data, nom){
+  
+  model_original <- lm(weight ~ height + sex + age + edu, data = data)
+  
+  ci <- confint(model_original, level = 0.95)
+  
+  ci <- ci %>% 
+    as_tibble() %>%
+    mutate(vars = rownames(ci), modele = nom) %>% 
+    slice(-1) %>% 
+    select(4:3,1:2)
+  
+  names(ci) <- c("modele", "vars","low","up")
+  
+  return(ci)
+}
 
-compare(model.sds_cart, df)
-compare(model.sds_ctgan, df)
-compare(model.sds_tvae, df)
+cio_function <- function(lo, uo, ls, us){
+  min_u <- pmin(uo, us)
+  max_l <- pmax(lo,ls)
+  1/2*((min_u - max_l)/(uo-lo) + (min_u - max_l)/(us-ls))
+}
+
+all_confints <- purrr::imap(
+  list("1-original" = df, "2-cart" = df_cart, "3-ctgan" = df_ctgan, "4-tvae" = df_tvae),
+  get_confint
+)
+
+all_cios <- all_confints[1:4] |>
+  purrr::list_rbind() |>
+  full_join(all_confints[["1-original"]] %>%  select(-1) %>% rename(low_orig = low, up_orig = up)) |>
+  mutate(cio = cio_function(low_orig, up_orig, low, up)) |>
+  arrange(vars, modele) %>% 
+  group_by(modele) %>% 
+  mutate(num = 1:n()) %>% 
+  group_by(vars) %>% 
+  mutate(num = num + c(-0.15,-0.05,0.05,0.15))
+# mutate(modele = factor(modele, levels = c("original","cart","ctgan","tvae"), ordered = TRUE)) %>% 
+
+
+all_cios %>% 
+  ggplot() +
+  geom_segment( aes(x=num, xend=num, y=low, yend=up, color = modele)) +
+  geom_point( aes(x=num, y=low, color = modele), size=1.5 ) +
+  geom_point( aes(x=num, y=up, color = modele), size=1.5 ) +
+  coord_flip()+
+  geom_hline(yintercept = 0, linetype = "dashed", color = "grey25") +
+  scale_color_brewer(type = "qual", palette = 2) +
+  scale_x_continuous(breaks = 1:6, labels = sort(unique(all_confints$`1-original`$vars))) +
+  scale_y_continuous(expand = c(0,0)) +
+  theme_minimal(base_size = 14) +
+  guides(color = guide_legend("Modèle")) +
+  theme(
+    axis.line = element_line(linewidth = 0.45, colour = "grey5"),
+    legend.position = c(0.15,0.15), legend.background = element_rect(fill = "white"),
+    panel.grid.minor = element_blank(),
+    # panel.grid.minor = element_blank()
+  ) +
+  xlab("") +
+  ylab("Coefficient de régression")
+
+ggsave(filename = "sd2011_intervalle_confiance_lm.pdf", device = "pdf", width = 12, height = 6)
+
+
+# # Synthétisations --------------------------------------------------------------
+# syn_cart <- syn(df_cart,
+#                 seed = 1)
+# 
+# syn_ctgan <- syn(df_ctgan,
+#                  seed = 1)
+# syn_ctgan$syn <- df_ctgan
+# 
+# syn_tvae <- syn(df_tvae,
+#                 seed = 1)
+# syn_tvae$syn <- df_tvae
+# 
+# # CIO --------------------------------------------------------------------------
+# model.ods <- glm(alcsol ~ ., data = df, family = binomial)
+# model.sds_cart <- glm.synds(alcsol ~ ., data = syn_cart, family = binomial)
+# model.sds_ctgan <- glm.synds(alcsol ~ ., data = syn_ctgan, family = binomial)
+# model.sds_tvae <- glm.synds(alcsol ~ ., data = syn_tvae, family = binomial)
+# 
+# compare(model.sds_cart, df)
+# compare(model.sds_ctgan, df)
+# compare(model.sds_tvae, df)
 
