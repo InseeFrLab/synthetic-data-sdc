@@ -64,7 +64,7 @@ df_ctgan$edu <- factor(df_ctgan$edu, levels =edu_levels)
 
 get_confint <- function(data, nom){
   
-  model_original <- lm(weight ~ height + sex + age + edu, data = data)
+  model_original <- lm(weight ~ height + age + edu, data = data)
   
   ci <- confint(model_original, level = 0.95)
   
@@ -110,23 +110,24 @@ all_cios %>%
   coord_flip()+
   geom_hline(yintercept = 0, linetype = "dashed", color = "grey25") +
   scale_color_brewer(type = "qual", palette = 2) +
-  scale_x_continuous(breaks = 1:6, labels = sort(unique(all_confints$`1-original`$vars))) +
+  scale_x_continuous(breaks = 1:5, labels = sort(unique(all_confints$`1-original`$vars))) +
   scale_y_continuous(expand = c(0,0)) +
   theme_minimal(base_size = 20) +
   guides(color = guide_legend("Modèle")) +
   theme(
     axis.line = element_line(linewidth = 0.45, colour = "grey5"),
-    legend.position = c(0.15,0.3), legend.background = element_rect(fill = "white"),
+    legend.position = "inside", 
+    legend.position.inside = c(0.85,0.2), legend.background = element_rect(fill = "white"),
     panel.grid.minor = element_blank(),
     panel.grid.major = element_line(linewidth = 0.5)
   ) +
   xlab("") +
   ylab("Coefficient de régression")
 
-ggsave(filename = "sd2011_intervalle_confiance_lm.pdf", device = "pdf", width = 12, height = 4)
+ggsave(filename = "sd2011_intervalle_confiance_lm.pdf", device = "pdf", width = 12, height = 6)
 
 
-resume_original <- summary(lm(weight ~ height + sex + age + edu, data = df))$coefficients[,c(1,4)] 
+resume_original <- summary(lm(weight ~ height + age + edu, data = df))$coefficients[,c(1,4)] 
 
 all_cios %>% 
   ungroup() %>% 
