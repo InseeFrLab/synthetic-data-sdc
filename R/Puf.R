@@ -5,10 +5,6 @@ if (!requireNamespace("aws.s3", quietly = TRUE)) install.packages("aws.s3"); lib
 if (!requireNamespace("tidyr", quietly = TRUE)) install.packages("tidyr"); library(tidyr)
 if (!requireNamespace("FactoMineR", quietly = TRUE)) install.packages("FactoMineR"); library(FactoMineR)
 if (!requireNamespace("ggplot2", quietly = TRUE)) install.packages("ggplot2"); library(ggplot2)
-if (!requireNamespace("rcompanion", quietly = TRUE)) install.packages("rcompanion"); library(rcompanion)
-if (!requireNamespace("rpart", quietly = TRUE)) install.packages("rpart"); library(rpart)
-if (!requireNamespace("rpart.plot", quietly = TRUE)) install.packages("rpart.plot"); library(rpart.plot)
-source("~/work/synthetic-data-sdc/R/fonctions/Correlations_mixtes.R")
 
 # Preprocessing ----------------------------------------------------------------
 puf <- puf %>%
@@ -21,13 +17,6 @@ puf <- puf %>%
 # Importation ------------------------------------------------------------------
 BUCKET = "projet-donnees-synthetiques"
 
-puf65 <- aws.s3::s3read_using(
-  FUN = readRDS,
-  object = "puf_preprocessed.RDS",
-  bucket = BUCKET,
-  opts = list("region" = "")
-)
-
 puf <- aws.s3::s3read_using(
   FUN = readRDS,
   object = "puf.RDS",
@@ -35,9 +24,30 @@ puf <- aws.s3::s3read_using(
   opts = list("region" = "")
 )
 
-puf_cart <- aws.s3::s3read_using(
+puf65 <- aws.s3::s3read_using(
+  FUN = readr::read_csv,
+  object = "puf65.csv",
+  bucket = BUCKET,
+  opts = list("region" = "")
+)
+
+puf65_cart <- aws.s3::s3read_using(
   FUN = readr::read_csv,
   object = "puf_cart.csv",
+  bucket = BUCKET,
+  opts = list("region" = "")
+)
+
+puf65_ctgan <- aws.s3::s3read_using(
+  FUN = readr::read_csv,
+  object = "puf65_ctgan.csv",
+  bucket = BUCKET,
+  opts = list("region" = "")
+)
+
+puf65_tvae <- aws.s3::s3read_using(
+  FUN = readr::read_csv,
+  object = "puf65_tvae.csv",
   bucket = BUCKET,
   opts = list("region" = "")
 )
@@ -65,29 +75,54 @@ data <- aws.s3::s3read_using(
 str(data, max.level=1)
 methodes <- which(names(data) != "original")
 
-# Tests ------------------------------------------------------------------------
+# Traitement--------------------------------------------------------------------
+puf65 <- puf65[, 2:66]
+num <- c("EXTRIAN", "HEFFEMP", "HEFFTOT", "HHABEMP", "HHABTOT")
+fac <- setdiff(names(puf65), num)
 
-tic()
-syn_ctree <- syn(puf_test,
-                 maxfaclevels = 100,
-                 method = "ctree",
-                 seed = 1)
-toc()
+puf65 <- puf65 %>%
+  mutate_if(is.numeric, as.factor) %>%
+  mutate_if(is.character, as.factor) %>%
+  mutate(across(all_of(num), as.numeric)) %>%
+  as.data.frame
+
+puf65_cart <- puf65_cart[, 2:66]
+
+puf65_cart <- puf65_cart %>%
+  mutate_if(is.numeric, as.factor) %>%
+  mutate_if(is.character, as.factor) %>%
+  mutate(across(all_of(num), as.numeric)) %>%
+  as.data.frame
+
+puf65_ctgan <- puf65_ctgan[, 2:66]
+
+puf65_ctgan <- puf65_ctgan %>%
+  mutate_if(is.numeric, as.factor) %>%
+  mutate_if(is.character, as.factor) %>%
+  mutate(across(all_of(num), as.numeric)) %>%
+  as.data.frame
+
+puf65_tvae <- puf65_tvae[, 2:66]
+
+puf65_tvae <- puf65_tvae %>%
+  mutate_if(is.numeric, as.factor) %>%
+  mutate_if(is.character, as.factor) %>%
+  mutate(across(all_of(num), as.numeric)) %>%
+  as.data.frame
 
 
-pMSE_ctree <- utility.gen(syn_ctree, puf_test, nperms = 1)$pMSE
+# pMSE -------------------------------------------------------------------------
+pMSE_cart <- utility.gen(puf65_cart, puf65, nperms = 1)$pMSE
 
-utility.gen(puf_syn, puf_test, nperms = 1)$pMSE # 0.1914136
+pMSE_ctgan <- utility.gen(puf65_ctgan, puf65, nperms = 1)$pMSE
 
-pMSE_cart <- utility.gen(syn_test, puf_test, nperms = 1)$pMSE # 0.0008927075
+pMSE_tvae <- utility.gen(puf65_tvae, puf65, nperms = 1)$pMSE
 
-write.csv(puf_test, "~/work/synthetic-data-sdc/TableEvaluator/puf.csv")
+pMSE_cart1 <- utility.gen(puf65_cart, puf65, nperms = 1)$pMSE
 
+pMSE_ctgan1 <- utility.gen(puf65_ctgan, puf65, nperms = 1)$pMSE
 
-for (i in 1:length(puf)) {
-  #cat(names(puf)[i], " : ", sum(is.na(puf[[names(puf)[i]]])), "\n")
-  cat(names(puf)[i], " : ", sum(puf[[names(puf)[i]]] == ""), "\n")
-}
+pMSE_tvae1 <- utility.gen(puf65_tvae, puf65, nperms = 1)$pMSE
 
 
 # Jeux de donnés ---------------------------------------------------------------
@@ -156,28 +191,12 @@ source("~/work/synthetic-data-sdc/R/fonctions/Naf_incorrect.R")
 source("~/work/synthetic-data-sdc/R/fonctions/Filtres_puf.R")
 
 # Filtres CART -----------------------------------------------------------------
-puf_cart <- puf_cart[, 2:66]
-
-puf_cart <- puf_cart %>%
-  mutate_if(is.numeric, as.factor) %>%
-  mutate_if(is.character, as.factor) %>%
-  mutate(across(all_of(num), as.numeric))
-
-
 filtres_puf(puf_cart)
 
 #NAF
 naf_incorrect(puf_cart)
 
 # Filtres TVAE -----------------------------------------------------------------
-puf65_tvae <- read.csv("~/work/synthetic-data-sdc/TableEvaluator/puf65_tvae.csv")
-puf65_tvae <- puf65_tvae[, 2:66]
-
-puf65_tvae <- puf65_tvae %>%
-  mutate_if(is.numeric, as.factor) %>%
-  mutate_if(is.character, as.factor) %>%
-  mutate(across(all_of(num), as.numeric))
-
 filtres_puf(puf65_tvae)
 
 # NAF
@@ -185,21 +204,6 @@ naf_incorrect(puf65_tvae)
 
 
 # Filtres CTGAN -----------------------------------------------------------------
-puf65_ctgan <- aws.s3::s3read_using(
-  FUN = readr::read_csv,
-  object = "puf65_ctgan.csv",
-  bucket = BUCKET,
-  opts = list("region" = "")
-)
-
-puf65_ctgan <- puf65_ctgan[, 2:66]
-
-puf65_ctgan <- puf65_ctgan %>%
-  mutate_if(is.numeric, as.factor) %>%
-  mutate_if(is.character, as.factor) %>%
-  mutate(across(all_of(num), as.numeric))
-
-
 filtres_puf(puf65_ctgan)
 
 # NAF
@@ -207,7 +211,15 @@ naf_incorrect(puf65_ctgan)
 
 
 
+tic()
+syn_cart <- syn(puf65,
+                maxfaclevels = 100,
+                seed = 1)
+toc()
 
+tic()
+pMSE_syn_cart <- utility.gen(syn_cart, puf65, nperms = 1)$pMSE
+toc()
 
 
 
