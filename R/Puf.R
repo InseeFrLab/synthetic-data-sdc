@@ -20,18 +20,17 @@ puf <- puf %>%
 
 # Importation ------------------------------------------------------------------
 BUCKET = "projet-donnees-synthetiques"
-FILE_KEY_IN_S3_1 = "puf_preprocessed.RDS"
-puf <- aws.s3::s3read_using(
+
+puf65 <- aws.s3::s3read_using(
   FUN = readRDS,
-  object = FILE_KEY_IN_S3_1,
+  object = "puf_preprocessed.RDS",
   bucket = BUCKET,
   opts = list("region" = "")
 )
 
-FILE_KEY_IN_S3_2 = "puf.RDS"
 puf <- aws.s3::s3read_using(
   FUN = readRDS,
-  object = FILE_KEY_IN_S3_2,
+  object = "puf.RDS",
   bucket = BUCKET,
   opts = list("region" = "")
 )
@@ -65,6 +64,7 @@ data <- aws.s3::s3read_using(
 )
 str(data, max.level=1)
 methodes <- which(names(data) != "original")
+
 # Tests ------------------------------------------------------------------------
 
 tic()
@@ -110,19 +110,19 @@ df_ctgan <- df_ctgan[, 2:23] %>%
 df_ctgan <- as.data.frame(df_ctgan)
 
 # Répliqués --------------------------------------------------------------------
-# CART
+  # CART
 replicated.uniques(syn_cart, df)
 # no.unique : 3264, no.replications = 411, per.replications = 8.928959
 df_comb_cart <- rbind(df, df_cart)
 sum(duplicated(df_comb_cart)) # 2629
 
-#CTGAN
+  #CTGAN
 replicated.uniques(syn_ctgan, df)
 # no.unique : 3264, no.replications = 377, per.replications = 8.190311
 df_comb_ctgan <- rbind(df, df_ctgan)
 sum(duplicated(df_comb_ctgan)) # 2049
 
-#TVAE
+  #TVAE
 replicated.uniques(syn_tvae, df)
 # no.unique : 3264, no.replications = 344, per.replications = 7.473387
 df_comb_tvae <- rbind(df, df_tvae)
