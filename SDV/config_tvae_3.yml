@@ -1,4 +1,4 @@
 compress_dims : [256,256,256,256]
 decompress_dims : [256,256,256,256]
 batch_size : 100
-epochs: 1000
+epochs: 500
