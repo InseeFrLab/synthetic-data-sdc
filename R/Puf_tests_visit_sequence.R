@@ -51,7 +51,7 @@ classement_var <- function(data, data.afdm) {
   for (i in 1:length(data)) {
     var <- 0
     for (j in 1:eig.val[, 2]) {
-      var <- var + eig.val[, 2][j] * data.afdm$var$contrib[names(data)[i], j] / 100
+      var <- var + eig.val[, "percentage of variance"][j] * data.afdm$var$contrib[names(data)[i], j] / 100
     }
     matrice[1, i] <- var
   }
